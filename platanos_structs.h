@@ -35,6 +35,6 @@ struct platanos_node_t{
 
 char bind_point[50];
 
-}
+};
 
 
