@@ -17,7 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include"api/platanos.h"
+#include"../api/platanos.h"
 #include<string.h>
 
 struct platanos_node_t{
