@@ -18,13 +18,10 @@
 */
 
 #include"../api/platanos.h"
+#include"../api/platanos_common.h"
+#include"platanos_structs.h"
 #include<string.h>
 
-struct platanos_node_t{
-
-char bind_point[50];
-
-}
 
 typedef struct platanos_node_t platanos_node_t;
 

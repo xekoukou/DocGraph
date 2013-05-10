@@ -19,21 +19,7 @@
 
 
 #include"../api/platanos.h"
-
-
-struct platanos_poll_t{
-
-zmq_pollitem_t pollitem;
-int64_t next_time;
-};
-
-struct platanos_t{
-platanos_poll_t *poll;
-void *router;
-void *dealer;
-compute_t *compute;
-
-};
+#include"platanos_structs.h"
 
 
 void platanos_poll_init (platanos_poll_t ** poll,platanos_t *platanos){
@@ -115,7 +101,7 @@ zmsg_destroy(&msg);
 
 platanos_node_t *node;
 
-platanos_node_init(&platanos_node);
+platanos_node_init(&node);
 
 strcpy(node->bind_point,bind_point);
 return node;
@@ -124,7 +110,7 @@ return node;
 
 platanos_node_t *platanos_bind (platanos_t * platanos, zmsg_t * msg){
     char bind_point[50];
-    frame = zmsg_next (msg);
+    zframe_t *frame = zmsg_next (msg);
     memcpy (bind_point, zframe_data (frame), zframe_size (frame));
 
 zmsg_destroy(&msg);
@@ -135,7 +121,7 @@ zmsg_destroy(&msg);
 
 platanos_node_t *node;
 
-platanos_node_init(&platanos_node);
+platanos_node_init(&node);
 
 strcpy(node->bind_point,bind_point);
 return node;
