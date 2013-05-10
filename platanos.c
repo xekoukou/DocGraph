@@ -81,9 +81,9 @@ platanos_poll_init(&((*platanos)->poll),*platanos);
 
 void platanos_register (zhandle_t * zh, char *octopus,char *comp_name, char *res_name,
                         char *bind_point,oconfig_t *config){
-
+          char path[1000];
           char bind_location[1000];
-          int  port = oconfig_incr_port (fconfig);
+          int  port = oconfig_incr_port (config);
             sprintf (bind_location, "tcp://%s:%d", bind_point, port);
             sprintf (path, "/%s/computers/%s/worker_nodes/%s/bind_point", octopus,
                      comp_name, res_name);
@@ -104,7 +104,7 @@ void platanos_send (platanos_t * platanos, zmsg_t * msg);
 
 platanos_node_t *platanos_connect (platanos_t * platanos, zmsg_t * msg){
     char bind_point[50];
-    frame = zmsg_next (msg);
+   zframe_t * frame = zmsg_next (msg);
     memcpy (bind_point, zframe_data (frame), zframe_size (frame));
 
 zmsg_destroy(&msg);
@@ -113,7 +113,9 @@ zmsg_destroy(&msg);
     rc = zsocket_connect (platanos->router, "%s", bind_point);
     assert (rc == 0);
 
-platanos_node_t *node = malloc(sizeof(platanos_node_t));
+platanos_node_t *node;
+
+platanos_node_init(&platanos_node);
 
 strcpy(node->bind_point,bind_point);
 return node;
@@ -131,7 +133,9 @@ zmsg_destroy(&msg);
     rc = zsocket_bind (platanos->dealer, "%s", bind_point);
     assert (rc != -1);
 
-platanos_node_t *node = malloc(sizeof(platanos_node_t));
+platanos_node_t *node;
+
+platanos_node_init(&platanos_node);
 
 strcpy(node->bind_point,bind_point);
 return node;

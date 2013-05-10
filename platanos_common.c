@@ -51,6 +51,12 @@ buffer_len = 1000;
 
 }
 
+void platanos_node_init( platanos_node_t **plananos_node){
+
+*platanos_node = malloc(sizeof(platanos_node_t));
+
+}
+
 void platanos_node_destroy (platanos_node_t ** platanos_node){
 free(*platanos);
 *platanos=NULL;
