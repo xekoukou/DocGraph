@@ -30,10 +30,10 @@ int64_t key;
 typedef struct edge_t edge_t;
 
 struct skip_vertex_t {
-int64_t *for_edges[];
+int64_t *for_edges;
 int64_t for_edges_size;
 
-int64_t *bck_edges[];
+int64_t *bck_edges;
 int64_t bck_edges_size;
 
 
@@ -43,13 +43,13 @@ typedef struct skip_vertex_t skip_vertex_t;
 
 struct vertex_t {
 int64_t key;
-edge_t *edges[];      //ordered by position
+edge_t *edges;      //ordered by position
 int64_t edges_size;
 
-uint64_t *bck_edges[];
+uint64_t *bck_edges;
 int64_t bck_edges_size;
 
-skip_vertex_t *skip_vertex[];
+skip_vertex_t *skip_vertex;
 int64_t skip_size;
 };
 
