@@ -57,7 +57,7 @@ void platanos_node_init( platanos_node_t **platanos_node){
 }
 
 void platanos_node_destroy (platanos_node_t ** platanos_node){
-free(*platanos);
+free(*platanos_node);
 *platanos_node=NULL;
 }
 
