@@ -19,6 +19,9 @@
 
 #include"../api/vertex.h"
 
+#ifndef _OCTOPUS_GPROJECT_VERTEX_H_
+#define _OCTOPUS_GPROJECT_VERTEX_H_
+
 struct edge_t {
 unsigned char position;
 int64_t key;
@@ -51,4 +54,4 @@ int64_t skip_size;
 };
 
 
-
+#endif
