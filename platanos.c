@@ -47,7 +47,7 @@ void platanos_poll_pollitems (platanos_poll_t * poll,
 
 void platanos_do (platanos_t * platanos);
 
-platanos_poll_t *platanos_poll (platanos_t * platanos){
+platanos_poll_t *platanos_return_poll (platanos_t * platanos){
 return platanos->poll;
 }
 
