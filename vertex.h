@@ -22,35 +22,41 @@
 #ifndef _OCTOPUS_GPROJECT_VERTEX_H_
 #define _OCTOPUS_GPROJECT_VERTEX_H_
 
-struct edge_t {
-unsigned char position;
-int64_t key;
+struct edge_t
+{                                      //the order here is important because I send this to casssandra which
+    unsigned char st_position;         // orders it lexicographically
+    int64_t key;
+    unsigned char position;
 };
 
 typedef struct edge_t edge_t;
 
-struct skip_vertex_t {
-int64_t *for_edges;
-int64_t for_edges_size;
+struct skip_vertex_t
+{
+    int64_t *for_edges;   //ordered by starting position
+    int64_t for_edges_size;
 
-int64_t *bck_edges;
-int64_t bck_edges_size;
+    int64_t *bck_edges;
+    int64_t bck_edges_size;
 
 
 };
 
 typedef struct skip_vertex_t skip_vertex_t;
 
-struct vertex_t {
-int64_t key;
-edge_t *edges;      //ordered by position
-int64_t edges_size;
+struct vertex_t
+{
+    int64_t key;
+    unsigned char size; //number of docs in line
 
-uint64_t *bck_edges;
-int64_t bck_edges_size;
+    edge_t *edges;              
+    int64_t edges_size;
 
-skip_vertex_t *skip_vertex;
-int64_t skip_size;
+    uint64_t *bck_edges;
+    int64_t bck_edges_size;
+
+    skip_vertex_t *skip_vertex;
+    int64_t skip_size;
 };
 
 

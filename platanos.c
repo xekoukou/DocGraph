@@ -22,64 +22,75 @@
 #include"platanos_structs.h"
 
 
-void platanos_poll_init (platanos_poll_t ** poll,platanos_t *platanos){
+void
+platanos_poll_init (platanos_poll_t ** poll, platanos_t * platanos)
+{
 
-*poll=malloc(sizeof(struct platanos_poll_t));
+    *poll = malloc (sizeof (struct platanos_poll_t));
 
-(*poll)->pollitem = (zmq_pollitem_t) {
+    (*poll)->pollitem = (zmq_pollitem_t) {
     platanos->dealer, 0, ZMQ_POLLIN};
 
-(*poll)->next_time=-1;
+    (*poll)->next_time = -1;
 
 }
 
-int64_t platanos_poll_before_poll (platanos_poll_t * poll){
+int64_t
+platanos_poll_before_poll (platanos_poll_t * poll)
+{
 
-return poll->next_time;
+    return poll->next_time;
 }
 
-void platanos_poll_pollitems (platanos_poll_t * poll,
-                              zmq_pollitem_t ** pollitems, int *size){
+void
+platanos_poll_pollitems (platanos_poll_t * poll,
+                         zmq_pollitem_t ** pollitems, int *size)
+{
 
-*pollitems=&(poll->pollitem);
-*size=1;
+    *pollitems = &(poll->pollitem);
+    *size = 1;
 }
 
 void platanos_do (platanos_t * platanos);
 
-platanos_poll_t *platanos_return_poll (platanos_t * platanos){
-return platanos->poll;
+platanos_poll_t *
+platanos_return_poll (platanos_t * platanos)
+{
+    return platanos->poll;
 }
 
-void platanos_init (platanos_t ** platanos,
-                    compute_t * compute, char *id, zctx_t * ctx){
+void
+platanos_init (platanos_t ** platanos,
+               compute_t * compute, char *id, zctx_t * ctx)
+{
 
-*platanos=malloc(sizeof(platanos_t));
+    *platanos = malloc (sizeof (platanos_t));
 
     (*platanos)->router = zsocket_new (ctx, ZMQ_ROUTER);
     (*platanos)->dealer = zsocket_new (ctx, ZMQ_DEALER);
     zmq_setsockopt ((*platanos)->dealer, ZMQ_IDENTITY, id, strlen (id));
 
-platanos_poll_init(&((*platanos)->poll),*platanos);
-(*platanos)->compute=compute;
+    platanos_poll_init (&((*platanos)->poll), *platanos);
+    (*platanos)->compute = compute;
 }
 
 
-void platanos_register (zhandle_t * zh, char *octopus,char *comp_name, char *res_name,
-                        char *bind_point,oconfig_t *config){
-          char path[1000];
-          char bind_location[1000];
-          int  port = oconfig_incr_port (config);
-            sprintf (bind_location, "tcp://%s:%d", bind_point, port);
-            sprintf (path, "/%s/computers/%s/worker_nodes/%s/bind_point", octopus,
-                     comp_name, res_name);
-          int  result =
-                zoo_create (zh, path, bind_location,
-                            strlen (bind_location) + 1, &ZOO_OPEN_ACL_UNSAFE,
-                            0, NULL, 0);
+void
+platanos_register (zhandle_t * zh, char *octopus, char *comp_name,
+                   char *res_name, char *bind_point, oconfig_t * config)
+{
+    char path[1000];
+    char bind_location[1000];
+    int port = oconfig_incr_port (config);
+    sprintf (bind_location, "tcp://%s:%d", bind_point, port);
+    sprintf (path, "/%s/computers/%s/worker_nodes/%s/bind_point", octopus,
+             comp_name, res_name);
+    int result = zoo_create (zh, path, bind_location,
+                             strlen (bind_location) + 1, &ZOO_OPEN_ACL_UNSAFE,
+                             0, NULL, 0);
 
 
-            assert (ZOK == result);
+    assert (ZOK == result);
 
 
 
@@ -88,43 +99,46 @@ void platanos_register (zhandle_t * zh, char *octopus,char *comp_name, char *res
 
 void platanos_send (platanos_t * platanos, zmsg_t * msg);
 
-platanos_node_t *platanos_connect (platanos_t * platanos, zmsg_t * msg){
-    char bind_point[50];
-   zframe_t * frame = zmsg_next (msg);
-    memcpy (bind_point, zframe_data (frame), zframe_size (frame));
-
-zmsg_destroy(&msg);
-
-   int rc;
-    rc = zsocket_connect (platanos->router, "%s", bind_point);
-    assert (rc == 0);
-
-platanos_node_t *node;
-
-platanos_node_init(&node);
-
-strcpy(node->bind_point,bind_point);
-return node;
-}
-
-
-platanos_node_t *platanos_bind (platanos_t * platanos, zmsg_t * msg){
+platanos_node_t *
+platanos_connect (platanos_t * platanos, zmsg_t * msg)
+{
     char bind_point[50];
     zframe_t *frame = zmsg_next (msg);
     memcpy (bind_point, zframe_data (frame), zframe_size (frame));
 
-zmsg_destroy(&msg);
+    zmsg_destroy (&msg);
 
-   int rc;
+    int rc;
+    rc = zsocket_connect (platanos->router, "%s", bind_point);
+    assert (rc == 0);
+
+    platanos_node_t *node;
+
+    platanos_node_init (&node);
+
+    strcpy (node->bind_point, bind_point);
+    return node;
+}
+
+
+platanos_node_t *
+platanos_bind (platanos_t * platanos, zmsg_t * msg)
+{
+    char bind_point[50];
+    zframe_t *frame = zmsg_next (msg);
+    memcpy (bind_point, zframe_data (frame), zframe_size (frame));
+
+    zmsg_destroy (&msg);
+
+    int rc;
     rc = zsocket_bind (platanos->dealer, "%s", bind_point);
     assert (rc != -1);
 
-platanos_node_t *node;
+    platanos_node_t *node;
 
-platanos_node_init(&node);
+    platanos_node_init (&node);
 
-strcpy(node->bind_point,bind_point);
-return node;
+    strcpy (node->bind_point, bind_point);
+    return node;
 
 }
-

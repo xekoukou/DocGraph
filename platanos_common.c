@@ -27,45 +27,52 @@ typedef struct platanos_node_t platanos_node_t;
 
 
 
-void platanos_online_bind_points (zhandle_t * zh, char *octopus, char *comp_name,
-                           char *res_name, char (**bind_points)[][50], int *size){
+void
+platanos_online_bind_points (zhandle_t * zh, char *octopus, char *comp_name,
+                             char *res_name, char (**bind_points)[][50],
+                             int *size)
+{
 
-*bind_points = malloc(50*1);
+    *bind_points = malloc (50 * 1);
 
- int buffer_len;
-char path[1000];
-struct Stat stat;
+    int buffer_len;
+    char path[1000];
+    struct Stat stat;
 
-buffer_len = 1000;
-            sprintf (path, "/%s/computers/%s/worker_nodes/%s/bind_point",
-                     octopus, comp_name, res_name);
-          int  result =
-                zoo_get (zh, path, 0, (**bind_points)[0], &buffer_len,
-                         &stat);
-            assert(buffer_len<51);
-            assert (result == ZOK);
+    buffer_len = 1000;
+    sprintf (path, "/%s/computers/%s/worker_nodes/%s/bind_point",
+             octopus, comp_name, res_name);
+    int result = zoo_get (zh, path, 0, (**bind_points)[0], &buffer_len,
+                          &stat);
+    assert (buffer_len < 51);
+    assert (result == ZOK);
 
-*size=1;
+    *size = 1;
 
-
-}
-
-void platanos_node_init( platanos_node_t **platanos_node){
-
-*platanos_node = malloc(sizeof(platanos_node_t));
 
 }
 
-void platanos_node_destroy (platanos_node_t ** platanos_node){
-free(*platanos_node);
-*platanos_node=NULL;
+void
+platanos_node_init (platanos_node_t ** platanos_node)
+{
+
+    *platanos_node = malloc (sizeof (platanos_node_t));
+
 }
 
-platanos_node_t *platanos_node_dup (platanos_node_t * platanos_node){
-
-platanos_node_t *node_dup= malloc(sizeof(struct platanos_node_t));
-
-strcpy(node_dup->bind_point,platanos_node->bind_point);
-return node_dup;
+void
+platanos_node_destroy (platanos_node_t ** platanos_node)
+{
+    free (*platanos_node);
+    *platanos_node = NULL;
 }
 
+platanos_node_t *
+platanos_node_dup (platanos_node_t * platanos_node)
+{
+
+    platanos_node_t *node_dup = malloc (sizeof (struct platanos_node_t));
+
+    strcpy (node_dup->bind_point, platanos_node->bind_point);
+    return node_dup;
+}

@@ -1,0 +1,111 @@
+package protocol;
+
+option java_package = "platanos.docGraphDB";
+option java_outer_classname = "Protocol";
+
+message MultiCommand
+{
+
+  required int64 key = 1;
+
+  message Command
+  {
+
+    enum Type
+    {
+
+      cmetadata = 0;
+      ccontent = 1;
+      cege = 2;
+      cvertex = 3;
+
+    }
+    required Type type = 1;
+
+
+    message Metadata
+    {
+
+      enum SecCommand
+      {
+
+	csha1 = 0;
+	cluceneUid = 1;
+
+      }
+      required SecCommand secCommand = 1;
+      required bytes position = 2;
+      optional bytes sha1 = 3;
+      optional int64 luceneUid = 4;
+
+    }
+
+    optional Metadata metadata = 2;
+
+    message Content
+    {
+
+      enum SecCommand
+      {
+
+	cdoc = 0;
+	csummary = 1;
+
+      }
+      required SecCommand secCommand = 1;
+      required bytes position = 2;
+
+      required bytes data = 3;
+
+    }
+
+    message Edge
+    {
+
+      enum secCommand
+      {
+	cinEdge = 0;
+	cedge = 1;
+
+      }
+
+      optional bytes position = 1;	//inEdge requires position
+      optional bytes edge = 2;	// edge requires edge
+
+      required bytes data = 3;
+
+    }
+
+    optional Content content = 3;
+
+    message Vertex
+    {
+
+      enum SecCommand
+      {
+
+	ccreateVertex = 0;
+	csetSize = 1;
+	caddEdge = 2;
+	caddBack_edge = 3;
+
+      }
+      required SecCommand secCommand = 1;
+
+      optional int32 size = 2;
+
+      message Edge
+      {
+	required bytes edge = 1;
+	required bytes data = 2;
+      }
+
+      optional Edge edge = 3;	//required by both edge back_edge
+
+    }
+
+
+  }
+
+  repeated Command command = 2;
+}
