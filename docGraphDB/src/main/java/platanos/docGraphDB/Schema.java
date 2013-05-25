@@ -1,23 +1,22 @@
 package platanos.docGraphDB;
 
+import java.util.Arrays;
 
-import com.google.common.collect.ImmutableMap;
-import com.netflix.astyanax.Keyspace;
-import com.netflix.astyanax.connectionpool.exceptions.ConnectionException;
-import com.netflix.astyanax.model.ColumnFamily;
-import com.netflix.astyanax.model.Composite;
-import com.netflix.astyanax.serializers.BytesArraySerializer;
-import com.netflix.astyanax.serializers.CompositeSerializer;
-
+import me.prettyprint.cassandra.service.ThriftKsDef;
+import me.prettyprint.hector.api.Cluster;
+import me.prettyprint.hector.api.ddl.ColumnFamilyDefinition;
+import me.prettyprint.hector.api.ddl.ComparatorType;
+import me.prettyprint.hector.api.ddl.KeyspaceDefinition;
+import me.prettyprint.hector.api.factory.HFactory;
 
 public class Schema {
 
 	public static void main(String[] args) {
 		if (args.length == 3) {
-			 Keyspace ksp = ClusterConnect.clusterConnect(args[0], args[1]);
+			Cluster cluster = ClusterConnect.clusterConnect(args[0], args[1]);
 			try {
 				int replicationFactor = Integer.parseInt(args[2]);
-				createSchema(ksp, replicationFactor);
+				createSchema(cluster, replicationFactor);
 			} catch (NumberFormatException e) {
 				System.out
 						.print("Wrong arguments: \n command name location replicationFactor");
@@ -29,47 +28,40 @@ public class Schema {
 
 	}
 
-	static void createSchema(Keyspace ksp, int replicationFactor) {
-		
-		try {
-			ksp.createKeyspace(ImmutableMap.<String, Object>builder()
-				    .put("strategy_options", ImmutableMap.<String, Object>builder()
-				        .put("replication_factor", new Integer(replicationFactor).toString())
-				        .build())
-				    .put("strategy_class",     "SimpleStrategy")
-				        .build()
-				     );
+	static void createSchema(Cluster cluster, int replicationFactor) {
 
-		ColumnFamily<byte[], Composite> DocVertices = ColumnFamily
-				.newColumnFamily("DocVertices", BytesArraySerializer.get(), new CompositeSerializer());
-			ksp.createColumnFamily(DocVertices, null);
+		KeyspaceDefinition keyspaceDef = cluster
+				.describeKeyspace("DocGraphUID");
 
-		
-		ColumnFamily<byte[], Composite> Edges = ColumnFamily
-				.newColumnFamily("Edges", BytesArraySerializer.get(), new CompositeSerializer());
-		ksp.createColumnFamily(Edges, null);
-		
-		ColumnFamily<byte[], Composite> DocMetadata = ColumnFamily
-				.newColumnFamily("DocMetadata", BytesArraySerializer.get(), new CompositeSerializer());
-		ksp.createColumnFamily(DocMetadata, null);
-		
-		ColumnFamily<byte[], byte[]> Docs = ColumnFamily
-				.newColumnFamily("Docs", BytesArraySerializer.get(), BytesArraySerializer.get());
-		ksp.createColumnFamily(Docs, null);
-		
-		ColumnFamily<byte[], byte[]> Summaries = ColumnFamily
-				.newColumnFamily("Summaries", BytesArraySerializer.get(), BytesArraySerializer.get());
-		ksp.createColumnFamily(Summaries, null);
-		
-		} catch (ConnectionException e) {
-			System.out.print("Error trying to create the Schema - Connection Error");
-			e.printStackTrace();
+		if (keyspaceDef == null) {
+			ColumnFamilyDefinition DocVerticesDef = HFactory
+					.createColumnFamilyDefinition("DocGraphUID", "DocVertices",
+							ComparatorType.COMPOSITETYPE);
+
+			ColumnFamilyDefinition DocsDef = HFactory
+					.createColumnFamilyDefinition("DocGraphUID", "Docs",
+							ComparatorType.BYTESTYPE);
+
+			ColumnFamilyDefinition SummariesDef = HFactory
+					.createColumnFamilyDefinition("DocGraphUID", "Summaries",
+							ComparatorType.BYTESTYPE);
+			
+			ColumnFamilyDefinition EdgesDef = HFactory
+					.createColumnFamilyDefinition("DocGraphUID", "Edges",
+							ComparatorType.COMPOSITETYPE);
+			
+			ColumnFamilyDefinition DocMetaDataDef = HFactory
+					.createColumnFamilyDefinition("DocGraphUID", "DocMetadata",
+							ComparatorType.COMPOSITETYPE);
+
+			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
+					"DOcGraphUID", ThriftKsDef.DEF_STRATEGY_CLASS,
+					replicationFactor,
+					Arrays.asList(DocVerticesDef, DocsDef, SummariesDef,EdgesDef,DocMetaDataDef));
+
+			cluster.addKeyspace(newKeyspace, true);
 		}
-		
-		
 
-		}
+	}
 
 }
-
-
