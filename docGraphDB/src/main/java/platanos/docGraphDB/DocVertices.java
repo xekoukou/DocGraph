@@ -94,4 +94,33 @@ class DocVertices {
 
 	}
 
+       protected Vertex getVertex(byte[] key){
+               
+               Builder vb = Vertex.newBuilder();
+               
+               Composite comp = new Composite();
+               comp.add(0, "size");
+               
+               HColumn<Composite, byte[]> res = template.querySingleColumn(key, comp,BytesArraySerializer.get());
+               vb.setSize(ByteString.copyFrom(res.getValue()));
+               
+               Composite start = new Composite();
+               start.addComponent(0, "edge", Composite.ComponentEquality.EQUAL);
+               Composite stop = new Composite();
+               stop.addComponent(0, "edge", Composite.ComponentEquality.GREATER_THAN_EQUAL);
+               HSlicePredicate<Composite> predicate = new HSlicePredicate<Composite>(new CompositeSerializer());
+               predicate.setRange(start, stop, false, 2147483647);
+               ColumnFamilyResult<byte[], Composite> sres = template.queryColumns(key, predicate);
+               while(sres.hasNext()){
+                       ColumnFamilyResult<byte[], Composite> column = sres.next();
+                       
+               }
+               
+               
+               
+               
+               
+       }
+
+
 }

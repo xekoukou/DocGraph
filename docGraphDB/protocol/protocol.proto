@@ -8,7 +8,7 @@ message MultiCommand
 
   required int64 key = 1;
 
-  message Command
+  message SaveCommand
   {
 
     enum Type
@@ -16,7 +16,7 @@ message MultiCommand
 
       cmetadata = 0;
       ccontent = 1;
-      cege = 2;
+      cedge = 2;
       cvertex = 3;
 
     }
@@ -59,6 +59,8 @@ message MultiCommand
 
     }
 
+    optional Content content = 3;
+
     message Edge
     {
 
@@ -75,8 +77,7 @@ message MultiCommand
       required bytes data = 3;
 
     }
-
-    optional Content content = 3;
+    optional Edge edge = 4;
 
     message Vertex
     {
@@ -104,8 +105,92 @@ message MultiCommand
 
     }
 
+    optional Vertex vertex = 5;
+
 
   }
 
-  repeated Command command = 2;
+  repeated SaveCommand saveCommand = 2 ;
+
+ message LoadCommand
+  {
+
+    enum Type
+    {
+
+      cmetadata = 0;
+      ccontent = 1;
+      cedge = 2;
+      cvertex = 3;
+
+    }
+    required Type type = 1;
+
+
+    message Metadata
+    {
+
+      enum SecCommand
+      {
+
+        csha1 = 0;
+        cluceneUid = 1;
+
+      }
+      required SecCommand secCommand = 1;
+      required bytes position = 2;
+    
+    }
+      
+    optional Metadata metadata = 2;
+
+    message Content
+    {
+
+      enum SecCommand
+      {
+
+        cdoc = 0;
+        csummary = 1;
+
+      }
+      required SecCommand secCommand = 1;
+      required bytes position = 2;
+
+    }
+
+    optional Content content = 3;
+
+    message Edge
+    {
+
+      enum secCommand
+      {
+        cinEdge = 0;
+        cedge = 1;
+
+      }
+
+      optional bytes position = 1;      //inEdge requires position
+      optional bytes edge = 2;  // edge requires edge
+
+    }
+    optional Edge edge = 4; 
+
+  }
+
+  repeated LoadCommand loadCommand = 3 ;
+
+
+
+
+}
+
+
+message Vertex {
+
+required bytes size = 1;
+repeated bytes edges = 2  ;
+repeated bytes back_edges = 3 ;
+
 }
