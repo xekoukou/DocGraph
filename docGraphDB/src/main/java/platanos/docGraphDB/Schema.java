@@ -36,7 +36,7 @@ public class Schema {
 		if (keyspaceDef == null) {
 			ColumnFamilyDefinition DocVerticesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocVertices",
-							ComparatorType.COMPOSITETYPE);
+							ComparatorType.DYNAMICCOMPOSITETYPE);
 
 			ColumnFamilyDefinition DocsDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Docs",
@@ -45,23 +45,54 @@ public class Schema {
 			ColumnFamilyDefinition SummariesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Summaries",
 							ComparatorType.BYTESTYPE);
-			
+
 			ColumnFamilyDefinition EdgesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Edges",
 							ComparatorType.COMPOSITETYPE);
-			
+
 			ColumnFamilyDefinition DocMetaDataDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocMetadata",
 							ComparatorType.COMPOSITETYPE);
 
 			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
 					"DOcGraphUID", ThriftKsDef.DEF_STRATEGY_CLASS,
-					replicationFactor,
-					Arrays.asList(DocVerticesDef, DocsDef, SummariesDef,EdgesDef,DocMetaDataDef));
+					replicationFactor, Arrays.asList(DocVerticesDef, DocsDef,
+							SummariesDef, EdgesDef, DocMetaDataDef));
 
 			cluster.addKeyspace(newKeyspace, true);
 		}
+		keyspaceDef = cluster
+				.describeKeyspace("LuceneUIDRanges");
 
+		if (keyspaceDef == null) {
+			
+			ColumnFamilyDefinition luceneUIDs = HFactory
+					.createColumnFamilyDefinition("LuceneUIDRanges", "LuceneUIDs",
+							ComparatorType.LONGTYPE);
+
+			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
+					"LuceneUIDRanges", ThriftKsDef.DEF_STRATEGY_CLASS,
+					replicationFactor, Arrays.asList(luceneUIDs));
+
+			cluster.addKeyspace(newKeyspace, true);
+			
+		}
+		keyspaceDef = cluster
+				.describeKeyspace("Sha3");
+
+		if (keyspaceDef == null) {
+			
+			ColumnFamilyDefinition graphUID = HFactory
+					.createColumnFamilyDefinition("Sha3", "GraphUIDs",
+							ComparatorType.LONGTYPE);
+
+			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
+					"Sha3", ThriftKsDef.DEF_STRATEGY_CLASS,
+					replicationFactor, Arrays.asList(graphUID));
+
+			cluster.addKeyspace(newKeyspace, true);
+			
+		}
 	}
 
 }

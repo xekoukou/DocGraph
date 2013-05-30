@@ -1,6 +1,5 @@
 package platanos.docGraphDB;
 
-import me.prettyprint.cassandra.service.template.ColumnFamilyTemplate;
 import me.prettyprint.hector.api.Cluster;
 import me.prettyprint.hector.api.Keyspace;
 import me.prettyprint.hector.api.factory.HFactory;
@@ -8,10 +7,8 @@ import me.prettyprint.hector.api.factory.HFactory;
 public class DocGraph {
 	protected static Cluster cluster;
 	protected static Keyspace ksp;
-	protected static DocVertices docVertices;
-	static ColumnFamilyTemplate<byte[], byte[]> DocTemplate;
-	protected static Docs docs;
-	protected static Summaries summaries;
+	protected static Keyspace rksp;
+	protected static Keyspace sksp;
 
 	public static void main(String[] args) {
 
@@ -25,10 +22,18 @@ public class DocGraph {
 	static void init() {
 
 		ksp = HFactory.createKeyspace("DocGraphUID", cluster);
+		rksp = HFactory.createKeyspace("LuceneUIDRanges", cluster);
+		sksp = HFactory.createKeyspace("Sha1", cluster);
 
-		docVertices = new DocVertices(ksp);
-		docs = new Docs(ksp);
-		summaries = new Summaries(ksp);
+		DocVertices docVertices = new DocVertices(ksp);
+		Docs docs = new Docs(ksp);
+		Summaries summaries = new Summaries(ksp);
+		Edges edges = new Edges(ksp);
+		DocMetadata docMetadata = new DocMetadata(ksp,rksp,sksp);
+
+		Connector connector = new Connector(docVertices, edges, docs,
+				summaries, docMetadata);
+		connector.poll();
 
 	}
 }

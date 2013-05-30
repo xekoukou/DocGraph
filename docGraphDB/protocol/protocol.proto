@@ -3,194 +3,210 @@ package protocol;
 option java_package = "platanos.docGraphDB";
 option java_outer_classname = "Protocol";
 
+message MultiSaveCommand
+{
+
+    required int64 key = 1;
+
+    message SaveCommand
+    {
+
+        enum Type
+        {
+
+            cmetadata = 0;
+            ccontent = 1;
+            cedge = 2;
+            cvertex = 3;
+
+        }
+        required Type type = 1;
+
+
+        message Metadata
+        {
+
+            enum SecCommand
+            {
+
+                csha3 = 0;      //sha3
+                cluceneUid = 1;
+                ctime = 2;
+                cauthor = 3;    //public key
+                cprevSha3 = 4;
+                clocation = 5;
+                cseller = 6;   //public key
+                cperiod = 7;
+                csha3Contract = 8;  //sha3
+
+
+            }
+            required SecCommand secCommand = 1;
+            required bytes position = 2;
+            optional bytes sha3 = 3;
+            optional int64 luceneUid = 4;
+            optional int32 time =5;  //in days
+            optional bytes author =6;
+            repeated bytes prevSha3 = 7; //max 2
+            optional bytes location = 8;
+            optional bytes seller = 9; 
+            optional bytes period = 10;
+            optional bytes sha3Contract = 11;
+
+        }
+
+        optional Metadata metadata = 2;
+
+        message Content
+        {
+
+            enum SecCommand
+            {
+
+                cdoc = 0;
+                csummary = 1;
+
+            }
+            required SecCommand secCommand = 1;
+            required bytes position = 2;
+
+            required bytes data = 3;
+
+        }
+
+        optional Content content = 3;
+
+        message Edge
+        {
+
+            enum SecCommand
+            {
+                cinEdge = 0;
+                cedge = 1;
+
+            }
+            required SecCommand secCommand = 1;
+            optional bytes position = 2;        //inEdge requires position
+            optional bytes edge = 3;    // edge requires edge
+
+            required bytes data = 4;
+
+        }
+        optional Edge edge = 4;
+
+        message Vertex
+        {
+
+            enum SecCommand
+            {
+
+                ccreateVertex = 0;
+                csetSize = 1;
+                caddEdge = 2;
+                caddBack_edge = 3;
+
+            }
+            required SecCommand secCommand = 1;
+
+            optional bytes size = 2;
+
+
+            optional bytes edge = 3;    //required by both edge back_edge
+
+        }
+
+        optional Vertex vertex = 5;
+
+
+    }
+
+    repeated SaveCommand saveCommand = 2;
+}
+
+message LoadCommand
+{
+
+    enum Type
+    {
+
+        cgraphView = 0;
+        ccontentiView = 1;
+        csearchView = 2;
+        cvertex = 3;
+        crepair = 4;
+
+    }
+    required Type type = 1;
+
+//initial definition
+    message Edge
+    {
+
+        enum SecCommand
+        {
+            cinEdge = 0;
+            cedge = 1;
+
+        }
+        required SecCommand secCommand = 1;
+        optional bytes position = 2;    //inEdge requires position
+        optional bytes edge = 3;        // edge requires edge
+    }
+
+    message GraphView
+    {
+
+        repeated int64 doc_key = 1  [packed = true] ;        //these 2 are used to fetch summary/sha1
+        repeated bytes position = 2;
+
+        repeated Edge edges = 3;        //this is to retrieve the edges
+    }
+
+    optional GraphView graphView = 2;
+
+
+    message ContentView
+    {
+        //this fetches the content 
+        enum Delta
+        {
+
+            TRUE = 0;
+            FALSE = 1;
+        }
+        required Delta delta = 1;
+        required int64 key = 2;
+        required bytes position = 3;
+        optional bytes start_position = 4; //start position
+    }
+
+}
+
+
+
+
 message MultiCommand
 {
 
-  required int64 key = 1;
-
-  message SaveCommand
-  {
-
-    enum Type
+    enum Save
     {
 
-      cmetadata = 0;
-      ccontent = 1;
-      cedge = 2;
-      cvertex = 3;
-
+        TRUE = 0;
+        FALSE = 1;
     }
-    required Type type = 1;
+    required Save save = 1;
+    optional LoadCommand LoadCommand = 2;
+    optional MultiSaveCommand multiSaveCommand = 3;
 
+}
 
-    message Metadata
-    {
+message Vertex
+{
 
-      enum SecCommand
-      {
-
-	csha1 = 0;
-	cluceneUid = 1;
-
-      }
-      required SecCommand secCommand = 1;
-      required bytes position = 2;
-      optional bytes sha1 = 3;
-      optional int64 luceneUid = 4;
-
-    }
-
-    optional Metadata metadata = 2;
-
-    message Content
-    {
-
-      enum SecCommand
-      {
-
-	cdoc = 0;
-	csummary = 1;
-
-      }
-      required SecCommand secCommand = 1;
-      required bytes position = 2;
-
-      required bytes data = 3;
-
-    }
-
-    optional Content content = 3;
-
-    message Edge
-    {
-
-      enum secCommand
-      {
-	cinEdge = 0;
-	cedge = 1;
-
-      }
-
-      optional bytes position = 1;	//inEdge requires position
-      optional bytes edge = 2;	// edge requires edge
-
-      required bytes data = 3;
-
-    }
-    optional Edge edge = 4;
-
-    message Vertex
-    {
-
-      enum SecCommand
-      {
-
-	ccreateVertex = 0;
-	csetSize = 1;
-	caddEdge = 2;
-	caddBack_edge = 3;
-
-      }
-      required SecCommand secCommand = 1;
-
-      optional int32 size = 2;
-
-      message Edge
-      {
-	required bytes edge = 1;
-	required bytes data = 2;
-      }
-
-      optional Edge edge = 3;	//required by both edge back_edge
-
-    }
-
-    optional Vertex vertex = 5;
-
-
-  }
-
-  repeated SaveCommand saveCommand = 2 ;
-
- message LoadCommand
-  {
-
-    enum Type
-    {
-
-      cmetadata = 0;
-      ccontent = 1;
-      cedge = 2;
-      cvertex = 3;
-
-    }
-    required Type type = 1;
-
-
-    message Metadata
-    {
-
-      enum SecCommand
-      {
-
-        csha1 = 0;
-        cluceneUid = 1;
-
-      }
-      required SecCommand secCommand = 1;
-      required bytes position = 2;
-    
-    }
-      
-    optional Metadata metadata = 2;
-
-    message Content
-    {
-
-      enum SecCommand
-      {
-
-        cdoc = 0;
-        csummary = 1;
-
-      }
-      required SecCommand secCommand = 1;
-      required bytes position = 2;
-
-    }
-
-    optional Content content = 3;
-
-    message Edge
-    {
-
-      enum secCommand
-      {
-        cinEdge = 0;
-        cedge = 1;
-
-      }
-
-      optional bytes position = 1;      //inEdge requires position
-      optional bytes edge = 2;  // edge requires edge
-
-    }
-    optional Edge edge = 4; 
-
-  }
-
-  repeated LoadCommand loadCommand = 3 ;
-
-
-
+    required bytes size = 1;
+    repeated bytes edges = 2;
+    repeated bytes back_edges = 3;
 
 }
 
 
-message Vertex {
-
-required bytes size = 1;
-repeated bytes edges = 2  ;
-repeated bytes back_edges = 3 ;
-
-}
