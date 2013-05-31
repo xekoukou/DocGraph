@@ -25,8 +25,8 @@ class DocVertices {
 	protected Keyspace ksp;
 
 	DocVertices(Keyspace ksp) {
-		template = new ThriftColumnFamilyTemplate<Long, DynamicComposite>(
-				ksp, "DocVertices", LongSerializer.get(),
+		template = new ThriftColumnFamilyTemplate<Long, DynamicComposite>(ksp,
+				"DocVertices", LongSerializer.get(),
 				new DynamicCompositeSerializer());
 		this.ksp = ksp;
 	}
@@ -77,7 +77,7 @@ class DocVertices {
 			columnName.add(0, "size");
 			ColumnFamilyUpdater<Long, DynamicComposite> updater = template
 					.createUpdater(key);
-			 byte[] zero = new byte[0];
+			byte[] zero = new byte[0];
 			updater.setByteArray(columnName, zero);
 			template.update(updater);
 
@@ -106,7 +106,7 @@ class DocVertices {
 
 	}
 
-	protected Vertex getVertex(Long key) {
+	protected byte[] getVertex(Long key) {
 
 		Builder vb = Vertex.newBuilder();
 
@@ -114,8 +114,8 @@ class DocVertices {
 		DynamicComposite comp = new DynamicComposite();
 		comp.add(0, "size");
 
-		HColumn<DynamicComposite, byte[]> res = template.querySingleColumn(
-				key, comp, BytesArraySerializer.get());
+		HColumn<DynamicComposite, byte[]> res = template.querySingleColumn(key,
+				comp, BytesArraySerializer.get());
 		vb.setSize(ByteString.copyFrom(res.getValue()));
 
 		// edge
@@ -160,12 +160,12 @@ class DocVertices {
 		i = 0;
 		while (sliceIterator.hasNext()) {
 			sres = sliceIterator.next();
-			byte[] data = res.getName().get(1, BytesArraySerializer.get());
+			byte[] data = sres.getName().get(1, BytesArraySerializer.get());
 			vb.setEdges(i, (ByteString.copyFrom(data)));
 			i++;
 		}
 
-		return vb.build();
+		return vb.build().toByteArray();
 
 	}
 

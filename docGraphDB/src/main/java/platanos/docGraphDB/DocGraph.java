@@ -29,7 +29,7 @@ public class DocGraph {
 		Docs docs = new Docs(ksp);
 		Summaries summaries = new Summaries(ksp);
 		Edges edges = new Edges(ksp);
-		DocMetadata docMetadata = new DocMetadata(ksp,rksp,sksp);
+		DocMetadata docMetadata = new DocMetadata(ksp, rksp, sksp);
 
 		Connector connector = new Connector(docVertices, edges, docs,
 				summaries, docMetadata);

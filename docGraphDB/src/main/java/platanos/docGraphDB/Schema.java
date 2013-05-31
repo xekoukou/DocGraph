@@ -61,37 +61,35 @@ public class Schema {
 
 			cluster.addKeyspace(newKeyspace, true);
 		}
-		keyspaceDef = cluster
-				.describeKeyspace("LuceneUIDRanges");
+		keyspaceDef = cluster.describeKeyspace("LuceneUIDRanges");
 
 		if (keyspaceDef == null) {
-			
+
 			ColumnFamilyDefinition luceneUIDs = HFactory
-					.createColumnFamilyDefinition("LuceneUIDRanges", "LuceneUIDs",
-							ComparatorType.LONGTYPE);
+					.createColumnFamilyDefinition("LuceneUIDRanges",
+							"LuceneUIDs", ComparatorType.LONGTYPE);
 
 			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
 					"LuceneUIDRanges", ThriftKsDef.DEF_STRATEGY_CLASS,
 					replicationFactor, Arrays.asList(luceneUIDs));
 
 			cluster.addKeyspace(newKeyspace, true);
-			
+
 		}
-		keyspaceDef = cluster
-				.describeKeyspace("Sha3");
+		keyspaceDef = cluster.describeKeyspace("Sha3");
 
 		if (keyspaceDef == null) {
-			
+
 			ColumnFamilyDefinition graphUID = HFactory
 					.createColumnFamilyDefinition("Sha3", "GraphUIDs",
 							ComparatorType.LONGTYPE);
 
 			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
-					"Sha3", ThriftKsDef.DEF_STRATEGY_CLASS,
-					replicationFactor, Arrays.asList(graphUID));
+					"Sha3", ThriftKsDef.DEF_STRATEGY_CLASS, replicationFactor,
+					Arrays.asList(graphUID));
 
 			cluster.addKeyspace(newKeyspace, true);
-			
+
 		}
 	}
 

@@ -1,8 +1,6 @@
 package platanos.docGraphDB;
 
 
-import java.util.List;
-
 import org.zeromq.ZFrame;
 import org.zeromq.ZMsg;
 import org.zeromq.ZContext;
@@ -11,6 +9,8 @@ import org.zeromq.ZMQ.PollItem;
 import org.zeromq.ZMQ.Socket;
 import org.zeromq.ZMQ.Poller;
 
+import platanos.docGraphDB.Protocol.GraphView;
+import platanos.docGraphDB.Protocol.GraphView.Builder;
 import platanos.docGraphDB.Protocol.LoadCommand;
 import platanos.docGraphDB.Protocol.MultiCommand;
 import platanos.docGraphDB.Protocol.MultiCommand.Save;
@@ -18,6 +18,7 @@ import platanos.docGraphDB.Protocol.MultiSaveCommand;
 import platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand;
 import platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type;
 import platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand;
+import platanos.docGraphDB.Protocol.SearchView;
 
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -119,7 +120,7 @@ class Connector {
 					result = docVertices.addVertex(key);
 					break;
 				case csetSize:
-					result = docVertices.setSize(key,command.getVertex()
+					result = docVertices.setSize(key, command.getVertex()
 							.getSize().toByteArray());
 					break;
 				case caddEdge:
@@ -176,42 +177,42 @@ class Connector {
 							.getMetadata().getPosition().toByteArray(), command
 							.getMetadata().getLuceneUid());
 					break;
-				case ctime: 
-					result = docMetadata.addTime(key, command
-							.getMetadata().getPosition().toByteArray(), command
-							.getMetadata().getTime());
+				case ctime:
+					result = docMetadata.addTime(key, command.getMetadata()
+							.getPosition().toByteArray(), command.getMetadata()
+							.getTime());
 					break;
-				case cauthor: 		
+				case cauthor:
 					result = docMetadata.addAuthor(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getAuthor().toByteArray());
+							.getPosition().toByteArray(), command.getMetadata()
+							.getAuthor().toByteArray());
 					break;
-				case clocation: 		
+				case clocation:
 					result = docMetadata.addLocation(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getLocation().toByteArray());
+							.getPosition().toByteArray(), command.getMetadata()
+							.getLocation().toByteArray());
 					break;
-				case cseller: 		
+				case cseller:
 					result = docMetadata.addSeller(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getSeller().toByteArray());
+							.getPosition().toByteArray(), command.getMetadata()
+							.getSeller().toByteArray());
 					break;
-				case cperiod: 		
+				case cperiod:
 					result = docMetadata.addPeriod(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getPeriod().toByteArray());
+							.getPosition().toByteArray(), command.getMetadata()
+							.getPeriod().toByteArray());
 					break;
-				case csha3Contract: 		
-					result = docMetadata.addSha3Contract(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getSha3Contract().toByteArray());
+				case csha3Contract:
+					result = docMetadata.addSha3Contract(key, command
+							.getMetadata().getPosition().toByteArray(), command
+							.getMetadata().getSha3Contract().toByteArray());
 					break;
-				case cprevSha3: 		
+				case cprevSha3:
 					result = docMetadata.addPrevSha3(key, command.getMetadata()
-						.getPosition().toByteArray(), command.getMetadata()
-						.getPrevSha3List());
+							.getPosition().toByteArray(), command.getMetadata()
+							.getPrevSha3List());
 					break;
-					}
+				}
 				break;
 			}
 			if (result == false) {
@@ -225,14 +226,59 @@ class Connector {
 	Pair handleLoadCommand(LoadCommand loadCommand) {
 		Pair result = new Pair();
 		result.success = true;
-		
-			platanos.docGraphDB.Protocol.LoadCommand.Type type = loadCommand.getType();
-			
-			switch(type){
-			case cgraphView:
-			break;
-			
+
+		platanos.docGraphDB.Protocol.LoadCommand.Type type = loadCommand
+				.getType();
+
+		switch (type) {
+		case cgraphView:
+			Builder gv = GraphView.newBuilder();
+			for (int i = 0; i <= loadCommand.getGraphView().getKeyCount(); i++) {
+				long key = loadCommand.getGraphView().getKey(i);
+				byte[] position = loadCommand.getGraphView().getPosition(i)
+						.toByteArray();
+				gv.setSummaries(i, ByteString.copyFrom(summaries.getSummary(
+						key, position)));
+				gv.setSha3(i,
+						ByteString.copyFrom(docMetadata.getSha3(key, position)));
 			}
+
+			for (int i = 0; i <= loadCommand.getGraphView().getEdgesCount(); i++) {
+				gv.setEdges(i, ByteString.copyFrom(edges.getEdge(loadCommand
+						.getGraphView().getEdges(i))));
+			}
+			result.data = gv.build().toByteArray();
+			return result;
+		case ccontentView:
+			result.data = docs.getDoc(loadCommand.getContentView().getKey(),
+					loadCommand.getContentView().getStartPosition()
+							.toByteArray(), loadCommand.getContentView()
+							.getPosition().toByteArray());
+			return result;
+		case csearchView:
+			platanos.docGraphDB.Protocol.SearchView.Builder sv = SearchView
+					.newBuilder();
+			for (int i = 0; i <= loadCommand.getSearchView().getKeyCount(); i++) {
+				long key = loadCommand.getSearchView().getKey(i);
+				byte[] position = loadCommand.getSearchView().getPosition(i)
+						.toByteArray();
+				sv.setSummaries(i, ByteString.copyFrom(summaries.getSummary(
+						key, position)));
+				sv.setSha3(i,
+						ByteString.copyFrom(docMetadata.getSha3(key, position)));
+			}
+
+			result.data = sv.build().toByteArray();
+			return result;
+		case cvertex:
+			result.data = docVertices.getVertex(loadCommand.getVertex()
+					.getKey());
+			return result;
+
+			// TODO add repair method
+		}
+		result.success = false;
+		return result;
 	}
-		
+
 }

@@ -35,9 +35,9 @@ message MultiSaveCommand
                 cauthor = 3;    //public key
                 cprevSha3 = 4;
                 clocation = 5;
-                cseller = 6;   //public key
+                cseller = 6;    //public key
                 cperiod = 7;
-                csha3Contract = 8;  //sha3
+                csha3Contract = 8;      //sha3
 
 
             }
@@ -45,11 +45,11 @@ message MultiSaveCommand
             required bytes position = 2;
             optional bytes sha3 = 3;
             optional int64 luceneUid = 4;
-            optional int32 time =5;  //in days
-            optional bytes author =6;
-            repeated bytes prevSha3 = 7; //max 2
+            optional int32 time = 5;    //in days
+            optional bytes author = 6;
+            repeated bytes prevSha3 = 7;        //max 2
             optional bytes location = 8;
-            optional bytes seller = 9; 
+            optional bytes seller = 9;
             optional bytes period = 10;
             optional bytes sha3Contract = 11;
 
@@ -130,7 +130,7 @@ message LoadCommand
     {
 
         cgraphView = 0;
-        ccontentiView = 1;
+        ccontentView = 1;
         csearchView = 2;
         cvertex = 3;
         crepair = 4;
@@ -149,14 +149,15 @@ message LoadCommand
 
         }
         required SecCommand secCommand = 1;
-        optional bytes position = 2;    //inEdge requires position
-        optional bytes edge = 3;        // edge requires edge
+        required int64 key = 2;
+        optional bytes position = 3;    //inEdge requires position
+        optional bytes edge = 4;        // edge requires edge
     }
 
     message GraphView
     {
 
-        repeated int64 doc_key = 1  [packed = true] ;        //these 2 are used to fetch summary/sha1
+        repeated int64 key = 1[packed = true];  //these 2 are used to fetch summary/sha3
         repeated bytes position = 2;
 
         repeated Edge edges = 3;        //this is to retrieve the edges
@@ -167,18 +168,30 @@ message LoadCommand
 
     message ContentView
     {
-        //this fetches the content 
-        enum Delta
-        {
-
-            TRUE = 0;
-            FALSE = 1;
-        }
-        required Delta delta = 1;
-        required int64 key = 2;
-        required bytes position = 3;
-        optional bytes start_position = 4; //start position
+        required int64 key = 1;
+        required bytes position = 2;
+        required bytes start_position = 3;      //start position
     }
+
+    optional ContentView contentView = 3;
+
+    message SearchView
+    {
+
+        repeated int64 key = 1[packed = true];  //these 2 are used to fetch summary/sha3
+        repeated bytes position = 2;
+
+    }
+
+    optional SearchView searchView = 4;
+
+    message Vertex
+    {
+
+        required int64 key = 1;
+    }
+
+    optional Vertex vertex = 5;
 
 }
 
@@ -209,4 +222,27 @@ message Vertex
 
 }
 
+message GraphView
+{
+    //the order here is the same as the order of the command
+    repeated bytes summaries = 1;
+    repeated bytes sha3 = 2;
 
+    repeated bytes edges = 3;
+
+}
+
+message ContentView
+{
+    repeated bytes data = 1;
+
+}
+
+message SearchView
+{
+    //the order here is the same as the order of the command
+    repeated bytes summaries = 1;
+    repeated bytes sha3 = 2;
+
+
+}

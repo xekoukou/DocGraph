@@ -4,8570 +4,12591 @@
 package platanos.docGraphDB;
 
 public final class Protocol {
-  private Protocol() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-  }
-  public interface MultiSaveCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required int64 key = 1;
-    boolean hasKey();
-    long getKey();
-    
-    // repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
-    java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> 
-        getSaveCommandList();
-    platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(int index);
-    int getSaveCommandCount();
-    java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> 
-        getSaveCommandOrBuilderList();
-    platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
-        int index);
-  }
-  public static final class MultiSaveCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements MultiSaveCommandOrBuilder {
-    // Use MultiSaveCommand.newBuilder() to construct.
-    private MultiSaveCommand(Builder builder) {
-      super(builder);
-    }
-    private MultiSaveCommand(boolean noInit) {}
-    
-    private static final MultiSaveCommand defaultInstance;
-    public static MultiSaveCommand getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public MultiSaveCommand getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
-    }
-    
-    public interface SaveCommandOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-      
-      // required .protocol.MultiSaveCommand.SaveCommand.Type type = 1;
-      boolean hasType();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType();
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Metadata metadata = 2;
-      boolean hasMetadata();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder();
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Content content = 3;
-      boolean hasContent();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder();
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Edge edge = 4;
-      boolean hasEdge();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder();
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex = 5;
-      boolean hasVertex();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex();
-      platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder();
-    }
-    public static final class SaveCommand extends
-        com.google.protobuf.GeneratedMessage
-        implements SaveCommandOrBuilder {
-      // Use SaveCommand.newBuilder() to construct.
-      private SaveCommand(Builder builder) {
-        super(builder);
-      }
-      private SaveCommand(boolean noInit) {}
-      
-      private static final SaveCommand defaultInstance;
-      public static SaveCommand getDefaultInstance() {
-        return defaultInstance;
-      }
-      
-      public SaveCommand getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-      
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
-      }
-      
-      public enum Type
-          implements com.google.protobuf.ProtocolMessageEnum {
-        cmetadata(0, 0),
-        ccontent(1, 1),
-        cedge(2, 2),
-        cvertex(3, 3),
-        ;
-        
-        public static final int cmetadata_VALUE = 0;
-        public static final int ccontent_VALUE = 1;
-        public static final int cedge_VALUE = 2;
-        public static final int cvertex_VALUE = 3;
-        
-        
-        public final int getNumber() { return value; }
-        
-        public static Type valueOf(int value) {
-          switch (value) {
-            case 0: return cmetadata;
-            case 1: return ccontent;
-            case 2: return cedge;
-            case 3: return cvertex;
-            default: return null;
-          }
-        }
-        
-        public static com.google.protobuf.Internal.EnumLiteMap<Type>
-            internalGetValueMap() {
-          return internalValueMap;
-        }
-        private static com.google.protobuf.Internal.EnumLiteMap<Type>
-            internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-                public Type findValueByNumber(int number) {
-                  return Type.valueOf(number);
-                }
-              };
-        
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          return getDescriptor().getValues().get(index);
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDescriptor().getEnumTypes().get(0);
-        }
-        
-        private static final Type[] VALUES = {
-          cmetadata, ccontent, cedge, cvertex, 
-        };
-        
-        public static Type valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          return VALUES[desc.getIndex()];
-        }
-        
-        private final int index;
-        private final int value;
-        
-        private Type(int index, int value) {
-          this.index = index;
-          this.value = value;
-        }
-        
-        // @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Type)
-      }
-      
-      public interface MetadataOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
-        
-        // required .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand = 1;
-        boolean hasSecCommand();
-        platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand();
-        
-        // required bytes position = 2;
-        boolean hasPosition();
-        com.google.protobuf.ByteString getPosition();
-        
-        // optional bytes sha3 = 3;
-        boolean hasSha3();
-        com.google.protobuf.ByteString getSha3();
-        
-        // optional int64 luceneUid = 4;
-        boolean hasLuceneUid();
-        long getLuceneUid();
-        
-        // optional int32 time = 5;
-        boolean hasTime();
-        int getTime();
-        
-        // optional bytes author = 6;
-        boolean hasAuthor();
-        com.google.protobuf.ByteString getAuthor();
-        
-        // repeated bytes prevSha3 = 7;
-        java.util.List<com.google.protobuf.ByteString> getPrevSha3List();
-        int getPrevSha3Count();
-        com.google.protobuf.ByteString getPrevSha3(int index);
-        
-        // optional bytes location = 8;
-        boolean hasLocation();
-        com.google.protobuf.ByteString getLocation();
-        
-        // optional bytes seller = 9;
-        boolean hasSeller();
-        com.google.protobuf.ByteString getSeller();
-        
-        // optional bytes period = 10;
-        boolean hasPeriod();
-        com.google.protobuf.ByteString getPeriod();
-        
-        // optional bytes sha3Contract = 11;
-        boolean hasSha3Contract();
-        com.google.protobuf.ByteString getSha3Contract();
-      }
-      public static final class Metadata extends
-          com.google.protobuf.GeneratedMessage
-          implements MetadataOrBuilder {
-        // Use Metadata.newBuilder() to construct.
-        private Metadata(Builder builder) {
-          super(builder);
-        }
-        private Metadata(boolean noInit) {}
-        
-        private static final Metadata defaultInstance;
-        public static Metadata getDefaultInstance() {
-          return defaultInstance;
-        }
-        
-        public Metadata getDefaultInstanceForType() {
-          return defaultInstance;
-        }
-        
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
-        }
-        
-        public enum SecCommand
-            implements com.google.protobuf.ProtocolMessageEnum {
-          csha3(0, 0),
-          cluceneUid(1, 1),
-          ctime(2, 2),
-          cauthor(3, 3),
-          cprevSha3(4, 4),
-          clocation(5, 5),
-          cseller(6, 6),
-          cperiod(7, 7),
-          csha3Contract(8, 8),
-          ;
-          
-          public static final int csha3_VALUE = 0;
-          public static final int cluceneUid_VALUE = 1;
-          public static final int ctime_VALUE = 2;
-          public static final int cauthor_VALUE = 3;
-          public static final int cprevSha3_VALUE = 4;
-          public static final int clocation_VALUE = 5;
-          public static final int cseller_VALUE = 6;
-          public static final int cperiod_VALUE = 7;
-          public static final int csha3Contract_VALUE = 8;
-          
-          
-          public final int getNumber() { return value; }
-          
-          public static SecCommand valueOf(int value) {
-            switch (value) {
-              case 0: return csha3;
-              case 1: return cluceneUid;
-              case 2: return ctime;
-              case 3: return cauthor;
-              case 4: return cprevSha3;
-              case 5: return clocation;
-              case 6: return cseller;
-              case 7: return cperiod;
-              case 8: return csha3Contract;
-              default: return null;
-            }
-          }
-          
-          public static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalGetValueMap() {
-            return internalValueMap;
-          }
-          private static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalValueMap =
-                new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
-                  public SecCommand findValueByNumber(int number) {
-                    return SecCommand.valueOf(number);
-                  }
-                };
-          
-          public final com.google.protobuf.Descriptors.EnumValueDescriptor
-              getValueDescriptor() {
-            return getDescriptor().getValues().get(index);
-          }
-          public final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptorForType() {
-            return getDescriptor();
-          }
-          public static final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDescriptor().getEnumTypes().get(0);
-          }
-          
-          private static final SecCommand[] VALUES = {
-            csha3, cluceneUid, ctime, cauthor, cprevSha3, clocation, cseller, cperiod, csha3Contract, 
-          };
-          
-          public static SecCommand valueOf(
-              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-              throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-            }
-            return VALUES[desc.getIndex()];
-          }
-          
-          private final int index;
-          private final int value;
-          
-          private SecCommand(int index, int value) {
-            this.index = index;
-            this.value = value;
-          }
-          
-          // @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand)
-        }
-        
-        private int bitField0_;
-        // required .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand = 1;
-        public static final int SECCOMMAND_FIELD_NUMBER = 1;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand_;
-        public boolean hasSecCommand() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand() {
-          return secCommand_;
-        }
-        
-        // required bytes position = 2;
-        public static final int POSITION_FIELD_NUMBER = 2;
-        private com.google.protobuf.ByteString position_;
-        public boolean hasPosition() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public com.google.protobuf.ByteString getPosition() {
-          return position_;
-        }
-        
-        // optional bytes sha3 = 3;
-        public static final int SHA3_FIELD_NUMBER = 3;
-        private com.google.protobuf.ByteString sha3_;
-        public boolean hasSha3() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getSha3() {
-          return sha3_;
-        }
-        
-        // optional int64 luceneUid = 4;
-        public static final int LUCENEUID_FIELD_NUMBER = 4;
-        private long luceneUid_;
-        public boolean hasLuceneUid() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        public long getLuceneUid() {
-          return luceneUid_;
-        }
-        
-        // optional int32 time = 5;
-        public static final int TIME_FIELD_NUMBER = 5;
-        private int time_;
-        public boolean hasTime() {
-          return ((bitField0_ & 0x00000010) == 0x00000010);
-        }
-        public int getTime() {
-          return time_;
-        }
-        
-        // optional bytes author = 6;
-        public static final int AUTHOR_FIELD_NUMBER = 6;
-        private com.google.protobuf.ByteString author_;
-        public boolean hasAuthor() {
-          return ((bitField0_ & 0x00000020) == 0x00000020);
-        }
-        public com.google.protobuf.ByteString getAuthor() {
-          return author_;
-        }
-        
-        // repeated bytes prevSha3 = 7;
-        public static final int PREVSHA3_FIELD_NUMBER = 7;
-        private java.util.List<com.google.protobuf.ByteString> prevSha3_;
-        public java.util.List<com.google.protobuf.ByteString>
-            getPrevSha3List() {
-          return prevSha3_;
-        }
-        public int getPrevSha3Count() {
-          return prevSha3_.size();
-        }
-        public com.google.protobuf.ByteString getPrevSha3(int index) {
-          return prevSha3_.get(index);
-        }
-        
-        // optional bytes location = 8;
-        public static final int LOCATION_FIELD_NUMBER = 8;
-        private com.google.protobuf.ByteString location_;
-        public boolean hasLocation() {
-          return ((bitField0_ & 0x00000040) == 0x00000040);
-        }
-        public com.google.protobuf.ByteString getLocation() {
-          return location_;
-        }
-        
-        // optional bytes seller = 9;
-        public static final int SELLER_FIELD_NUMBER = 9;
-        private com.google.protobuf.ByteString seller_;
-        public boolean hasSeller() {
-          return ((bitField0_ & 0x00000080) == 0x00000080);
-        }
-        public com.google.protobuf.ByteString getSeller() {
-          return seller_;
-        }
-        
-        // optional bytes period = 10;
-        public static final int PERIOD_FIELD_NUMBER = 10;
-        private com.google.protobuf.ByteString period_;
-        public boolean hasPeriod() {
-          return ((bitField0_ & 0x00000100) == 0x00000100);
-        }
-        public com.google.protobuf.ByteString getPeriod() {
-          return period_;
-        }
-        
-        // optional bytes sha3Contract = 11;
-        public static final int SHA3CONTRACT_FIELD_NUMBER = 11;
-        private com.google.protobuf.ByteString sha3Contract_;
-        public boolean hasSha3Contract() {
-          return ((bitField0_ & 0x00000200) == 0x00000200);
-        }
-        public com.google.protobuf.ByteString getSha3Contract() {
-          return sha3Contract_;
-        }
-        
-        private void initFields() {
-          secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
-          position_ = com.google.protobuf.ByteString.EMPTY;
-          sha3_ = com.google.protobuf.ByteString.EMPTY;
-          luceneUid_ = 0L;
-          time_ = 0;
-          author_ = com.google.protobuf.ByteString.EMPTY;
-          prevSha3_ = java.util.Collections.emptyList();;
-          location_ = com.google.protobuf.ByteString.EMPTY;
-          seller_ = com.google.protobuf.ByteString.EMPTY;
-          period_ = com.google.protobuf.ByteString.EMPTY;
-          sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
-        }
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
-          
-          if (!hasSecCommand()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          if (!hasPosition()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          memoizedIsInitialized = 1;
-          return true;
-        }
-        
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          getSerializedSize();
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            output.writeEnum(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            output.writeBytes(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            output.writeBytes(3, sha3_);
-          }
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            output.writeInt64(4, luceneUid_);
-          }
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            output.writeInt32(5, time_);
-          }
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            output.writeBytes(6, author_);
-          }
-          for (int i = 0; i < prevSha3_.size(); i++) {
-            output.writeBytes(7, prevSha3_.get(i));
-          }
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            output.writeBytes(8, location_);
-          }
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
-            output.writeBytes(9, seller_);
-          }
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
-            output.writeBytes(10, period_);
-          }
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
-            output.writeBytes(11, sha3Contract_);
-          }
-          getUnknownFields().writeTo(output);
-        }
-        
-        private int memoizedSerializedSize = -1;
-        public int getSerializedSize() {
-          int size = memoizedSerializedSize;
-          if (size != -1) return size;
-        
-          size = 0;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeEnumSize(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(3, sha3_);
-          }
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeInt64Size(4, luceneUid_);
-          }
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeInt32Size(5, time_);
-          }
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(6, author_);
-          }
-          {
-            int dataSize = 0;
-            for (int i = 0; i < prevSha3_.size(); i++) {
-              dataSize += com.google.protobuf.CodedOutputStream
-                .computeBytesSizeNoTag(prevSha3_.get(i));
-            }
-            size += dataSize;
-            size += 1 * getPrevSha3List().size();
-          }
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(8, location_);
-          }
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(9, seller_);
-          }
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(10, period_);
-          }
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(11, sha3Contract_);
-          }
-          size += getUnknownFields().getSerializedSize();
-          memoizedSerializedSize = size;
-          return size;
-        }
-        
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
-          return super.writeReplace();
-        }
-        
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        
-        public static Builder newBuilder() { return Builder.create(); }
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata prototype) {
-          return newBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() { return newBuilder(this); }
-        
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
-          }
-          
-          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
-          }
-          
-          // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-          
-          private Builder(BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            }
-          }
-          private static Builder create() {
-            return new Builder();
-          }
-          
-          public Builder clear() {
-            super.clear();
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            position_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            sha3_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            luceneUid_ = 0L;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            time_ = 0;
-            bitField0_ = (bitField0_ & ~0x00000010);
-            author_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000020);
-            prevSha3_ = java.util.Collections.emptyList();;
-            bitField0_ = (bitField0_ & ~0x00000040);
-            location_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000080);
-            seller_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000100);
-            period_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000200);
-            sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000400);
-            return this;
-          }
-          
-          public Builder clone() {
-            return create().mergeFrom(buildPartial());
-          }
-          
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDescriptor();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getDefaultInstanceForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata build() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-          
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata buildParsed()
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(
-                result).asInvalidProtocolBufferException();
-            }
-            return result;
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata buildPartial() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-              to_bitField0_ |= 0x00000001;
-            }
-            result.secCommand_ = secCommand_;
-            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-              to_bitField0_ |= 0x00000002;
-            }
-            result.position_ = position_;
-            if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-              to_bitField0_ |= 0x00000004;
-            }
-            result.sha3_ = sha3_;
-            if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-              to_bitField0_ |= 0x00000008;
-            }
-            result.luceneUid_ = luceneUid_;
-            if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-              to_bitField0_ |= 0x00000010;
-            }
-            result.time_ = time_;
-            if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-              to_bitField0_ |= 0x00000020;
-            }
-            result.author_ = author_;
-            if (((bitField0_ & 0x00000040) == 0x00000040)) {
-              prevSha3_ = java.util.Collections.unmodifiableList(prevSha3_);
-              bitField0_ = (bitField0_ & ~0x00000040);
-            }
-            result.prevSha3_ = prevSha3_;
-            if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-              to_bitField0_ |= 0x00000040;
-            }
-            result.location_ = location_;
-            if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-              to_bitField0_ |= 0x00000080;
-            }
-            result.seller_ = seller_;
-            if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-              to_bitField0_ |= 0x00000100;
-            }
-            result.period_ = period_;
-            if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-              to_bitField0_ |= 0x00000200;
-            }
-            result.sha3Contract_ = sha3Contract_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-          
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata) {
-              return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-          
-          public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata other) {
-            if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance()) return this;
-            if (other.hasSecCommand()) {
-              setSecCommand(other.getSecCommand());
-            }
-            if (other.hasPosition()) {
-              setPosition(other.getPosition());
-            }
-            if (other.hasSha3()) {
-              setSha3(other.getSha3());
-            }
-            if (other.hasLuceneUid()) {
-              setLuceneUid(other.getLuceneUid());
-            }
-            if (other.hasTime()) {
-              setTime(other.getTime());
-            }
-            if (other.hasAuthor()) {
-              setAuthor(other.getAuthor());
-            }
-            if (!other.prevSha3_.isEmpty()) {
-              if (prevSha3_.isEmpty()) {
-                prevSha3_ = other.prevSha3_;
-                bitField0_ = (bitField0_ & ~0x00000040);
-              } else {
-                ensurePrevSha3IsMutable();
-                prevSha3_.addAll(other.prevSha3_);
-              }
-              onChanged();
-            }
-            if (other.hasLocation()) {
-              setLocation(other.getLocation());
-            }
-            if (other.hasSeller()) {
-              setSeller(other.getSeller());
-            }
-            if (other.hasPeriod()) {
-              setPeriod(other.getPeriod());
-            }
-            if (other.hasSha3Contract()) {
-              setSha3Contract(other.getSha3Contract());
-            }
-            this.mergeUnknownFields(other.getUnknownFields());
-            return this;
-          }
-          
-          public final boolean isInitialized() {
-            if (!hasSecCommand()) {
-              
-              return false;
-            }
-            if (!hasPosition()) {
-              
-              return false;
-            }
-            return true;
-          }
-          
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder(
-                this.getUnknownFields());
-            while (true) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    this.setUnknownFields(unknownFields.build());
-                    onChanged();
-                    return this;
-                  }
-                  break;
-                }
-                case 8: {
-                  int rawValue = input.readEnum();
-                  platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.valueOf(rawValue);
-                  if (value == null) {
-                    unknownFields.mergeVarintField(1, rawValue);
-                  } else {
-                    bitField0_ |= 0x00000001;
-                    secCommand_ = value;
-                  }
-                  break;
-                }
-                case 18: {
-                  bitField0_ |= 0x00000002;
-                  position_ = input.readBytes();
-                  break;
-                }
-                case 26: {
-                  bitField0_ |= 0x00000004;
-                  sha3_ = input.readBytes();
-                  break;
-                }
-                case 32: {
-                  bitField0_ |= 0x00000008;
-                  luceneUid_ = input.readInt64();
-                  break;
-                }
-                case 40: {
-                  bitField0_ |= 0x00000010;
-                  time_ = input.readInt32();
-                  break;
-                }
-                case 50: {
-                  bitField0_ |= 0x00000020;
-                  author_ = input.readBytes();
-                  break;
-                }
-                case 58: {
-                  ensurePrevSha3IsMutable();
-                  prevSha3_.add(input.readBytes());
-                  break;
-                }
-                case 66: {
-                  bitField0_ |= 0x00000080;
-                  location_ = input.readBytes();
-                  break;
-                }
-                case 74: {
-                  bitField0_ |= 0x00000100;
-                  seller_ = input.readBytes();
-                  break;
-                }
-                case 82: {
-                  bitField0_ |= 0x00000200;
-                  period_ = input.readBytes();
-                  break;
-                }
-                case 90: {
-                  bitField0_ |= 0x00000400;
-                  sha3Contract_ = input.readBytes();
-                  break;
-                }
-              }
-            }
-          }
-          
-          private int bitField0_;
-          
-          // required .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand = 1;
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
-          public boolean hasSecCommand() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-          }
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand() {
-            return secCommand_;
-          }
-          public Builder setSecCommand(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            bitField0_ |= 0x00000001;
-            secCommand_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSecCommand() {
-            bitField0_ = (bitField0_ & ~0x00000001);
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
-            onChanged();
-            return this;
-          }
-          
-          // required bytes position = 2;
-          private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasPosition() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-          }
-          public com.google.protobuf.ByteString getPosition() {
-            return position_;
-          }
-          public Builder setPosition(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-            position_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearPosition() {
-            bitField0_ = (bitField0_ & ~0x00000002);
-            position_ = getDefaultInstance().getPosition();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes sha3 = 3;
-          private com.google.protobuf.ByteString sha3_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasSha3() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-          }
-          public com.google.protobuf.ByteString getSha3() {
-            return sha3_;
-          }
-          public Builder setSha3(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-            sha3_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSha3() {
-            bitField0_ = (bitField0_ & ~0x00000004);
-            sha3_ = getDefaultInstance().getSha3();
-            onChanged();
-            return this;
-          }
-          
-          // optional int64 luceneUid = 4;
-          private long luceneUid_ ;
-          public boolean hasLuceneUid() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-          }
-          public long getLuceneUid() {
-            return luceneUid_;
-          }
-          public Builder setLuceneUid(long value) {
-            bitField0_ |= 0x00000008;
-            luceneUid_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearLuceneUid() {
-            bitField0_ = (bitField0_ & ~0x00000008);
-            luceneUid_ = 0L;
-            onChanged();
-            return this;
-          }
-          
-          // optional int32 time = 5;
-          private int time_ ;
-          public boolean hasTime() {
-            return ((bitField0_ & 0x00000010) == 0x00000010);
-          }
-          public int getTime() {
-            return time_;
-          }
-          public Builder setTime(int value) {
-            bitField0_ |= 0x00000010;
-            time_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearTime() {
-            bitField0_ = (bitField0_ & ~0x00000010);
-            time_ = 0;
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes author = 6;
-          private com.google.protobuf.ByteString author_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasAuthor() {
-            return ((bitField0_ & 0x00000020) == 0x00000020);
-          }
-          public com.google.protobuf.ByteString getAuthor() {
-            return author_;
-          }
-          public Builder setAuthor(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-            author_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearAuthor() {
-            bitField0_ = (bitField0_ & ~0x00000020);
-            author_ = getDefaultInstance().getAuthor();
-            onChanged();
-            return this;
-          }
-          
-          // repeated bytes prevSha3 = 7;
-          private java.util.List<com.google.protobuf.ByteString> prevSha3_ = java.util.Collections.emptyList();;
-          private void ensurePrevSha3IsMutable() {
-            if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-              prevSha3_ = new java.util.ArrayList<com.google.protobuf.ByteString>(prevSha3_);
-              bitField0_ |= 0x00000040;
-             }
-          }
-          public java.util.List<com.google.protobuf.ByteString>
-              getPrevSha3List() {
-            return java.util.Collections.unmodifiableList(prevSha3_);
-          }
-          public int getPrevSha3Count() {
-            return prevSha3_.size();
-          }
-          public com.google.protobuf.ByteString getPrevSha3(int index) {
-            return prevSha3_.get(index);
-          }
-          public Builder setPrevSha3(
-              int index, com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePrevSha3IsMutable();
-            prevSha3_.set(index, value);
-            onChanged();
-            return this;
-          }
-          public Builder addPrevSha3(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePrevSha3IsMutable();
-            prevSha3_.add(value);
-            onChanged();
-            return this;
-          }
-          public Builder addAllPrevSha3(
-              java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-            ensurePrevSha3IsMutable();
-            super.addAll(values, prevSha3_);
-            onChanged();
-            return this;
-          }
-          public Builder clearPrevSha3() {
-            prevSha3_ = java.util.Collections.emptyList();;
-            bitField0_ = (bitField0_ & ~0x00000040);
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes location = 8;
-          private com.google.protobuf.ByteString location_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasLocation() {
-            return ((bitField0_ & 0x00000080) == 0x00000080);
-          }
-          public com.google.protobuf.ByteString getLocation() {
-            return location_;
-          }
-          public Builder setLocation(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-            location_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearLocation() {
-            bitField0_ = (bitField0_ & ~0x00000080);
-            location_ = getDefaultInstance().getLocation();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes seller = 9;
-          private com.google.protobuf.ByteString seller_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasSeller() {
-            return ((bitField0_ & 0x00000100) == 0x00000100);
-          }
-          public com.google.protobuf.ByteString getSeller() {
-            return seller_;
-          }
-          public Builder setSeller(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000100;
-            seller_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSeller() {
-            bitField0_ = (bitField0_ & ~0x00000100);
-            seller_ = getDefaultInstance().getSeller();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes period = 10;
-          private com.google.protobuf.ByteString period_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasPeriod() {
-            return ((bitField0_ & 0x00000200) == 0x00000200);
-          }
-          public com.google.protobuf.ByteString getPeriod() {
-            return period_;
-          }
-          public Builder setPeriod(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000200;
-            period_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearPeriod() {
-            bitField0_ = (bitField0_ & ~0x00000200);
-            period_ = getDefaultInstance().getPeriod();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes sha3Contract = 11;
-          private com.google.protobuf.ByteString sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasSha3Contract() {
-            return ((bitField0_ & 0x00000400) == 0x00000400);
-          }
-          public com.google.protobuf.ByteString getSha3Contract() {
-            return sha3Contract_;
-          }
-          public Builder setSha3Contract(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-            sha3Contract_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSha3Contract() {
-            bitField0_ = (bitField0_ & ~0x00000400);
-            sha3Contract_ = getDefaultInstance().getSha3Contract();
-            onChanged();
-            return this;
-          }
-          
-          // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Metadata)
-        }
-        
-        static {
-          defaultInstance = new Metadata(true);
-          defaultInstance.initFields();
-        }
-        
-        // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Metadata)
-      }
-      
-      public interface ContentOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
-        
-        // required .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand = 1;
-        boolean hasSecCommand();
-        platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand();
-        
-        // required bytes position = 2;
-        boolean hasPosition();
-        com.google.protobuf.ByteString getPosition();
-        
-        // required bytes data = 3;
-        boolean hasData();
-        com.google.protobuf.ByteString getData();
-      }
-      public static final class Content extends
-          com.google.protobuf.GeneratedMessage
-          implements ContentOrBuilder {
-        // Use Content.newBuilder() to construct.
-        private Content(Builder builder) {
-          super(builder);
-        }
-        private Content(boolean noInit) {}
-        
-        private static final Content defaultInstance;
-        public static Content getDefaultInstance() {
-          return defaultInstance;
-        }
-        
-        public Content getDefaultInstanceForType() {
-          return defaultInstance;
-        }
-        
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
-        }
-        
-        public enum SecCommand
-            implements com.google.protobuf.ProtocolMessageEnum {
-          cdoc(0, 0),
-          csummary(1, 1),
-          ;
-          
-          public static final int cdoc_VALUE = 0;
-          public static final int csummary_VALUE = 1;
-          
-          
-          public final int getNumber() { return value; }
-          
-          public static SecCommand valueOf(int value) {
-            switch (value) {
-              case 0: return cdoc;
-              case 1: return csummary;
-              default: return null;
-            }
-          }
-          
-          public static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalGetValueMap() {
-            return internalValueMap;
-          }
-          private static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalValueMap =
-                new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
-                  public SecCommand findValueByNumber(int number) {
-                    return SecCommand.valueOf(number);
-                  }
-                };
-          
-          public final com.google.protobuf.Descriptors.EnumValueDescriptor
-              getValueDescriptor() {
-            return getDescriptor().getValues().get(index);
-          }
-          public final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptorForType() {
-            return getDescriptor();
-          }
-          public static final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDescriptor().getEnumTypes().get(0);
-          }
-          
-          private static final SecCommand[] VALUES = {
-            cdoc, csummary, 
-          };
-          
-          public static SecCommand valueOf(
-              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-              throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-            }
-            return VALUES[desc.getIndex()];
-          }
-          
-          private final int index;
-          private final int value;
-          
-          private SecCommand(int index, int value) {
-            this.index = index;
-            this.value = value;
-          }
-          
-          // @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Content.SecCommand)
-        }
-        
-        private int bitField0_;
-        // required .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand = 1;
-        public static final int SECCOMMAND_FIELD_NUMBER = 1;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand_;
-        public boolean hasSecCommand() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand() {
-          return secCommand_;
-        }
-        
-        // required bytes position = 2;
-        public static final int POSITION_FIELD_NUMBER = 2;
-        private com.google.protobuf.ByteString position_;
-        public boolean hasPosition() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public com.google.protobuf.ByteString getPosition() {
-          return position_;
-        }
-        
-        // required bytes data = 3;
-        public static final int DATA_FIELD_NUMBER = 3;
-        private com.google.protobuf.ByteString data_;
-        public boolean hasData() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getData() {
-          return data_;
-        }
-        
-        private void initFields() {
-          secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
-          position_ = com.google.protobuf.ByteString.EMPTY;
-          data_ = com.google.protobuf.ByteString.EMPTY;
-        }
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
-          
-          if (!hasSecCommand()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          if (!hasPosition()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          if (!hasData()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          memoizedIsInitialized = 1;
-          return true;
-        }
-        
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          getSerializedSize();
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            output.writeEnum(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            output.writeBytes(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            output.writeBytes(3, data_);
-          }
-          getUnknownFields().writeTo(output);
-        }
-        
-        private int memoizedSerializedSize = -1;
-        public int getSerializedSize() {
-          int size = memoizedSerializedSize;
-          if (size != -1) return size;
-        
-          size = 0;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeEnumSize(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(3, data_);
-          }
-          size += getUnknownFields().getSerializedSize();
-          memoizedSerializedSize = size;
-          return size;
-        }
-        
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
-          return super.writeReplace();
-        }
-        
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        
-        public static Builder newBuilder() { return Builder.create(); }
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content prototype) {
-          return newBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() { return newBuilder(this); }
-        
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
-          }
-          
-          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
-          }
-          
-          // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-          
-          private Builder(BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            }
-          }
-          private static Builder create() {
-            return new Builder();
-          }
-          
-          public Builder clear() {
-            super.clear();
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            position_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            data_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            return this;
-          }
-          
-          public Builder clone() {
-            return create().mergeFrom(buildPartial());
-          }
-          
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDescriptor();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getDefaultInstanceForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content build() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-          
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content buildParsed()
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(
-                result).asInvalidProtocolBufferException();
-            }
-            return result;
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content buildPartial() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-              to_bitField0_ |= 0x00000001;
-            }
-            result.secCommand_ = secCommand_;
-            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-              to_bitField0_ |= 0x00000002;
-            }
-            result.position_ = position_;
-            if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-              to_bitField0_ |= 0x00000004;
-            }
-            result.data_ = data_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-          
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content) {
-              return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-          
-          public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content other) {
-            if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance()) return this;
-            if (other.hasSecCommand()) {
-              setSecCommand(other.getSecCommand());
-            }
-            if (other.hasPosition()) {
-              setPosition(other.getPosition());
-            }
-            if (other.hasData()) {
-              setData(other.getData());
-            }
-            this.mergeUnknownFields(other.getUnknownFields());
-            return this;
-          }
-          
-          public final boolean isInitialized() {
-            if (!hasSecCommand()) {
-              
-              return false;
-            }
-            if (!hasPosition()) {
-              
-              return false;
-            }
-            if (!hasData()) {
-              
-              return false;
-            }
-            return true;
-          }
-          
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder(
-                this.getUnknownFields());
-            while (true) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    this.setUnknownFields(unknownFields.build());
-                    onChanged();
-                    return this;
-                  }
-                  break;
-                }
-                case 8: {
-                  int rawValue = input.readEnum();
-                  platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.valueOf(rawValue);
-                  if (value == null) {
-                    unknownFields.mergeVarintField(1, rawValue);
-                  } else {
-                    bitField0_ |= 0x00000001;
-                    secCommand_ = value;
-                  }
-                  break;
-                }
-                case 18: {
-                  bitField0_ |= 0x00000002;
-                  position_ = input.readBytes();
-                  break;
-                }
-                case 26: {
-                  bitField0_ |= 0x00000004;
-                  data_ = input.readBytes();
-                  break;
-                }
-              }
-            }
-          }
-          
-          private int bitField0_;
-          
-          // required .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand = 1;
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
-          public boolean hasSecCommand() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-          }
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand() {
-            return secCommand_;
-          }
-          public Builder setSecCommand(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            bitField0_ |= 0x00000001;
-            secCommand_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSecCommand() {
-            bitField0_ = (bitField0_ & ~0x00000001);
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
-            onChanged();
-            return this;
-          }
-          
-          // required bytes position = 2;
-          private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasPosition() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-          }
-          public com.google.protobuf.ByteString getPosition() {
-            return position_;
-          }
-          public Builder setPosition(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-            position_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearPosition() {
-            bitField0_ = (bitField0_ & ~0x00000002);
-            position_ = getDefaultInstance().getPosition();
-            onChanged();
-            return this;
-          }
-          
-          // required bytes data = 3;
-          private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasData() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-          }
-          public com.google.protobuf.ByteString getData() {
-            return data_;
-          }
-          public Builder setData(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-            data_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearData() {
-            bitField0_ = (bitField0_ & ~0x00000004);
-            data_ = getDefaultInstance().getData();
-            onChanged();
-            return this;
-          }
-          
-          // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Content)
-        }
-        
-        static {
-          defaultInstance = new Content(true);
-          defaultInstance.initFields();
-        }
-        
-        // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Content)
-      }
-      
-      public interface EdgeOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
-        
-        // required .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand = 1;
-        boolean hasSecCommand();
-        platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand();
-        
-        // optional bytes position = 2;
-        boolean hasPosition();
-        com.google.protobuf.ByteString getPosition();
-        
-        // optional bytes edge = 3;
-        boolean hasEdge();
-        com.google.protobuf.ByteString getEdge();
-        
-        // required bytes data = 4;
-        boolean hasData();
-        com.google.protobuf.ByteString getData();
-      }
-      public static final class Edge extends
-          com.google.protobuf.GeneratedMessage
-          implements EdgeOrBuilder {
-        // Use Edge.newBuilder() to construct.
-        private Edge(Builder builder) {
-          super(builder);
-        }
-        private Edge(boolean noInit) {}
-        
-        private static final Edge defaultInstance;
-        public static Edge getDefaultInstance() {
-          return defaultInstance;
-        }
-        
-        public Edge getDefaultInstanceForType() {
-          return defaultInstance;
-        }
-        
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
-        }
-        
-        public enum SecCommand
-            implements com.google.protobuf.ProtocolMessageEnum {
-          cinEdge(0, 0),
-          cedge(1, 1),
-          ;
-          
-          public static final int cinEdge_VALUE = 0;
-          public static final int cedge_VALUE = 1;
-          
-          
-          public final int getNumber() { return value; }
-          
-          public static SecCommand valueOf(int value) {
-            switch (value) {
-              case 0: return cinEdge;
-              case 1: return cedge;
-              default: return null;
-            }
-          }
-          
-          public static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalGetValueMap() {
-            return internalValueMap;
-          }
-          private static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalValueMap =
-                new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
-                  public SecCommand findValueByNumber(int number) {
-                    return SecCommand.valueOf(number);
-                  }
-                };
-          
-          public final com.google.protobuf.Descriptors.EnumValueDescriptor
-              getValueDescriptor() {
-            return getDescriptor().getValues().get(index);
-          }
-          public final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptorForType() {
-            return getDescriptor();
-          }
-          public static final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDescriptor().getEnumTypes().get(0);
-          }
-          
-          private static final SecCommand[] VALUES = {
-            cinEdge, cedge, 
-          };
-          
-          public static SecCommand valueOf(
-              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-              throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-            }
-            return VALUES[desc.getIndex()];
-          }
-          
-          private final int index;
-          private final int value;
-          
-          private SecCommand(int index, int value) {
-            this.index = index;
-            this.value = value;
-          }
-          
-          // @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand)
-        }
-        
-        private int bitField0_;
-        // required .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand = 1;
-        public static final int SECCOMMAND_FIELD_NUMBER = 1;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand_;
-        public boolean hasSecCommand() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand() {
-          return secCommand_;
-        }
-        
-        // optional bytes position = 2;
-        public static final int POSITION_FIELD_NUMBER = 2;
-        private com.google.protobuf.ByteString position_;
-        public boolean hasPosition() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public com.google.protobuf.ByteString getPosition() {
-          return position_;
-        }
-        
-        // optional bytes edge = 3;
-        public static final int EDGE_FIELD_NUMBER = 3;
-        private com.google.protobuf.ByteString edge_;
-        public boolean hasEdge() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getEdge() {
-          return edge_;
-        }
-        
-        // required bytes data = 4;
-        public static final int DATA_FIELD_NUMBER = 4;
-        private com.google.protobuf.ByteString data_;
-        public boolean hasData() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        public com.google.protobuf.ByteString getData() {
-          return data_;
-        }
-        
-        private void initFields() {
-          secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
-          position_ = com.google.protobuf.ByteString.EMPTY;
-          edge_ = com.google.protobuf.ByteString.EMPTY;
-          data_ = com.google.protobuf.ByteString.EMPTY;
-        }
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
-          
-          if (!hasSecCommand()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          if (!hasData()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          memoizedIsInitialized = 1;
-          return true;
-        }
-        
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          getSerializedSize();
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            output.writeEnum(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            output.writeBytes(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            output.writeBytes(3, edge_);
-          }
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            output.writeBytes(4, data_);
-          }
-          getUnknownFields().writeTo(output);
-        }
-        
-        private int memoizedSerializedSize = -1;
-        public int getSerializedSize() {
-          int size = memoizedSerializedSize;
-          if (size != -1) return size;
-        
-          size = 0;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeEnumSize(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(2, position_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(3, edge_);
-          }
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(4, data_);
-          }
-          size += getUnknownFields().getSerializedSize();
-          memoizedSerializedSize = size;
-          return size;
-        }
-        
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
-          return super.writeReplace();
-        }
-        
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        
-        public static Builder newBuilder() { return Builder.create(); }
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge prototype) {
-          return newBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() { return newBuilder(this); }
-        
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
-          }
-          
-          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
-          }
-          
-          // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-          
-          private Builder(BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            }
-          }
-          private static Builder create() {
-            return new Builder();
-          }
-          
-          public Builder clear() {
-            super.clear();
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            position_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            edge_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            data_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            return this;
-          }
-          
-          public Builder clone() {
-            return create().mergeFrom(buildPartial());
-          }
-          
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDescriptor();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getDefaultInstanceForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge build() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-          
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge buildParsed()
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(
-                result).asInvalidProtocolBufferException();
-            }
-            return result;
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge buildPartial() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-              to_bitField0_ |= 0x00000001;
-            }
-            result.secCommand_ = secCommand_;
-            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-              to_bitField0_ |= 0x00000002;
-            }
-            result.position_ = position_;
-            if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-              to_bitField0_ |= 0x00000004;
-            }
-            result.edge_ = edge_;
-            if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-              to_bitField0_ |= 0x00000008;
-            }
-            result.data_ = data_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-          
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge) {
-              return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-          
-          public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge other) {
-            if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance()) return this;
-            if (other.hasSecCommand()) {
-              setSecCommand(other.getSecCommand());
-            }
-            if (other.hasPosition()) {
-              setPosition(other.getPosition());
-            }
-            if (other.hasEdge()) {
-              setEdge(other.getEdge());
-            }
-            if (other.hasData()) {
-              setData(other.getData());
-            }
-            this.mergeUnknownFields(other.getUnknownFields());
-            return this;
-          }
-          
-          public final boolean isInitialized() {
-            if (!hasSecCommand()) {
-              
-              return false;
-            }
-            if (!hasData()) {
-              
-              return false;
-            }
-            return true;
-          }
-          
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder(
-                this.getUnknownFields());
-            while (true) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    this.setUnknownFields(unknownFields.build());
-                    onChanged();
-                    return this;
-                  }
-                  break;
-                }
-                case 8: {
-                  int rawValue = input.readEnum();
-                  platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.valueOf(rawValue);
-                  if (value == null) {
-                    unknownFields.mergeVarintField(1, rawValue);
-                  } else {
-                    bitField0_ |= 0x00000001;
-                    secCommand_ = value;
-                  }
-                  break;
-                }
-                case 18: {
-                  bitField0_ |= 0x00000002;
-                  position_ = input.readBytes();
-                  break;
-                }
-                case 26: {
-                  bitField0_ |= 0x00000004;
-                  edge_ = input.readBytes();
-                  break;
-                }
-                case 34: {
-                  bitField0_ |= 0x00000008;
-                  data_ = input.readBytes();
-                  break;
-                }
-              }
-            }
-          }
-          
-          private int bitField0_;
-          
-          // required .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand = 1;
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
-          public boolean hasSecCommand() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-          }
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand() {
-            return secCommand_;
-          }
-          public Builder setSecCommand(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            bitField0_ |= 0x00000001;
-            secCommand_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSecCommand() {
-            bitField0_ = (bitField0_ & ~0x00000001);
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes position = 2;
-          private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasPosition() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-          }
-          public com.google.protobuf.ByteString getPosition() {
-            return position_;
-          }
-          public Builder setPosition(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-            position_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearPosition() {
-            bitField0_ = (bitField0_ & ~0x00000002);
-            position_ = getDefaultInstance().getPosition();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes edge = 3;
-          private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasEdge() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-          }
-          public com.google.protobuf.ByteString getEdge() {
-            return edge_;
-          }
-          public Builder setEdge(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-            edge_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearEdge() {
-            bitField0_ = (bitField0_ & ~0x00000004);
-            edge_ = getDefaultInstance().getEdge();
-            onChanged();
-            return this;
-          }
-          
-          // required bytes data = 4;
-          private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasData() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-          }
-          public com.google.protobuf.ByteString getData() {
-            return data_;
-          }
-          public Builder setData(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-            data_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearData() {
-            bitField0_ = (bitField0_ & ~0x00000008);
-            data_ = getDefaultInstance().getData();
-            onChanged();
-            return this;
-          }
-          
-          // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Edge)
-        }
-        
-        static {
-          defaultInstance = new Edge(true);
-          defaultInstance.initFields();
-        }
-        
-        // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Edge)
-      }
-      
-      public interface VertexOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
-        
-        // required .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand = 1;
-        boolean hasSecCommand();
-        platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand();
-        
-        // optional bytes size = 2;
-        boolean hasSize();
-        com.google.protobuf.ByteString getSize();
-        
-        // optional bytes edge = 3;
-        boolean hasEdge();
-        com.google.protobuf.ByteString getEdge();
-      }
-      public static final class Vertex extends
-          com.google.protobuf.GeneratedMessage
-          implements VertexOrBuilder {
-        // Use Vertex.newBuilder() to construct.
-        private Vertex(Builder builder) {
-          super(builder);
-        }
-        private Vertex(boolean noInit) {}
-        
-        private static final Vertex defaultInstance;
-        public static Vertex getDefaultInstance() {
-          return defaultInstance;
-        }
-        
-        public Vertex getDefaultInstanceForType() {
-          return defaultInstance;
-        }
-        
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
-        }
-        
-        public enum SecCommand
-            implements com.google.protobuf.ProtocolMessageEnum {
-          ccreateVertex(0, 0),
-          csetSize(1, 1),
-          caddEdge(2, 2),
-          caddBack_edge(3, 3),
-          ;
-          
-          public static final int ccreateVertex_VALUE = 0;
-          public static final int csetSize_VALUE = 1;
-          public static final int caddEdge_VALUE = 2;
-          public static final int caddBack_edge_VALUE = 3;
-          
-          
-          public final int getNumber() { return value; }
-          
-          public static SecCommand valueOf(int value) {
-            switch (value) {
-              case 0: return ccreateVertex;
-              case 1: return csetSize;
-              case 2: return caddEdge;
-              case 3: return caddBack_edge;
-              default: return null;
-            }
-          }
-          
-          public static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalGetValueMap() {
-            return internalValueMap;
-          }
-          private static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-              internalValueMap =
-                new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
-                  public SecCommand findValueByNumber(int number) {
-                    return SecCommand.valueOf(number);
-                  }
-                };
-          
-          public final com.google.protobuf.Descriptors.EnumValueDescriptor
-              getValueDescriptor() {
-            return getDescriptor().getValues().get(index);
-          }
-          public final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptorForType() {
-            return getDescriptor();
-          }
-          public static final com.google.protobuf.Descriptors.EnumDescriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDescriptor().getEnumTypes().get(0);
-          }
-          
-          private static final SecCommand[] VALUES = {
-            ccreateVertex, csetSize, caddEdge, caddBack_edge, 
-          };
-          
-          public static SecCommand valueOf(
-              com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-            if (desc.getType() != getDescriptor()) {
-              throw new java.lang.IllegalArgumentException(
-                "EnumValueDescriptor is not for this type.");
-            }
-            return VALUES[desc.getIndex()];
-          }
-          
-          private final int index;
-          private final int value;
-          
-          private SecCommand(int index, int value) {
-            this.index = index;
-            this.value = value;
-          }
-          
-          // @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand)
-        }
-        
-        private int bitField0_;
-        // required .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand = 1;
-        public static final int SECCOMMAND_FIELD_NUMBER = 1;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand_;
-        public boolean hasSecCommand() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand() {
-          return secCommand_;
-        }
-        
-        // optional bytes size = 2;
-        public static final int SIZE_FIELD_NUMBER = 2;
-        private com.google.protobuf.ByteString size_;
-        public boolean hasSize() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public com.google.protobuf.ByteString getSize() {
-          return size_;
-        }
-        
-        // optional bytes edge = 3;
-        public static final int EDGE_FIELD_NUMBER = 3;
-        private com.google.protobuf.ByteString edge_;
-        public boolean hasEdge() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getEdge() {
-          return edge_;
-        }
-        
-        private void initFields() {
-          secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
-          size_ = com.google.protobuf.ByteString.EMPTY;
-          edge_ = com.google.protobuf.ByteString.EMPTY;
-        }
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized != -1) return isInitialized == 1;
-          
-          if (!hasSecCommand()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          memoizedIsInitialized = 1;
-          return true;
-        }
-        
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          getSerializedSize();
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            output.writeEnum(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            output.writeBytes(2, size_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            output.writeBytes(3, edge_);
-          }
-          getUnknownFields().writeTo(output);
-        }
-        
-        private int memoizedSerializedSize = -1;
-        public int getSerializedSize() {
-          int size = memoizedSerializedSize;
-          if (size != -1) return size;
-        
-          size = 0;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeEnumSize(1, secCommand_.getNumber());
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(2, size_);
-          }
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeBytesSize(3, edge_);
-          }
-          size += getUnknownFields().getSerializedSize();
-          memoizedSerializedSize = size;
-          return size;
-        }
-        
-        private static final long serialVersionUID = 0L;
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
-          return super.writeReplace();
-        }
-        
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
-        }
-        public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
-        }
-        
-        public static Builder newBuilder() { return Builder.create(); }
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex prototype) {
-          return newBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() { return newBuilder(this); }
-        
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-           implements platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
-          }
-          
-          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
-          }
-          
-          // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-          
-          private Builder(BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            }
-          }
-          private static Builder create() {
-            return new Builder();
-          }
-          
-          public Builder clear() {
-            super.clear();
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            size_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            edge_ = com.google.protobuf.ByteString.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            return this;
-          }
-          
-          public Builder clone() {
-            return create().mergeFrom(buildPartial());
-          }
-          
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDescriptor();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getDefaultInstanceForType() {
-            return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance();
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex build() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-          
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex buildParsed()
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(
-                result).asInvalidProtocolBufferException();
-            }
-            return result;
-          }
-          
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex buildPartial() {
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-              to_bitField0_ |= 0x00000001;
-            }
-            result.secCommand_ = secCommand_;
-            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-              to_bitField0_ |= 0x00000002;
-            }
-            result.size_ = size_;
-            if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-              to_bitField0_ |= 0x00000004;
-            }
-            result.edge_ = edge_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-          
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex) {
-              return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-          
-          public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex other) {
-            if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance()) return this;
-            if (other.hasSecCommand()) {
-              setSecCommand(other.getSecCommand());
-            }
-            if (other.hasSize()) {
-              setSize(other.getSize());
-            }
-            if (other.hasEdge()) {
-              setEdge(other.getEdge());
-            }
-            this.mergeUnknownFields(other.getUnknownFields());
-            return this;
-          }
-          
-          public final boolean isInitialized() {
-            if (!hasSecCommand()) {
-              
-              return false;
-            }
-            return true;
-          }
-          
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder(
-                this.getUnknownFields());
-            while (true) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    this.setUnknownFields(unknownFields.build());
-                    onChanged();
-                    return this;
-                  }
-                  break;
-                }
-                case 8: {
-                  int rawValue = input.readEnum();
-                  platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.valueOf(rawValue);
-                  if (value == null) {
-                    unknownFields.mergeVarintField(1, rawValue);
-                  } else {
-                    bitField0_ |= 0x00000001;
-                    secCommand_ = value;
-                  }
-                  break;
-                }
-                case 18: {
-                  bitField0_ |= 0x00000002;
-                  size_ = input.readBytes();
-                  break;
-                }
-                case 26: {
-                  bitField0_ |= 0x00000004;
-                  edge_ = input.readBytes();
-                  break;
-                }
-              }
-            }
-          }
-          
-          private int bitField0_;
-          
-          // required .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand = 1;
-          private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
-          public boolean hasSecCommand() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-          }
-          public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand() {
-            return secCommand_;
-          }
-          public Builder setSecCommand(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            bitField0_ |= 0x00000001;
-            secCommand_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSecCommand() {
-            bitField0_ = (bitField0_ & ~0x00000001);
-            secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes size = 2;
-          private com.google.protobuf.ByteString size_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasSize() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-          }
-          public com.google.protobuf.ByteString getSize() {
-            return size_;
-          }
-          public Builder setSize(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-            size_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearSize() {
-            bitField0_ = (bitField0_ & ~0x00000002);
-            size_ = getDefaultInstance().getSize();
-            onChanged();
-            return this;
-          }
-          
-          // optional bytes edge = 3;
-          private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
-          public boolean hasEdge() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-          }
-          public com.google.protobuf.ByteString getEdge() {
-            return edge_;
-          }
-          public Builder setEdge(com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-            edge_ = value;
-            onChanged();
-            return this;
-          }
-          public Builder clearEdge() {
-            bitField0_ = (bitField0_ & ~0x00000004);
-            edge_ = getDefaultInstance().getEdge();
-            onChanged();
-            return this;
-          }
-          
-          // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Vertex)
-        }
-        
-        static {
-          defaultInstance = new Vertex(true);
-          defaultInstance.initFields();
-        }
-        
-        // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Vertex)
-      }
-      
-      private int bitField0_;
-      // required .protocol.MultiSaveCommand.SaveCommand.Type type = 1;
-      public static final int TYPE_FIELD_NUMBER = 1;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type type_;
-      public boolean hasType() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType() {
-        return type_;
-      }
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Metadata metadata = 2;
-      public static final int METADATA_FIELD_NUMBER = 2;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata metadata_;
-      public boolean hasMetadata() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata() {
-        return metadata_;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder() {
-        return metadata_;
-      }
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Content content = 3;
-      public static final int CONTENT_FIELD_NUMBER = 3;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content content_;
-      public boolean hasContent() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent() {
-        return content_;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder() {
-        return content_;
-      }
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Edge edge = 4;
-      public static final int EDGE_FIELD_NUMBER = 4;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge edge_;
-      public boolean hasEdge() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge() {
-        return edge_;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder() {
-        return edge_;
-      }
-      
-      // optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex = 5;
-      public static final int VERTEX_FIELD_NUMBER = 5;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex vertex_;
-      public boolean hasVertex() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex() {
-        return vertex_;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder() {
-        return vertex_;
-      }
-      
-      private void initFields() {
-        type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
-        metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance();
-        content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance();
-        edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance();
-        vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance();
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-        
-        if (!hasType()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (hasMetadata()) {
-          if (!getMetadata().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        if (hasContent()) {
-          if (!getContent().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        if (hasEdge()) {
-          if (!getEdge().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        if (hasVertex()) {
-          if (!getVertex().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-      
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeEnum(1, type_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeMessage(2, metadata_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeMessage(3, content_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeMessage(4, edge_);
-        }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          output.writeMessage(5, vertex_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-      
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-      
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, type_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, metadata_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, content_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, edge_);
-        }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, vertex_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-      
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-      
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-      
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
-        }
-        
-        // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-        
-        private Builder(BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            getMetadataFieldBuilder();
-            getContentFieldBuilder();
-            getEdgeFieldBuilder();
-            getVertexFieldBuilder();
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-        
-        public Builder clear() {
-          super.clear();
-          type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          if (metadataBuilder_ == null) {
-            metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance();
-          } else {
-            metadataBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (contentBuilder_ == null) {
-            content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance();
-          } else {
-            contentBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          if (edgeBuilder_ == null) {
-            edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance();
-          } else {
-            edgeBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000008);
-          if (vertexBuilder_ == null) {
-            vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance();
-          } else {
-            vertexBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000010);
-          return this;
-        }
-        
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-        
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDescriptor();
-        }
-        
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getDefaultInstanceForType() {
-          return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDefaultInstance();
-        }
-        
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand build() {
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-        
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand buildPartial() {
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.type_ = type_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          if (metadataBuilder_ == null) {
-            result.metadata_ = metadata_;
-          } else {
-            result.metadata_ = metadataBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          if (contentBuilder_ == null) {
-            result.content_ = content_;
-          } else {
-            result.content_ = contentBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
-          if (edgeBuilder_ == null) {
-            result.edge_ = edge_;
-          } else {
-            result.edge_ = edgeBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-            to_bitField0_ |= 0x00000010;
-          }
-          if (vertexBuilder_ == null) {
-            result.vertex_ = vertex_;
-          } else {
-            result.vertex_ = vertexBuilder_.build();
-          }
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-        
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand) {
-            return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-        
-        public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand other) {
-          if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDefaultInstance()) return this;
-          if (other.hasType()) {
-            setType(other.getType());
-          }
-          if (other.hasMetadata()) {
-            mergeMetadata(other.getMetadata());
-          }
-          if (other.hasContent()) {
-            mergeContent(other.getContent());
-          }
-          if (other.hasEdge()) {
-            mergeEdge(other.getEdge());
-          }
-          if (other.hasVertex()) {
-            mergeVertex(other.getVertex());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-        
-        public final boolean isInitialized() {
-          if (!hasType()) {
-            
-            return false;
-          }
-          if (hasMetadata()) {
-            if (!getMetadata().isInitialized()) {
-              
-              return false;
-            }
-          }
-          if (hasContent()) {
-            if (!getContent().isInitialized()) {
-              
-              return false;
-            }
-          }
-          if (hasEdge()) {
-            if (!getEdge().isInitialized()) {
-              
-              return false;
-            }
-          }
-          if (hasVertex()) {
-            if (!getVertex().isInitialized()) {
-              
-              return false;
-            }
-          }
-          return true;
-        }
-        
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  type_ = value;
-                }
-                break;
-              }
-              case 18: {
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.newBuilder();
-                if (hasMetadata()) {
-                  subBuilder.mergeFrom(getMetadata());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setMetadata(subBuilder.buildPartial());
-                break;
-              }
-              case 26: {
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.newBuilder();
-                if (hasContent()) {
-                  subBuilder.mergeFrom(getContent());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setContent(subBuilder.buildPartial());
-                break;
-              }
-              case 34: {
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.newBuilder();
-                if (hasEdge()) {
-                  subBuilder.mergeFrom(getEdge());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setEdge(subBuilder.buildPartial());
-                break;
-              }
-              case 42: {
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.newBuilder();
-                if (hasVertex()) {
-                  subBuilder.mergeFrom(getVertex());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setVertex(subBuilder.buildPartial());
-                break;
-              }
-            }
-          }
-        }
-        
-        private int bitField0_;
-        
-        // required .protocol.MultiSaveCommand.SaveCommand.Type type = 1;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
-        public boolean hasType() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType() {
-          return type_;
-        }
-        public Builder setType(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
-          type_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearType() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
-          onChanged();
-          return this;
-        }
-        
-        // optional .protocol.MultiSaveCommand.SaveCommand.Metadata metadata = 2;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder> metadataBuilder_;
-        public boolean hasMetadata() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata() {
-          if (metadataBuilder_ == null) {
-            return metadata_;
-          } else {
-            return metadataBuilder_.getMessage();
-          }
-        }
-        public Builder setMetadata(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata value) {
-          if (metadataBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            metadata_ = value;
-            onChanged();
-          } else {
-            metadataBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000002;
-          return this;
-        }
-        public Builder setMetadata(
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder builderForValue) {
-          if (metadataBuilder_ == null) {
-            metadata_ = builderForValue.build();
-            onChanged();
-          } else {
-            metadataBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000002;
-          return this;
-        }
-        public Builder mergeMetadata(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata value) {
-          if (metadataBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                metadata_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance()) {
-              metadata_ =
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
-            } else {
-              metadata_ = value;
-            }
-            onChanged();
-          } else {
-            metadataBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000002;
-          return this;
-        }
-        public Builder clearMetadata() {
-          if (metadataBuilder_ == null) {
-            metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.getDefaultInstance();
-            onChanged();
-          } else {
-            metadataBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000002);
-          return this;
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder getMetadataBuilder() {
-          bitField0_ |= 0x00000002;
-          onChanged();
-          return getMetadataFieldBuilder().getBuilder();
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder() {
-          if (metadataBuilder_ != null) {
-            return metadataBuilder_.getMessageOrBuilder();
-          } else {
-            return metadata_;
-          }
-        }
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder> 
-            getMetadataFieldBuilder() {
-          if (metadataBuilder_ == null) {
-            metadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder>(
-                    metadata_,
-                    getParentForChildren(),
-                    isClean());
-            metadata_ = null;
-          }
-          return metadataBuilder_;
-        }
-        
-        // optional .protocol.MultiSaveCommand.SaveCommand.Content content = 3;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder> contentBuilder_;
-        public boolean hasContent() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent() {
-          if (contentBuilder_ == null) {
-            return content_;
-          } else {
-            return contentBuilder_.getMessage();
-          }
-        }
-        public Builder setContent(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content value) {
-          if (contentBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            content_ = value;
-            onChanged();
-          } else {
-            contentBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        public Builder setContent(
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder builderForValue) {
-          if (contentBuilder_ == null) {
-            content_ = builderForValue.build();
-            onChanged();
-          } else {
-            contentBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        public Builder mergeContent(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content value) {
-          if (contentBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                content_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance()) {
-              content_ =
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.newBuilder(content_).mergeFrom(value).buildPartial();
-            } else {
-              content_ = value;
-            }
-            onChanged();
-          } else {
-            contentBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        public Builder clearContent() {
-          if (contentBuilder_ == null) {
-            content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.getDefaultInstance();
-            onChanged();
-          } else {
-            contentBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder getContentBuilder() {
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return getContentFieldBuilder().getBuilder();
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder() {
-          if (contentBuilder_ != null) {
-            return contentBuilder_.getMessageOrBuilder();
-          } else {
-            return content_;
-          }
-        }
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder> 
-            getContentFieldBuilder() {
-          if (contentBuilder_ == null) {
-            contentBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder>(
-                    content_,
-                    getParentForChildren(),
-                    isClean());
-            content_ = null;
-          }
-          return contentBuilder_;
-        }
-        
-        // optional .protocol.MultiSaveCommand.SaveCommand.Edge edge = 4;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder> edgeBuilder_;
-        public boolean hasEdge() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge() {
-          if (edgeBuilder_ == null) {
-            return edge_;
-          } else {
-            return edgeBuilder_.getMessage();
-          }
-        }
-        public Builder setEdge(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge value) {
-          if (edgeBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            edge_ = value;
-            onChanged();
-          } else {
-            edgeBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000008;
-          return this;
-        }
-        public Builder setEdge(
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder builderForValue) {
-          if (edgeBuilder_ == null) {
-            edge_ = builderForValue.build();
-            onChanged();
-          } else {
-            edgeBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000008;
-          return this;
-        }
-        public Builder mergeEdge(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge value) {
-          if (edgeBuilder_ == null) {
-            if (((bitField0_ & 0x00000008) == 0x00000008) &&
-                edge_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance()) {
-              edge_ =
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.newBuilder(edge_).mergeFrom(value).buildPartial();
-            } else {
-              edge_ = value;
-            }
-            onChanged();
-          } else {
-            edgeBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000008;
-          return this;
-        }
-        public Builder clearEdge() {
-          if (edgeBuilder_ == null) {
-            edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.getDefaultInstance();
-            onChanged();
-          } else {
-            edgeBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000008);
-          return this;
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder getEdgeBuilder() {
-          bitField0_ |= 0x00000008;
-          onChanged();
-          return getEdgeFieldBuilder().getBuilder();
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder() {
-          if (edgeBuilder_ != null) {
-            return edgeBuilder_.getMessageOrBuilder();
-          } else {
-            return edge_;
-          }
-        }
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder> 
-            getEdgeFieldBuilder() {
-          if (edgeBuilder_ == null) {
-            edgeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder>(
-                    edge_,
-                    getParentForChildren(),
-                    isClean());
-            edge_ = null;
-          }
-          return edgeBuilder_;
-        }
-        
-        // optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex = 5;
-        private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance();
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder> vertexBuilder_;
-        public boolean hasVertex() {
-          return ((bitField0_ & 0x00000010) == 0x00000010);
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex() {
-          if (vertexBuilder_ == null) {
-            return vertex_;
-          } else {
-            return vertexBuilder_.getMessage();
-          }
-        }
-        public Builder setVertex(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex value) {
-          if (vertexBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            vertex_ = value;
-            onChanged();
-          } else {
-            vertexBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000010;
-          return this;
-        }
-        public Builder setVertex(
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder builderForValue) {
-          if (vertexBuilder_ == null) {
-            vertex_ = builderForValue.build();
-            onChanged();
-          } else {
-            vertexBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000010;
-          return this;
-        }
-        public Builder mergeVertex(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex value) {
-          if (vertexBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) == 0x00000010) &&
-                vertex_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance()) {
-              vertex_ =
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.newBuilder(vertex_).mergeFrom(value).buildPartial();
-            } else {
-              vertex_ = value;
-            }
-            onChanged();
-          } else {
-            vertexBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000010;
-          return this;
-        }
-        public Builder clearVertex() {
-          if (vertexBuilder_ == null) {
-            vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.getDefaultInstance();
-            onChanged();
-          } else {
-            vertexBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000010);
-          return this;
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder getVertexBuilder() {
-          bitField0_ |= 0x00000010;
-          onChanged();
-          return getVertexFieldBuilder().getBuilder();
-        }
-        public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder() {
-          if (vertexBuilder_ != null) {
-            return vertexBuilder_.getMessageOrBuilder();
-          } else {
-            return vertex_;
-          }
-        }
-        private com.google.protobuf.SingleFieldBuilder<
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder> 
-            getVertexFieldBuilder() {
-          if (vertexBuilder_ == null) {
-            vertexBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder>(
-                    vertex_,
-                    getParentForChildren(),
-                    isClean());
-            vertex_ = null;
-          }
-          return vertexBuilder_;
-        }
-        
-        // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand)
-      }
-      
-      static {
-        defaultInstance = new SaveCommand(true);
-        defaultInstance.initFields();
-      }
-      
-      // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand)
-    }
-    
-    private int bitField0_;
-    // required int64 key = 1;
-    public static final int KEY_FIELD_NUMBER = 1;
-    private long key_;
-    public boolean hasKey() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public long getKey() {
-      return key_;
-    }
-    
-    // repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
-    public static final int SAVECOMMAND_FIELD_NUMBER = 2;
-    private java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> saveCommand_;
-    public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> getSaveCommandList() {
-      return saveCommand_;
-    }
-    public java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> 
-        getSaveCommandOrBuilderList() {
-      return saveCommand_;
-    }
-    public int getSaveCommandCount() {
-      return saveCommand_.size();
-    }
-    public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(int index) {
-      return saveCommand_.get(index);
-    }
-    public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
-        int index) {
-      return saveCommand_.get(index);
-    }
-    
-    private void initFields() {
-      key_ = 0L;
-      saveCommand_ = java.util.Collections.emptyList();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasKey()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getSaveCommandCount(); i++) {
-        if (!getSaveCommand(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt64(1, key_);
-      }
-      for (int i = 0; i < saveCommand_.size(); i++) {
-        output.writeMessage(2, saveCommand_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, key_);
-      }
-      for (int i = 0; i < saveCommand_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, saveCommand_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiSaveCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
-      }
-      
-      // Construct using platanos.docGraphDB.Protocol.MultiSaveCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getSaveCommandFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        key_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (saveCommandBuilder_ == null) {
-          saveCommand_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          saveCommandBuilder_.clear();
-        }
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return platanos.docGraphDB.Protocol.MultiSaveCommand.getDescriptor();
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiSaveCommand getDefaultInstanceForType() {
-        return platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance();
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiSaveCommand build() {
-        platanos.docGraphDB.Protocol.MultiSaveCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private platanos.docGraphDB.Protocol.MultiSaveCommand buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        platanos.docGraphDB.Protocol.MultiSaveCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiSaveCommand buildPartial() {
-        platanos.docGraphDB.Protocol.MultiSaveCommand result = new platanos.docGraphDB.Protocol.MultiSaveCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.key_ = key_;
-        if (saveCommandBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            saveCommand_ = java.util.Collections.unmodifiableList(saveCommand_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.saveCommand_ = saveCommand_;
-        } else {
-          result.saveCommand_ = saveCommandBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand) {
-          return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiSaveCommand other) {
-        if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance()) return this;
-        if (other.hasKey()) {
-          setKey(other.getKey());
-        }
-        if (saveCommandBuilder_ == null) {
-          if (!other.saveCommand_.isEmpty()) {
-            if (saveCommand_.isEmpty()) {
-              saveCommand_ = other.saveCommand_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureSaveCommandIsMutable();
-              saveCommand_.addAll(other.saveCommand_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.saveCommand_.isEmpty()) {
-            if (saveCommandBuilder_.isEmpty()) {
-              saveCommandBuilder_.dispose();
-              saveCommandBuilder_ = null;
-              saveCommand_ = other.saveCommand_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              saveCommandBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getSaveCommandFieldBuilder() : null;
-            } else {
-              saveCommandBuilder_.addAllMessages(other.saveCommand_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasKey()) {
-          
-          return false;
-        }
-        for (int i = 0; i < getSaveCommandCount(); i++) {
-          if (!getSaveCommand(i).isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              key_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addSaveCommand(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required int64 key = 1;
-      private long key_ ;
-      public boolean hasKey() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public long getKey() {
-        return key_;
-      }
-      public Builder setKey(long value) {
-        bitField0_ |= 0x00000001;
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearKey() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        key_ = 0L;
-        onChanged();
-        return this;
-      }
-      
-      // repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
-      private java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> saveCommand_ =
-        java.util.Collections.emptyList();
-      private void ensureSaveCommandIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          saveCommand_ = new java.util.ArrayList<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand>(saveCommand_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> saveCommandBuilder_;
-      
-      public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> getSaveCommandList() {
-        if (saveCommandBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(saveCommand_);
-        } else {
-          return saveCommandBuilder_.getMessageList();
-        }
-      }
-      public int getSaveCommandCount() {
-        if (saveCommandBuilder_ == null) {
-          return saveCommand_.size();
-        } else {
-          return saveCommandBuilder_.getCount();
-        }
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(int index) {
-        if (saveCommandBuilder_ == null) {
-          return saveCommand_.get(index);
-        } else {
-          return saveCommandBuilder_.getMessage(index);
-        }
-      }
-      public Builder setSaveCommand(
-          int index, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
-        if (saveCommandBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSaveCommandIsMutable();
-          saveCommand_.set(index, value);
-          onChanged();
-        } else {
-          saveCommandBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      public Builder setSaveCommand(
-          int index, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
-        if (saveCommandBuilder_ == null) {
-          ensureSaveCommandIsMutable();
-          saveCommand_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          saveCommandBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addSaveCommand(platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
-        if (saveCommandBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSaveCommandIsMutable();
-          saveCommand_.add(value);
-          onChanged();
-        } else {
-          saveCommandBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      public Builder addSaveCommand(
-          int index, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
-        if (saveCommandBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSaveCommandIsMutable();
-          saveCommand_.add(index, value);
-          onChanged();
-        } else {
-          saveCommandBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      public Builder addSaveCommand(
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
-        if (saveCommandBuilder_ == null) {
-          ensureSaveCommandIsMutable();
-          saveCommand_.add(builderForValue.build());
-          onChanged();
-        } else {
-          saveCommandBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addSaveCommand(
-          int index, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
-        if (saveCommandBuilder_ == null) {
-          ensureSaveCommandIsMutable();
-          saveCommand_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          saveCommandBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addAllSaveCommand(
-          java.lang.Iterable<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> values) {
-        if (saveCommandBuilder_ == null) {
-          ensureSaveCommandIsMutable();
-          super.addAll(values, saveCommand_);
-          onChanged();
-        } else {
-          saveCommandBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      public Builder clearSaveCommand() {
-        if (saveCommandBuilder_ == null) {
-          saveCommand_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          saveCommandBuilder_.clear();
-        }
-        return this;
-      }
-      public Builder removeSaveCommand(int index) {
-        if (saveCommandBuilder_ == null) {
-          ensureSaveCommandIsMutable();
-          saveCommand_.remove(index);
-          onChanged();
-        } else {
-          saveCommandBuilder_.remove(index);
-        }
-        return this;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder getSaveCommandBuilder(
-          int index) {
-        return getSaveCommandFieldBuilder().getBuilder(index);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
-          int index) {
-        if (saveCommandBuilder_ == null) {
-          return saveCommand_.get(index);  } else {
-          return saveCommandBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      public java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> 
-           getSaveCommandOrBuilderList() {
-        if (saveCommandBuilder_ != null) {
-          return saveCommandBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(saveCommand_);
-        }
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder addSaveCommandBuilder() {
-        return getSaveCommandFieldBuilder().addBuilder(
-            platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDefaultInstance());
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder addSaveCommandBuilder(
-          int index) {
-        return getSaveCommandFieldBuilder().addBuilder(
-            index, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.getDefaultInstance());
-      }
-      public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder> 
-           getSaveCommandBuilderList() {
-        return getSaveCommandFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> 
-          getSaveCommandFieldBuilder() {
-        if (saveCommandBuilder_ == null) {
-          saveCommandBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder>(
-                  saveCommand_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          saveCommand_ = null;
-        }
-        return saveCommandBuilder_;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand)
-    }
-    
-    static {
-      defaultInstance = new MultiSaveCommand(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand)
-  }
-  
-  public interface LoadCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required .protocol.LoadCommand.Type type = 1;
-    boolean hasType();
-    platanos.docGraphDB.Protocol.LoadCommand.Type getType();
-    
-    // optional .protocol.LoadCommand.GraphView graphView = 2;
-    boolean hasGraphView();
-    platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView();
-    platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder();
-  }
-  public static final class LoadCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements LoadCommandOrBuilder {
-    // Use LoadCommand.newBuilder() to construct.
-    private LoadCommand(Builder builder) {
-      super(builder);
-    }
-    private LoadCommand(boolean noInit) {}
-    
-    private static final LoadCommand defaultInstance;
-    public static LoadCommand getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public LoadCommand getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_fieldAccessorTable;
-    }
-    
-    public enum Type
-        implements com.google.protobuf.ProtocolMessageEnum {
-      cgraphView(0, 0),
-      ccontentiView(1, 1),
-      csearchView(2, 2),
-      cvertex(3, 3),
-      crepair(4, 4),
-      ;
-      
-      public static final int cgraphView_VALUE = 0;
-      public static final int ccontentiView_VALUE = 1;
-      public static final int csearchView_VALUE = 2;
-      public static final int cvertex_VALUE = 3;
-      public static final int crepair_VALUE = 4;
-      
-      
-      public final int getNumber() { return value; }
-      
-      public static Type valueOf(int value) {
-        switch (value) {
-          case 0: return cgraphView;
-          case 1: return ccontentiView;
-          case 2: return csearchView;
-          case 3: return cvertex;
-          case 4: return crepair;
-          default: return null;
-        }
-      }
-      
-      public static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static com.google.protobuf.Internal.EnumLiteMap<Type>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-              public Type findValueByNumber(int number) {
-                return Type.valueOf(number);
-              }
-            };
-      
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.LoadCommand.getDescriptor().getEnumTypes().get(0);
-      }
-      
-      private static final Type[] VALUES = {
-        cgraphView, ccontentiView, csearchView, cvertex, crepair, 
-      };
-      
-      public static Type valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-      
-      private final int index;
-      private final int value;
-      
-      private Type(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-      
-      // @@protoc_insertion_point(enum_scope:protocol.LoadCommand.Type)
-    }
-    
-    public interface EdgeOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-      
-      // required .protocol.LoadCommand.Edge.SecCommand secCommand = 1;
-      boolean hasSecCommand();
-      platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand();
-      
-      // optional bytes position = 2;
-      boolean hasPosition();
-      com.google.protobuf.ByteString getPosition();
-      
-      // optional bytes edge = 3;
-      boolean hasEdge();
-      com.google.protobuf.ByteString getEdge();
-    }
-    public static final class Edge extends
-        com.google.protobuf.GeneratedMessage
-        implements EdgeOrBuilder {
-      // Use Edge.newBuilder() to construct.
-      private Edge(Builder builder) {
-        super(builder);
-      }
-      private Edge(boolean noInit) {}
-      
-      private static final Edge defaultInstance;
-      public static Edge getDefaultInstance() {
-        return defaultInstance;
-      }
-      
-      public Edge getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-      
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
-      }
-      
-      public enum SecCommand
-          implements com.google.protobuf.ProtocolMessageEnum {
-        cinEdge(0, 0),
-        cedge(1, 1),
-        ;
-        
-        public static final int cinEdge_VALUE = 0;
-        public static final int cedge_VALUE = 1;
-        
-        
-        public final int getNumber() { return value; }
-        
-        public static SecCommand valueOf(int value) {
-          switch (value) {
-            case 0: return cinEdge;
-            case 1: return cedge;
-            default: return null;
-          }
-        }
-        
-        public static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-            internalGetValueMap() {
-          return internalValueMap;
-        }
-        private static com.google.protobuf.Internal.EnumLiteMap<SecCommand>
-            internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
-                public SecCommand findValueByNumber(int number) {
-                  return SecCommand.valueOf(number);
-                }
-              };
-        
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          return getDescriptor().getValues().get(index);
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.LoadCommand.Edge.getDescriptor().getEnumTypes().get(0);
-        }
-        
-        private static final SecCommand[] VALUES = {
-          cinEdge, cedge, 
-        };
-        
-        public static SecCommand valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          return VALUES[desc.getIndex()];
-        }
-        
-        private final int index;
-        private final int value;
-        
-        private SecCommand(int index, int value) {
-          this.index = index;
-          this.value = value;
-        }
-        
-        // @@protoc_insertion_point(enum_scope:protocol.LoadCommand.Edge.SecCommand)
-      }
-      
-      private int bitField0_;
-      // required .protocol.LoadCommand.Edge.SecCommand secCommand = 1;
-      public static final int SECCOMMAND_FIELD_NUMBER = 1;
-      private platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand secCommand_;
-      public boolean hasSecCommand() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand() {
-        return secCommand_;
-      }
-      
-      // optional bytes position = 2;
-      public static final int POSITION_FIELD_NUMBER = 2;
-      private com.google.protobuf.ByteString position_;
-      public boolean hasPosition() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public com.google.protobuf.ByteString getPosition() {
-        return position_;
-      }
-      
-      // optional bytes edge = 3;
-      public static final int EDGE_FIELD_NUMBER = 3;
-      private com.google.protobuf.ByteString edge_;
-      public boolean hasEdge() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public com.google.protobuf.ByteString getEdge() {
-        return edge_;
-      }
-      
-      private void initFields() {
-        secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
-        position_ = com.google.protobuf.ByteString.EMPTY;
-        edge_ = com.google.protobuf.ByteString.EMPTY;
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-        
-        if (!hasSecCommand()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-      
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeEnum(1, secCommand_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeBytes(2, position_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeBytes(3, edge_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-      
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-      
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, secCommand_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(2, position_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(3, edge_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-      
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-      
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(platanos.docGraphDB.Protocol.LoadCommand.Edge prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-      
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
-        }
-        
-        // Construct using platanos.docGraphDB.Protocol.LoadCommand.Edge.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-        
-        private Builder(BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-        
-        public Builder clear() {
-          super.clear();
-          secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          position_ = com.google.protobuf.ByteString.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          edge_ = com.google.protobuf.ByteString.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-        
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-        
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.Edge.getDescriptor();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge getDefaultInstanceForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.Edge.getDefaultInstance();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge build() {
-          platanos.docGraphDB.Protocol.LoadCommand.Edge result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-        
-        private platanos.docGraphDB.Protocol.LoadCommand.Edge buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          platanos.docGraphDB.Protocol.LoadCommand.Edge result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge buildPartial() {
-          platanos.docGraphDB.Protocol.LoadCommand.Edge result = new platanos.docGraphDB.Protocol.LoadCommand.Edge(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.secCommand_ = secCommand_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.position_ = position_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.edge_ = edge_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-        
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.Edge) {
-            return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.Edge)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-        
-        public Builder mergeFrom(platanos.docGraphDB.Protocol.LoadCommand.Edge other) {
-          if (other == platanos.docGraphDB.Protocol.LoadCommand.Edge.getDefaultInstance()) return this;
-          if (other.hasSecCommand()) {
-            setSecCommand(other.getSecCommand());
-          }
-          if (other.hasPosition()) {
-            setPosition(other.getPosition());
-          }
-          if (other.hasEdge()) {
-            setEdge(other.getEdge());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-        
-        public final boolean isInitialized() {
-          if (!hasSecCommand()) {
-            
-            return false;
-          }
-          return true;
-        }
-        
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-                platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand value = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  secCommand_ = value;
-                }
-                break;
-              }
-              case 18: {
-                bitField0_ |= 0x00000002;
-                position_ = input.readBytes();
-                break;
-              }
-              case 26: {
-                bitField0_ |= 0x00000004;
-                edge_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        }
-        
-        private int bitField0_;
-        
-        // required .protocol.LoadCommand.Edge.SecCommand secCommand = 1;
-        private platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
-        public boolean hasSecCommand() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand() {
-          return secCommand_;
-        }
-        public Builder setSecCommand(platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
-          secCommand_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearSecCommand() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
-          onChanged();
-          return this;
-        }
-        
-        // optional bytes position = 2;
-        private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
-        public boolean hasPosition() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public com.google.protobuf.ByteString getPosition() {
-          return position_;
-        }
-        public Builder setPosition(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
-          position_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearPosition() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          position_ = getDefaultInstance().getPosition();
-          onChanged();
-          return this;
-        }
-        
-        // optional bytes edge = 3;
-        private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
-        public boolean hasEdge() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getEdge() {
-          return edge_;
-        }
-        public Builder setEdge(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-          edge_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearEdge() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          edge_ = getDefaultInstance().getEdge();
-          onChanged();
-          return this;
-        }
-        
-        // @@protoc_insertion_point(builder_scope:protocol.LoadCommand.Edge)
-      }
-      
-      static {
-        defaultInstance = new Edge(true);
-        defaultInstance.initFields();
-      }
-      
-      // @@protoc_insertion_point(class_scope:protocol.LoadCommand.Edge)
-    }
-    
-    public interface GraphViewOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-      
-      // repeated int64 doc_key = 1 [packed = true];
-      java.util.List<java.lang.Long> getDocKeyList();
-      int getDocKeyCount();
-      long getDocKey(int index);
-      
-      // repeated bytes d0c_position = 2;
-      java.util.List<com.google.protobuf.ByteString> getD0CPositionList();
-      int getD0CPositionCount();
-      com.google.protobuf.ByteString getD0CPosition(int index);
-      
-      // repeated .protocol.LoadCommand.Edge edges = 3;
-      java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> 
-          getEdgesList();
-      platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(int index);
-      int getEdgesCount();
-      java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> 
-          getEdgesOrBuilderList();
-      platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
-          int index);
-    }
-    public static final class GraphView extends
-        com.google.protobuf.GeneratedMessage
-        implements GraphViewOrBuilder {
-      // Use GraphView.newBuilder() to construct.
-      private GraphView(Builder builder) {
-        super(builder);
-      }
-      private GraphView(boolean noInit) {}
-      
-      private static final GraphView defaultInstance;
-      public static GraphView getDefaultInstance() {
-        return defaultInstance;
-      }
-      
-      public GraphView getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-      
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
-      }
-      
-      // repeated int64 doc_key = 1 [packed = true];
-      public static final int DOC_KEY_FIELD_NUMBER = 1;
-      private java.util.List<java.lang.Long> docKey_;
-      public java.util.List<java.lang.Long>
-          getDocKeyList() {
-        return docKey_;
-      }
-      public int getDocKeyCount() {
-        return docKey_.size();
-      }
-      public long getDocKey(int index) {
-        return docKey_.get(index);
-      }
-      private int docKeyMemoizedSerializedSize = -1;
-      
-      // repeated bytes d0c_position = 2;
-      public static final int D0C_POSITION_FIELD_NUMBER = 2;
-      private java.util.List<com.google.protobuf.ByteString> d0CPosition_;
-      public java.util.List<com.google.protobuf.ByteString>
-          getD0CPositionList() {
-        return d0CPosition_;
-      }
-      public int getD0CPositionCount() {
-        return d0CPosition_.size();
-      }
-      public com.google.protobuf.ByteString getD0CPosition(int index) {
-        return d0CPosition_.get(index);
-      }
-      
-      // repeated .protocol.LoadCommand.Edge edges = 3;
-      public static final int EDGES_FIELD_NUMBER = 3;
-      private java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> edges_;
-      public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> getEdgesList() {
-        return edges_;
-      }
-      public java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> 
-          getEdgesOrBuilderList() {
-        return edges_;
-      }
-      public int getEdgesCount() {
-        return edges_.size();
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(int index) {
-        return edges_.get(index);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
-          int index) {
-        return edges_.get(index);
-      }
-      
-      private void initFields() {
-        docKey_ = java.util.Collections.emptyList();;
-        d0CPosition_ = java.util.Collections.emptyList();;
-        edges_ = java.util.Collections.emptyList();
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-        
-        for (int i = 0; i < getEdgesCount(); i++) {
-          if (!getEdges(i).isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-      
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (getDocKeyList().size() > 0) {
-          output.writeRawVarint32(10);
-          output.writeRawVarint32(docKeyMemoizedSerializedSize);
-        }
-        for (int i = 0; i < docKey_.size(); i++) {
-          output.writeInt64NoTag(docKey_.get(i));
-        }
-        for (int i = 0; i < d0CPosition_.size(); i++) {
-          output.writeBytes(2, d0CPosition_.get(i));
-        }
-        for (int i = 0; i < edges_.size(); i++) {
-          output.writeMessage(3, edges_.get(i));
-        }
-        getUnknownFields().writeTo(output);
-      }
-      
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-      
-        size = 0;
-        {
-          int dataSize = 0;
-          for (int i = 0; i < docKey_.size(); i++) {
-            dataSize += com.google.protobuf.CodedOutputStream
-              .computeInt64SizeNoTag(docKey_.get(i));
-          }
-          size += dataSize;
-          if (!getDocKeyList().isEmpty()) {
-            size += 1;
-            size += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(dataSize);
-          }
-          docKeyMemoizedSerializedSize = dataSize;
-        }
-        {
-          int dataSize = 0;
-          for (int i = 0; i < d0CPosition_.size(); i++) {
-            dataSize += com.google.protobuf.CodedOutputStream
-              .computeBytesSizeNoTag(d0CPosition_.get(i));
-          }
-          size += dataSize;
-          size += 1 * getD0CPositionList().size();
-        }
-        for (int i = 0; i < edges_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, edges_.get(i));
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-      
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-      
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(platanos.docGraphDB.Protocol.LoadCommand.GraphView prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-      
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
-        }
-        
-        // Construct using platanos.docGraphDB.Protocol.LoadCommand.GraphView.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-        
-        private Builder(BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            getEdgesFieldBuilder();
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-        
-        public Builder clear() {
-          super.clear();
-          docKey_ = java.util.Collections.emptyList();;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          d0CPosition_ = java.util.Collections.emptyList();;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          if (edgesBuilder_ == null) {
-            edges_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            edgesBuilder_.clear();
-          }
-          return this;
-        }
-        
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-        
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDescriptor();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.GraphView getDefaultInstanceForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.GraphView build() {
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-        
-        private platanos.docGraphDB.Protocol.LoadCommand.GraphView buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.GraphView buildPartial() {
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView result = new platanos.docGraphDB.Protocol.LoadCommand.GraphView(this);
-          int from_bitField0_ = bitField0_;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            docKey_ = java.util.Collections.unmodifiableList(docKey_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.docKey_ = docKey_;
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            d0CPosition_ = java.util.Collections.unmodifiableList(d0CPosition_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.d0CPosition_ = d0CPosition_;
-          if (edgesBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-              edges_ = java.util.Collections.unmodifiableList(edges_);
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.edges_ = edges_;
-          } else {
-            result.edges_ = edgesBuilder_.build();
-          }
-          onBuilt();
-          return result;
-        }
-        
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.GraphView) {
-            return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.GraphView)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-        
-        public Builder mergeFrom(platanos.docGraphDB.Protocol.LoadCommand.GraphView other) {
-          if (other == platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance()) return this;
-          if (!other.docKey_.isEmpty()) {
-            if (docKey_.isEmpty()) {
-              docKey_ = other.docKey_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureDocKeyIsMutable();
-              docKey_.addAll(other.docKey_);
-            }
-            onChanged();
-          }
-          if (!other.d0CPosition_.isEmpty()) {
-            if (d0CPosition_.isEmpty()) {
-              d0CPosition_ = other.d0CPosition_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureD0CPositionIsMutable();
-              d0CPosition_.addAll(other.d0CPosition_);
-            }
-            onChanged();
-          }
-          if (edgesBuilder_ == null) {
-            if (!other.edges_.isEmpty()) {
-              if (edges_.isEmpty()) {
-                edges_ = other.edges_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-              } else {
-                ensureEdgesIsMutable();
-                edges_.addAll(other.edges_);
-              }
-              onChanged();
-            }
-          } else {
-            if (!other.edges_.isEmpty()) {
-              if (edgesBuilder_.isEmpty()) {
-                edgesBuilder_.dispose();
-                edgesBuilder_ = null;
-                edges_ = other.edges_;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                edgesBuilder_ = 
-                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                     getEdgesFieldBuilder() : null;
-              } else {
-                edgesBuilder_.addAllMessages(other.edges_);
-              }
-            }
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-        
-        public final boolean isInitialized() {
-          for (int i = 0; i < getEdgesCount(); i++) {
-            if (!getEdges(i).isInitialized()) {
-              
-              return false;
-            }
-          }
-          return true;
-        }
-        
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 8: {
-                ensureDocKeyIsMutable();
-                docKey_.add(input.readInt64());
-                break;
-              }
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                while (input.getBytesUntilLimit() > 0) {
-                  addDocKey(input.readInt64());
-                }
-                input.popLimit(limit);
-                break;
-              }
-              case 18: {
-                ensureD0CPositionIsMutable();
-                d0CPosition_.add(input.readBytes());
-                break;
-              }
-              case 26: {
-                platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.Edge.newBuilder();
-                input.readMessage(subBuilder, extensionRegistry);
-                addEdges(subBuilder.buildPartial());
-                break;
-              }
-            }
-          }
-        }
-        
-        private int bitField0_;
-        
-        // repeated int64 doc_key = 1 [packed = true];
-        private java.util.List<java.lang.Long> docKey_ = java.util.Collections.emptyList();;
-        private void ensureDocKeyIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            docKey_ = new java.util.ArrayList<java.lang.Long>(docKey_);
-            bitField0_ |= 0x00000001;
-           }
-        }
-        public java.util.List<java.lang.Long>
-            getDocKeyList() {
-          return java.util.Collections.unmodifiableList(docKey_);
-        }
-        public int getDocKeyCount() {
-          return docKey_.size();
-        }
-        public long getDocKey(int index) {
-          return docKey_.get(index);
-        }
-        public Builder setDocKey(
-            int index, long value) {
-          ensureDocKeyIsMutable();
-          docKey_.set(index, value);
-          onChanged();
-          return this;
-        }
-        public Builder addDocKey(long value) {
-          ensureDocKeyIsMutable();
-          docKey_.add(value);
-          onChanged();
-          return this;
-        }
-        public Builder addAllDocKey(
-            java.lang.Iterable<? extends java.lang.Long> values) {
-          ensureDocKeyIsMutable();
-          super.addAll(values, docKey_);
-          onChanged();
-          return this;
-        }
-        public Builder clearDocKey() {
-          docKey_ = java.util.Collections.emptyList();;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-          return this;
-        }
-        
-        // repeated bytes d0c_position = 2;
-        private java.util.List<com.google.protobuf.ByteString> d0CPosition_ = java.util.Collections.emptyList();;
-        private void ensureD0CPositionIsMutable() {
-          if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            d0CPosition_ = new java.util.ArrayList<com.google.protobuf.ByteString>(d0CPosition_);
-            bitField0_ |= 0x00000002;
-           }
-        }
-        public java.util.List<com.google.protobuf.ByteString>
-            getD0CPositionList() {
-          return java.util.Collections.unmodifiableList(d0CPosition_);
-        }
-        public int getD0CPositionCount() {
-          return d0CPosition_.size();
-        }
-        public com.google.protobuf.ByteString getD0CPosition(int index) {
-          return d0CPosition_.get(index);
-        }
-        public Builder setD0CPosition(
-            int index, com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureD0CPositionIsMutable();
-          d0CPosition_.set(index, value);
-          onChanged();
-          return this;
-        }
-        public Builder addD0CPosition(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureD0CPositionIsMutable();
-          d0CPosition_.add(value);
-          onChanged();
-          return this;
-        }
-        public Builder addAllD0CPosition(
-            java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-          ensureD0CPositionIsMutable();
-          super.addAll(values, d0CPosition_);
-          onChanged();
-          return this;
-        }
-        public Builder clearD0CPosition() {
-          d0CPosition_ = java.util.Collections.emptyList();;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-          return this;
-        }
-        
-        // repeated .protocol.LoadCommand.Edge edges = 3;
-        private java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> edges_ =
-          java.util.Collections.emptyList();
-        private void ensureEdgesIsMutable() {
-          if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-            edges_ = new java.util.ArrayList<platanos.docGraphDB.Protocol.LoadCommand.Edge>(edges_);
-            bitField0_ |= 0x00000004;
-           }
-        }
-        
-        private com.google.protobuf.RepeatedFieldBuilder<
-            platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> edgesBuilder_;
-        
-        public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> getEdgesList() {
-          if (edgesBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(edges_);
-          } else {
-            return edgesBuilder_.getMessageList();
-          }
-        }
-        public int getEdgesCount() {
-          if (edgesBuilder_ == null) {
-            return edges_.size();
-          } else {
-            return edgesBuilder_.getCount();
-          }
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(int index) {
-          if (edgesBuilder_ == null) {
-            return edges_.get(index);
-          } else {
-            return edgesBuilder_.getMessage(index);
-          }
-        }
-        public Builder setEdges(
-            int index, platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
-          if (edgesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureEdgesIsMutable();
-            edges_.set(index, value);
-            onChanged();
-          } else {
-            edgesBuilder_.setMessage(index, value);
-          }
-          return this;
-        }
-        public Builder setEdges(
-            int index, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
-          if (edgesBuilder_ == null) {
-            ensureEdgesIsMutable();
-            edges_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            edgesBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        public Builder addEdges(platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
-          if (edgesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureEdgesIsMutable();
-            edges_.add(value);
-            onChanged();
-          } else {
-            edgesBuilder_.addMessage(value);
-          }
-          return this;
-        }
-        public Builder addEdges(
-            int index, platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
-          if (edgesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            ensureEdgesIsMutable();
-            edges_.add(index, value);
-            onChanged();
-          } else {
-            edgesBuilder_.addMessage(index, value);
-          }
-          return this;
-        }
-        public Builder addEdges(
-            platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
-          if (edgesBuilder_ == null) {
-            ensureEdgesIsMutable();
-            edges_.add(builderForValue.build());
-            onChanged();
-          } else {
-            edgesBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
-        }
-        public Builder addEdges(
-            int index, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
-          if (edgesBuilder_ == null) {
-            ensureEdgesIsMutable();
-            edges_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            edgesBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
-        }
-        public Builder addAllEdges(
-            java.lang.Iterable<? extends platanos.docGraphDB.Protocol.LoadCommand.Edge> values) {
-          if (edgesBuilder_ == null) {
-            ensureEdgesIsMutable();
-            super.addAll(values, edges_);
-            onChanged();
-          } else {
-            edgesBuilder_.addAllMessages(values);
-          }
-          return this;
-        }
-        public Builder clearEdges() {
-          if (edgesBuilder_ == null) {
-            edges_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000004);
-            onChanged();
-          } else {
-            edgesBuilder_.clear();
-          }
-          return this;
-        }
-        public Builder removeEdges(int index) {
-          if (edgesBuilder_ == null) {
-            ensureEdgesIsMutable();
-            edges_.remove(index);
-            onChanged();
-          } else {
-            edgesBuilder_.remove(index);
-          }
-          return this;
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder getEdgesBuilder(
-            int index) {
-          return getEdgesFieldBuilder().getBuilder(index);
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
-            int index) {
-          if (edgesBuilder_ == null) {
-            return edges_.get(index);  } else {
-            return edgesBuilder_.getMessageOrBuilder(index);
-          }
-        }
-        public java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> 
-             getEdgesOrBuilderList() {
-          if (edgesBuilder_ != null) {
-            return edgesBuilder_.getMessageOrBuilderList();
-          } else {
-            return java.util.Collections.unmodifiableList(edges_);
-          }
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder addEdgesBuilder() {
-          return getEdgesFieldBuilder().addBuilder(
-              platanos.docGraphDB.Protocol.LoadCommand.Edge.getDefaultInstance());
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder addEdgesBuilder(
-            int index) {
-          return getEdgesFieldBuilder().addBuilder(
-              index, platanos.docGraphDB.Protocol.LoadCommand.Edge.getDefaultInstance());
-        }
-        public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder> 
-             getEdgesBuilderList() {
-          return getEdgesFieldBuilder().getBuilderList();
-        }
-        private com.google.protobuf.RepeatedFieldBuilder<
-            platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> 
-            getEdgesFieldBuilder() {
-          if (edgesBuilder_ == null) {
-            edgesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder>(
-                    edges_,
-                    ((bitField0_ & 0x00000004) == 0x00000004),
-                    getParentForChildren(),
-                    isClean());
-            edges_ = null;
-          }
-          return edgesBuilder_;
-        }
-        
-        // @@protoc_insertion_point(builder_scope:protocol.LoadCommand.GraphView)
-      }
-      
-      static {
-        defaultInstance = new GraphView(true);
-        defaultInstance.initFields();
-      }
-      
-      // @@protoc_insertion_point(class_scope:protocol.LoadCommand.GraphView)
-    }
-    
-    public interface ContentViewOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-      
-      // required .protocol.LoadCommand.ContentView.Delta delta = 1;
-      boolean hasDelta();
-      platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta getDelta();
-      
-      // required int64 key = 2;
-      boolean hasKey();
-      long getKey();
-      
-      // required bytes position = 3;
-      boolean hasPosition();
-      com.google.protobuf.ByteString getPosition();
-      
-      // optional bytes start_position = 4;
-      boolean hasStartPosition();
-      com.google.protobuf.ByteString getStartPosition();
-    }
-    public static final class ContentView extends
-        com.google.protobuf.GeneratedMessage
-        implements ContentViewOrBuilder {
-      // Use ContentView.newBuilder() to construct.
-      private ContentView(Builder builder) {
-        super(builder);
-      }
-      private ContentView(boolean noInit) {}
-      
-      private static final ContentView defaultInstance;
-      public static ContentView getDefaultInstance() {
-        return defaultInstance;
-      }
-      
-      public ContentView getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-      
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
-      }
-      
-      public enum Delta
-          implements com.google.protobuf.ProtocolMessageEnum {
-        TRUE(0, 0),
-        FALSE(1, 1),
-        ;
-        
-        public static final int TRUE_VALUE = 0;
-        public static final int FALSE_VALUE = 1;
-        
-        
-        public final int getNumber() { return value; }
-        
-        public static Delta valueOf(int value) {
-          switch (value) {
-            case 0: return TRUE;
-            case 1: return FALSE;
-            default: return null;
-          }
-        }
-        
-        public static com.google.protobuf.Internal.EnumLiteMap<Delta>
-            internalGetValueMap() {
-          return internalValueMap;
-        }
-        private static com.google.protobuf.Internal.EnumLiteMap<Delta>
-            internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<Delta>() {
-                public Delta findValueByNumber(int number) {
-                  return Delta.valueOf(number);
-                }
-              };
-        
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          return getDescriptor().getValues().get(index);
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.LoadCommand.ContentView.getDescriptor().getEnumTypes().get(0);
-        }
-        
-        private static final Delta[] VALUES = {
-          TRUE, FALSE, 
-        };
-        
-        public static Delta valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new java.lang.IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          return VALUES[desc.getIndex()];
-        }
-        
-        private final int index;
-        private final int value;
-        
-        private Delta(int index, int value) {
-          this.index = index;
-          this.value = value;
-        }
-        
-        // @@protoc_insertion_point(enum_scope:protocol.LoadCommand.ContentView.Delta)
-      }
-      
-      private int bitField0_;
-      // required .protocol.LoadCommand.ContentView.Delta delta = 1;
-      public static final int DELTA_FIELD_NUMBER = 1;
-      private platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta delta_;
-      public boolean hasDelta() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta getDelta() {
-        return delta_;
-      }
-      
-      // required int64 key = 2;
-      public static final int KEY_FIELD_NUMBER = 2;
-      private long key_;
-      public boolean hasKey() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public long getKey() {
-        return key_;
-      }
-      
-      // required bytes position = 3;
-      public static final int POSITION_FIELD_NUMBER = 3;
-      private com.google.protobuf.ByteString position_;
-      public boolean hasPosition() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public com.google.protobuf.ByteString getPosition() {
-        return position_;
-      }
-      
-      // optional bytes start_position = 4;
-      public static final int START_POSITION_FIELD_NUMBER = 4;
-      private com.google.protobuf.ByteString startPosition_;
-      public boolean hasStartPosition() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public com.google.protobuf.ByteString getStartPosition() {
-        return startPosition_;
-      }
-      
-      private void initFields() {
-        delta_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta.TRUE;
-        key_ = 0L;
-        position_ = com.google.protobuf.ByteString.EMPTY;
-        startPosition_ = com.google.protobuf.ByteString.EMPTY;
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-        
-        if (!hasDelta()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasKey()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasPosition()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-      
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeEnum(1, delta_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeInt64(2, key_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeBytes(3, position_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeBytes(4, startPosition_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-      
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-      
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, delta_.getNumber());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(2, key_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(3, position_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(4, startPosition_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-      
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-      
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
-      }
-      public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
-      }
-      
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(platanos.docGraphDB.Protocol.LoadCommand.ContentView prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-      
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_descriptor;
-        }
-        
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
-        }
-        
-        // Construct using platanos.docGraphDB.Protocol.LoadCommand.ContentView.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-        
-        private Builder(BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-        
-        public Builder clear() {
-          super.clear();
-          delta_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta.TRUE;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          key_ = 0L;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          position_ = com.google.protobuf.ByteString.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          startPosition_ = com.google.protobuf.ByteString.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          return this;
-        }
-        
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-        
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.ContentView.getDescriptor();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.ContentView getDefaultInstanceForType() {
-          return platanos.docGraphDB.Protocol.LoadCommand.ContentView.getDefaultInstance();
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.ContentView build() {
-          platanos.docGraphDB.Protocol.LoadCommand.ContentView result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-        
-        private platanos.docGraphDB.Protocol.LoadCommand.ContentView buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          platanos.docGraphDB.Protocol.LoadCommand.ContentView result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
-        public platanos.docGraphDB.Protocol.LoadCommand.ContentView buildPartial() {
-          platanos.docGraphDB.Protocol.LoadCommand.ContentView result = new platanos.docGraphDB.Protocol.LoadCommand.ContentView(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.delta_ = delta_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.key_ = key_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.position_ = position_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
-          result.startPosition_ = startPosition_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-        
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.ContentView) {
-            return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.ContentView)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-        
-        public Builder mergeFrom(platanos.docGraphDB.Protocol.LoadCommand.ContentView other) {
-          if (other == platanos.docGraphDB.Protocol.LoadCommand.ContentView.getDefaultInstance()) return this;
-          if (other.hasDelta()) {
-            setDelta(other.getDelta());
-          }
-          if (other.hasKey()) {
-            setKey(other.getKey());
-          }
-          if (other.hasPosition()) {
-            setPosition(other.getPosition());
-          }
-          if (other.hasStartPosition()) {
-            setStartPosition(other.getStartPosition());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-        
-        public final boolean isInitialized() {
-          if (!hasDelta()) {
-            
-            return false;
-          }
-          if (!hasKey()) {
-            
-            return false;
-          }
-          if (!hasPosition()) {
-            
-            return false;
-          }
-          return true;
-        }
-        
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 8: {
-                int rawValue = input.readEnum();
-                platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta value = platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta.valueOf(rawValue);
-                if (value == null) {
-                  unknownFields.mergeVarintField(1, rawValue);
-                } else {
-                  bitField0_ |= 0x00000001;
-                  delta_ = value;
-                }
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                key_ = input.readInt64();
-                break;
-              }
-              case 26: {
-                bitField0_ |= 0x00000004;
-                position_ = input.readBytes();
-                break;
-              }
-              case 34: {
-                bitField0_ |= 0x00000008;
-                startPosition_ = input.readBytes();
-                break;
-              }
-            }
-          }
-        }
-        
-        private int bitField0_;
-        
-        // required .protocol.LoadCommand.ContentView.Delta delta = 1;
-        private platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta delta_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta.TRUE;
-        public boolean hasDelta() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        public platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta getDelta() {
-          return delta_;
-        }
-        public Builder setDelta(platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bitField0_ |= 0x00000001;
-          delta_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearDelta() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          delta_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView.Delta.TRUE;
-          onChanged();
-          return this;
-        }
-        
-        // required int64 key = 2;
-        private long key_ ;
-        public boolean hasKey() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        public long getKey() {
-          return key_;
-        }
-        public Builder setKey(long value) {
-          bitField0_ |= 0x00000002;
-          key_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearKey() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          key_ = 0L;
-          onChanged();
-          return this;
-        }
-        
-        // required bytes position = 3;
-        private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
-        public boolean hasPosition() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        public com.google.protobuf.ByteString getPosition() {
-          return position_;
-        }
-        public Builder setPosition(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-          position_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearPosition() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          position_ = getDefaultInstance().getPosition();
-          onChanged();
-          return this;
-        }
-        
-        // optional bytes start_position = 4;
-        private com.google.protobuf.ByteString startPosition_ = com.google.protobuf.ByteString.EMPTY;
-        public boolean hasStartPosition() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        public com.google.protobuf.ByteString getStartPosition() {
-          return startPosition_;
-        }
-        public Builder setStartPosition(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-          startPosition_ = value;
-          onChanged();
-          return this;
-        }
-        public Builder clearStartPosition() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          startPosition_ = getDefaultInstance().getStartPosition();
-          onChanged();
-          return this;
-        }
-        
-        // @@protoc_insertion_point(builder_scope:protocol.LoadCommand.ContentView)
-      }
-      
-      static {
-        defaultInstance = new ContentView(true);
-        defaultInstance.initFields();
-      }
-      
-      // @@protoc_insertion_point(class_scope:protocol.LoadCommand.ContentView)
-    }
-    
-    private int bitField0_;
-    // required .protocol.LoadCommand.Type type = 1;
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private platanos.docGraphDB.Protocol.LoadCommand.Type type_;
-    public boolean hasType() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public platanos.docGraphDB.Protocol.LoadCommand.Type getType() {
-      return type_;
-    }
-    
-    // optional .protocol.LoadCommand.GraphView graphView = 2;
-    public static final int GRAPHVIEW_FIELD_NUMBER = 2;
-    private platanos.docGraphDB.Protocol.LoadCommand.GraphView graphView_;
-    public boolean hasGraphView() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView() {
-      return graphView_;
-    }
-    public platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder() {
-      return graphView_;
-    }
-    
-    private void initFields() {
-      type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
-      graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasGraphView()) {
-        if (!getGraphView().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, graphView_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, graphView_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(platanos.docGraphDB.Protocol.LoadCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements platanos.docGraphDB.Protocol.LoadCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_fieldAccessorTable;
-      }
-      
-      // Construct using platanos.docGraphDB.Protocol.LoadCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getGraphViewFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (graphViewBuilder_ == null) {
-          graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance();
-        } else {
-          graphViewBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return platanos.docGraphDB.Protocol.LoadCommand.getDescriptor();
-      }
-      
-      public platanos.docGraphDB.Protocol.LoadCommand getDefaultInstanceForType() {
-        return platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance();
-      }
-      
-      public platanos.docGraphDB.Protocol.LoadCommand build() {
-        platanos.docGraphDB.Protocol.LoadCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private platanos.docGraphDB.Protocol.LoadCommand buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        platanos.docGraphDB.Protocol.LoadCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public platanos.docGraphDB.Protocol.LoadCommand buildPartial() {
-        platanos.docGraphDB.Protocol.LoadCommand result = new platanos.docGraphDB.Protocol.LoadCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        if (graphViewBuilder_ == null) {
-          result.graphView_ = graphView_;
-        } else {
-          result.graphView_ = graphViewBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof platanos.docGraphDB.Protocol.LoadCommand) {
-          return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(platanos.docGraphDB.Protocol.LoadCommand other) {
-        if (other == platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance()) return this;
-        if (other.hasType()) {
-          setType(other.getType());
-        }
-        if (other.hasGraphView()) {
-          mergeGraphView(other.getGraphView());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasType()) {
-          
-          return false;
-        }
-        if (hasGraphView()) {
-          if (!getGraphView().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              platanos.docGraphDB.Protocol.LoadCommand.Type value = platanos.docGraphDB.Protocol.LoadCommand.Type.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                type_ = value;
-              }
-              break;
-            }
-            case 18: {
-              platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.GraphView.newBuilder();
-              if (hasGraphView()) {
-                subBuilder.mergeFrom(getGraphView());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setGraphView(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required .protocol.LoadCommand.Type type = 1;
-      private platanos.docGraphDB.Protocol.LoadCommand.Type type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
-      public boolean hasType() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.Type getType() {
-        return type_;
-      }
-      public Builder setType(platanos.docGraphDB.Protocol.LoadCommand.Type value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
-        onChanged();
-        return this;
-      }
-      
-      // optional .protocol.LoadCommand.GraphView graphView = 2;
-      private platanos.docGraphDB.Protocol.LoadCommand.GraphView graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder> graphViewBuilder_;
-      public boolean hasGraphView() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView() {
-        if (graphViewBuilder_ == null) {
-          return graphView_;
-        } else {
-          return graphViewBuilder_.getMessage();
-        }
-      }
-      public Builder setGraphView(platanos.docGraphDB.Protocol.LoadCommand.GraphView value) {
-        if (graphViewBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          graphView_ = value;
-          onChanged();
-        } else {
-          graphViewBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder setGraphView(
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder builderForValue) {
-        if (graphViewBuilder_ == null) {
-          graphView_ = builderForValue.build();
-          onChanged();
-        } else {
-          graphViewBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder mergeGraphView(platanos.docGraphDB.Protocol.LoadCommand.GraphView value) {
-        if (graphViewBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              graphView_ != platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance()) {
-            graphView_ =
-              platanos.docGraphDB.Protocol.LoadCommand.GraphView.newBuilder(graphView_).mergeFrom(value).buildPartial();
-          } else {
-            graphView_ = value;
-          }
-          onChanged();
-        } else {
-          graphViewBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder clearGraphView() {
-        if (graphViewBuilder_ == null) {
-          graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView.getDefaultInstance();
-          onChanged();
-        } else {
-          graphViewBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder getGraphViewBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getGraphViewFieldBuilder().getBuilder();
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder() {
-        if (graphViewBuilder_ != null) {
-          return graphViewBuilder_.getMessageOrBuilder();
-        } else {
-          return graphView_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder> 
-          getGraphViewFieldBuilder() {
-        if (graphViewBuilder_ == null) {
-          graphViewBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder>(
-                  graphView_,
-                  getParentForChildren(),
-                  isClean());
-          graphView_ = null;
-        }
-        return graphViewBuilder_;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:protocol.LoadCommand)
-    }
-    
-    static {
-      defaultInstance = new LoadCommand(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:protocol.LoadCommand)
-  }
-  
-  public interface MultiCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required .protocol.MultiCommand.Save save = 1;
-    boolean hasSave();
-    platanos.docGraphDB.Protocol.MultiCommand.Save getSave();
-    
-    // optional .protocol.LoadCommand LoadCommand = 2;
-    boolean hasLoadCommand();
-    platanos.docGraphDB.Protocol.LoadCommand getLoadCommand();
-    platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder();
-    
-    // optional .protocol.MultiSaveCommand multiSaveCommand = 3;
-    boolean hasMultiSaveCommand();
-    platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand();
-    platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder();
-  }
-  public static final class MultiCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements MultiCommandOrBuilder {
-    // Use MultiCommand.newBuilder() to construct.
-    private MultiCommand(Builder builder) {
-      super(builder);
-    }
-    private MultiCommand(boolean noInit) {}
-    
-    private static final MultiCommand defaultInstance;
-    public static MultiCommand getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public MultiCommand getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_fieldAccessorTable;
-    }
-    
-    public enum Save
-        implements com.google.protobuf.ProtocolMessageEnum {
-      TRUE(0, 0),
-      FALSE(1, 1),
-      ;
-      
-      public static final int TRUE_VALUE = 0;
-      public static final int FALSE_VALUE = 1;
-      
-      
-      public final int getNumber() { return value; }
-      
-      public static Save valueOf(int value) {
-        switch (value) {
-          case 0: return TRUE;
-          case 1: return FALSE;
-          default: return null;
-        }
-      }
-      
-      public static com.google.protobuf.Internal.EnumLiteMap<Save>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static com.google.protobuf.Internal.EnumLiteMap<Save>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Save>() {
-              public Save findValueByNumber(int number) {
-                return Save.valueOf(number);
-              }
-            };
-      
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.MultiCommand.getDescriptor().getEnumTypes().get(0);
-      }
-      
-      private static final Save[] VALUES = {
-        TRUE, FALSE, 
-      };
-      
-      public static Save valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-      
-      private final int index;
-      private final int value;
-      
-      private Save(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-      
-      // @@protoc_insertion_point(enum_scope:protocol.MultiCommand.Save)
-    }
-    
-    private int bitField0_;
-    // required .protocol.MultiCommand.Save save = 1;
-    public static final int SAVE_FIELD_NUMBER = 1;
-    private platanos.docGraphDB.Protocol.MultiCommand.Save save_;
-    public boolean hasSave() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public platanos.docGraphDB.Protocol.MultiCommand.Save getSave() {
-      return save_;
-    }
-    
-    // optional .protocol.LoadCommand LoadCommand = 2;
-    public static final int LOADCOMMAND_FIELD_NUMBER = 2;
-    private platanos.docGraphDB.Protocol.LoadCommand loadCommand_;
-    public boolean hasLoadCommand() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public platanos.docGraphDB.Protocol.LoadCommand getLoadCommand() {
-      return loadCommand_;
-    }
-    public platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder() {
-      return loadCommand_;
-    }
-    
-    // optional .protocol.MultiSaveCommand multiSaveCommand = 3;
-    public static final int MULTISAVECOMMAND_FIELD_NUMBER = 3;
-    private platanos.docGraphDB.Protocol.MultiSaveCommand multiSaveCommand_;
-    public boolean hasMultiSaveCommand() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand() {
-      return multiSaveCommand_;
-    }
-    public platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder() {
-      return multiSaveCommand_;
-    }
-    
-    private void initFields() {
-      save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
-      loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance();
-      multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasSave()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasLoadCommand()) {
-        if (!getLoadCommand().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasMultiSaveCommand()) {
-        if (!getMultiSaveCommand().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, save_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, loadCommand_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, multiSaveCommand_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, save_.getNumber());
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, loadCommand_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, multiSaveCommand_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(platanos.docGraphDB.Protocol.MultiCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements platanos.docGraphDB.Protocol.MultiCommandOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_fieldAccessorTable;
-      }
-      
-      // Construct using platanos.docGraphDB.Protocol.MultiCommand.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getLoadCommandFieldBuilder();
-          getMultiSaveCommandFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (loadCommandBuilder_ == null) {
-          loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance();
-        } else {
-          loadCommandBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (multiSaveCommandBuilder_ == null) {
-          multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance();
-        } else {
-          multiSaveCommandBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return platanos.docGraphDB.Protocol.MultiCommand.getDescriptor();
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiCommand getDefaultInstanceForType() {
-        return platanos.docGraphDB.Protocol.MultiCommand.getDefaultInstance();
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiCommand build() {
-        platanos.docGraphDB.Protocol.MultiCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private platanos.docGraphDB.Protocol.MultiCommand buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        platanos.docGraphDB.Protocol.MultiCommand result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public platanos.docGraphDB.Protocol.MultiCommand buildPartial() {
-        platanos.docGraphDB.Protocol.MultiCommand result = new platanos.docGraphDB.Protocol.MultiCommand(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.save_ = save_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        if (loadCommandBuilder_ == null) {
-          result.loadCommand_ = loadCommand_;
-        } else {
-          result.loadCommand_ = loadCommandBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        if (multiSaveCommandBuilder_ == null) {
-          result.multiSaveCommand_ = multiSaveCommand_;
-        } else {
-          result.multiSaveCommand_ = multiSaveCommandBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof platanos.docGraphDB.Protocol.MultiCommand) {
-          return mergeFrom((platanos.docGraphDB.Protocol.MultiCommand)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(platanos.docGraphDB.Protocol.MultiCommand other) {
-        if (other == platanos.docGraphDB.Protocol.MultiCommand.getDefaultInstance()) return this;
-        if (other.hasSave()) {
-          setSave(other.getSave());
-        }
-        if (other.hasLoadCommand()) {
-          mergeLoadCommand(other.getLoadCommand());
-        }
-        if (other.hasMultiSaveCommand()) {
-          mergeMultiSaveCommand(other.getMultiSaveCommand());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasSave()) {
-          
-          return false;
-        }
-        if (hasLoadCommand()) {
-          if (!getLoadCommand().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasMultiSaveCommand()) {
-          if (!getMultiSaveCommand().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              int rawValue = input.readEnum();
-              platanos.docGraphDB.Protocol.MultiCommand.Save value = platanos.docGraphDB.Protocol.MultiCommand.Save.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                save_ = value;
-              }
-              break;
-            }
-            case 18: {
-              platanos.docGraphDB.Protocol.LoadCommand.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.newBuilder();
-              if (hasLoadCommand()) {
-                subBuilder.mergeFrom(getLoadCommand());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLoadCommand(subBuilder.buildPartial());
-              break;
-            }
-            case 26: {
-              platanos.docGraphDB.Protocol.MultiSaveCommand.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.newBuilder();
-              if (hasMultiSaveCommand()) {
-                subBuilder.mergeFrom(getMultiSaveCommand());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setMultiSaveCommand(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required .protocol.MultiCommand.Save save = 1;
-      private platanos.docGraphDB.Protocol.MultiCommand.Save save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
-      public boolean hasSave() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public platanos.docGraphDB.Protocol.MultiCommand.Save getSave() {
-        return save_;
-      }
-      public Builder setSave(platanos.docGraphDB.Protocol.MultiCommand.Save value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
-        save_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearSave() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
-        onChanged();
-        return this;
-      }
-      
-      // optional .protocol.LoadCommand LoadCommand = 2;
-      private platanos.docGraphDB.Protocol.LoadCommand loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder> loadCommandBuilder_;
-      public boolean hasLoadCommand() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand getLoadCommand() {
-        if (loadCommandBuilder_ == null) {
-          return loadCommand_;
-        } else {
-          return loadCommandBuilder_.getMessage();
-        }
-      }
-      public Builder setLoadCommand(platanos.docGraphDB.Protocol.LoadCommand value) {
-        if (loadCommandBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          loadCommand_ = value;
-          onChanged();
-        } else {
-          loadCommandBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder setLoadCommand(
-          platanos.docGraphDB.Protocol.LoadCommand.Builder builderForValue) {
-        if (loadCommandBuilder_ == null) {
-          loadCommand_ = builderForValue.build();
-          onChanged();
-        } else {
-          loadCommandBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder mergeLoadCommand(platanos.docGraphDB.Protocol.LoadCommand value) {
-        if (loadCommandBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              loadCommand_ != platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance()) {
-            loadCommand_ =
-              platanos.docGraphDB.Protocol.LoadCommand.newBuilder(loadCommand_).mergeFrom(value).buildPartial();
-          } else {
-            loadCommand_ = value;
-          }
-          onChanged();
-        } else {
-          loadCommandBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      public Builder clearLoadCommand() {
-        if (loadCommandBuilder_ == null) {
-          loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand.getDefaultInstance();
-          onChanged();
-        } else {
-          loadCommandBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      public platanos.docGraphDB.Protocol.LoadCommand.Builder getLoadCommandBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getLoadCommandFieldBuilder().getBuilder();
-      }
-      public platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder() {
-        if (loadCommandBuilder_ != null) {
-          return loadCommandBuilder_.getMessageOrBuilder();
-        } else {
-          return loadCommand_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder> 
-          getLoadCommandFieldBuilder() {
-        if (loadCommandBuilder_ == null) {
-          loadCommandBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder>(
-                  loadCommand_,
-                  getParentForChildren(),
-                  isClean());
-          loadCommand_ = null;
-        }
-        return loadCommandBuilder_;
-      }
-      
-      // optional .protocol.MultiSaveCommand multiSaveCommand = 3;
-      private platanos.docGraphDB.Protocol.MultiSaveCommand multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder> multiSaveCommandBuilder_;
-      public boolean hasMultiSaveCommand() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand() {
-        if (multiSaveCommandBuilder_ == null) {
-          return multiSaveCommand_;
-        } else {
-          return multiSaveCommandBuilder_.getMessage();
-        }
-      }
-      public Builder setMultiSaveCommand(platanos.docGraphDB.Protocol.MultiSaveCommand value) {
-        if (multiSaveCommandBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          multiSaveCommand_ = value;
-          onChanged();
-        } else {
-          multiSaveCommandBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder setMultiSaveCommand(
-          platanos.docGraphDB.Protocol.MultiSaveCommand.Builder builderForValue) {
-        if (multiSaveCommandBuilder_ == null) {
-          multiSaveCommand_ = builderForValue.build();
-          onChanged();
-        } else {
-          multiSaveCommandBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder mergeMultiSaveCommand(platanos.docGraphDB.Protocol.MultiSaveCommand value) {
-        if (multiSaveCommandBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              multiSaveCommand_ != platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance()) {
-            multiSaveCommand_ =
-              platanos.docGraphDB.Protocol.MultiSaveCommand.newBuilder(multiSaveCommand_).mergeFrom(value).buildPartial();
-          } else {
-            multiSaveCommand_ = value;
-          }
-          onChanged();
-        } else {
-          multiSaveCommandBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder clearMultiSaveCommand() {
-        if (multiSaveCommandBuilder_ == null) {
-          multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.getDefaultInstance();
-          onChanged();
-        } else {
-          multiSaveCommandBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommand.Builder getMultiSaveCommandBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getMultiSaveCommandFieldBuilder().getBuilder();
-      }
-      public platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder() {
-        if (multiSaveCommandBuilder_ != null) {
-          return multiSaveCommandBuilder_.getMessageOrBuilder();
-        } else {
-          return multiSaveCommand_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder> 
-          getMultiSaveCommandFieldBuilder() {
-        if (multiSaveCommandBuilder_ == null) {
-          multiSaveCommandBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder>(
-                  multiSaveCommand_,
-                  getParentForChildren(),
-                  isClean());
-          multiSaveCommand_ = null;
-        }
-        return multiSaveCommandBuilder_;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:protocol.MultiCommand)
-    }
-    
-    static {
-      defaultInstance = new MultiCommand(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:protocol.MultiCommand)
-  }
-  
-  public interface VertexOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required bytes size = 1;
-    boolean hasSize();
-    com.google.protobuf.ByteString getSize();
-    
-    // repeated bytes edges = 2;
-    java.util.List<com.google.protobuf.ByteString> getEdgesList();
-    int getEdgesCount();
-    com.google.protobuf.ByteString getEdges(int index);
-    
-    // repeated bytes back_edges = 3;
-    java.util.List<com.google.protobuf.ByteString> getBackEdgesList();
-    int getBackEdgesCount();
-    com.google.protobuf.ByteString getBackEdges(int index);
-  }
-  public static final class Vertex extends
-      com.google.protobuf.GeneratedMessage
-      implements VertexOrBuilder {
-    // Use Vertex.newBuilder() to construct.
-    private Vertex(Builder builder) {
-      super(builder);
-    }
-    private Vertex(boolean noInit) {}
-    
-    private static final Vertex defaultInstance;
-    public static Vertex getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public Vertex getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required bytes size = 1;
-    public static final int SIZE_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString size_;
-    public boolean hasSize() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public com.google.protobuf.ByteString getSize() {
-      return size_;
-    }
-    
-    // repeated bytes edges = 2;
-    public static final int EDGES_FIELD_NUMBER = 2;
-    private java.util.List<com.google.protobuf.ByteString> edges_;
-    public java.util.List<com.google.protobuf.ByteString>
-        getEdgesList() {
-      return edges_;
-    }
-    public int getEdgesCount() {
-      return edges_.size();
-    }
-    public com.google.protobuf.ByteString getEdges(int index) {
-      return edges_.get(index);
-    }
-    
-    // repeated bytes back_edges = 3;
-    public static final int BACK_EDGES_FIELD_NUMBER = 3;
-    private java.util.List<com.google.protobuf.ByteString> backEdges_;
-    public java.util.List<com.google.protobuf.ByteString>
-        getBackEdgesList() {
-      return backEdges_;
-    }
-    public int getBackEdgesCount() {
-      return backEdges_.size();
-    }
-    public com.google.protobuf.ByteString getBackEdges(int index) {
-      return backEdges_.get(index);
-    }
-    
-    private void initFields() {
-      size_ = com.google.protobuf.ByteString.EMPTY;
-      edges_ = java.util.Collections.emptyList();;
-      backEdges_ = java.util.Collections.emptyList();;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasSize()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, size_);
-      }
-      for (int i = 0; i < edges_.size(); i++) {
-        output.writeBytes(2, edges_.get(i));
-      }
-      for (int i = 0; i < backEdges_.size(); i++) {
-        output.writeBytes(3, backEdges_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, size_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < edges_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(edges_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getEdgesList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < backEdges_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(backEdges_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getBackEdgesList().size();
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static platanos.docGraphDB.Protocol.Vertex parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(platanos.docGraphDB.Protocol.Vertex prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements platanos.docGraphDB.Protocol.VertexOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_fieldAccessorTable;
-      }
-      
-      // Construct using platanos.docGraphDB.Protocol.Vertex.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        size_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        edges_ = java.util.Collections.emptyList();;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        backEdges_ = java.util.Collections.emptyList();;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return platanos.docGraphDB.Protocol.Vertex.getDescriptor();
-      }
-      
-      public platanos.docGraphDB.Protocol.Vertex getDefaultInstanceForType() {
-        return platanos.docGraphDB.Protocol.Vertex.getDefaultInstance();
-      }
-      
-      public platanos.docGraphDB.Protocol.Vertex build() {
-        platanos.docGraphDB.Protocol.Vertex result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private platanos.docGraphDB.Protocol.Vertex buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        platanos.docGraphDB.Protocol.Vertex result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public platanos.docGraphDB.Protocol.Vertex buildPartial() {
-        platanos.docGraphDB.Protocol.Vertex result = new platanos.docGraphDB.Protocol.Vertex(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.size_ = size_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          edges_ = java.util.Collections.unmodifiableList(edges_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.edges_ = edges_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          backEdges_ = java.util.Collections.unmodifiableList(backEdges_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.backEdges_ = backEdges_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof platanos.docGraphDB.Protocol.Vertex) {
-          return mergeFrom((platanos.docGraphDB.Protocol.Vertex)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(platanos.docGraphDB.Protocol.Vertex other) {
-        if (other == platanos.docGraphDB.Protocol.Vertex.getDefaultInstance()) return this;
-        if (other.hasSize()) {
-          setSize(other.getSize());
-        }
-        if (!other.edges_.isEmpty()) {
-          if (edges_.isEmpty()) {
-            edges_ = other.edges_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureEdgesIsMutable();
-            edges_.addAll(other.edges_);
-          }
-          onChanged();
-        }
-        if (!other.backEdges_.isEmpty()) {
-          if (backEdges_.isEmpty()) {
-            backEdges_ = other.backEdges_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureBackEdgesIsMutable();
-            backEdges_.addAll(other.backEdges_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasSize()) {
-          
-          return false;
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              size_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              ensureEdgesIsMutable();
-              edges_.add(input.readBytes());
-              break;
-            }
-            case 26: {
-              ensureBackEdgesIsMutable();
-              backEdges_.add(input.readBytes());
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required bytes size = 1;
-      private com.google.protobuf.ByteString size_ = com.google.protobuf.ByteString.EMPTY;
-      public boolean hasSize() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public com.google.protobuf.ByteString getSize() {
-        return size_;
-      }
-      public Builder setSize(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        size_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearSize() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        size_ = getDefaultInstance().getSize();
-        onChanged();
-        return this;
-      }
-      
-      // repeated bytes edges = 2;
-      private java.util.List<com.google.protobuf.ByteString> edges_ = java.util.Collections.emptyList();;
-      private void ensureEdgesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          edges_ = new java.util.ArrayList<com.google.protobuf.ByteString>(edges_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      public java.util.List<com.google.protobuf.ByteString>
-          getEdgesList() {
-        return java.util.Collections.unmodifiableList(edges_);
-      }
-      public int getEdgesCount() {
-        return edges_.size();
-      }
-      public com.google.protobuf.ByteString getEdges(int index) {
-        return edges_.get(index);
-      }
-      public Builder setEdges(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEdgesIsMutable();
-        edges_.set(index, value);
-        onChanged();
-        return this;
-      }
-      public Builder addEdges(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEdgesIsMutable();
-        edges_.add(value);
-        onChanged();
-        return this;
-      }
-      public Builder addAllEdges(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureEdgesIsMutable();
-        super.addAll(values, edges_);
-        onChanged();
-        return this;
-      }
-      public Builder clearEdges() {
-        edges_ = java.util.Collections.emptyList();;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      
-      // repeated bytes back_edges = 3;
-      private java.util.List<com.google.protobuf.ByteString> backEdges_ = java.util.Collections.emptyList();;
-      private void ensureBackEdgesIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          backEdges_ = new java.util.ArrayList<com.google.protobuf.ByteString>(backEdges_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      public java.util.List<com.google.protobuf.ByteString>
-          getBackEdgesList() {
-        return java.util.Collections.unmodifiableList(backEdges_);
-      }
-      public int getBackEdgesCount() {
-        return backEdges_.size();
-      }
-      public com.google.protobuf.ByteString getBackEdges(int index) {
-        return backEdges_.get(index);
-      }
-      public Builder setBackEdges(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBackEdgesIsMutable();
-        backEdges_.set(index, value);
-        onChanged();
-        return this;
-      }
-      public Builder addBackEdges(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBackEdgesIsMutable();
-        backEdges_.add(value);
-        onChanged();
-        return this;
-      }
-      public Builder addAllBackEdges(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureBackEdgesIsMutable();
-        super.addAll(values, backEdges_);
-        onChanged();
-        return this;
-      }
-      public Builder clearBackEdges() {
-        backEdges_ = java.util.Collections.emptyList();;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:protocol.Vertex)
-    }
-    
-    static {
-      defaultInstance = new Vertex(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:protocol.Vertex)
-  }
-  
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_LoadCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_LoadCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_LoadCommand_Edge_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_LoadCommand_GraphView_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_LoadCommand_ContentView_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_MultiCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_MultiCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocol_Vertex_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocol_Vertex_fieldAccessorTable;
-  
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\016protocol.proto\022\010protocol\"\206\013\n\020MultiSave" +
-      "Command\022\013\n\003key\030\001 \002(\003\022;\n\013saveCommand\030\002 \003(" +
-      "\0132&.protocol.MultiSaveCommand.SaveComman" +
-      "d\032\247\n\n\013SaveCommand\0229\n\004type\030\001 \002(\0162+.protoc" +
-      "ol.MultiSaveCommand.SaveCommand.Type\022A\n\010" +
-      "metadata\030\002 \001(\0132/.protocol.MultiSaveComma" +
-      "nd.SaveCommand.Metadata\022?\n\007content\030\003 \001(\013" +
-      "2..protocol.MultiSaveCommand.SaveCommand" +
-      ".Content\0229\n\004edge\030\004 \001(\0132+.protocol.MultiS" +
-      "aveCommand.SaveCommand.Edge\022=\n\006vertex\030\005 ",
-      "\001(\0132-.protocol.MultiSaveCommand.SaveComm" +
-      "and.Vertex\032\222\003\n\010Metadata\022N\n\nsecCommand\030\001 " +
-      "\002(\0162:.protocol.MultiSaveCommand.SaveComm" +
-      "and.Metadata.SecCommand\022\020\n\010position\030\002 \002(" +
-      "\014\022\014\n\004sha3\030\003 \001(\014\022\021\n\tluceneUid\030\004 \001(\003\022\014\n\004ti" +
-      "me\030\005 \001(\005\022\016\n\006author\030\006 \001(\014\022\020\n\010prevSha3\030\007 \003" +
-      "(\014\022\020\n\010location\030\010 \001(\014\022\016\n\006seller\030\t \001(\014\022\016\n\006" +
-      "period\030\n \001(\014\022\024\n\014sha3Contract\030\013 \001(\014\"\212\001\n\nS" +
-      "ecCommand\022\t\n\005csha3\020\000\022\016\n\ncluceneUid\020\001\022\t\n\005" +
-      "ctime\020\002\022\013\n\007cauthor\020\003\022\r\n\tcprevSha3\020\004\022\r\n\tc",
-      "location\020\005\022\013\n\007cseller\020\006\022\013\n\007cperiod\020\007\022\021\n\r" +
-      "csha3Contract\020\010\032\236\001\n\007Content\022M\n\nsecComman" +
-      "d\030\001 \002(\01629.protocol.MultiSaveCommand.Save" +
-      "Command.Content.SecCommand\022\020\n\010position\030\002" +
-      " \002(\014\022\014\n\004data\030\003 \002(\014\"$\n\nSecCommand\022\010\n\004cdoc" +
-      "\020\000\022\014\n\010csummary\020\001\032\246\001\n\004Edge\022J\n\nsecCommand\030" +
-      "\001 \002(\01626.protocol.MultiSaveCommand.SaveCo" +
-      "mmand.Edge.SecCommand\022\020\n\010position\030\002 \001(\014\022" +
-      "\014\n\004edge\030\003 \001(\014\022\014\n\004data\030\004 \002(\014\"$\n\nSecComman" +
-      "d\022\013\n\007cinEdge\020\000\022\t\n\005cedge\020\001\032\302\001\n\006Vertex\022L\n\n",
-      "secCommand\030\001 \002(\01628.protocol.MultiSaveCom" +
-      "mand.SaveCommand.Vertex.SecCommand\022\014\n\004si" +
-      "ze\030\002 \001(\014\022\014\n\004edge\030\003 \001(\014\"N\n\nSecCommand\022\021\n\r" +
-      "ccreateVertex\020\000\022\014\n\010csetSize\020\001\022\014\n\010caddEdg" +
-      "e\020\002\022\021\n\rcaddBack_edge\020\003\";\n\004Type\022\r\n\tcmetad" +
-      "ata\020\000\022\014\n\010ccontent\020\001\022\t\n\005cedge\020\002\022\013\n\007cverte" +
-      "x\020\003\"\313\004\n\013LoadCommand\022(\n\004type\030\001 \002(\0162\032.prot" +
-      "ocol.LoadCommand.Type\0222\n\tgraphView\030\002 \001(\013" +
-      "2\037.protocol.LoadCommand.GraphView\032\207\001\n\004Ed" +
-      "ge\0229\n\nsecCommand\030\001 \002(\0162%.protocol.LoadCo",
-      "mmand.Edge.SecCommand\022\020\n\010position\030\002 \001(\014\022" +
-      "\014\n\004edge\030\003 \001(\014\"$\n\nSecCommand\022\013\n\007cinEdge\020\000" +
-      "\022\t\n\005cedge\020\001\032a\n\tGraphView\022\023\n\007doc_key\030\001 \003(" +
-      "\003B\002\020\001\022\024\n\014d0c_position\030\002 \003(\014\022)\n\005edges\030\003 \003" +
-      "(\0132\032.protocol.LoadCommand.Edge\032\232\001\n\013Conte" +
-      "ntView\0226\n\005delta\030\001 \002(\0162\'.protocol.LoadCom" +
-      "mand.ContentView.Delta\022\013\n\003key\030\002 \002(\003\022\020\n\010p" +
-      "osition\030\003 \002(\014\022\026\n\016start_position\030\004 \001(\014\"\034\n" +
-      "\005Delta\022\010\n\004TRUE\020\000\022\t\n\005FALSE\020\001\"T\n\004Type\022\016\n\nc" +
-      "graphView\020\000\022\021\n\rccontentiView\020\001\022\017\n\013csearc",
-      "hView\020\002\022\013\n\007cvertex\020\003\022\013\n\007crepair\020\004\"\270\001\n\014Mu" +
-      "ltiCommand\022)\n\004save\030\001 \002(\0162\033.protocol.Mult" +
-      "iCommand.Save\022*\n\013LoadCommand\030\002 \001(\0132\025.pro" +
-      "tocol.LoadCommand\0224\n\020multiSaveCommand\030\003 " +
-      "\001(\0132\032.protocol.MultiSaveCommand\"\033\n\004Save\022" +
-      "\010\n\004TRUE\020\000\022\t\n\005FALSE\020\001\"9\n\006Vertex\022\014\n\004size\030\001" +
-      " \002(\014\022\r\n\005edges\030\002 \003(\014\022\022\n\nback_edges\030\003 \003(\014B" +
-      "\037\n\023platanos.docGraphDBB\010Protocol"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_protocol_MultiSaveCommand_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_protocol_MultiSaveCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_descriptor,
-              new java.lang.String[] { "Key", "SaveCommand", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.Builder.class);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor =
-            internal_static_protocol_MultiSaveCommand_descriptor.getNestedTypes().get(0);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor,
-              new java.lang.String[] { "Type", "Metadata", "Content", "Edge", "Vertex", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder.class);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor =
-            internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor.getNestedTypes().get(0);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor,
-              new java.lang.String[] { "SecCommand", "Position", "Sha3", "LuceneUid", "Time", "Author", "PrevSha3", "Location", "Seller", "Period", "Sha3Contract", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder.class);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor =
-            internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor.getNestedTypes().get(1);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor,
-              new java.lang.String[] { "SecCommand", "Position", "Data", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder.class);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor =
-            internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor.getNestedTypes().get(2);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor,
-              new java.lang.String[] { "SecCommand", "Position", "Edge", "Data", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder.class);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor =
-            internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor.getNestedTypes().get(3);
-          internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor,
-              new java.lang.String[] { "SecCommand", "Size", "Edge", },
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.class,
-              platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder.class);
-          internal_static_protocol_LoadCommand_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_protocol_LoadCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_LoadCommand_descriptor,
-              new java.lang.String[] { "Type", "GraphView", },
-              platanos.docGraphDB.Protocol.LoadCommand.class,
-              platanos.docGraphDB.Protocol.LoadCommand.Builder.class);
-          internal_static_protocol_LoadCommand_Edge_descriptor =
-            internal_static_protocol_LoadCommand_descriptor.getNestedTypes().get(0);
-          internal_static_protocol_LoadCommand_Edge_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_LoadCommand_Edge_descriptor,
-              new java.lang.String[] { "SecCommand", "Position", "Edge", },
-              platanos.docGraphDB.Protocol.LoadCommand.Edge.class,
-              platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder.class);
-          internal_static_protocol_LoadCommand_GraphView_descriptor =
-            internal_static_protocol_LoadCommand_descriptor.getNestedTypes().get(1);
-          internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_LoadCommand_GraphView_descriptor,
-              new java.lang.String[] { "DocKey", "D0CPosition", "Edges", },
-              platanos.docGraphDB.Protocol.LoadCommand.GraphView.class,
-              platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder.class);
-          internal_static_protocol_LoadCommand_ContentView_descriptor =
-            internal_static_protocol_LoadCommand_descriptor.getNestedTypes().get(2);
-          internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_LoadCommand_ContentView_descriptor,
-              new java.lang.String[] { "Delta", "Key", "Position", "StartPosition", },
-              platanos.docGraphDB.Protocol.LoadCommand.ContentView.class,
-              platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder.class);
-          internal_static_protocol_MultiCommand_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_protocol_MultiCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_MultiCommand_descriptor,
-              new java.lang.String[] { "Save", "LoadCommand", "MultiSaveCommand", },
-              platanos.docGraphDB.Protocol.MultiCommand.class,
-              platanos.docGraphDB.Protocol.MultiCommand.Builder.class);
-          internal_static_protocol_Vertex_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_protocol_Vertex_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocol_Vertex_descriptor,
-              new java.lang.String[] { "Size", "Edges", "BackEdges", },
-              platanos.docGraphDB.Protocol.Vertex.class,
-              platanos.docGraphDB.Protocol.Vertex.Builder.class);
-          return null;
-        }
-      };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-  }
-  
-  // @@protoc_insertion_point(outer_class_scope)
+	private Protocol() {
+	}
+
+	public static void registerAllExtensions(
+			com.google.protobuf.ExtensionRegistry registry) {
+	}
+
+	public interface MultiSaveCommandOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// required int64 key = 1;
+		boolean hasKey();
+
+		long getKey();
+
+		// repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
+		java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> getSaveCommandList();
+
+		platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(
+				int index);
+
+		int getSaveCommandCount();
+
+		java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> getSaveCommandOrBuilderList();
+
+		platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
+				int index);
+	}
+
+	public static final class MultiSaveCommand extends
+			com.google.protobuf.GeneratedMessage implements
+			MultiSaveCommandOrBuilder {
+		// Use MultiSaveCommand.newBuilder() to construct.
+		private MultiSaveCommand(Builder builder) {
+			super(builder);
+		}
+
+		private MultiSaveCommand(boolean noInit) {
+		}
+
+		private static final MultiSaveCommand defaultInstance;
+
+		public static MultiSaveCommand getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public MultiSaveCommand getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
+		}
+
+		public interface SaveCommandOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// required .protocol.MultiSaveCommand.SaveCommand.Type type = 1;
+			boolean hasType();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType();
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Metadata metadata
+			// = 2;
+			boolean hasMetadata();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder();
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Content content =
+			// 3;
+			boolean hasContent();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder();
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Edge edge = 4;
+			boolean hasEdge();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder();
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex =
+			// 5;
+			boolean hasVertex();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex();
+
+			platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder();
+		}
+
+		public static final class SaveCommand extends
+				com.google.protobuf.GeneratedMessage implements
+				SaveCommandOrBuilder {
+			// Use SaveCommand.newBuilder() to construct.
+			private SaveCommand(Builder builder) {
+				super(builder);
+			}
+
+			private SaveCommand(boolean noInit) {
+			}
+
+			private static final SaveCommand defaultInstance;
+
+			public static SaveCommand getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public SaveCommand getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
+			}
+
+			public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+				cmetadata(0, 0), ccontent(1, 1), cedge(2, 2), cvertex(3, 3), ;
+
+				public static final int cmetadata_VALUE = 0;
+				public static final int ccontent_VALUE = 1;
+				public static final int cedge_VALUE = 2;
+				public static final int cvertex_VALUE = 3;
+
+				public final int getNumber() {
+					return value;
+				}
+
+				public static Type valueOf(int value) {
+					switch (value) {
+					case 0:
+						return cmetadata;
+					case 1:
+						return ccontent;
+					case 2:
+						return cedge;
+					case 3:
+						return cvertex;
+					default:
+						return null;
+					}
+				}
+
+				public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+					return internalValueMap;
+				}
+
+				private static com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+					public Type findValueByNumber(int number) {
+						return Type.valueOf(number);
+					}
+				};
+
+				public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+					return getDescriptor().getValues().get(index);
+				}
+
+				public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+					return getDescriptor();
+				}
+
+				public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+							.getDescriptor().getEnumTypes().get(0);
+				}
+
+				private static final Type[] VALUES = { cmetadata, ccontent,
+						cedge, cvertex, };
+
+				public static Type valueOf(
+						com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+					if (desc.getType() != getDescriptor()) {
+						throw new java.lang.IllegalArgumentException(
+								"EnumValueDescriptor is not for this type.");
+					}
+					return VALUES[desc.getIndex()];
+				}
+
+				private final int index;
+				private final int value;
+
+				private Type(int index, int value) {
+					this.index = index;
+					this.value = value;
+				}
+
+				// @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Type)
+			}
+
+			public interface MetadataOrBuilder extends
+					com.google.protobuf.MessageOrBuilder {
+
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand
+				// secCommand = 1;
+				boolean hasSecCommand();
+
+				platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand();
+
+				// required bytes position = 2;
+				boolean hasPosition();
+
+				com.google.protobuf.ByteString getPosition();
+
+				// optional bytes sha3 = 3;
+				boolean hasSha3();
+
+				com.google.protobuf.ByteString getSha3();
+
+				// optional int64 luceneUid = 4;
+				boolean hasLuceneUid();
+
+				long getLuceneUid();
+
+				// optional int32 time = 5;
+				boolean hasTime();
+
+				int getTime();
+
+				// optional bytes author = 6;
+				boolean hasAuthor();
+
+				com.google.protobuf.ByteString getAuthor();
+
+				// repeated bytes prevSha3 = 7;
+				java.util.List<com.google.protobuf.ByteString> getPrevSha3List();
+
+				int getPrevSha3Count();
+
+				com.google.protobuf.ByteString getPrevSha3(int index);
+
+				// optional bytes location = 8;
+				boolean hasLocation();
+
+				com.google.protobuf.ByteString getLocation();
+
+				// optional bytes seller = 9;
+				boolean hasSeller();
+
+				com.google.protobuf.ByteString getSeller();
+
+				// optional bytes period = 10;
+				boolean hasPeriod();
+
+				com.google.protobuf.ByteString getPeriod();
+
+				// optional bytes sha3Contract = 11;
+				boolean hasSha3Contract();
+
+				com.google.protobuf.ByteString getSha3Contract();
+			}
+
+			public static final class Metadata extends
+					com.google.protobuf.GeneratedMessage implements
+					MetadataOrBuilder {
+				// Use Metadata.newBuilder() to construct.
+				private Metadata(Builder builder) {
+					super(builder);
+				}
+
+				private Metadata(boolean noInit) {
+				}
+
+				private static final Metadata defaultInstance;
+
+				public static Metadata getDefaultInstance() {
+					return defaultInstance;
+				}
+
+				public Metadata getDefaultInstanceForType() {
+					return defaultInstance;
+				}
+
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
+				}
+
+				public enum SecCommand implements
+						com.google.protobuf.ProtocolMessageEnum {
+					csha3(0, 0), cluceneUid(1, 1), ctime(2, 2), cauthor(3, 3), cprevSha3(
+							4, 4), clocation(5, 5), cseller(6, 6), cperiod(7, 7), csha3Contract(
+							8, 8), ;
+
+					public static final int csha3_VALUE = 0;
+					public static final int cluceneUid_VALUE = 1;
+					public static final int ctime_VALUE = 2;
+					public static final int cauthor_VALUE = 3;
+					public static final int cprevSha3_VALUE = 4;
+					public static final int clocation_VALUE = 5;
+					public static final int cseller_VALUE = 6;
+					public static final int cperiod_VALUE = 7;
+					public static final int csha3Contract_VALUE = 8;
+
+					public final int getNumber() {
+						return value;
+					}
+
+					public static SecCommand valueOf(int value) {
+						switch (value) {
+						case 0:
+							return csha3;
+						case 1:
+							return cluceneUid;
+						case 2:
+							return ctime;
+						case 3:
+							return cauthor;
+						case 4:
+							return cprevSha3;
+						case 5:
+							return clocation;
+						case 6:
+							return cseller;
+						case 7:
+							return cperiod;
+						case 8:
+							return csha3Contract;
+						default:
+							return null;
+						}
+					}
+
+					public static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalGetValueMap() {
+						return internalValueMap;
+					}
+
+					private static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
+						public SecCommand findValueByNumber(int number) {
+							return SecCommand.valueOf(number);
+						}
+					};
+
+					public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+						return getDescriptor().getValues().get(index);
+					}
+
+					public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+						return getDescriptor();
+					}
+
+					public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDescriptor().getEnumTypes().get(0);
+					}
+
+					private static final SecCommand[] VALUES = { csha3,
+							cluceneUid, ctime, cauthor, cprevSha3, clocation,
+							cseller, cperiod, csha3Contract, };
+
+					public static SecCommand valueOf(
+							com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+						if (desc.getType() != getDescriptor()) {
+							throw new java.lang.IllegalArgumentException(
+									"EnumValueDescriptor is not for this type.");
+						}
+						return VALUES[desc.getIndex()];
+					}
+
+					private final int index;
+					private final int value;
+
+					private SecCommand(int index, int value) {
+						this.index = index;
+						this.value = value;
+					}
+
+					// @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand)
+				}
+
+				private int bitField0_;
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand
+				// secCommand = 1;
+				public static final int SECCOMMAND_FIELD_NUMBER = 1;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand_;
+
+				public boolean hasSecCommand() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand() {
+					return secCommand_;
+				}
+
+				// required bytes position = 2;
+				public static final int POSITION_FIELD_NUMBER = 2;
+				private com.google.protobuf.ByteString position_;
+
+				public boolean hasPosition() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public com.google.protobuf.ByteString getPosition() {
+					return position_;
+				}
+
+				// optional bytes sha3 = 3;
+				public static final int SHA3_FIELD_NUMBER = 3;
+				private com.google.protobuf.ByteString sha3_;
+
+				public boolean hasSha3() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getSha3() {
+					return sha3_;
+				}
+
+				// optional int64 luceneUid = 4;
+				public static final int LUCENEUID_FIELD_NUMBER = 4;
+				private long luceneUid_;
+
+				public boolean hasLuceneUid() {
+					return ((bitField0_ & 0x00000008) == 0x00000008);
+				}
+
+				public long getLuceneUid() {
+					return luceneUid_;
+				}
+
+				// optional int32 time = 5;
+				public static final int TIME_FIELD_NUMBER = 5;
+				private int time_;
+
+				public boolean hasTime() {
+					return ((bitField0_ & 0x00000010) == 0x00000010);
+				}
+
+				public int getTime() {
+					return time_;
+				}
+
+				// optional bytes author = 6;
+				public static final int AUTHOR_FIELD_NUMBER = 6;
+				private com.google.protobuf.ByteString author_;
+
+				public boolean hasAuthor() {
+					return ((bitField0_ & 0x00000020) == 0x00000020);
+				}
+
+				public com.google.protobuf.ByteString getAuthor() {
+					return author_;
+				}
+
+				// repeated bytes prevSha3 = 7;
+				public static final int PREVSHA3_FIELD_NUMBER = 7;
+				private java.util.List<com.google.protobuf.ByteString> prevSha3_;
+
+				public java.util.List<com.google.protobuf.ByteString> getPrevSha3List() {
+					return prevSha3_;
+				}
+
+				public int getPrevSha3Count() {
+					return prevSha3_.size();
+				}
+
+				public com.google.protobuf.ByteString getPrevSha3(int index) {
+					return prevSha3_.get(index);
+				}
+
+				// optional bytes location = 8;
+				public static final int LOCATION_FIELD_NUMBER = 8;
+				private com.google.protobuf.ByteString location_;
+
+				public boolean hasLocation() {
+					return ((bitField0_ & 0x00000040) == 0x00000040);
+				}
+
+				public com.google.protobuf.ByteString getLocation() {
+					return location_;
+				}
+
+				// optional bytes seller = 9;
+				public static final int SELLER_FIELD_NUMBER = 9;
+				private com.google.protobuf.ByteString seller_;
+
+				public boolean hasSeller() {
+					return ((bitField0_ & 0x00000080) == 0x00000080);
+				}
+
+				public com.google.protobuf.ByteString getSeller() {
+					return seller_;
+				}
+
+				// optional bytes period = 10;
+				public static final int PERIOD_FIELD_NUMBER = 10;
+				private com.google.protobuf.ByteString period_;
+
+				public boolean hasPeriod() {
+					return ((bitField0_ & 0x00000100) == 0x00000100);
+				}
+
+				public com.google.protobuf.ByteString getPeriod() {
+					return period_;
+				}
+
+				// optional bytes sha3Contract = 11;
+				public static final int SHA3CONTRACT_FIELD_NUMBER = 11;
+				private com.google.protobuf.ByteString sha3Contract_;
+
+				public boolean hasSha3Contract() {
+					return ((bitField0_ & 0x00000200) == 0x00000200);
+				}
+
+				public com.google.protobuf.ByteString getSha3Contract() {
+					return sha3Contract_;
+				}
+
+				private void initFields() {
+					secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
+					position_ = com.google.protobuf.ByteString.EMPTY;
+					sha3_ = com.google.protobuf.ByteString.EMPTY;
+					luceneUid_ = 0L;
+					time_ = 0;
+					author_ = com.google.protobuf.ByteString.EMPTY;
+					prevSha3_ = java.util.Collections.emptyList();
+					;
+					location_ = com.google.protobuf.ByteString.EMPTY;
+					seller_ = com.google.protobuf.ByteString.EMPTY;
+					period_ = com.google.protobuf.ByteString.EMPTY;
+					sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
+				}
+
+				private byte memoizedIsInitialized = -1;
+
+				public final boolean isInitialized() {
+					byte isInitialized = memoizedIsInitialized;
+					if (isInitialized != -1)
+						return isInitialized == 1;
+
+					if (!hasSecCommand()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					if (!hasPosition()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					memoizedIsInitialized = 1;
+					return true;
+				}
+
+				public void writeTo(com.google.protobuf.CodedOutputStream output)
+						throws java.io.IOException {
+					getSerializedSize();
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						output.writeEnum(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						output.writeBytes(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						output.writeBytes(3, sha3_);
+					}
+					if (((bitField0_ & 0x00000008) == 0x00000008)) {
+						output.writeInt64(4, luceneUid_);
+					}
+					if (((bitField0_ & 0x00000010) == 0x00000010)) {
+						output.writeInt32(5, time_);
+					}
+					if (((bitField0_ & 0x00000020) == 0x00000020)) {
+						output.writeBytes(6, author_);
+					}
+					for (int i = 0; i < prevSha3_.size(); i++) {
+						output.writeBytes(7, prevSha3_.get(i));
+					}
+					if (((bitField0_ & 0x00000040) == 0x00000040)) {
+						output.writeBytes(8, location_);
+					}
+					if (((bitField0_ & 0x00000080) == 0x00000080)) {
+						output.writeBytes(9, seller_);
+					}
+					if (((bitField0_ & 0x00000100) == 0x00000100)) {
+						output.writeBytes(10, period_);
+					}
+					if (((bitField0_ & 0x00000200) == 0x00000200)) {
+						output.writeBytes(11, sha3Contract_);
+					}
+					getUnknownFields().writeTo(output);
+				}
+
+				private int memoizedSerializedSize = -1;
+
+				public int getSerializedSize() {
+					int size = memoizedSerializedSize;
+					if (size != -1)
+						return size;
+
+					size = 0;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeEnumSize(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(3, sha3_);
+					}
+					if (((bitField0_ & 0x00000008) == 0x00000008)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeInt64Size(4, luceneUid_);
+					}
+					if (((bitField0_ & 0x00000010) == 0x00000010)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeInt32Size(5, time_);
+					}
+					if (((bitField0_ & 0x00000020) == 0x00000020)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(6, author_);
+					}
+					{
+						int dataSize = 0;
+						for (int i = 0; i < prevSha3_.size(); i++) {
+							dataSize += com.google.protobuf.CodedOutputStream
+									.computeBytesSizeNoTag(prevSha3_.get(i));
+						}
+						size += dataSize;
+						size += 1 * getPrevSha3List().size();
+					}
+					if (((bitField0_ & 0x00000040) == 0x00000040)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(8, location_);
+					}
+					if (((bitField0_ & 0x00000080) == 0x00000080)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(9, seller_);
+					}
+					if (((bitField0_ & 0x00000100) == 0x00000100)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(10, period_);
+					}
+					if (((bitField0_ & 0x00000200) == 0x00000200)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(11, sha3Contract_);
+					}
+					size += getUnknownFields().getSerializedSize();
+					memoizedSerializedSize = size;
+					return size;
+				}
+
+				private static final long serialVersionUID = 0L;
+
+				@java.lang.Override
+				protected java.lang.Object writeReplace()
+						throws java.io.ObjectStreamException {
+					return super.writeReplace();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						com.google.protobuf.ByteString data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						com.google.protobuf.ByteString data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						byte[] data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						byte[] data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseDelimitedFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseDelimitedFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						com.google.protobuf.CodedInputStream input)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata parseFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static Builder newBuilder() {
+					return Builder.create();
+				}
+
+				public Builder newBuilderForType() {
+					return newBuilder();
+				}
+
+				public static Builder newBuilder(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata prototype) {
+					return newBuilder().mergeFrom(prototype);
+				}
+
+				public Builder toBuilder() {
+					return newBuilder(this);
+				}
+
+				@java.lang.Override
+				protected Builder newBuilderForType(
+						com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+					Builder builder = new Builder(parent);
+					return builder;
+				}
+
+				public static final class Builder extends
+						com.google.protobuf.GeneratedMessage.Builder<Builder>
+						implements
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder {
+					public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
+					}
+
+					protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
+					}
+
+					// Construct using
+					// platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.newBuilder()
+					private Builder() {
+						maybeForceBuilderInitialization();
+					}
+
+					private Builder(BuilderParent parent) {
+						super(parent);
+						maybeForceBuilderInitialization();
+					}
+
+					private void maybeForceBuilderInitialization() {
+						if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						}
+					}
+
+					private static Builder create() {
+						return new Builder();
+					}
+
+					public Builder clear() {
+						super.clear();
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
+						bitField0_ = (bitField0_ & ~0x00000001);
+						position_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000002);
+						sha3_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000004);
+						luceneUid_ = 0L;
+						bitField0_ = (bitField0_ & ~0x00000008);
+						time_ = 0;
+						bitField0_ = (bitField0_ & ~0x00000010);
+						author_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000020);
+						prevSha3_ = java.util.Collections.emptyList();
+						;
+						bitField0_ = (bitField0_ & ~0x00000040);
+						location_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000080);
+						seller_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000100);
+						period_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000200);
+						sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000400);
+						return this;
+					}
+
+					public Builder clone() {
+						return create().mergeFrom(buildPartial());
+					}
+
+					public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDescriptor();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getDefaultInstanceForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDefaultInstance();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata build() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result);
+						}
+						return result;
+					}
+
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata buildParsed()
+							throws com.google.protobuf.InvalidProtocolBufferException {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result)
+									.asInvalidProtocolBufferException();
+						}
+						return result;
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata buildPartial() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata(
+								this);
+						int from_bitField0_ = bitField0_;
+						int to_bitField0_ = 0;
+						if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+							to_bitField0_ |= 0x00000001;
+						}
+						result.secCommand_ = secCommand_;
+						if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+							to_bitField0_ |= 0x00000002;
+						}
+						result.position_ = position_;
+						if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+							to_bitField0_ |= 0x00000004;
+						}
+						result.sha3_ = sha3_;
+						if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+							to_bitField0_ |= 0x00000008;
+						}
+						result.luceneUid_ = luceneUid_;
+						if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+							to_bitField0_ |= 0x00000010;
+						}
+						result.time_ = time_;
+						if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+							to_bitField0_ |= 0x00000020;
+						}
+						result.author_ = author_;
+						if (((bitField0_ & 0x00000040) == 0x00000040)) {
+							prevSha3_ = java.util.Collections
+									.unmodifiableList(prevSha3_);
+							bitField0_ = (bitField0_ & ~0x00000040);
+						}
+						result.prevSha3_ = prevSha3_;
+						if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+							to_bitField0_ |= 0x00000040;
+						}
+						result.location_ = location_;
+						if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+							to_bitField0_ |= 0x00000080;
+						}
+						result.seller_ = seller_;
+						if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+							to_bitField0_ |= 0x00000100;
+						}
+						result.period_ = period_;
+						if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+							to_bitField0_ |= 0x00000200;
+						}
+						result.sha3Contract_ = sha3Contract_;
+						result.bitField0_ = to_bitField0_;
+						onBuilt();
+						return result;
+					}
+
+					public Builder mergeFrom(com.google.protobuf.Message other) {
+						if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata) {
+							return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata) other);
+						} else {
+							super.mergeFrom(other);
+							return this;
+						}
+					}
+
+					public Builder mergeFrom(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata other) {
+						if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDefaultInstance())
+							return this;
+						if (other.hasSecCommand()) {
+							setSecCommand(other.getSecCommand());
+						}
+						if (other.hasPosition()) {
+							setPosition(other.getPosition());
+						}
+						if (other.hasSha3()) {
+							setSha3(other.getSha3());
+						}
+						if (other.hasLuceneUid()) {
+							setLuceneUid(other.getLuceneUid());
+						}
+						if (other.hasTime()) {
+							setTime(other.getTime());
+						}
+						if (other.hasAuthor()) {
+							setAuthor(other.getAuthor());
+						}
+						if (!other.prevSha3_.isEmpty()) {
+							if (prevSha3_.isEmpty()) {
+								prevSha3_ = other.prevSha3_;
+								bitField0_ = (bitField0_ & ~0x00000040);
+							} else {
+								ensurePrevSha3IsMutable();
+								prevSha3_.addAll(other.prevSha3_);
+							}
+							onChanged();
+						}
+						if (other.hasLocation()) {
+							setLocation(other.getLocation());
+						}
+						if (other.hasSeller()) {
+							setSeller(other.getSeller());
+						}
+						if (other.hasPeriod()) {
+							setPeriod(other.getPeriod());
+						}
+						if (other.hasSha3Contract()) {
+							setSha3Contract(other.getSha3Contract());
+						}
+						this.mergeUnknownFields(other.getUnknownFields());
+						return this;
+					}
+
+					public final boolean isInitialized() {
+						if (!hasSecCommand()) {
+
+							return false;
+						}
+						if (!hasPosition()) {
+
+							return false;
+						}
+						return true;
+					}
+
+					public Builder mergeFrom(
+							com.google.protobuf.CodedInputStream input,
+							com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+							throws java.io.IOException {
+						com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+								.newBuilder(this.getUnknownFields());
+						while (true) {
+							int tag = input.readTag();
+							switch (tag) {
+							case 0:
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							default: {
+								if (!parseUnknownField(input, unknownFields,
+										extensionRegistry, tag)) {
+									this.setUnknownFields(unknownFields.build());
+									onChanged();
+									return this;
+								}
+								break;
+							}
+							case 8: {
+								int rawValue = input.readEnum();
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand
+										.valueOf(rawValue);
+								if (value == null) {
+									unknownFields.mergeVarintField(1, rawValue);
+								} else {
+									bitField0_ |= 0x00000001;
+									secCommand_ = value;
+								}
+								break;
+							}
+							case 18: {
+								bitField0_ |= 0x00000002;
+								position_ = input.readBytes();
+								break;
+							}
+							case 26: {
+								bitField0_ |= 0x00000004;
+								sha3_ = input.readBytes();
+								break;
+							}
+							case 32: {
+								bitField0_ |= 0x00000008;
+								luceneUid_ = input.readInt64();
+								break;
+							}
+							case 40: {
+								bitField0_ |= 0x00000010;
+								time_ = input.readInt32();
+								break;
+							}
+							case 50: {
+								bitField0_ |= 0x00000020;
+								author_ = input.readBytes();
+								break;
+							}
+							case 58: {
+								ensurePrevSha3IsMutable();
+								prevSha3_.add(input.readBytes());
+								break;
+							}
+							case 66: {
+								bitField0_ |= 0x00000080;
+								location_ = input.readBytes();
+								break;
+							}
+							case 74: {
+								bitField0_ |= 0x00000100;
+								seller_ = input.readBytes();
+								break;
+							}
+							case 82: {
+								bitField0_ |= 0x00000200;
+								period_ = input.readBytes();
+								break;
+							}
+							case 90: {
+								bitField0_ |= 0x00000400;
+								sha3Contract_ = input.readBytes();
+								break;
+							}
+							}
+						}
+					}
+
+					private int bitField0_;
+
+					// required
+					// .protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand
+					// secCommand = 1;
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
+
+					public boolean hasSecCommand() {
+						return ((bitField0_ & 0x00000001) == 0x00000001);
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand getSecCommand() {
+						return secCommand_;
+					}
+
+					public Builder setSecCommand(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000001;
+						secCommand_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSecCommand() {
+						bitField0_ = (bitField0_ & ~0x00000001);
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.SecCommand.csha3;
+						onChanged();
+						return this;
+					}
+
+					// required bytes position = 2;
+					private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasPosition() {
+						return ((bitField0_ & 0x00000002) == 0x00000002);
+					}
+
+					public com.google.protobuf.ByteString getPosition() {
+						return position_;
+					}
+
+					public Builder setPosition(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000002;
+						position_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearPosition() {
+						bitField0_ = (bitField0_ & ~0x00000002);
+						position_ = getDefaultInstance().getPosition();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes sha3 = 3;
+					private com.google.protobuf.ByteString sha3_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasSha3() {
+						return ((bitField0_ & 0x00000004) == 0x00000004);
+					}
+
+					public com.google.protobuf.ByteString getSha3() {
+						return sha3_;
+					}
+
+					public Builder setSha3(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000004;
+						sha3_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSha3() {
+						bitField0_ = (bitField0_ & ~0x00000004);
+						sha3_ = getDefaultInstance().getSha3();
+						onChanged();
+						return this;
+					}
+
+					// optional int64 luceneUid = 4;
+					private long luceneUid_;
+
+					public boolean hasLuceneUid() {
+						return ((bitField0_ & 0x00000008) == 0x00000008);
+					}
+
+					public long getLuceneUid() {
+						return luceneUid_;
+					}
+
+					public Builder setLuceneUid(long value) {
+						bitField0_ |= 0x00000008;
+						luceneUid_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearLuceneUid() {
+						bitField0_ = (bitField0_ & ~0x00000008);
+						luceneUid_ = 0L;
+						onChanged();
+						return this;
+					}
+
+					// optional int32 time = 5;
+					private int time_;
+
+					public boolean hasTime() {
+						return ((bitField0_ & 0x00000010) == 0x00000010);
+					}
+
+					public int getTime() {
+						return time_;
+					}
+
+					public Builder setTime(int value) {
+						bitField0_ |= 0x00000010;
+						time_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearTime() {
+						bitField0_ = (bitField0_ & ~0x00000010);
+						time_ = 0;
+						onChanged();
+						return this;
+					}
+
+					// optional bytes author = 6;
+					private com.google.protobuf.ByteString author_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasAuthor() {
+						return ((bitField0_ & 0x00000020) == 0x00000020);
+					}
+
+					public com.google.protobuf.ByteString getAuthor() {
+						return author_;
+					}
+
+					public Builder setAuthor(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000020;
+						author_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearAuthor() {
+						bitField0_ = (bitField0_ & ~0x00000020);
+						author_ = getDefaultInstance().getAuthor();
+						onChanged();
+						return this;
+					}
+
+					// repeated bytes prevSha3 = 7;
+					private java.util.List<com.google.protobuf.ByteString> prevSha3_ = java.util.Collections
+							.emptyList();;
+
+					private void ensurePrevSha3IsMutable() {
+						if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+							prevSha3_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+									prevSha3_);
+							bitField0_ |= 0x00000040;
+						}
+					}
+
+					public java.util.List<com.google.protobuf.ByteString> getPrevSha3List() {
+						return java.util.Collections
+								.unmodifiableList(prevSha3_);
+					}
+
+					public int getPrevSha3Count() {
+						return prevSha3_.size();
+					}
+
+					public com.google.protobuf.ByteString getPrevSha3(int index) {
+						return prevSha3_.get(index);
+					}
+
+					public Builder setPrevSha3(int index,
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						ensurePrevSha3IsMutable();
+						prevSha3_.set(index, value);
+						onChanged();
+						return this;
+					}
+
+					public Builder addPrevSha3(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						ensurePrevSha3IsMutable();
+						prevSha3_.add(value);
+						onChanged();
+						return this;
+					}
+
+					public Builder addAllPrevSha3(
+							java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+						ensurePrevSha3IsMutable();
+						super.addAll(values, prevSha3_);
+						onChanged();
+						return this;
+					}
+
+					public Builder clearPrevSha3() {
+						prevSha3_ = java.util.Collections.emptyList();
+						;
+						bitField0_ = (bitField0_ & ~0x00000040);
+						onChanged();
+						return this;
+					}
+
+					// optional bytes location = 8;
+					private com.google.protobuf.ByteString location_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasLocation() {
+						return ((bitField0_ & 0x00000080) == 0x00000080);
+					}
+
+					public com.google.protobuf.ByteString getLocation() {
+						return location_;
+					}
+
+					public Builder setLocation(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000080;
+						location_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearLocation() {
+						bitField0_ = (bitField0_ & ~0x00000080);
+						location_ = getDefaultInstance().getLocation();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes seller = 9;
+					private com.google.protobuf.ByteString seller_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasSeller() {
+						return ((bitField0_ & 0x00000100) == 0x00000100);
+					}
+
+					public com.google.protobuf.ByteString getSeller() {
+						return seller_;
+					}
+
+					public Builder setSeller(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000100;
+						seller_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSeller() {
+						bitField0_ = (bitField0_ & ~0x00000100);
+						seller_ = getDefaultInstance().getSeller();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes period = 10;
+					private com.google.protobuf.ByteString period_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasPeriod() {
+						return ((bitField0_ & 0x00000200) == 0x00000200);
+					}
+
+					public com.google.protobuf.ByteString getPeriod() {
+						return period_;
+					}
+
+					public Builder setPeriod(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000200;
+						period_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearPeriod() {
+						bitField0_ = (bitField0_ & ~0x00000200);
+						period_ = getDefaultInstance().getPeriod();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes sha3Contract = 11;
+					private com.google.protobuf.ByteString sha3Contract_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasSha3Contract() {
+						return ((bitField0_ & 0x00000400) == 0x00000400);
+					}
+
+					public com.google.protobuf.ByteString getSha3Contract() {
+						return sha3Contract_;
+					}
+
+					public Builder setSha3Contract(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000400;
+						sha3Contract_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSha3Contract() {
+						bitField0_ = (bitField0_ & ~0x00000400);
+						sha3Contract_ = getDefaultInstance().getSha3Contract();
+						onChanged();
+						return this;
+					}
+
+					// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Metadata)
+				}
+
+				static {
+					defaultInstance = new Metadata(true);
+					defaultInstance.initFields();
+				}
+
+				// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Metadata)
+			}
+
+			public interface ContentOrBuilder extends
+					com.google.protobuf.MessageOrBuilder {
+
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand
+				// secCommand = 1;
+				boolean hasSecCommand();
+
+				platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand();
+
+				// required bytes position = 2;
+				boolean hasPosition();
+
+				com.google.protobuf.ByteString getPosition();
+
+				// required bytes data = 3;
+				boolean hasData();
+
+				com.google.protobuf.ByteString getData();
+			}
+
+			public static final class Content extends
+					com.google.protobuf.GeneratedMessage implements
+					ContentOrBuilder {
+				// Use Content.newBuilder() to construct.
+				private Content(Builder builder) {
+					super(builder);
+				}
+
+				private Content(boolean noInit) {
+				}
+
+				private static final Content defaultInstance;
+
+				public static Content getDefaultInstance() {
+					return defaultInstance;
+				}
+
+				public Content getDefaultInstanceForType() {
+					return defaultInstance;
+				}
+
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
+				}
+
+				public enum SecCommand implements
+						com.google.protobuf.ProtocolMessageEnum {
+					cdoc(0, 0), csummary(1, 1), ;
+
+					public static final int cdoc_VALUE = 0;
+					public static final int csummary_VALUE = 1;
+
+					public final int getNumber() {
+						return value;
+					}
+
+					public static SecCommand valueOf(int value) {
+						switch (value) {
+						case 0:
+							return cdoc;
+						case 1:
+							return csummary;
+						default:
+							return null;
+						}
+					}
+
+					public static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalGetValueMap() {
+						return internalValueMap;
+					}
+
+					private static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
+						public SecCommand findValueByNumber(int number) {
+							return SecCommand.valueOf(number);
+						}
+					};
+
+					public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+						return getDescriptor().getValues().get(index);
+					}
+
+					public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+						return getDescriptor();
+					}
+
+					public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDescriptor().getEnumTypes().get(0);
+					}
+
+					private static final SecCommand[] VALUES = { cdoc,
+							csummary, };
+
+					public static SecCommand valueOf(
+							com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+						if (desc.getType() != getDescriptor()) {
+							throw new java.lang.IllegalArgumentException(
+									"EnumValueDescriptor is not for this type.");
+						}
+						return VALUES[desc.getIndex()];
+					}
+
+					private final int index;
+					private final int value;
+
+					private SecCommand(int index, int value) {
+						this.index = index;
+						this.value = value;
+					}
+
+					// @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Content.SecCommand)
+				}
+
+				private int bitField0_;
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand
+				// secCommand = 1;
+				public static final int SECCOMMAND_FIELD_NUMBER = 1;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand_;
+
+				public boolean hasSecCommand() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand() {
+					return secCommand_;
+				}
+
+				// required bytes position = 2;
+				public static final int POSITION_FIELD_NUMBER = 2;
+				private com.google.protobuf.ByteString position_;
+
+				public boolean hasPosition() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public com.google.protobuf.ByteString getPosition() {
+					return position_;
+				}
+
+				// required bytes data = 3;
+				public static final int DATA_FIELD_NUMBER = 3;
+				private com.google.protobuf.ByteString data_;
+
+				public boolean hasData() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getData() {
+					return data_;
+				}
+
+				private void initFields() {
+					secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
+					position_ = com.google.protobuf.ByteString.EMPTY;
+					data_ = com.google.protobuf.ByteString.EMPTY;
+				}
+
+				private byte memoizedIsInitialized = -1;
+
+				public final boolean isInitialized() {
+					byte isInitialized = memoizedIsInitialized;
+					if (isInitialized != -1)
+						return isInitialized == 1;
+
+					if (!hasSecCommand()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					if (!hasPosition()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					if (!hasData()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					memoizedIsInitialized = 1;
+					return true;
+				}
+
+				public void writeTo(com.google.protobuf.CodedOutputStream output)
+						throws java.io.IOException {
+					getSerializedSize();
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						output.writeEnum(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						output.writeBytes(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						output.writeBytes(3, data_);
+					}
+					getUnknownFields().writeTo(output);
+				}
+
+				private int memoizedSerializedSize = -1;
+
+				public int getSerializedSize() {
+					int size = memoizedSerializedSize;
+					if (size != -1)
+						return size;
+
+					size = 0;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeEnumSize(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(3, data_);
+					}
+					size += getUnknownFields().getSerializedSize();
+					memoizedSerializedSize = size;
+					return size;
+				}
+
+				private static final long serialVersionUID = 0L;
+
+				@java.lang.Override
+				protected java.lang.Object writeReplace()
+						throws java.io.ObjectStreamException {
+					return super.writeReplace();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						com.google.protobuf.ByteString data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						com.google.protobuf.ByteString data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						byte[] data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						byte[] data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseDelimitedFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseDelimitedFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						com.google.protobuf.CodedInputStream input)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content parseFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static Builder newBuilder() {
+					return Builder.create();
+				}
+
+				public Builder newBuilderForType() {
+					return newBuilder();
+				}
+
+				public static Builder newBuilder(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content prototype) {
+					return newBuilder().mergeFrom(prototype);
+				}
+
+				public Builder toBuilder() {
+					return newBuilder(this);
+				}
+
+				@java.lang.Override
+				protected Builder newBuilderForType(
+						com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+					Builder builder = new Builder(parent);
+					return builder;
+				}
+
+				public static final class Builder extends
+						com.google.protobuf.GeneratedMessage.Builder<Builder>
+						implements
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder {
+					public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
+					}
+
+					protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
+					}
+
+					// Construct using
+					// platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.newBuilder()
+					private Builder() {
+						maybeForceBuilderInitialization();
+					}
+
+					private Builder(BuilderParent parent) {
+						super(parent);
+						maybeForceBuilderInitialization();
+					}
+
+					private void maybeForceBuilderInitialization() {
+						if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						}
+					}
+
+					private static Builder create() {
+						return new Builder();
+					}
+
+					public Builder clear() {
+						super.clear();
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
+						bitField0_ = (bitField0_ & ~0x00000001);
+						position_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000002);
+						data_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000004);
+						return this;
+					}
+
+					public Builder clone() {
+						return create().mergeFrom(buildPartial());
+					}
+
+					public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDescriptor();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getDefaultInstanceForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDefaultInstance();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content build() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result);
+						}
+						return result;
+					}
+
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content buildParsed()
+							throws com.google.protobuf.InvalidProtocolBufferException {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result)
+									.asInvalidProtocolBufferException();
+						}
+						return result;
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content buildPartial() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content(
+								this);
+						int from_bitField0_ = bitField0_;
+						int to_bitField0_ = 0;
+						if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+							to_bitField0_ |= 0x00000001;
+						}
+						result.secCommand_ = secCommand_;
+						if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+							to_bitField0_ |= 0x00000002;
+						}
+						result.position_ = position_;
+						if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+							to_bitField0_ |= 0x00000004;
+						}
+						result.data_ = data_;
+						result.bitField0_ = to_bitField0_;
+						onBuilt();
+						return result;
+					}
+
+					public Builder mergeFrom(com.google.protobuf.Message other) {
+						if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content) {
+							return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content) other);
+						} else {
+							super.mergeFrom(other);
+							return this;
+						}
+					}
+
+					public Builder mergeFrom(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content other) {
+						if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDefaultInstance())
+							return this;
+						if (other.hasSecCommand()) {
+							setSecCommand(other.getSecCommand());
+						}
+						if (other.hasPosition()) {
+							setPosition(other.getPosition());
+						}
+						if (other.hasData()) {
+							setData(other.getData());
+						}
+						this.mergeUnknownFields(other.getUnknownFields());
+						return this;
+					}
+
+					public final boolean isInitialized() {
+						if (!hasSecCommand()) {
+
+							return false;
+						}
+						if (!hasPosition()) {
+
+							return false;
+						}
+						if (!hasData()) {
+
+							return false;
+						}
+						return true;
+					}
+
+					public Builder mergeFrom(
+							com.google.protobuf.CodedInputStream input,
+							com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+							throws java.io.IOException {
+						com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+								.newBuilder(this.getUnknownFields());
+						while (true) {
+							int tag = input.readTag();
+							switch (tag) {
+							case 0:
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							default: {
+								if (!parseUnknownField(input, unknownFields,
+										extensionRegistry, tag)) {
+									this.setUnknownFields(unknownFields.build());
+									onChanged();
+									return this;
+								}
+								break;
+							}
+							case 8: {
+								int rawValue = input.readEnum();
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand
+										.valueOf(rawValue);
+								if (value == null) {
+									unknownFields.mergeVarintField(1, rawValue);
+								} else {
+									bitField0_ |= 0x00000001;
+									secCommand_ = value;
+								}
+								break;
+							}
+							case 18: {
+								bitField0_ |= 0x00000002;
+								position_ = input.readBytes();
+								break;
+							}
+							case 26: {
+								bitField0_ |= 0x00000004;
+								data_ = input.readBytes();
+								break;
+							}
+							}
+						}
+					}
+
+					private int bitField0_;
+
+					// required
+					// .protocol.MultiSaveCommand.SaveCommand.Content.SecCommand
+					// secCommand = 1;
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
+
+					public boolean hasSecCommand() {
+						return ((bitField0_ & 0x00000001) == 0x00000001);
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand getSecCommand() {
+						return secCommand_;
+					}
+
+					public Builder setSecCommand(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000001;
+						secCommand_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSecCommand() {
+						bitField0_ = (bitField0_ & ~0x00000001);
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.SecCommand.cdoc;
+						onChanged();
+						return this;
+					}
+
+					// required bytes position = 2;
+					private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasPosition() {
+						return ((bitField0_ & 0x00000002) == 0x00000002);
+					}
+
+					public com.google.protobuf.ByteString getPosition() {
+						return position_;
+					}
+
+					public Builder setPosition(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000002;
+						position_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearPosition() {
+						bitField0_ = (bitField0_ & ~0x00000002);
+						position_ = getDefaultInstance().getPosition();
+						onChanged();
+						return this;
+					}
+
+					// required bytes data = 3;
+					private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasData() {
+						return ((bitField0_ & 0x00000004) == 0x00000004);
+					}
+
+					public com.google.protobuf.ByteString getData() {
+						return data_;
+					}
+
+					public Builder setData(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000004;
+						data_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearData() {
+						bitField0_ = (bitField0_ & ~0x00000004);
+						data_ = getDefaultInstance().getData();
+						onChanged();
+						return this;
+					}
+
+					// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Content)
+				}
+
+				static {
+					defaultInstance = new Content(true);
+					defaultInstance.initFields();
+				}
+
+				// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Content)
+			}
+
+			public interface EdgeOrBuilder extends
+					com.google.protobuf.MessageOrBuilder {
+
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand
+				// secCommand = 1;
+				boolean hasSecCommand();
+
+				platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand();
+
+				// optional bytes position = 2;
+				boolean hasPosition();
+
+				com.google.protobuf.ByteString getPosition();
+
+				// optional bytes edge = 3;
+				boolean hasEdge();
+
+				com.google.protobuf.ByteString getEdge();
+
+				// required bytes data = 4;
+				boolean hasData();
+
+				com.google.protobuf.ByteString getData();
+			}
+
+			public static final class Edge extends
+					com.google.protobuf.GeneratedMessage implements
+					EdgeOrBuilder {
+				// Use Edge.newBuilder() to construct.
+				private Edge(Builder builder) {
+					super(builder);
+				}
+
+				private Edge(boolean noInit) {
+				}
+
+				private static final Edge defaultInstance;
+
+				public static Edge getDefaultInstance() {
+					return defaultInstance;
+				}
+
+				public Edge getDefaultInstanceForType() {
+					return defaultInstance;
+				}
+
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
+				}
+
+				public enum SecCommand implements
+						com.google.protobuf.ProtocolMessageEnum {
+					cinEdge(0, 0), cedge(1, 1), ;
+
+					public static final int cinEdge_VALUE = 0;
+					public static final int cedge_VALUE = 1;
+
+					public final int getNumber() {
+						return value;
+					}
+
+					public static SecCommand valueOf(int value) {
+						switch (value) {
+						case 0:
+							return cinEdge;
+						case 1:
+							return cedge;
+						default:
+							return null;
+						}
+					}
+
+					public static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalGetValueMap() {
+						return internalValueMap;
+					}
+
+					private static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
+						public SecCommand findValueByNumber(int number) {
+							return SecCommand.valueOf(number);
+						}
+					};
+
+					public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+						return getDescriptor().getValues().get(index);
+					}
+
+					public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+						return getDescriptor();
+					}
+
+					public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDescriptor().getEnumTypes().get(0);
+					}
+
+					private static final SecCommand[] VALUES = { cinEdge,
+							cedge, };
+
+					public static SecCommand valueOf(
+							com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+						if (desc.getType() != getDescriptor()) {
+							throw new java.lang.IllegalArgumentException(
+									"EnumValueDescriptor is not for this type.");
+						}
+						return VALUES[desc.getIndex()];
+					}
+
+					private final int index;
+					private final int value;
+
+					private SecCommand(int index, int value) {
+						this.index = index;
+						this.value = value;
+					}
+
+					// @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand)
+				}
+
+				private int bitField0_;
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand
+				// secCommand = 1;
+				public static final int SECCOMMAND_FIELD_NUMBER = 1;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand_;
+
+				public boolean hasSecCommand() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand() {
+					return secCommand_;
+				}
+
+				// optional bytes position = 2;
+				public static final int POSITION_FIELD_NUMBER = 2;
+				private com.google.protobuf.ByteString position_;
+
+				public boolean hasPosition() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public com.google.protobuf.ByteString getPosition() {
+					return position_;
+				}
+
+				// optional bytes edge = 3;
+				public static final int EDGE_FIELD_NUMBER = 3;
+				private com.google.protobuf.ByteString edge_;
+
+				public boolean hasEdge() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getEdge() {
+					return edge_;
+				}
+
+				// required bytes data = 4;
+				public static final int DATA_FIELD_NUMBER = 4;
+				private com.google.protobuf.ByteString data_;
+
+				public boolean hasData() {
+					return ((bitField0_ & 0x00000008) == 0x00000008);
+				}
+
+				public com.google.protobuf.ByteString getData() {
+					return data_;
+				}
+
+				private void initFields() {
+					secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
+					position_ = com.google.protobuf.ByteString.EMPTY;
+					edge_ = com.google.protobuf.ByteString.EMPTY;
+					data_ = com.google.protobuf.ByteString.EMPTY;
+				}
+
+				private byte memoizedIsInitialized = -1;
+
+				public final boolean isInitialized() {
+					byte isInitialized = memoizedIsInitialized;
+					if (isInitialized != -1)
+						return isInitialized == 1;
+
+					if (!hasSecCommand()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					if (!hasData()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					memoizedIsInitialized = 1;
+					return true;
+				}
+
+				public void writeTo(com.google.protobuf.CodedOutputStream output)
+						throws java.io.IOException {
+					getSerializedSize();
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						output.writeEnum(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						output.writeBytes(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						output.writeBytes(3, edge_);
+					}
+					if (((bitField0_ & 0x00000008) == 0x00000008)) {
+						output.writeBytes(4, data_);
+					}
+					getUnknownFields().writeTo(output);
+				}
+
+				private int memoizedSerializedSize = -1;
+
+				public int getSerializedSize() {
+					int size = memoizedSerializedSize;
+					if (size != -1)
+						return size;
+
+					size = 0;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeEnumSize(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(2, position_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(3, edge_);
+					}
+					if (((bitField0_ & 0x00000008) == 0x00000008)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(4, data_);
+					}
+					size += getUnknownFields().getSerializedSize();
+					memoizedSerializedSize = size;
+					return size;
+				}
+
+				private static final long serialVersionUID = 0L;
+
+				@java.lang.Override
+				protected java.lang.Object writeReplace()
+						throws java.io.ObjectStreamException {
+					return super.writeReplace();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						com.google.protobuf.ByteString data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						com.google.protobuf.ByteString data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						byte[] data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						byte[] data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseDelimitedFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseDelimitedFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						com.google.protobuf.CodedInputStream input)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge parseFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static Builder newBuilder() {
+					return Builder.create();
+				}
+
+				public Builder newBuilderForType() {
+					return newBuilder();
+				}
+
+				public static Builder newBuilder(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge prototype) {
+					return newBuilder().mergeFrom(prototype);
+				}
+
+				public Builder toBuilder() {
+					return newBuilder(this);
+				}
+
+				@java.lang.Override
+				protected Builder newBuilderForType(
+						com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+					Builder builder = new Builder(parent);
+					return builder;
+				}
+
+				public static final class Builder extends
+						com.google.protobuf.GeneratedMessage.Builder<Builder>
+						implements
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder {
+					public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
+					}
+
+					protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
+					}
+
+					// Construct using
+					// platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.newBuilder()
+					private Builder() {
+						maybeForceBuilderInitialization();
+					}
+
+					private Builder(BuilderParent parent) {
+						super(parent);
+						maybeForceBuilderInitialization();
+					}
+
+					private void maybeForceBuilderInitialization() {
+						if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						}
+					}
+
+					private static Builder create() {
+						return new Builder();
+					}
+
+					public Builder clear() {
+						super.clear();
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
+						bitField0_ = (bitField0_ & ~0x00000001);
+						position_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000002);
+						edge_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000004);
+						data_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000008);
+						return this;
+					}
+
+					public Builder clone() {
+						return create().mergeFrom(buildPartial());
+					}
+
+					public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDescriptor();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getDefaultInstanceForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDefaultInstance();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge build() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result);
+						}
+						return result;
+					}
+
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge buildParsed()
+							throws com.google.protobuf.InvalidProtocolBufferException {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result)
+									.asInvalidProtocolBufferException();
+						}
+						return result;
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge buildPartial() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge(
+								this);
+						int from_bitField0_ = bitField0_;
+						int to_bitField0_ = 0;
+						if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+							to_bitField0_ |= 0x00000001;
+						}
+						result.secCommand_ = secCommand_;
+						if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+							to_bitField0_ |= 0x00000002;
+						}
+						result.position_ = position_;
+						if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+							to_bitField0_ |= 0x00000004;
+						}
+						result.edge_ = edge_;
+						if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+							to_bitField0_ |= 0x00000008;
+						}
+						result.data_ = data_;
+						result.bitField0_ = to_bitField0_;
+						onBuilt();
+						return result;
+					}
+
+					public Builder mergeFrom(com.google.protobuf.Message other) {
+						if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge) {
+							return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge) other);
+						} else {
+							super.mergeFrom(other);
+							return this;
+						}
+					}
+
+					public Builder mergeFrom(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge other) {
+						if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDefaultInstance())
+							return this;
+						if (other.hasSecCommand()) {
+							setSecCommand(other.getSecCommand());
+						}
+						if (other.hasPosition()) {
+							setPosition(other.getPosition());
+						}
+						if (other.hasEdge()) {
+							setEdge(other.getEdge());
+						}
+						if (other.hasData()) {
+							setData(other.getData());
+						}
+						this.mergeUnknownFields(other.getUnknownFields());
+						return this;
+					}
+
+					public final boolean isInitialized() {
+						if (!hasSecCommand()) {
+
+							return false;
+						}
+						if (!hasData()) {
+
+							return false;
+						}
+						return true;
+					}
+
+					public Builder mergeFrom(
+							com.google.protobuf.CodedInputStream input,
+							com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+							throws java.io.IOException {
+						com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+								.newBuilder(this.getUnknownFields());
+						while (true) {
+							int tag = input.readTag();
+							switch (tag) {
+							case 0:
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							default: {
+								if (!parseUnknownField(input, unknownFields,
+										extensionRegistry, tag)) {
+									this.setUnknownFields(unknownFields.build());
+									onChanged();
+									return this;
+								}
+								break;
+							}
+							case 8: {
+								int rawValue = input.readEnum();
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand
+										.valueOf(rawValue);
+								if (value == null) {
+									unknownFields.mergeVarintField(1, rawValue);
+								} else {
+									bitField0_ |= 0x00000001;
+									secCommand_ = value;
+								}
+								break;
+							}
+							case 18: {
+								bitField0_ |= 0x00000002;
+								position_ = input.readBytes();
+								break;
+							}
+							case 26: {
+								bitField0_ |= 0x00000004;
+								edge_ = input.readBytes();
+								break;
+							}
+							case 34: {
+								bitField0_ |= 0x00000008;
+								data_ = input.readBytes();
+								break;
+							}
+							}
+						}
+					}
+
+					private int bitField0_;
+
+					// required
+					// .protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand
+					// secCommand = 1;
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
+
+					public boolean hasSecCommand() {
+						return ((bitField0_ & 0x00000001) == 0x00000001);
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand getSecCommand() {
+						return secCommand_;
+					}
+
+					public Builder setSecCommand(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000001;
+						secCommand_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSecCommand() {
+						bitField0_ = (bitField0_ & ~0x00000001);
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.SecCommand.cinEdge;
+						onChanged();
+						return this;
+					}
+
+					// optional bytes position = 2;
+					private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasPosition() {
+						return ((bitField0_ & 0x00000002) == 0x00000002);
+					}
+
+					public com.google.protobuf.ByteString getPosition() {
+						return position_;
+					}
+
+					public Builder setPosition(
+							com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000002;
+						position_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearPosition() {
+						bitField0_ = (bitField0_ & ~0x00000002);
+						position_ = getDefaultInstance().getPosition();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes edge = 3;
+					private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasEdge() {
+						return ((bitField0_ & 0x00000004) == 0x00000004);
+					}
+
+					public com.google.protobuf.ByteString getEdge() {
+						return edge_;
+					}
+
+					public Builder setEdge(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000004;
+						edge_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearEdge() {
+						bitField0_ = (bitField0_ & ~0x00000004);
+						edge_ = getDefaultInstance().getEdge();
+						onChanged();
+						return this;
+					}
+
+					// required bytes data = 4;
+					private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasData() {
+						return ((bitField0_ & 0x00000008) == 0x00000008);
+					}
+
+					public com.google.protobuf.ByteString getData() {
+						return data_;
+					}
+
+					public Builder setData(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000008;
+						data_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearData() {
+						bitField0_ = (bitField0_ & ~0x00000008);
+						data_ = getDefaultInstance().getData();
+						onChanged();
+						return this;
+					}
+
+					// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Edge)
+				}
+
+				static {
+					defaultInstance = new Edge(true);
+					defaultInstance.initFields();
+				}
+
+				// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Edge)
+			}
+
+			public interface VertexOrBuilder extends
+					com.google.protobuf.MessageOrBuilder {
+
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand
+				// secCommand = 1;
+				boolean hasSecCommand();
+
+				platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand();
+
+				// optional bytes size = 2;
+				boolean hasSize();
+
+				com.google.protobuf.ByteString getSize();
+
+				// optional bytes edge = 3;
+				boolean hasEdge();
+
+				com.google.protobuf.ByteString getEdge();
+			}
+
+			public static final class Vertex extends
+					com.google.protobuf.GeneratedMessage implements
+					VertexOrBuilder {
+				// Use Vertex.newBuilder() to construct.
+				private Vertex(Builder builder) {
+					super(builder);
+				}
+
+				private Vertex(boolean noInit) {
+				}
+
+				private static final Vertex defaultInstance;
+
+				public static Vertex getDefaultInstance() {
+					return defaultInstance;
+				}
+
+				public Vertex getDefaultInstanceForType() {
+					return defaultInstance;
+				}
+
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
+				}
+
+				public enum SecCommand implements
+						com.google.protobuf.ProtocolMessageEnum {
+					ccreateVertex(0, 0), csetSize(1, 1), caddEdge(2, 2), caddBack_edge(
+							3, 3), ;
+
+					public static final int ccreateVertex_VALUE = 0;
+					public static final int csetSize_VALUE = 1;
+					public static final int caddEdge_VALUE = 2;
+					public static final int caddBack_edge_VALUE = 3;
+
+					public final int getNumber() {
+						return value;
+					}
+
+					public static SecCommand valueOf(int value) {
+						switch (value) {
+						case 0:
+							return ccreateVertex;
+						case 1:
+							return csetSize;
+						case 2:
+							return caddEdge;
+						case 3:
+							return caddBack_edge;
+						default:
+							return null;
+						}
+					}
+
+					public static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalGetValueMap() {
+						return internalValueMap;
+					}
+
+					private static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
+						public SecCommand findValueByNumber(int number) {
+							return SecCommand.valueOf(number);
+						}
+					};
+
+					public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+						return getDescriptor().getValues().get(index);
+					}
+
+					public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+						return getDescriptor();
+					}
+
+					public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDescriptor().getEnumTypes().get(0);
+					}
+
+					private static final SecCommand[] VALUES = { ccreateVertex,
+							csetSize, caddEdge, caddBack_edge, };
+
+					public static SecCommand valueOf(
+							com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+						if (desc.getType() != getDescriptor()) {
+							throw new java.lang.IllegalArgumentException(
+									"EnumValueDescriptor is not for this type.");
+						}
+						return VALUES[desc.getIndex()];
+					}
+
+					private final int index;
+					private final int value;
+
+					private SecCommand(int index, int value) {
+						this.index = index;
+						this.value = value;
+					}
+
+					// @@protoc_insertion_point(enum_scope:protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand)
+				}
+
+				private int bitField0_;
+				// required
+				// .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand
+				// secCommand = 1;
+				public static final int SECCOMMAND_FIELD_NUMBER = 1;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand_;
+
+				public boolean hasSecCommand() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand() {
+					return secCommand_;
+				}
+
+				// optional bytes size = 2;
+				public static final int SIZE_FIELD_NUMBER = 2;
+				private com.google.protobuf.ByteString size_;
+
+				public boolean hasSize() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public com.google.protobuf.ByteString getSize() {
+					return size_;
+				}
+
+				// optional bytes edge = 3;
+				public static final int EDGE_FIELD_NUMBER = 3;
+				private com.google.protobuf.ByteString edge_;
+
+				public boolean hasEdge() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getEdge() {
+					return edge_;
+				}
+
+				private void initFields() {
+					secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
+					size_ = com.google.protobuf.ByteString.EMPTY;
+					edge_ = com.google.protobuf.ByteString.EMPTY;
+				}
+
+				private byte memoizedIsInitialized = -1;
+
+				public final boolean isInitialized() {
+					byte isInitialized = memoizedIsInitialized;
+					if (isInitialized != -1)
+						return isInitialized == 1;
+
+					if (!hasSecCommand()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+					memoizedIsInitialized = 1;
+					return true;
+				}
+
+				public void writeTo(com.google.protobuf.CodedOutputStream output)
+						throws java.io.IOException {
+					getSerializedSize();
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						output.writeEnum(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						output.writeBytes(2, size_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						output.writeBytes(3, edge_);
+					}
+					getUnknownFields().writeTo(output);
+				}
+
+				private int memoizedSerializedSize = -1;
+
+				public int getSerializedSize() {
+					int size = memoizedSerializedSize;
+					if (size != -1)
+						return size;
+
+					size = 0;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeEnumSize(1, secCommand_.getNumber());
+					}
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(2, size_);
+					}
+					if (((bitField0_ & 0x00000004) == 0x00000004)) {
+						size += com.google.protobuf.CodedOutputStream
+								.computeBytesSize(3, edge_);
+					}
+					size += getUnknownFields().getSerializedSize();
+					memoizedSerializedSize = size;
+					return size;
+				}
+
+				private static final long serialVersionUID = 0L;
+
+				@java.lang.Override
+				protected java.lang.Object writeReplace()
+						throws java.io.ObjectStreamException {
+					return super.writeReplace();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						com.google.protobuf.ByteString data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						com.google.protobuf.ByteString data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						byte[] data)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						byte[] data,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					return newBuilder().mergeFrom(data, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseDelimitedFrom(
+						java.io.InputStream input) throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseDelimitedFrom(
+						java.io.InputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					Builder builder = newBuilder();
+					if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+						return builder.buildParsed();
+					} else {
+						return null;
+					}
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						com.google.protobuf.CodedInputStream input)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input).buildParsed();
+				}
+
+				public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex parseFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					return newBuilder().mergeFrom(input, extensionRegistry)
+							.buildParsed();
+				}
+
+				public static Builder newBuilder() {
+					return Builder.create();
+				}
+
+				public Builder newBuilderForType() {
+					return newBuilder();
+				}
+
+				public static Builder newBuilder(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex prototype) {
+					return newBuilder().mergeFrom(prototype);
+				}
+
+				public Builder toBuilder() {
+					return newBuilder(this);
+				}
+
+				@java.lang.Override
+				protected Builder newBuilderForType(
+						com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+					Builder builder = new Builder(parent);
+					return builder;
+				}
+
+				public static final class Builder extends
+						com.google.protobuf.GeneratedMessage.Builder<Builder>
+						implements
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder {
+					public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
+					}
+
+					protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+						return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
+					}
+
+					// Construct using
+					// platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.newBuilder()
+					private Builder() {
+						maybeForceBuilderInitialization();
+					}
+
+					private Builder(BuilderParent parent) {
+						super(parent);
+						maybeForceBuilderInitialization();
+					}
+
+					private void maybeForceBuilderInitialization() {
+						if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						}
+					}
+
+					private static Builder create() {
+						return new Builder();
+					}
+
+					public Builder clear() {
+						super.clear();
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
+						bitField0_ = (bitField0_ & ~0x00000001);
+						size_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000002);
+						edge_ = com.google.protobuf.ByteString.EMPTY;
+						bitField0_ = (bitField0_ & ~0x00000004);
+						return this;
+					}
+
+					public Builder clone() {
+						return create().mergeFrom(buildPartial());
+					}
+
+					public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDescriptor();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getDefaultInstanceForType() {
+						return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDefaultInstance();
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex build() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result);
+						}
+						return result;
+					}
+
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex buildParsed()
+							throws com.google.protobuf.InvalidProtocolBufferException {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = buildPartial();
+						if (!result.isInitialized()) {
+							throw newUninitializedMessageException(result)
+									.asInvalidProtocolBufferException();
+						}
+						return result;
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex buildPartial() {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex(
+								this);
+						int from_bitField0_ = bitField0_;
+						int to_bitField0_ = 0;
+						if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+							to_bitField0_ |= 0x00000001;
+						}
+						result.secCommand_ = secCommand_;
+						if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+							to_bitField0_ |= 0x00000002;
+						}
+						result.size_ = size_;
+						if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+							to_bitField0_ |= 0x00000004;
+						}
+						result.edge_ = edge_;
+						result.bitField0_ = to_bitField0_;
+						onBuilt();
+						return result;
+					}
+
+					public Builder mergeFrom(com.google.protobuf.Message other) {
+						if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex) {
+							return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex) other);
+						} else {
+							super.mergeFrom(other);
+							return this;
+						}
+					}
+
+					public Builder mergeFrom(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex other) {
+						if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDefaultInstance())
+							return this;
+						if (other.hasSecCommand()) {
+							setSecCommand(other.getSecCommand());
+						}
+						if (other.hasSize()) {
+							setSize(other.getSize());
+						}
+						if (other.hasEdge()) {
+							setEdge(other.getEdge());
+						}
+						this.mergeUnknownFields(other.getUnknownFields());
+						return this;
+					}
+
+					public final boolean isInitialized() {
+						if (!hasSecCommand()) {
+
+							return false;
+						}
+						return true;
+					}
+
+					public Builder mergeFrom(
+							com.google.protobuf.CodedInputStream input,
+							com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+							throws java.io.IOException {
+						com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+								.newBuilder(this.getUnknownFields());
+						while (true) {
+							int tag = input.readTag();
+							switch (tag) {
+							case 0:
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							default: {
+								if (!parseUnknownField(input, unknownFields,
+										extensionRegistry, tag)) {
+									this.setUnknownFields(unknownFields.build());
+									onChanged();
+									return this;
+								}
+								break;
+							}
+							case 8: {
+								int rawValue = input.readEnum();
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand
+										.valueOf(rawValue);
+								if (value == null) {
+									unknownFields.mergeVarintField(1, rawValue);
+								} else {
+									bitField0_ |= 0x00000001;
+									secCommand_ = value;
+								}
+								break;
+							}
+							case 18: {
+								bitField0_ |= 0x00000002;
+								size_ = input.readBytes();
+								break;
+							}
+							case 26: {
+								bitField0_ |= 0x00000004;
+								edge_ = input.readBytes();
+								break;
+							}
+							}
+						}
+					}
+
+					private int bitField0_;
+
+					// required
+					// .protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand
+					// secCommand = 1;
+					private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
+
+					public boolean hasSecCommand() {
+						return ((bitField0_ & 0x00000001) == 0x00000001);
+					}
+
+					public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand getSecCommand() {
+						return secCommand_;
+					}
+
+					public Builder setSecCommand(
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000001;
+						secCommand_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSecCommand() {
+						bitField0_ = (bitField0_ & ~0x00000001);
+						secCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.SecCommand.ccreateVertex;
+						onChanged();
+						return this;
+					}
+
+					// optional bytes size = 2;
+					private com.google.protobuf.ByteString size_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasSize() {
+						return ((bitField0_ & 0x00000002) == 0x00000002);
+					}
+
+					public com.google.protobuf.ByteString getSize() {
+						return size_;
+					}
+
+					public Builder setSize(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000002;
+						size_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearSize() {
+						bitField0_ = (bitField0_ & ~0x00000002);
+						size_ = getDefaultInstance().getSize();
+						onChanged();
+						return this;
+					}
+
+					// optional bytes edge = 3;
+					private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
+
+					public boolean hasEdge() {
+						return ((bitField0_ & 0x00000004) == 0x00000004);
+					}
+
+					public com.google.protobuf.ByteString getEdge() {
+						return edge_;
+					}
+
+					public Builder setEdge(com.google.protobuf.ByteString value) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						bitField0_ |= 0x00000004;
+						edge_ = value;
+						onChanged();
+						return this;
+					}
+
+					public Builder clearEdge() {
+						bitField0_ = (bitField0_ & ~0x00000004);
+						edge_ = getDefaultInstance().getEdge();
+						onChanged();
+						return this;
+					}
+
+					// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand.Vertex)
+				}
+
+				static {
+					defaultInstance = new Vertex(true);
+					defaultInstance.initFields();
+				}
+
+				// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand.Vertex)
+			}
+
+			private int bitField0_;
+			// required .protocol.MultiSaveCommand.SaveCommand.Type type = 1;
+			public static final int TYPE_FIELD_NUMBER = 1;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type type_;
+
+			public boolean hasType() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType() {
+				return type_;
+			}
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Metadata metadata
+			// = 2;
+			public static final int METADATA_FIELD_NUMBER = 2;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata metadata_;
+
+			public boolean hasMetadata() {
+				return ((bitField0_ & 0x00000002) == 0x00000002);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata() {
+				return metadata_;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder() {
+				return metadata_;
+			}
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Content content =
+			// 3;
+			public static final int CONTENT_FIELD_NUMBER = 3;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content content_;
+
+			public boolean hasContent() {
+				return ((bitField0_ & 0x00000004) == 0x00000004);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent() {
+				return content_;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder() {
+				return content_;
+			}
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Edge edge = 4;
+			public static final int EDGE_FIELD_NUMBER = 4;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge edge_;
+
+			public boolean hasEdge() {
+				return ((bitField0_ & 0x00000008) == 0x00000008);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge() {
+				return edge_;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder() {
+				return edge_;
+			}
+
+			// optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex =
+			// 5;
+			public static final int VERTEX_FIELD_NUMBER = 5;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex vertex_;
+
+			public boolean hasVertex() {
+				return ((bitField0_ & 0x00000010) == 0x00000010);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex() {
+				return vertex_;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder() {
+				return vertex_;
+			}
+
+			private void initFields() {
+				type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
+				metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+						.getDefaultInstance();
+				content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+						.getDefaultInstance();
+				edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+						.getDefaultInstance();
+				vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+						.getDefaultInstance();
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				if (!hasType()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				if (hasMetadata()) {
+					if (!getMetadata().isInitialized()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+				}
+				if (hasContent()) {
+					if (!getContent().isInitialized()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+				}
+				if (hasEdge()) {
+					if (!getEdge().isInitialized()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+				}
+				if (hasVertex()) {
+					if (!getVertex().isInitialized()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+				}
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					output.writeEnum(1, type_.getNumber());
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					output.writeMessage(2, metadata_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					output.writeMessage(3, content_);
+				}
+				if (((bitField0_ & 0x00000008) == 0x00000008)) {
+					output.writeMessage(4, edge_);
+				}
+				if (((bitField0_ & 0x00000010) == 0x00000010)) {
+					output.writeMessage(5, vertex_);
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeEnumSize(1, type_.getNumber());
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeMessageSize(2, metadata_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeMessageSize(3, content_);
+				}
+				if (((bitField0_ & 0x00000008) == 0x00000008)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeMessageSize(4, edge_);
+				}
+				if (((bitField0_ & 0x00000010) == 0x00000010)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeMessageSize(5, vertex_);
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						getMetadataFieldBuilder();
+						getContentFieldBuilder();
+						getEdgeFieldBuilder();
+						getVertexFieldBuilder();
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					if (metadataBuilder_ == null) {
+						metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDefaultInstance();
+					} else {
+						metadataBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000002);
+					if (contentBuilder_ == null) {
+						content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDefaultInstance();
+					} else {
+						contentBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000004);
+					if (edgeBuilder_ == null) {
+						edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDefaultInstance();
+					} else {
+						edgeBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000008);
+					if (vertexBuilder_ == null) {
+						vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDefaultInstance();
+					} else {
+						vertexBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000010);
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand build() {
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand buildPartial() {
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand result = new platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand(
+							this);
+					int from_bitField0_ = bitField0_;
+					int to_bitField0_ = 0;
+					if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+						to_bitField0_ |= 0x00000001;
+					}
+					result.type_ = type_;
+					if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+						to_bitField0_ |= 0x00000002;
+					}
+					if (metadataBuilder_ == null) {
+						result.metadata_ = metadata_;
+					} else {
+						result.metadata_ = metadataBuilder_.build();
+					}
+					if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+						to_bitField0_ |= 0x00000004;
+					}
+					if (contentBuilder_ == null) {
+						result.content_ = content_;
+					} else {
+						result.content_ = contentBuilder_.build();
+					}
+					if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+						to_bitField0_ |= 0x00000008;
+					}
+					if (edgeBuilder_ == null) {
+						result.edge_ = edge_;
+					} else {
+						result.edge_ = edgeBuilder_.build();
+					}
+					if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+						to_bitField0_ |= 0x00000010;
+					}
+					if (vertexBuilder_ == null) {
+						result.vertex_ = vertex_;
+					} else {
+						result.vertex_ = vertexBuilder_.build();
+					}
+					result.bitField0_ = to_bitField0_;
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand) {
+						return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand other) {
+					if (other == platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+							.getDefaultInstance())
+						return this;
+					if (other.hasType()) {
+						setType(other.getType());
+					}
+					if (other.hasMetadata()) {
+						mergeMetadata(other.getMetadata());
+					}
+					if (other.hasContent()) {
+						mergeContent(other.getContent());
+					}
+					if (other.hasEdge()) {
+						mergeEdge(other.getEdge());
+					}
+					if (other.hasVertex()) {
+						mergeVertex(other.getVertex());
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					if (!hasType()) {
+
+						return false;
+					}
+					if (hasMetadata()) {
+						if (!getMetadata().isInitialized()) {
+
+							return false;
+						}
+					}
+					if (hasContent()) {
+						if (!getContent().isInitialized()) {
+
+							return false;
+						}
+					}
+					if (hasEdge()) {
+						if (!getEdge().isInitialized()) {
+
+							return false;
+						}
+					}
+					if (hasVertex()) {
+						if (!getVertex().isInitialized()) {
+
+							return false;
+						}
+					}
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							int rawValue = input.readEnum();
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type value = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type
+									.valueOf(rawValue);
+							if (value == null) {
+								unknownFields.mergeVarintField(1, rawValue);
+							} else {
+								bitField0_ |= 0x00000001;
+								type_ = value;
+							}
+							break;
+						}
+						case 18: {
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+									.newBuilder();
+							if (hasMetadata()) {
+								subBuilder.mergeFrom(getMetadata());
+							}
+							input.readMessage(subBuilder, extensionRegistry);
+							setMetadata(subBuilder.buildPartial());
+							break;
+						}
+						case 26: {
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+									.newBuilder();
+							if (hasContent()) {
+								subBuilder.mergeFrom(getContent());
+							}
+							input.readMessage(subBuilder, extensionRegistry);
+							setContent(subBuilder.buildPartial());
+							break;
+						}
+						case 34: {
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+									.newBuilder();
+							if (hasEdge()) {
+								subBuilder.mergeFrom(getEdge());
+							}
+							input.readMessage(subBuilder, extensionRegistry);
+							setEdge(subBuilder.buildPartial());
+							break;
+						}
+						case 42: {
+							platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+									.newBuilder();
+							if (hasVertex()) {
+								subBuilder.mergeFrom(getVertex());
+							}
+							input.readMessage(subBuilder, extensionRegistry);
+							setVertex(subBuilder.buildPartial());
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// required .protocol.MultiSaveCommand.SaveCommand.Type type =
+				// 1;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
+
+				public boolean hasType() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type getType() {
+					return type_;
+				}
+
+				public Builder setType(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000001;
+					type_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearType() {
+					bitField0_ = (bitField0_ & ~0x00000001);
+					type_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Type.cmetadata;
+					onChanged();
+					return this;
+				}
+
+				// optional .protocol.MultiSaveCommand.SaveCommand.Metadata
+				// metadata = 2;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+						.getDefaultInstance();
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder> metadataBuilder_;
+
+				public boolean hasMetadata() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata getMetadata() {
+					if (metadataBuilder_ == null) {
+						return metadata_;
+					} else {
+						return metadataBuilder_.getMessage();
+					}
+				}
+
+				public Builder setMetadata(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata value) {
+					if (metadataBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						metadata_ = value;
+						onChanged();
+					} else {
+						metadataBuilder_.setMessage(value);
+					}
+					bitField0_ |= 0x00000002;
+					return this;
+				}
+
+				public Builder setMetadata(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder builderForValue) {
+					if (metadataBuilder_ == null) {
+						metadata_ = builderForValue.build();
+						onChanged();
+					} else {
+						metadataBuilder_.setMessage(builderForValue.build());
+					}
+					bitField0_ |= 0x00000002;
+					return this;
+				}
+
+				public Builder mergeMetadata(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata value) {
+					if (metadataBuilder_ == null) {
+						if (((bitField0_ & 0x00000002) == 0x00000002)
+								&& metadata_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+										.getDefaultInstance()) {
+							metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+									.newBuilder(metadata_).mergeFrom(value)
+									.buildPartial();
+						} else {
+							metadata_ = value;
+						}
+						onChanged();
+					} else {
+						metadataBuilder_.mergeFrom(value);
+					}
+					bitField0_ |= 0x00000002;
+					return this;
+				}
+
+				public Builder clearMetadata() {
+					if (metadataBuilder_ == null) {
+						metadata_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata
+								.getDefaultInstance();
+						onChanged();
+					} else {
+						metadataBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000002);
+					return this;
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder getMetadataBuilder() {
+					bitField0_ |= 0x00000002;
+					onChanged();
+					return getMetadataFieldBuilder().getBuilder();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder getMetadataOrBuilder() {
+					if (metadataBuilder_ != null) {
+						return metadataBuilder_.getMessageOrBuilder();
+					} else {
+						return metadata_;
+					}
+				}
+
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder> getMetadataFieldBuilder() {
+					if (metadataBuilder_ == null) {
+						metadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.MetadataOrBuilder>(
+								metadata_, getParentForChildren(), isClean());
+						metadata_ = null;
+					}
+					return metadataBuilder_;
+				}
+
+				// optional .protocol.MultiSaveCommand.SaveCommand.Content
+				// content = 3;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+						.getDefaultInstance();
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder> contentBuilder_;
+
+				public boolean hasContent() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content getContent() {
+					if (contentBuilder_ == null) {
+						return content_;
+					} else {
+						return contentBuilder_.getMessage();
+					}
+				}
+
+				public Builder setContent(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content value) {
+					if (contentBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						content_ = value;
+						onChanged();
+					} else {
+						contentBuilder_.setMessage(value);
+					}
+					bitField0_ |= 0x00000004;
+					return this;
+				}
+
+				public Builder setContent(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder builderForValue) {
+					if (contentBuilder_ == null) {
+						content_ = builderForValue.build();
+						onChanged();
+					} else {
+						contentBuilder_.setMessage(builderForValue.build());
+					}
+					bitField0_ |= 0x00000004;
+					return this;
+				}
+
+				public Builder mergeContent(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content value) {
+					if (contentBuilder_ == null) {
+						if (((bitField0_ & 0x00000004) == 0x00000004)
+								&& content_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+										.getDefaultInstance()) {
+							content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+									.newBuilder(content_).mergeFrom(value)
+									.buildPartial();
+						} else {
+							content_ = value;
+						}
+						onChanged();
+					} else {
+						contentBuilder_.mergeFrom(value);
+					}
+					bitField0_ |= 0x00000004;
+					return this;
+				}
+
+				public Builder clearContent() {
+					if (contentBuilder_ == null) {
+						content_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content
+								.getDefaultInstance();
+						onChanged();
+					} else {
+						contentBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000004);
+					return this;
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder getContentBuilder() {
+					bitField0_ |= 0x00000004;
+					onChanged();
+					return getContentFieldBuilder().getBuilder();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder getContentOrBuilder() {
+					if (contentBuilder_ != null) {
+						return contentBuilder_.getMessageOrBuilder();
+					} else {
+						return content_;
+					}
+				}
+
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder> getContentFieldBuilder() {
+					if (contentBuilder_ == null) {
+						contentBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.ContentOrBuilder>(
+								content_, getParentForChildren(), isClean());
+						content_ = null;
+					}
+					return contentBuilder_;
+				}
+
+				// optional .protocol.MultiSaveCommand.SaveCommand.Edge edge =
+				// 4;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+						.getDefaultInstance();
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder> edgeBuilder_;
+
+				public boolean hasEdge() {
+					return ((bitField0_ & 0x00000008) == 0x00000008);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge getEdge() {
+					if (edgeBuilder_ == null) {
+						return edge_;
+					} else {
+						return edgeBuilder_.getMessage();
+					}
+				}
+
+				public Builder setEdge(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge value) {
+					if (edgeBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						edge_ = value;
+						onChanged();
+					} else {
+						edgeBuilder_.setMessage(value);
+					}
+					bitField0_ |= 0x00000008;
+					return this;
+				}
+
+				public Builder setEdge(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder builderForValue) {
+					if (edgeBuilder_ == null) {
+						edge_ = builderForValue.build();
+						onChanged();
+					} else {
+						edgeBuilder_.setMessage(builderForValue.build());
+					}
+					bitField0_ |= 0x00000008;
+					return this;
+				}
+
+				public Builder mergeEdge(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge value) {
+					if (edgeBuilder_ == null) {
+						if (((bitField0_ & 0x00000008) == 0x00000008)
+								&& edge_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+										.getDefaultInstance()) {
+							edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+									.newBuilder(edge_).mergeFrom(value)
+									.buildPartial();
+						} else {
+							edge_ = value;
+						}
+						onChanged();
+					} else {
+						edgeBuilder_.mergeFrom(value);
+					}
+					bitField0_ |= 0x00000008;
+					return this;
+				}
+
+				public Builder clearEdge() {
+					if (edgeBuilder_ == null) {
+						edge_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge
+								.getDefaultInstance();
+						onChanged();
+					} else {
+						edgeBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000008);
+					return this;
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder getEdgeBuilder() {
+					bitField0_ |= 0x00000008;
+					onChanged();
+					return getEdgeFieldBuilder().getBuilder();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder getEdgeOrBuilder() {
+					if (edgeBuilder_ != null) {
+						return edgeBuilder_.getMessageOrBuilder();
+					} else {
+						return edge_;
+					}
+				}
+
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder> getEdgeFieldBuilder() {
+					if (edgeBuilder_ == null) {
+						edgeBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.EdgeOrBuilder>(
+								edge_, getParentForChildren(), isClean());
+						edge_ = null;
+					}
+					return edgeBuilder_;
+				}
+
+				// optional .protocol.MultiSaveCommand.SaveCommand.Vertex vertex
+				// = 5;
+				private platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+						.getDefaultInstance();
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder> vertexBuilder_;
+
+				public boolean hasVertex() {
+					return ((bitField0_ & 0x00000010) == 0x00000010);
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex getVertex() {
+					if (vertexBuilder_ == null) {
+						return vertex_;
+					} else {
+						return vertexBuilder_.getMessage();
+					}
+				}
+
+				public Builder setVertex(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex value) {
+					if (vertexBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						vertex_ = value;
+						onChanged();
+					} else {
+						vertexBuilder_.setMessage(value);
+					}
+					bitField0_ |= 0x00000010;
+					return this;
+				}
+
+				public Builder setVertex(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder builderForValue) {
+					if (vertexBuilder_ == null) {
+						vertex_ = builderForValue.build();
+						onChanged();
+					} else {
+						vertexBuilder_.setMessage(builderForValue.build());
+					}
+					bitField0_ |= 0x00000010;
+					return this;
+				}
+
+				public Builder mergeVertex(
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex value) {
+					if (vertexBuilder_ == null) {
+						if (((bitField0_ & 0x00000010) == 0x00000010)
+								&& vertex_ != platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+										.getDefaultInstance()) {
+							vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+									.newBuilder(vertex_).mergeFrom(value)
+									.buildPartial();
+						} else {
+							vertex_ = value;
+						}
+						onChanged();
+					} else {
+						vertexBuilder_.mergeFrom(value);
+					}
+					bitField0_ |= 0x00000010;
+					return this;
+				}
+
+				public Builder clearVertex() {
+					if (vertexBuilder_ == null) {
+						vertex_ = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex
+								.getDefaultInstance();
+						onChanged();
+					} else {
+						vertexBuilder_.clear();
+					}
+					bitField0_ = (bitField0_ & ~0x00000010);
+					return this;
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder getVertexBuilder() {
+					bitField0_ |= 0x00000010;
+					onChanged();
+					return getVertexFieldBuilder().getBuilder();
+				}
+
+				public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder getVertexOrBuilder() {
+					if (vertexBuilder_ != null) {
+						return vertexBuilder_.getMessageOrBuilder();
+					} else {
+						return vertex_;
+					}
+				}
+
+				private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder> getVertexFieldBuilder() {
+					if (vertexBuilder_ == null) {
+						vertexBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.VertexOrBuilder>(
+								vertex_, getParentForChildren(), isClean());
+						vertex_ = null;
+					}
+					return vertexBuilder_;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand.SaveCommand)
+			}
+
+			static {
+				defaultInstance = new SaveCommand(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand.SaveCommand)
+		}
+
+		private int bitField0_;
+		// required int64 key = 1;
+		public static final int KEY_FIELD_NUMBER = 1;
+		private long key_;
+
+		public boolean hasKey() {
+			return ((bitField0_ & 0x00000001) == 0x00000001);
+		}
+
+		public long getKey() {
+			return key_;
+		}
+
+		// repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
+		public static final int SAVECOMMAND_FIELD_NUMBER = 2;
+		private java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> saveCommand_;
+
+		public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> getSaveCommandList() {
+			return saveCommand_;
+		}
+
+		public java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> getSaveCommandOrBuilderList() {
+			return saveCommand_;
+		}
+
+		public int getSaveCommandCount() {
+			return saveCommand_.size();
+		}
+
+		public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(
+				int index) {
+			return saveCommand_.get(index);
+		}
+
+		public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
+				int index) {
+			return saveCommand_.get(index);
+		}
+
+		private void initFields() {
+			key_ = 0L;
+			saveCommand_ = java.util.Collections.emptyList();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			if (!hasKey()) {
+				memoizedIsInitialized = 0;
+				return false;
+			}
+			for (int i = 0; i < getSaveCommandCount(); i++) {
+				if (!getSaveCommand(i).isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				output.writeInt64(1, key_);
+			}
+			for (int i = 0; i < saveCommand_.size(); i++) {
+				output.writeMessage(2, saveCommand_.get(i));
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				size += com.google.protobuf.CodedOutputStream.computeInt64Size(
+						1, key_);
+			}
+			for (int i = 0; i < saveCommand_.size(); i++) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(2, saveCommand_.get(i));
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiSaveCommand parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.MultiSaveCommand prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.MultiSaveCommand.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					getSaveCommandFieldBuilder();
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				key_ = 0L;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				if (saveCommandBuilder_ == null) {
+					saveCommand_ = java.util.Collections.emptyList();
+					bitField0_ = (bitField0_ & ~0x00000002);
+				} else {
+					saveCommandBuilder_.clear();
+				}
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.MultiSaveCommand
+						.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.MultiSaveCommand
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand build() {
+				platanos.docGraphDB.Protocol.MultiSaveCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.MultiSaveCommand buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.MultiSaveCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand buildPartial() {
+				platanos.docGraphDB.Protocol.MultiSaveCommand result = new platanos.docGraphDB.Protocol.MultiSaveCommand(
+						this);
+				int from_bitField0_ = bitField0_;
+				int to_bitField0_ = 0;
+				if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+					to_bitField0_ |= 0x00000001;
+				}
+				result.key_ = key_;
+				if (saveCommandBuilder_ == null) {
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						saveCommand_ = java.util.Collections
+								.unmodifiableList(saveCommand_);
+						bitField0_ = (bitField0_ & ~0x00000002);
+					}
+					result.saveCommand_ = saveCommand_;
+				} else {
+					result.saveCommand_ = saveCommandBuilder_.build();
+				}
+				result.bitField0_ = to_bitField0_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.MultiSaveCommand) {
+					return mergeFrom((platanos.docGraphDB.Protocol.MultiSaveCommand) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.MultiSaveCommand other) {
+				if (other == platanos.docGraphDB.Protocol.MultiSaveCommand
+						.getDefaultInstance())
+					return this;
+				if (other.hasKey()) {
+					setKey(other.getKey());
+				}
+				if (saveCommandBuilder_ == null) {
+					if (!other.saveCommand_.isEmpty()) {
+						if (saveCommand_.isEmpty()) {
+							saveCommand_ = other.saveCommand_;
+							bitField0_ = (bitField0_ & ~0x00000002);
+						} else {
+							ensureSaveCommandIsMutable();
+							saveCommand_.addAll(other.saveCommand_);
+						}
+						onChanged();
+					}
+				} else {
+					if (!other.saveCommand_.isEmpty()) {
+						if (saveCommandBuilder_.isEmpty()) {
+							saveCommandBuilder_.dispose();
+							saveCommandBuilder_ = null;
+							saveCommand_ = other.saveCommand_;
+							bitField0_ = (bitField0_ & ~0x00000002);
+							saveCommandBuilder_ = com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ? getSaveCommandFieldBuilder()
+									: null;
+						} else {
+							saveCommandBuilder_
+									.addAllMessages(other.saveCommand_);
+						}
+					}
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				if (!hasKey()) {
+
+					return false;
+				}
+				for (int i = 0; i < getSaveCommandCount(); i++) {
+					if (!getSaveCommand(i).isInitialized()) {
+
+						return false;
+					}
+				}
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 8: {
+						bitField0_ |= 0x00000001;
+						key_ = input.readInt64();
+						break;
+					}
+					case 18: {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+								.newBuilder();
+						input.readMessage(subBuilder, extensionRegistry);
+						addSaveCommand(subBuilder.buildPartial());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// required int64 key = 1;
+			private long key_;
+
+			public boolean hasKey() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public long getKey() {
+				return key_;
+			}
+
+			public Builder setKey(long value) {
+				bitField0_ |= 0x00000001;
+				key_ = value;
+				onChanged();
+				return this;
+			}
+
+			public Builder clearKey() {
+				bitField0_ = (bitField0_ & ~0x00000001);
+				key_ = 0L;
+				onChanged();
+				return this;
+			}
+
+			// repeated .protocol.MultiSaveCommand.SaveCommand saveCommand = 2;
+			private java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> saveCommand_ = java.util.Collections
+					.emptyList();
+
+			private void ensureSaveCommandIsMutable() {
+				if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+					saveCommand_ = new java.util.ArrayList<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand>(
+							saveCommand_);
+					bitField0_ |= 0x00000002;
+				}
+			}
+
+			private com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> saveCommandBuilder_;
+
+			public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> getSaveCommandList() {
+				if (saveCommandBuilder_ == null) {
+					return java.util.Collections.unmodifiableList(saveCommand_);
+				} else {
+					return saveCommandBuilder_.getMessageList();
+				}
+			}
+
+			public int getSaveCommandCount() {
+				if (saveCommandBuilder_ == null) {
+					return saveCommand_.size();
+				} else {
+					return saveCommandBuilder_.getCount();
+				}
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand getSaveCommand(
+					int index) {
+				if (saveCommandBuilder_ == null) {
+					return saveCommand_.get(index);
+				} else {
+					return saveCommandBuilder_.getMessage(index);
+				}
+			}
+
+			public Builder setSaveCommand(
+					int index,
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
+				if (saveCommandBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensureSaveCommandIsMutable();
+					saveCommand_.set(index, value);
+					onChanged();
+				} else {
+					saveCommandBuilder_.setMessage(index, value);
+				}
+				return this;
+			}
+
+			public Builder setSaveCommand(
+					int index,
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
+				if (saveCommandBuilder_ == null) {
+					ensureSaveCommandIsMutable();
+					saveCommand_.set(index, builderForValue.build());
+					onChanged();
+				} else {
+					saveCommandBuilder_.setMessage(index,
+							builderForValue.build());
+				}
+				return this;
+			}
+
+			public Builder addSaveCommand(
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
+				if (saveCommandBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensureSaveCommandIsMutable();
+					saveCommand_.add(value);
+					onChanged();
+				} else {
+					saveCommandBuilder_.addMessage(value);
+				}
+				return this;
+			}
+
+			public Builder addSaveCommand(
+					int index,
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand value) {
+				if (saveCommandBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensureSaveCommandIsMutable();
+					saveCommand_.add(index, value);
+					onChanged();
+				} else {
+					saveCommandBuilder_.addMessage(index, value);
+				}
+				return this;
+			}
+
+			public Builder addSaveCommand(
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
+				if (saveCommandBuilder_ == null) {
+					ensureSaveCommandIsMutable();
+					saveCommand_.add(builderForValue.build());
+					onChanged();
+				} else {
+					saveCommandBuilder_.addMessage(builderForValue.build());
+				}
+				return this;
+			}
+
+			public Builder addSaveCommand(
+					int index,
+					platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder builderForValue) {
+				if (saveCommandBuilder_ == null) {
+					ensureSaveCommandIsMutable();
+					saveCommand_.add(index, builderForValue.build());
+					onChanged();
+				} else {
+					saveCommandBuilder_.addMessage(index,
+							builderForValue.build());
+				}
+				return this;
+			}
+
+			public Builder addAllSaveCommand(
+					java.lang.Iterable<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand> values) {
+				if (saveCommandBuilder_ == null) {
+					ensureSaveCommandIsMutable();
+					super.addAll(values, saveCommand_);
+					onChanged();
+				} else {
+					saveCommandBuilder_.addAllMessages(values);
+				}
+				return this;
+			}
+
+			public Builder clearSaveCommand() {
+				if (saveCommandBuilder_ == null) {
+					saveCommand_ = java.util.Collections.emptyList();
+					bitField0_ = (bitField0_ & ~0x00000002);
+					onChanged();
+				} else {
+					saveCommandBuilder_.clear();
+				}
+				return this;
+			}
+
+			public Builder removeSaveCommand(int index) {
+				if (saveCommandBuilder_ == null) {
+					ensureSaveCommandIsMutable();
+					saveCommand_.remove(index);
+					onChanged();
+				} else {
+					saveCommandBuilder_.remove(index);
+				}
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder getSaveCommandBuilder(
+					int index) {
+				return getSaveCommandFieldBuilder().getBuilder(index);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder getSaveCommandOrBuilder(
+					int index) {
+				if (saveCommandBuilder_ == null) {
+					return saveCommand_.get(index);
+				} else {
+					return saveCommandBuilder_.getMessageOrBuilder(index);
+				}
+			}
+
+			public java.util.List<? extends platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> getSaveCommandOrBuilderList() {
+				if (saveCommandBuilder_ != null) {
+					return saveCommandBuilder_.getMessageOrBuilderList();
+				} else {
+					return java.util.Collections.unmodifiableList(saveCommand_);
+				}
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder addSaveCommandBuilder() {
+				return getSaveCommandFieldBuilder()
+						.addBuilder(
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+										.getDefaultInstance());
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder addSaveCommandBuilder(
+					int index) {
+				return getSaveCommandFieldBuilder()
+						.addBuilder(
+								index,
+								platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand
+										.getDefaultInstance());
+			}
+
+			public java.util.List<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder> getSaveCommandBuilderList() {
+				return getSaveCommandFieldBuilder().getBuilderList();
+			}
+
+			private com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder> getSaveCommandFieldBuilder() {
+				if (saveCommandBuilder_ == null) {
+					saveCommandBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommandOrBuilder>(
+							saveCommand_,
+							((bitField0_ & 0x00000002) == 0x00000002),
+							getParentForChildren(), isClean());
+					saveCommand_ = null;
+				}
+				return saveCommandBuilder_;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.MultiSaveCommand)
+		}
+
+		static {
+			defaultInstance = new MultiSaveCommand(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.MultiSaveCommand)
+	}
+
+	public interface LoadCommandOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// required .protocol.LoadCommand.Type type = 1;
+		boolean hasType();
+
+		platanos.docGraphDB.Protocol.LoadCommand.Type getType();
+
+		// optional .protocol.LoadCommand.GraphView graphView = 2;
+		boolean hasGraphView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder();
+
+		// optional .protocol.LoadCommand.ContentView contentView = 3;
+		boolean hasContentView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.ContentView getContentView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder getContentViewOrBuilder();
+
+		// optional .protocol.LoadCommand.SearchView searchView = 4;
+		boolean hasSearchView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.SearchView getSearchView();
+
+		platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder getSearchViewOrBuilder();
+
+		// optional .protocol.LoadCommand.Vertex vertex = 5;
+		boolean hasVertex();
+
+		platanos.docGraphDB.Protocol.LoadCommand.Vertex getVertex();
+
+		platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder getVertexOrBuilder();
+	}
+
+	public static final class LoadCommand extends
+			com.google.protobuf.GeneratedMessage implements
+			LoadCommandOrBuilder {
+		// Use LoadCommand.newBuilder() to construct.
+		private LoadCommand(Builder builder) {
+			super(builder);
+		}
+
+		private LoadCommand(boolean noInit) {
+		}
+
+		private static final LoadCommand defaultInstance;
+
+		public static LoadCommand getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public LoadCommand getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_fieldAccessorTable;
+		}
+
+		public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+			cgraphView(0, 0), ccontentView(1, 1), csearchView(2, 2), cvertex(3,
+					3), crepair(4, 4), ;
+
+			public static final int cgraphView_VALUE = 0;
+			public static final int ccontentView_VALUE = 1;
+			public static final int csearchView_VALUE = 2;
+			public static final int cvertex_VALUE = 3;
+			public static final int crepair_VALUE = 4;
+
+			public final int getNumber() {
+				return value;
+			}
+
+			public static Type valueOf(int value) {
+				switch (value) {
+				case 0:
+					return cgraphView;
+				case 1:
+					return ccontentView;
+				case 2:
+					return csearchView;
+				case 3:
+					return cvertex;
+				case 4:
+					return crepair;
+				default:
+					return null;
+				}
+			}
+
+			public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+				return internalValueMap;
+			}
+
+			private static com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+				public Type findValueByNumber(int number) {
+					return Type.valueOf(number);
+				}
+			};
+
+			public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+				return getDescriptor().getValues().get(index);
+			}
+
+			public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+				return getDescriptor();
+			}
+
+			public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.LoadCommand.getDescriptor()
+						.getEnumTypes().get(0);
+			}
+
+			private static final Type[] VALUES = { cgraphView, ccontentView,
+					csearchView, cvertex, crepair, };
+
+			public static Type valueOf(
+					com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+				if (desc.getType() != getDescriptor()) {
+					throw new java.lang.IllegalArgumentException(
+							"EnumValueDescriptor is not for this type.");
+				}
+				return VALUES[desc.getIndex()];
+			}
+
+			private final int index;
+			private final int value;
+
+			private Type(int index, int value) {
+				this.index = index;
+				this.value = value;
+			}
+
+			// @@protoc_insertion_point(enum_scope:protocol.LoadCommand.Type)
+		}
+
+		public interface EdgeOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// required .protocol.LoadCommand.Edge.SecCommand secCommand = 1;
+			boolean hasSecCommand();
+
+			platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand();
+
+			// required int64 key = 2;
+			boolean hasKey();
+
+			long getKey();
+
+			// optional bytes position = 3;
+			boolean hasPosition();
+
+			com.google.protobuf.ByteString getPosition();
+
+			// optional bytes edge = 4;
+			boolean hasEdge();
+
+			com.google.protobuf.ByteString getEdge();
+		}
+
+		public static final class Edge extends
+				com.google.protobuf.GeneratedMessage implements EdgeOrBuilder {
+			// Use Edge.newBuilder() to construct.
+			private Edge(Builder builder) {
+				super(builder);
+			}
+
+			private Edge(boolean noInit) {
+			}
+
+			private static final Edge defaultInstance;
+
+			public static Edge getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public Edge getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
+			}
+
+			public enum SecCommand implements
+					com.google.protobuf.ProtocolMessageEnum {
+				cinEdge(0, 0), cedge(1, 1), ;
+
+				public static final int cinEdge_VALUE = 0;
+				public static final int cedge_VALUE = 1;
+
+				public final int getNumber() {
+					return value;
+				}
+
+				public static SecCommand valueOf(int value) {
+					switch (value) {
+					case 0:
+						return cinEdge;
+					case 1:
+						return cedge;
+					default:
+						return null;
+					}
+				}
+
+				public static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalGetValueMap() {
+					return internalValueMap;
+				}
+
+				private static com.google.protobuf.Internal.EnumLiteMap<SecCommand> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<SecCommand>() {
+					public SecCommand findValueByNumber(int number) {
+						return SecCommand.valueOf(number);
+					}
+				};
+
+				public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+					return getDescriptor().getValues().get(index);
+				}
+
+				public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+					return getDescriptor();
+				}
+
+				public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.LoadCommand.Edge
+							.getDescriptor().getEnumTypes().get(0);
+				}
+
+				private static final SecCommand[] VALUES = { cinEdge, cedge, };
+
+				public static SecCommand valueOf(
+						com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+					if (desc.getType() != getDescriptor()) {
+						throw new java.lang.IllegalArgumentException(
+								"EnumValueDescriptor is not for this type.");
+					}
+					return VALUES[desc.getIndex()];
+				}
+
+				private final int index;
+				private final int value;
+
+				private SecCommand(int index, int value) {
+					this.index = index;
+					this.value = value;
+				}
+
+				// @@protoc_insertion_point(enum_scope:protocol.LoadCommand.Edge.SecCommand)
+			}
+
+			private int bitField0_;
+			// required .protocol.LoadCommand.Edge.SecCommand secCommand = 1;
+			public static final int SECCOMMAND_FIELD_NUMBER = 1;
+			private platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand secCommand_;
+
+			public boolean hasSecCommand() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand() {
+				return secCommand_;
+			}
+
+			// required int64 key = 2;
+			public static final int KEY_FIELD_NUMBER = 2;
+			private long key_;
+
+			public boolean hasKey() {
+				return ((bitField0_ & 0x00000002) == 0x00000002);
+			}
+
+			public long getKey() {
+				return key_;
+			}
+
+			// optional bytes position = 3;
+			public static final int POSITION_FIELD_NUMBER = 3;
+			private com.google.protobuf.ByteString position_;
+
+			public boolean hasPosition() {
+				return ((bitField0_ & 0x00000004) == 0x00000004);
+			}
+
+			public com.google.protobuf.ByteString getPosition() {
+				return position_;
+			}
+
+			// optional bytes edge = 4;
+			public static final int EDGE_FIELD_NUMBER = 4;
+			private com.google.protobuf.ByteString edge_;
+
+			public boolean hasEdge() {
+				return ((bitField0_ & 0x00000008) == 0x00000008);
+			}
+
+			public com.google.protobuf.ByteString getEdge() {
+				return edge_;
+			}
+
+			private void initFields() {
+				secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
+				key_ = 0L;
+				position_ = com.google.protobuf.ByteString.EMPTY;
+				edge_ = com.google.protobuf.ByteString.EMPTY;
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				if (!hasSecCommand()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				if (!hasKey()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					output.writeEnum(1, secCommand_.getNumber());
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					output.writeInt64(2, key_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					output.writeBytes(3, position_);
+				}
+				if (((bitField0_ & 0x00000008) == 0x00000008)) {
+					output.writeBytes(4, edge_);
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeEnumSize(1, secCommand_.getNumber());
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeInt64Size(2, key_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeBytesSize(3, position_);
+				}
+				if (((bitField0_ & 0x00000008) == 0x00000008)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeBytesSize(4, edge_);
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Edge parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.LoadCommand.Edge prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.LoadCommand.Edge.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					key_ = 0L;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					position_ = com.google.protobuf.ByteString.EMPTY;
+					bitField0_ = (bitField0_ & ~0x00000004);
+					edge_ = com.google.protobuf.ByteString.EMPTY;
+					bitField0_ = (bitField0_ & ~0x00000008);
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.Edge
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.Edge
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge build() {
+					platanos.docGraphDB.Protocol.LoadCommand.Edge result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.LoadCommand.Edge buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.LoadCommand.Edge result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge buildPartial() {
+					platanos.docGraphDB.Protocol.LoadCommand.Edge result = new platanos.docGraphDB.Protocol.LoadCommand.Edge(
+							this);
+					int from_bitField0_ = bitField0_;
+					int to_bitField0_ = 0;
+					if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+						to_bitField0_ |= 0x00000001;
+					}
+					result.secCommand_ = secCommand_;
+					if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+						to_bitField0_ |= 0x00000002;
+					}
+					result.key_ = key_;
+					if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+						to_bitField0_ |= 0x00000004;
+					}
+					result.position_ = position_;
+					if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+						to_bitField0_ |= 0x00000008;
+					}
+					result.edge_ = edge_;
+					result.bitField0_ = to_bitField0_;
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.Edge) {
+						return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.Edge) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.LoadCommand.Edge other) {
+					if (other == platanos.docGraphDB.Protocol.LoadCommand.Edge
+							.getDefaultInstance())
+						return this;
+					if (other.hasSecCommand()) {
+						setSecCommand(other.getSecCommand());
+					}
+					if (other.hasKey()) {
+						setKey(other.getKey());
+					}
+					if (other.hasPosition()) {
+						setPosition(other.getPosition());
+					}
+					if (other.hasEdge()) {
+						setEdge(other.getEdge());
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					if (!hasSecCommand()) {
+
+						return false;
+					}
+					if (!hasKey()) {
+
+						return false;
+					}
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							int rawValue = input.readEnum();
+							platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand value = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand
+									.valueOf(rawValue);
+							if (value == null) {
+								unknownFields.mergeVarintField(1, rawValue);
+							} else {
+								bitField0_ |= 0x00000001;
+								secCommand_ = value;
+							}
+							break;
+						}
+						case 16: {
+							bitField0_ |= 0x00000002;
+							key_ = input.readInt64();
+							break;
+						}
+						case 26: {
+							bitField0_ |= 0x00000004;
+							position_ = input.readBytes();
+							break;
+						}
+						case 34: {
+							bitField0_ |= 0x00000008;
+							edge_ = input.readBytes();
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// required .protocol.LoadCommand.Edge.SecCommand secCommand =
+				// 1;
+				private platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
+
+				public boolean hasSecCommand() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand getSecCommand() {
+					return secCommand_;
+				}
+
+				public Builder setSecCommand(
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000001;
+					secCommand_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearSecCommand() {
+					bitField0_ = (bitField0_ & ~0x00000001);
+					secCommand_ = platanos.docGraphDB.Protocol.LoadCommand.Edge.SecCommand.cinEdge;
+					onChanged();
+					return this;
+				}
+
+				// required int64 key = 2;
+				private long key_;
+
+				public boolean hasKey() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public long getKey() {
+					return key_;
+				}
+
+				public Builder setKey(long value) {
+					bitField0_ |= 0x00000002;
+					key_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearKey() {
+					bitField0_ = (bitField0_ & ~0x00000002);
+					key_ = 0L;
+					onChanged();
+					return this;
+				}
+
+				// optional bytes position = 3;
+				private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
+
+				public boolean hasPosition() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getPosition() {
+					return position_;
+				}
+
+				public Builder setPosition(com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000004;
+					position_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearPosition() {
+					bitField0_ = (bitField0_ & ~0x00000004);
+					position_ = getDefaultInstance().getPosition();
+					onChanged();
+					return this;
+				}
+
+				// optional bytes edge = 4;
+				private com.google.protobuf.ByteString edge_ = com.google.protobuf.ByteString.EMPTY;
+
+				public boolean hasEdge() {
+					return ((bitField0_ & 0x00000008) == 0x00000008);
+				}
+
+				public com.google.protobuf.ByteString getEdge() {
+					return edge_;
+				}
+
+				public Builder setEdge(com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000008;
+					edge_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearEdge() {
+					bitField0_ = (bitField0_ & ~0x00000008);
+					edge_ = getDefaultInstance().getEdge();
+					onChanged();
+					return this;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.LoadCommand.Edge)
+			}
+
+			static {
+				defaultInstance = new Edge(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.LoadCommand.Edge)
+		}
+
+		public interface GraphViewOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// repeated int64 key = 1 [packed = true];
+			java.util.List<java.lang.Long> getKeyList();
+
+			int getKeyCount();
+
+			long getKey(int index);
+
+			// repeated bytes position = 2;
+			java.util.List<com.google.protobuf.ByteString> getPositionList();
+
+			int getPositionCount();
+
+			com.google.protobuf.ByteString getPosition(int index);
+
+			// repeated .protocol.LoadCommand.Edge edges = 3;
+			java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> getEdgesList();
+
+			platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(int index);
+
+			int getEdgesCount();
+
+			java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> getEdgesOrBuilderList();
+
+			platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
+					int index);
+		}
+
+		public static final class GraphView extends
+				com.google.protobuf.GeneratedMessage implements
+				GraphViewOrBuilder {
+			// Use GraphView.newBuilder() to construct.
+			private GraphView(Builder builder) {
+				super(builder);
+			}
+
+			private GraphView(boolean noInit) {
+			}
+
+			private static final GraphView defaultInstance;
+
+			public static GraphView getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public GraphView getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
+			}
+
+			// repeated int64 key = 1 [packed = true];
+			public static final int KEY_FIELD_NUMBER = 1;
+			private java.util.List<java.lang.Long> key_;
+
+			public java.util.List<java.lang.Long> getKeyList() {
+				return key_;
+			}
+
+			public int getKeyCount() {
+				return key_.size();
+			}
+
+			public long getKey(int index) {
+				return key_.get(index);
+			}
+
+			private int keyMemoizedSerializedSize = -1;
+
+			// repeated bytes position = 2;
+			public static final int POSITION_FIELD_NUMBER = 2;
+			private java.util.List<com.google.protobuf.ByteString> position_;
+
+			public java.util.List<com.google.protobuf.ByteString> getPositionList() {
+				return position_;
+			}
+
+			public int getPositionCount() {
+				return position_.size();
+			}
+
+			public com.google.protobuf.ByteString getPosition(int index) {
+				return position_.get(index);
+			}
+
+			// repeated .protocol.LoadCommand.Edge edges = 3;
+			public static final int EDGES_FIELD_NUMBER = 3;
+			private java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> edges_;
+
+			public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> getEdgesList() {
+				return edges_;
+			}
+
+			public java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> getEdgesOrBuilderList() {
+				return edges_;
+			}
+
+			public int getEdgesCount() {
+				return edges_.size();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(
+					int index) {
+				return edges_.get(index);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
+					int index) {
+				return edges_.get(index);
+			}
+
+			private void initFields() {
+				key_ = java.util.Collections.emptyList();
+				;
+				position_ = java.util.Collections.emptyList();
+				;
+				edges_ = java.util.Collections.emptyList();
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				for (int i = 0; i < getEdgesCount(); i++) {
+					if (!getEdges(i).isInitialized()) {
+						memoizedIsInitialized = 0;
+						return false;
+					}
+				}
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (getKeyList().size() > 0) {
+					output.writeRawVarint32(10);
+					output.writeRawVarint32(keyMemoizedSerializedSize);
+				}
+				for (int i = 0; i < key_.size(); i++) {
+					output.writeInt64NoTag(key_.get(i));
+				}
+				for (int i = 0; i < position_.size(); i++) {
+					output.writeBytes(2, position_.get(i));
+				}
+				for (int i = 0; i < edges_.size(); i++) {
+					output.writeMessage(3, edges_.get(i));
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				{
+					int dataSize = 0;
+					for (int i = 0; i < key_.size(); i++) {
+						dataSize += com.google.protobuf.CodedOutputStream
+								.computeInt64SizeNoTag(key_.get(i));
+					}
+					size += dataSize;
+					if (!getKeyList().isEmpty()) {
+						size += 1;
+						size += com.google.protobuf.CodedOutputStream
+								.computeInt32SizeNoTag(dataSize);
+					}
+					keyMemoizedSerializedSize = dataSize;
+				}
+				{
+					int dataSize = 0;
+					for (int i = 0; i < position_.size(); i++) {
+						dataSize += com.google.protobuf.CodedOutputStream
+								.computeBytesSizeNoTag(position_.get(i));
+					}
+					size += dataSize;
+					size += 1 * getPositionList().size();
+				}
+				for (int i = 0; i < edges_.size(); i++) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeMessageSize(3, edges_.get(i));
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.GraphView parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.LoadCommand.GraphView.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+						getEdgesFieldBuilder();
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					key_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					position_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					if (edgesBuilder_ == null) {
+						edges_ = java.util.Collections.emptyList();
+						bitField0_ = (bitField0_ & ~0x00000004);
+					} else {
+						edgesBuilder_.clear();
+					}
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.GraphView
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.GraphView getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.GraphView
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.GraphView build() {
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.LoadCommand.GraphView buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.GraphView buildPartial() {
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView result = new platanos.docGraphDB.Protocol.LoadCommand.GraphView(
+							this);
+					int from_bitField0_ = bitField0_;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						key_ = java.util.Collections.unmodifiableList(key_);
+						bitField0_ = (bitField0_ & ~0x00000001);
+					}
+					result.key_ = key_;
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						position_ = java.util.Collections
+								.unmodifiableList(position_);
+						bitField0_ = (bitField0_ & ~0x00000002);
+					}
+					result.position_ = position_;
+					if (edgesBuilder_ == null) {
+						if (((bitField0_ & 0x00000004) == 0x00000004)) {
+							edges_ = java.util.Collections
+									.unmodifiableList(edges_);
+							bitField0_ = (bitField0_ & ~0x00000004);
+						}
+						result.edges_ = edges_;
+					} else {
+						result.edges_ = edgesBuilder_.build();
+					}
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.GraphView) {
+						return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.GraphView) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.LoadCommand.GraphView other) {
+					if (other == platanos.docGraphDB.Protocol.LoadCommand.GraphView
+							.getDefaultInstance())
+						return this;
+					if (!other.key_.isEmpty()) {
+						if (key_.isEmpty()) {
+							key_ = other.key_;
+							bitField0_ = (bitField0_ & ~0x00000001);
+						} else {
+							ensureKeyIsMutable();
+							key_.addAll(other.key_);
+						}
+						onChanged();
+					}
+					if (!other.position_.isEmpty()) {
+						if (position_.isEmpty()) {
+							position_ = other.position_;
+							bitField0_ = (bitField0_ & ~0x00000002);
+						} else {
+							ensurePositionIsMutable();
+							position_.addAll(other.position_);
+						}
+						onChanged();
+					}
+					if (edgesBuilder_ == null) {
+						if (!other.edges_.isEmpty()) {
+							if (edges_.isEmpty()) {
+								edges_ = other.edges_;
+								bitField0_ = (bitField0_ & ~0x00000004);
+							} else {
+								ensureEdgesIsMutable();
+								edges_.addAll(other.edges_);
+							}
+							onChanged();
+						}
+					} else {
+						if (!other.edges_.isEmpty()) {
+							if (edgesBuilder_.isEmpty()) {
+								edgesBuilder_.dispose();
+								edgesBuilder_ = null;
+								edges_ = other.edges_;
+								bitField0_ = (bitField0_ & ~0x00000004);
+								edgesBuilder_ = com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ? getEdgesFieldBuilder()
+										: null;
+							} else {
+								edgesBuilder_.addAllMessages(other.edges_);
+							}
+						}
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					for (int i = 0; i < getEdgesCount(); i++) {
+						if (!getEdges(i).isInitialized()) {
+
+							return false;
+						}
+					}
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							ensureKeyIsMutable();
+							key_.add(input.readInt64());
+							break;
+						}
+						case 10: {
+							int length = input.readRawVarint32();
+							int limit = input.pushLimit(length);
+							while (input.getBytesUntilLimit() > 0) {
+								addKey(input.readInt64());
+							}
+							input.popLimit(limit);
+							break;
+						}
+						case 18: {
+							ensurePositionIsMutable();
+							position_.add(input.readBytes());
+							break;
+						}
+						case 26: {
+							platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.Edge
+									.newBuilder();
+							input.readMessage(subBuilder, extensionRegistry);
+							addEdges(subBuilder.buildPartial());
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// repeated int64 key = 1 [packed = true];
+				private java.util.List<java.lang.Long> key_ = java.util.Collections
+						.emptyList();;
+
+				private void ensureKeyIsMutable() {
+					if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+						key_ = new java.util.ArrayList<java.lang.Long>(key_);
+						bitField0_ |= 0x00000001;
+					}
+				}
+
+				public java.util.List<java.lang.Long> getKeyList() {
+					return java.util.Collections.unmodifiableList(key_);
+				}
+
+				public int getKeyCount() {
+					return key_.size();
+				}
+
+				public long getKey(int index) {
+					return key_.get(index);
+				}
+
+				public Builder setKey(int index, long value) {
+					ensureKeyIsMutable();
+					key_.set(index, value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addKey(long value) {
+					ensureKeyIsMutable();
+					key_.add(value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addAllKey(
+						java.lang.Iterable<? extends java.lang.Long> values) {
+					ensureKeyIsMutable();
+					super.addAll(values, key_);
+					onChanged();
+					return this;
+				}
+
+				public Builder clearKey() {
+					key_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					onChanged();
+					return this;
+				}
+
+				// repeated bytes position = 2;
+				private java.util.List<com.google.protobuf.ByteString> position_ = java.util.Collections
+						.emptyList();;
+
+				private void ensurePositionIsMutable() {
+					if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+						position_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+								position_);
+						bitField0_ |= 0x00000002;
+					}
+				}
+
+				public java.util.List<com.google.protobuf.ByteString> getPositionList() {
+					return java.util.Collections.unmodifiableList(position_);
+				}
+
+				public int getPositionCount() {
+					return position_.size();
+				}
+
+				public com.google.protobuf.ByteString getPosition(int index) {
+					return position_.get(index);
+				}
+
+				public Builder setPosition(int index,
+						com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensurePositionIsMutable();
+					position_.set(index, value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addPosition(com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensurePositionIsMutable();
+					position_.add(value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addAllPosition(
+						java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+					ensurePositionIsMutable();
+					super.addAll(values, position_);
+					onChanged();
+					return this;
+				}
+
+				public Builder clearPosition() {
+					position_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					onChanged();
+					return this;
+				}
+
+				// repeated .protocol.LoadCommand.Edge edges = 3;
+				private java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> edges_ = java.util.Collections
+						.emptyList();
+
+				private void ensureEdgesIsMutable() {
+					if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+						edges_ = new java.util.ArrayList<platanos.docGraphDB.Protocol.LoadCommand.Edge>(
+								edges_);
+						bitField0_ |= 0x00000004;
+					}
+				}
+
+				private com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> edgesBuilder_;
+
+				public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge> getEdgesList() {
+					if (edgesBuilder_ == null) {
+						return java.util.Collections.unmodifiableList(edges_);
+					} else {
+						return edgesBuilder_.getMessageList();
+					}
+				}
+
+				public int getEdgesCount() {
+					if (edgesBuilder_ == null) {
+						return edges_.size();
+					} else {
+						return edgesBuilder_.getCount();
+					}
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge getEdges(
+						int index) {
+					if (edgesBuilder_ == null) {
+						return edges_.get(index);
+					} else {
+						return edgesBuilder_.getMessage(index);
+					}
+				}
+
+				public Builder setEdges(int index,
+						platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
+					if (edgesBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						ensureEdgesIsMutable();
+						edges_.set(index, value);
+						onChanged();
+					} else {
+						edgesBuilder_.setMessage(index, value);
+					}
+					return this;
+				}
+
+				public Builder setEdges(
+						int index,
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
+					if (edgesBuilder_ == null) {
+						ensureEdgesIsMutable();
+						edges_.set(index, builderForValue.build());
+						onChanged();
+					} else {
+						edgesBuilder_
+								.setMessage(index, builderForValue.build());
+					}
+					return this;
+				}
+
+				public Builder addEdges(
+						platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
+					if (edgesBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						ensureEdgesIsMutable();
+						edges_.add(value);
+						onChanged();
+					} else {
+						edgesBuilder_.addMessage(value);
+					}
+					return this;
+				}
+
+				public Builder addEdges(int index,
+						platanos.docGraphDB.Protocol.LoadCommand.Edge value) {
+					if (edgesBuilder_ == null) {
+						if (value == null) {
+							throw new NullPointerException();
+						}
+						ensureEdgesIsMutable();
+						edges_.add(index, value);
+						onChanged();
+					} else {
+						edgesBuilder_.addMessage(index, value);
+					}
+					return this;
+				}
+
+				public Builder addEdges(
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
+					if (edgesBuilder_ == null) {
+						ensureEdgesIsMutable();
+						edges_.add(builderForValue.build());
+						onChanged();
+					} else {
+						edgesBuilder_.addMessage(builderForValue.build());
+					}
+					return this;
+				}
+
+				public Builder addEdges(
+						int index,
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder builderForValue) {
+					if (edgesBuilder_ == null) {
+						ensureEdgesIsMutable();
+						edges_.add(index, builderForValue.build());
+						onChanged();
+					} else {
+						edgesBuilder_
+								.addMessage(index, builderForValue.build());
+					}
+					return this;
+				}
+
+				public Builder addAllEdges(
+						java.lang.Iterable<? extends platanos.docGraphDB.Protocol.LoadCommand.Edge> values) {
+					if (edgesBuilder_ == null) {
+						ensureEdgesIsMutable();
+						super.addAll(values, edges_);
+						onChanged();
+					} else {
+						edgesBuilder_.addAllMessages(values);
+					}
+					return this;
+				}
+
+				public Builder clearEdges() {
+					if (edgesBuilder_ == null) {
+						edges_ = java.util.Collections.emptyList();
+						bitField0_ = (bitField0_ & ~0x00000004);
+						onChanged();
+					} else {
+						edgesBuilder_.clear();
+					}
+					return this;
+				}
+
+				public Builder removeEdges(int index) {
+					if (edgesBuilder_ == null) {
+						ensureEdgesIsMutable();
+						edges_.remove(index);
+						onChanged();
+					} else {
+						edgesBuilder_.remove(index);
+					}
+					return this;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder getEdgesBuilder(
+						int index) {
+					return getEdgesFieldBuilder().getBuilder(index);
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder getEdgesOrBuilder(
+						int index) {
+					if (edgesBuilder_ == null) {
+						return edges_.get(index);
+					} else {
+						return edgesBuilder_.getMessageOrBuilder(index);
+					}
+				}
+
+				public java.util.List<? extends platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> getEdgesOrBuilderList() {
+					if (edgesBuilder_ != null) {
+						return edgesBuilder_.getMessageOrBuilderList();
+					} else {
+						return java.util.Collections.unmodifiableList(edges_);
+					}
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder addEdgesBuilder() {
+					return getEdgesFieldBuilder().addBuilder(
+							platanos.docGraphDB.Protocol.LoadCommand.Edge
+									.getDefaultInstance());
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder addEdgesBuilder(
+						int index) {
+					return getEdgesFieldBuilder().addBuilder(
+							index,
+							platanos.docGraphDB.Protocol.LoadCommand.Edge
+									.getDefaultInstance());
+				}
+
+				public java.util.List<platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder> getEdgesBuilderList() {
+					return getEdgesFieldBuilder().getBuilderList();
+				}
+
+				private com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder> getEdgesFieldBuilder() {
+					if (edgesBuilder_ == null) {
+						edgesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Edge, platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder, platanos.docGraphDB.Protocol.LoadCommand.EdgeOrBuilder>(
+								edges_,
+								((bitField0_ & 0x00000004) == 0x00000004),
+								getParentForChildren(), isClean());
+						edges_ = null;
+					}
+					return edgesBuilder_;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.LoadCommand.GraphView)
+			}
+
+			static {
+				defaultInstance = new GraphView(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.LoadCommand.GraphView)
+		}
+
+		public interface ContentViewOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// required int64 key = 1;
+			boolean hasKey();
+
+			long getKey();
+
+			// required bytes position = 2;
+			boolean hasPosition();
+
+			com.google.protobuf.ByteString getPosition();
+
+			// required bytes start_position = 3;
+			boolean hasStartPosition();
+
+			com.google.protobuf.ByteString getStartPosition();
+		}
+
+		public static final class ContentView extends
+				com.google.protobuf.GeneratedMessage implements
+				ContentViewOrBuilder {
+			// Use ContentView.newBuilder() to construct.
+			private ContentView(Builder builder) {
+				super(builder);
+			}
+
+			private ContentView(boolean noInit) {
+			}
+
+			private static final ContentView defaultInstance;
+
+			public static ContentView getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public ContentView getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
+			}
+
+			private int bitField0_;
+			// required int64 key = 1;
+			public static final int KEY_FIELD_NUMBER = 1;
+			private long key_;
+
+			public boolean hasKey() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public long getKey() {
+				return key_;
+			}
+
+			// required bytes position = 2;
+			public static final int POSITION_FIELD_NUMBER = 2;
+			private com.google.protobuf.ByteString position_;
+
+			public boolean hasPosition() {
+				return ((bitField0_ & 0x00000002) == 0x00000002);
+			}
+
+			public com.google.protobuf.ByteString getPosition() {
+				return position_;
+			}
+
+			// required bytes start_position = 3;
+			public static final int START_POSITION_FIELD_NUMBER = 3;
+			private com.google.protobuf.ByteString startPosition_;
+
+			public boolean hasStartPosition() {
+				return ((bitField0_ & 0x00000004) == 0x00000004);
+			}
+
+			public com.google.protobuf.ByteString getStartPosition() {
+				return startPosition_;
+			}
+
+			private void initFields() {
+				key_ = 0L;
+				position_ = com.google.protobuf.ByteString.EMPTY;
+				startPosition_ = com.google.protobuf.ByteString.EMPTY;
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				if (!hasKey()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				if (!hasPosition()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				if (!hasStartPosition()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					output.writeInt64(1, key_);
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					output.writeBytes(2, position_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					output.writeBytes(3, startPosition_);
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeInt64Size(1, key_);
+				}
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeBytesSize(2, position_);
+				}
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeBytesSize(3, startPosition_);
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.ContentView parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.LoadCommand.ContentView.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					key_ = 0L;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					position_ = com.google.protobuf.ByteString.EMPTY;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					startPosition_ = com.google.protobuf.ByteString.EMPTY;
+					bitField0_ = (bitField0_ & ~0x00000004);
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.ContentView
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.ContentView getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.ContentView
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.ContentView build() {
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.LoadCommand.ContentView buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.ContentView buildPartial() {
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView result = new platanos.docGraphDB.Protocol.LoadCommand.ContentView(
+							this);
+					int from_bitField0_ = bitField0_;
+					int to_bitField0_ = 0;
+					if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+						to_bitField0_ |= 0x00000001;
+					}
+					result.key_ = key_;
+					if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+						to_bitField0_ |= 0x00000002;
+					}
+					result.position_ = position_;
+					if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+						to_bitField0_ |= 0x00000004;
+					}
+					result.startPosition_ = startPosition_;
+					result.bitField0_ = to_bitField0_;
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.ContentView) {
+						return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.ContentView) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.LoadCommand.ContentView other) {
+					if (other == platanos.docGraphDB.Protocol.LoadCommand.ContentView
+							.getDefaultInstance())
+						return this;
+					if (other.hasKey()) {
+						setKey(other.getKey());
+					}
+					if (other.hasPosition()) {
+						setPosition(other.getPosition());
+					}
+					if (other.hasStartPosition()) {
+						setStartPosition(other.getStartPosition());
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					if (!hasKey()) {
+
+						return false;
+					}
+					if (!hasPosition()) {
+
+						return false;
+					}
+					if (!hasStartPosition()) {
+
+						return false;
+					}
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							bitField0_ |= 0x00000001;
+							key_ = input.readInt64();
+							break;
+						}
+						case 18: {
+							bitField0_ |= 0x00000002;
+							position_ = input.readBytes();
+							break;
+						}
+						case 26: {
+							bitField0_ |= 0x00000004;
+							startPosition_ = input.readBytes();
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// required int64 key = 1;
+				private long key_;
+
+				public boolean hasKey() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public long getKey() {
+					return key_;
+				}
+
+				public Builder setKey(long value) {
+					bitField0_ |= 0x00000001;
+					key_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearKey() {
+					bitField0_ = (bitField0_ & ~0x00000001);
+					key_ = 0L;
+					onChanged();
+					return this;
+				}
+
+				// required bytes position = 2;
+				private com.google.protobuf.ByteString position_ = com.google.protobuf.ByteString.EMPTY;
+
+				public boolean hasPosition() {
+					return ((bitField0_ & 0x00000002) == 0x00000002);
+				}
+
+				public com.google.protobuf.ByteString getPosition() {
+					return position_;
+				}
+
+				public Builder setPosition(com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000002;
+					position_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearPosition() {
+					bitField0_ = (bitField0_ & ~0x00000002);
+					position_ = getDefaultInstance().getPosition();
+					onChanged();
+					return this;
+				}
+
+				// required bytes start_position = 3;
+				private com.google.protobuf.ByteString startPosition_ = com.google.protobuf.ByteString.EMPTY;
+
+				public boolean hasStartPosition() {
+					return ((bitField0_ & 0x00000004) == 0x00000004);
+				}
+
+				public com.google.protobuf.ByteString getStartPosition() {
+					return startPosition_;
+				}
+
+				public Builder setStartPosition(
+						com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					bitField0_ |= 0x00000004;
+					startPosition_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearStartPosition() {
+					bitField0_ = (bitField0_ & ~0x00000004);
+					startPosition_ = getDefaultInstance().getStartPosition();
+					onChanged();
+					return this;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.LoadCommand.ContentView)
+			}
+
+			static {
+				defaultInstance = new ContentView(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.LoadCommand.ContentView)
+		}
+
+		public interface SearchViewOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// repeated int64 key = 1 [packed = true];
+			java.util.List<java.lang.Long> getKeyList();
+
+			int getKeyCount();
+
+			long getKey(int index);
+
+			// repeated bytes position = 2;
+			java.util.List<com.google.protobuf.ByteString> getPositionList();
+
+			int getPositionCount();
+
+			com.google.protobuf.ByteString getPosition(int index);
+		}
+
+		public static final class SearchView extends
+				com.google.protobuf.GeneratedMessage implements
+				SearchViewOrBuilder {
+			// Use SearchView.newBuilder() to construct.
+			private SearchView(Builder builder) {
+				super(builder);
+			}
+
+			private SearchView(boolean noInit) {
+			}
+
+			private static final SearchView defaultInstance;
+
+			public static SearchView getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public SearchView getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_SearchView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_SearchView_fieldAccessorTable;
+			}
+
+			// repeated int64 key = 1 [packed = true];
+			public static final int KEY_FIELD_NUMBER = 1;
+			private java.util.List<java.lang.Long> key_;
+
+			public java.util.List<java.lang.Long> getKeyList() {
+				return key_;
+			}
+
+			public int getKeyCount() {
+				return key_.size();
+			}
+
+			public long getKey(int index) {
+				return key_.get(index);
+			}
+
+			private int keyMemoizedSerializedSize = -1;
+
+			// repeated bytes position = 2;
+			public static final int POSITION_FIELD_NUMBER = 2;
+			private java.util.List<com.google.protobuf.ByteString> position_;
+
+			public java.util.List<com.google.protobuf.ByteString> getPositionList() {
+				return position_;
+			}
+
+			public int getPositionCount() {
+				return position_.size();
+			}
+
+			public com.google.protobuf.ByteString getPosition(int index) {
+				return position_.get(index);
+			}
+
+			private void initFields() {
+				key_ = java.util.Collections.emptyList();
+				;
+				position_ = java.util.Collections.emptyList();
+				;
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (getKeyList().size() > 0) {
+					output.writeRawVarint32(10);
+					output.writeRawVarint32(keyMemoizedSerializedSize);
+				}
+				for (int i = 0; i < key_.size(); i++) {
+					output.writeInt64NoTag(key_.get(i));
+				}
+				for (int i = 0; i < position_.size(); i++) {
+					output.writeBytes(2, position_.get(i));
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				{
+					int dataSize = 0;
+					for (int i = 0; i < key_.size(); i++) {
+						dataSize += com.google.protobuf.CodedOutputStream
+								.computeInt64SizeNoTag(key_.get(i));
+					}
+					size += dataSize;
+					if (!getKeyList().isEmpty()) {
+						size += 1;
+						size += com.google.protobuf.CodedOutputStream
+								.computeInt32SizeNoTag(dataSize);
+					}
+					keyMemoizedSerializedSize = dataSize;
+				}
+				{
+					int dataSize = 0;
+					for (int i = 0; i < position_.size(); i++) {
+						dataSize += com.google.protobuf.CodedOutputStream
+								.computeBytesSizeNoTag(position_.get(i));
+					}
+					size += dataSize;
+					size += 1 * getPositionList().size();
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.SearchView parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_SearchView_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_SearchView_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.LoadCommand.SearchView.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					key_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					position_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.SearchView
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.SearchView getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.SearchView
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.SearchView build() {
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.LoadCommand.SearchView buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.SearchView buildPartial() {
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView result = new platanos.docGraphDB.Protocol.LoadCommand.SearchView(
+							this);
+					int from_bitField0_ = bitField0_;
+					if (((bitField0_ & 0x00000001) == 0x00000001)) {
+						key_ = java.util.Collections.unmodifiableList(key_);
+						bitField0_ = (bitField0_ & ~0x00000001);
+					}
+					result.key_ = key_;
+					if (((bitField0_ & 0x00000002) == 0x00000002)) {
+						position_ = java.util.Collections
+								.unmodifiableList(position_);
+						bitField0_ = (bitField0_ & ~0x00000002);
+					}
+					result.position_ = position_;
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.SearchView) {
+						return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.SearchView) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.LoadCommand.SearchView other) {
+					if (other == platanos.docGraphDB.Protocol.LoadCommand.SearchView
+							.getDefaultInstance())
+						return this;
+					if (!other.key_.isEmpty()) {
+						if (key_.isEmpty()) {
+							key_ = other.key_;
+							bitField0_ = (bitField0_ & ~0x00000001);
+						} else {
+							ensureKeyIsMutable();
+							key_.addAll(other.key_);
+						}
+						onChanged();
+					}
+					if (!other.position_.isEmpty()) {
+						if (position_.isEmpty()) {
+							position_ = other.position_;
+							bitField0_ = (bitField0_ & ~0x00000002);
+						} else {
+							ensurePositionIsMutable();
+							position_.addAll(other.position_);
+						}
+						onChanged();
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							ensureKeyIsMutable();
+							key_.add(input.readInt64());
+							break;
+						}
+						case 10: {
+							int length = input.readRawVarint32();
+							int limit = input.pushLimit(length);
+							while (input.getBytesUntilLimit() > 0) {
+								addKey(input.readInt64());
+							}
+							input.popLimit(limit);
+							break;
+						}
+						case 18: {
+							ensurePositionIsMutable();
+							position_.add(input.readBytes());
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// repeated int64 key = 1 [packed = true];
+				private java.util.List<java.lang.Long> key_ = java.util.Collections
+						.emptyList();;
+
+				private void ensureKeyIsMutable() {
+					if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+						key_ = new java.util.ArrayList<java.lang.Long>(key_);
+						bitField0_ |= 0x00000001;
+					}
+				}
+
+				public java.util.List<java.lang.Long> getKeyList() {
+					return java.util.Collections.unmodifiableList(key_);
+				}
+
+				public int getKeyCount() {
+					return key_.size();
+				}
+
+				public long getKey(int index) {
+					return key_.get(index);
+				}
+
+				public Builder setKey(int index, long value) {
+					ensureKeyIsMutable();
+					key_.set(index, value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addKey(long value) {
+					ensureKeyIsMutable();
+					key_.add(value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addAllKey(
+						java.lang.Iterable<? extends java.lang.Long> values) {
+					ensureKeyIsMutable();
+					super.addAll(values, key_);
+					onChanged();
+					return this;
+				}
+
+				public Builder clearKey() {
+					key_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					onChanged();
+					return this;
+				}
+
+				// repeated bytes position = 2;
+				private java.util.List<com.google.protobuf.ByteString> position_ = java.util.Collections
+						.emptyList();;
+
+				private void ensurePositionIsMutable() {
+					if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+						position_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+								position_);
+						bitField0_ |= 0x00000002;
+					}
+				}
+
+				public java.util.List<com.google.protobuf.ByteString> getPositionList() {
+					return java.util.Collections.unmodifiableList(position_);
+				}
+
+				public int getPositionCount() {
+					return position_.size();
+				}
+
+				public com.google.protobuf.ByteString getPosition(int index) {
+					return position_.get(index);
+				}
+
+				public Builder setPosition(int index,
+						com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensurePositionIsMutable();
+					position_.set(index, value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addPosition(com.google.protobuf.ByteString value) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					ensurePositionIsMutable();
+					position_.add(value);
+					onChanged();
+					return this;
+				}
+
+				public Builder addAllPosition(
+						java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+					ensurePositionIsMutable();
+					super.addAll(values, position_);
+					onChanged();
+					return this;
+				}
+
+				public Builder clearPosition() {
+					position_ = java.util.Collections.emptyList();
+					;
+					bitField0_ = (bitField0_ & ~0x00000002);
+					onChanged();
+					return this;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.LoadCommand.SearchView)
+			}
+
+			static {
+				defaultInstance = new SearchView(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.LoadCommand.SearchView)
+		}
+
+		public interface VertexOrBuilder extends
+				com.google.protobuf.MessageOrBuilder {
+
+			// required int64 key = 1;
+			boolean hasKey();
+
+			long getKey();
+		}
+
+		public static final class Vertex extends
+				com.google.protobuf.GeneratedMessage implements VertexOrBuilder {
+			// Use Vertex.newBuilder() to construct.
+			private Vertex(Builder builder) {
+				super(builder);
+			}
+
+			private Vertex(boolean noInit) {
+			}
+
+			private static final Vertex defaultInstance;
+
+			public static Vertex getDefaultInstance() {
+				return defaultInstance;
+			}
+
+			public Vertex getDefaultInstanceForType() {
+				return defaultInstance;
+			}
+
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Vertex_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Vertex_fieldAccessorTable;
+			}
+
+			private int bitField0_;
+			// required int64 key = 1;
+			public static final int KEY_FIELD_NUMBER = 1;
+			private long key_;
+
+			public boolean hasKey() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public long getKey() {
+				return key_;
+			}
+
+			private void initFields() {
+				key_ = 0L;
+			}
+
+			private byte memoizedIsInitialized = -1;
+
+			public final boolean isInitialized() {
+				byte isInitialized = memoizedIsInitialized;
+				if (isInitialized != -1)
+					return isInitialized == 1;
+
+				if (!hasKey()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+				memoizedIsInitialized = 1;
+				return true;
+			}
+
+			public void writeTo(com.google.protobuf.CodedOutputStream output)
+					throws java.io.IOException {
+				getSerializedSize();
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					output.writeInt64(1, key_);
+				}
+				getUnknownFields().writeTo(output);
+			}
+
+			private int memoizedSerializedSize = -1;
+
+			public int getSerializedSize() {
+				int size = memoizedSerializedSize;
+				if (size != -1)
+					return size;
+
+				size = 0;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					size += com.google.protobuf.CodedOutputStream
+							.computeInt64Size(1, key_);
+				}
+				size += getUnknownFields().getSerializedSize();
+				memoizedSerializedSize = size;
+				return size;
+			}
+
+			private static final long serialVersionUID = 0L;
+
+			@java.lang.Override
+			protected java.lang.Object writeReplace()
+					throws java.io.ObjectStreamException {
+				return super.writeReplace();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					com.google.protobuf.ByteString data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					com.google.protobuf.ByteString data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					byte[] data)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					byte[] data,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				return newBuilder().mergeFrom(data, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseDelimitedFrom(
+					java.io.InputStream input) throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseDelimitedFrom(
+					java.io.InputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				Builder builder = newBuilder();
+				if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+					return builder.buildParsed();
+				} else {
+					return null;
+				}
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					com.google.protobuf.CodedInputStream input)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input).buildParsed();
+			}
+
+			public static platanos.docGraphDB.Protocol.LoadCommand.Vertex parseFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				return newBuilder().mergeFrom(input, extensionRegistry)
+						.buildParsed();
+			}
+
+			public static Builder newBuilder() {
+				return Builder.create();
+			}
+
+			public Builder newBuilderForType() {
+				return newBuilder();
+			}
+
+			public static Builder newBuilder(
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex prototype) {
+				return newBuilder().mergeFrom(prototype);
+			}
+
+			public Builder toBuilder() {
+				return newBuilder(this);
+			}
+
+			@java.lang.Override
+			protected Builder newBuilderForType(
+					com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+				Builder builder = new Builder(parent);
+				return builder;
+			}
+
+			public static final class Builder extends
+					com.google.protobuf.GeneratedMessage.Builder<Builder>
+					implements
+					platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder {
+				public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Vertex_descriptor;
+				}
+
+				protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+					return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_Vertex_fieldAccessorTable;
+				}
+
+				// Construct using
+				// platanos.docGraphDB.Protocol.LoadCommand.Vertex.newBuilder()
+				private Builder() {
+					maybeForceBuilderInitialization();
+				}
+
+				private Builder(BuilderParent parent) {
+					super(parent);
+					maybeForceBuilderInitialization();
+				}
+
+				private void maybeForceBuilderInitialization() {
+					if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					}
+				}
+
+				private static Builder create() {
+					return new Builder();
+				}
+
+				public Builder clear() {
+					super.clear();
+					key_ = 0L;
+					bitField0_ = (bitField0_ & ~0x00000001);
+					return this;
+				}
+
+				public Builder clone() {
+					return create().mergeFrom(buildPartial());
+				}
+
+				public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.Vertex
+							.getDescriptor();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Vertex getDefaultInstanceForType() {
+					return platanos.docGraphDB.Protocol.LoadCommand.Vertex
+							.getDefaultInstance();
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Vertex build() {
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result);
+					}
+					return result;
+				}
+
+				private platanos.docGraphDB.Protocol.LoadCommand.Vertex buildParsed()
+						throws com.google.protobuf.InvalidProtocolBufferException {
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex result = buildPartial();
+					if (!result.isInitialized()) {
+						throw newUninitializedMessageException(result)
+								.asInvalidProtocolBufferException();
+					}
+					return result;
+				}
+
+				public platanos.docGraphDB.Protocol.LoadCommand.Vertex buildPartial() {
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex result = new platanos.docGraphDB.Protocol.LoadCommand.Vertex(
+							this);
+					int from_bitField0_ = bitField0_;
+					int to_bitField0_ = 0;
+					if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+						to_bitField0_ |= 0x00000001;
+					}
+					result.key_ = key_;
+					result.bitField0_ = to_bitField0_;
+					onBuilt();
+					return result;
+				}
+
+				public Builder mergeFrom(com.google.protobuf.Message other) {
+					if (other instanceof platanos.docGraphDB.Protocol.LoadCommand.Vertex) {
+						return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand.Vertex) other);
+					} else {
+						super.mergeFrom(other);
+						return this;
+					}
+				}
+
+				public Builder mergeFrom(
+						platanos.docGraphDB.Protocol.LoadCommand.Vertex other) {
+					if (other == platanos.docGraphDB.Protocol.LoadCommand.Vertex
+							.getDefaultInstance())
+						return this;
+					if (other.hasKey()) {
+						setKey(other.getKey());
+					}
+					this.mergeUnknownFields(other.getUnknownFields());
+					return this;
+				}
+
+				public final boolean isInitialized() {
+					if (!hasKey()) {
+
+						return false;
+					}
+					return true;
+				}
+
+				public Builder mergeFrom(
+						com.google.protobuf.CodedInputStream input,
+						com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+						throws java.io.IOException {
+					com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+							.newBuilder(this.getUnknownFields());
+					while (true) {
+						int tag = input.readTag();
+						switch (tag) {
+						case 0:
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						default: {
+							if (!parseUnknownField(input, unknownFields,
+									extensionRegistry, tag)) {
+								this.setUnknownFields(unknownFields.build());
+								onChanged();
+								return this;
+							}
+							break;
+						}
+						case 8: {
+							bitField0_ |= 0x00000001;
+							key_ = input.readInt64();
+							break;
+						}
+						}
+					}
+				}
+
+				private int bitField0_;
+
+				// required int64 key = 1;
+				private long key_;
+
+				public boolean hasKey() {
+					return ((bitField0_ & 0x00000001) == 0x00000001);
+				}
+
+				public long getKey() {
+					return key_;
+				}
+
+				public Builder setKey(long value) {
+					bitField0_ |= 0x00000001;
+					key_ = value;
+					onChanged();
+					return this;
+				}
+
+				public Builder clearKey() {
+					bitField0_ = (bitField0_ & ~0x00000001);
+					key_ = 0L;
+					onChanged();
+					return this;
+				}
+
+				// @@protoc_insertion_point(builder_scope:protocol.LoadCommand.Vertex)
+			}
+
+			static {
+				defaultInstance = new Vertex(true);
+				defaultInstance.initFields();
+			}
+
+			// @@protoc_insertion_point(class_scope:protocol.LoadCommand.Vertex)
+		}
+
+		private int bitField0_;
+		// required .protocol.LoadCommand.Type type = 1;
+		public static final int TYPE_FIELD_NUMBER = 1;
+		private platanos.docGraphDB.Protocol.LoadCommand.Type type_;
+
+		public boolean hasType() {
+			return ((bitField0_ & 0x00000001) == 0x00000001);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.Type getType() {
+			return type_;
+		}
+
+		// optional .protocol.LoadCommand.GraphView graphView = 2;
+		public static final int GRAPHVIEW_FIELD_NUMBER = 2;
+		private platanos.docGraphDB.Protocol.LoadCommand.GraphView graphView_;
+
+		public boolean hasGraphView() {
+			return ((bitField0_ & 0x00000002) == 0x00000002);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView() {
+			return graphView_;
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder() {
+			return graphView_;
+		}
+
+		// optional .protocol.LoadCommand.ContentView contentView = 3;
+		public static final int CONTENTVIEW_FIELD_NUMBER = 3;
+		private platanos.docGraphDB.Protocol.LoadCommand.ContentView contentView_;
+
+		public boolean hasContentView() {
+			return ((bitField0_ & 0x00000004) == 0x00000004);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.ContentView getContentView() {
+			return contentView_;
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder getContentViewOrBuilder() {
+			return contentView_;
+		}
+
+		// optional .protocol.LoadCommand.SearchView searchView = 4;
+		public static final int SEARCHVIEW_FIELD_NUMBER = 4;
+		private platanos.docGraphDB.Protocol.LoadCommand.SearchView searchView_;
+
+		public boolean hasSearchView() {
+			return ((bitField0_ & 0x00000008) == 0x00000008);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.SearchView getSearchView() {
+			return searchView_;
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder getSearchViewOrBuilder() {
+			return searchView_;
+		}
+
+		// optional .protocol.LoadCommand.Vertex vertex = 5;
+		public static final int VERTEX_FIELD_NUMBER = 5;
+		private platanos.docGraphDB.Protocol.LoadCommand.Vertex vertex_;
+
+		public boolean hasVertex() {
+			return ((bitField0_ & 0x00000010) == 0x00000010);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.Vertex getVertex() {
+			return vertex_;
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder getVertexOrBuilder() {
+			return vertex_;
+		}
+
+		private void initFields() {
+			type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
+			graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+					.getDefaultInstance();
+			contentView_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+					.getDefaultInstance();
+			searchView_ = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+					.getDefaultInstance();
+			vertex_ = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+					.getDefaultInstance();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			if (!hasType()) {
+				memoizedIsInitialized = 0;
+				return false;
+			}
+			if (hasGraphView()) {
+				if (!getGraphView().isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			if (hasContentView()) {
+				if (!getContentView().isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			if (hasVertex()) {
+				if (!getVertex().isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				output.writeEnum(1, type_.getNumber());
+			}
+			if (((bitField0_ & 0x00000002) == 0x00000002)) {
+				output.writeMessage(2, graphView_);
+			}
+			if (((bitField0_ & 0x00000004) == 0x00000004)) {
+				output.writeMessage(3, contentView_);
+			}
+			if (((bitField0_ & 0x00000008) == 0x00000008)) {
+				output.writeMessage(4, searchView_);
+			}
+			if (((bitField0_ & 0x00000010) == 0x00000010)) {
+				output.writeMessage(5, vertex_);
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				size += com.google.protobuf.CodedOutputStream.computeEnumSize(
+						1, type_.getNumber());
+			}
+			if (((bitField0_ & 0x00000002) == 0x00000002)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(2, graphView_);
+			}
+			if (((bitField0_ & 0x00000004) == 0x00000004)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(3, contentView_);
+			}
+			if (((bitField0_ & 0x00000008) == 0x00000008)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(4, searchView_);
+			}
+			if (((bitField0_ & 0x00000010) == 0x00000010)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(5, vertex_);
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.LoadCommand parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.LoadCommand prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.LoadCommandOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_LoadCommand_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.LoadCommand.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					getGraphViewFieldBuilder();
+					getContentViewFieldBuilder();
+					getSearchViewFieldBuilder();
+					getVertexFieldBuilder();
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				if (graphViewBuilder_ == null) {
+					graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+							.getDefaultInstance();
+				} else {
+					graphViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000002);
+				if (contentViewBuilder_ == null) {
+					contentView_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+							.getDefaultInstance();
+				} else {
+					contentViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000004);
+				if (searchViewBuilder_ == null) {
+					searchView_ = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+							.getDefaultInstance();
+				} else {
+					searchViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000008);
+				if (vertexBuilder_ == null) {
+					vertex_ = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+							.getDefaultInstance();
+				} else {
+					vertexBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000010);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.LoadCommand.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.LoadCommand
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand build() {
+				platanos.docGraphDB.Protocol.LoadCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.LoadCommand buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.LoadCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand buildPartial() {
+				platanos.docGraphDB.Protocol.LoadCommand result = new platanos.docGraphDB.Protocol.LoadCommand(
+						this);
+				int from_bitField0_ = bitField0_;
+				int to_bitField0_ = 0;
+				if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+					to_bitField0_ |= 0x00000001;
+				}
+				result.type_ = type_;
+				if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+					to_bitField0_ |= 0x00000002;
+				}
+				if (graphViewBuilder_ == null) {
+					result.graphView_ = graphView_;
+				} else {
+					result.graphView_ = graphViewBuilder_.build();
+				}
+				if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+					to_bitField0_ |= 0x00000004;
+				}
+				if (contentViewBuilder_ == null) {
+					result.contentView_ = contentView_;
+				} else {
+					result.contentView_ = contentViewBuilder_.build();
+				}
+				if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+					to_bitField0_ |= 0x00000008;
+				}
+				if (searchViewBuilder_ == null) {
+					result.searchView_ = searchView_;
+				} else {
+					result.searchView_ = searchViewBuilder_.build();
+				}
+				if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+					to_bitField0_ |= 0x00000010;
+				}
+				if (vertexBuilder_ == null) {
+					result.vertex_ = vertex_;
+				} else {
+					result.vertex_ = vertexBuilder_.build();
+				}
+				result.bitField0_ = to_bitField0_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.LoadCommand) {
+					return mergeFrom((platanos.docGraphDB.Protocol.LoadCommand) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.LoadCommand other) {
+				if (other == platanos.docGraphDB.Protocol.LoadCommand
+						.getDefaultInstance())
+					return this;
+				if (other.hasType()) {
+					setType(other.getType());
+				}
+				if (other.hasGraphView()) {
+					mergeGraphView(other.getGraphView());
+				}
+				if (other.hasContentView()) {
+					mergeContentView(other.getContentView());
+				}
+				if (other.hasSearchView()) {
+					mergeSearchView(other.getSearchView());
+				}
+				if (other.hasVertex()) {
+					mergeVertex(other.getVertex());
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				if (!hasType()) {
+
+					return false;
+				}
+				if (hasGraphView()) {
+					if (!getGraphView().isInitialized()) {
+
+						return false;
+					}
+				}
+				if (hasContentView()) {
+					if (!getContentView().isInitialized()) {
+
+						return false;
+					}
+				}
+				if (hasVertex()) {
+					if (!getVertex().isInitialized()) {
+
+						return false;
+					}
+				}
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 8: {
+						int rawValue = input.readEnum();
+						platanos.docGraphDB.Protocol.LoadCommand.Type value = platanos.docGraphDB.Protocol.LoadCommand.Type
+								.valueOf(rawValue);
+						if (value == null) {
+							unknownFields.mergeVarintField(1, rawValue);
+						} else {
+							bitField0_ |= 0x00000001;
+							type_ = value;
+						}
+						break;
+					}
+					case 18: {
+						platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+								.newBuilder();
+						if (hasGraphView()) {
+							subBuilder.mergeFrom(getGraphView());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setGraphView(subBuilder.buildPartial());
+						break;
+					}
+					case 26: {
+						platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+								.newBuilder();
+						if (hasContentView()) {
+							subBuilder.mergeFrom(getContentView());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setContentView(subBuilder.buildPartial());
+						break;
+					}
+					case 34: {
+						platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+								.newBuilder();
+						if (hasSearchView()) {
+							subBuilder.mergeFrom(getSearchView());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setSearchView(subBuilder.buildPartial());
+						break;
+					}
+					case 42: {
+						platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+								.newBuilder();
+						if (hasVertex()) {
+							subBuilder.mergeFrom(getVertex());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setVertex(subBuilder.buildPartial());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// required .protocol.LoadCommand.Type type = 1;
+			private platanos.docGraphDB.Protocol.LoadCommand.Type type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
+
+			public boolean hasType() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Type getType() {
+				return type_;
+			}
+
+			public Builder setType(
+					platanos.docGraphDB.Protocol.LoadCommand.Type value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				bitField0_ |= 0x00000001;
+				type_ = value;
+				onChanged();
+				return this;
+			}
+
+			public Builder clearType() {
+				bitField0_ = (bitField0_ & ~0x00000001);
+				type_ = platanos.docGraphDB.Protocol.LoadCommand.Type.cgraphView;
+				onChanged();
+				return this;
+			}
+
+			// optional .protocol.LoadCommand.GraphView graphView = 2;
+			private platanos.docGraphDB.Protocol.LoadCommand.GraphView graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder> graphViewBuilder_;
+
+			public boolean hasGraphView() {
+				return ((bitField0_ & 0x00000002) == 0x00000002);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.GraphView getGraphView() {
+				if (graphViewBuilder_ == null) {
+					return graphView_;
+				} else {
+					return graphViewBuilder_.getMessage();
+				}
+			}
+
+			public Builder setGraphView(
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView value) {
+				if (graphViewBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					graphView_ = value;
+					onChanged();
+				} else {
+					graphViewBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder setGraphView(
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder builderForValue) {
+				if (graphViewBuilder_ == null) {
+					graphView_ = builderForValue.build();
+					onChanged();
+				} else {
+					graphViewBuilder_.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder mergeGraphView(
+					platanos.docGraphDB.Protocol.LoadCommand.GraphView value) {
+				if (graphViewBuilder_ == null) {
+					if (((bitField0_ & 0x00000002) == 0x00000002)
+							&& graphView_ != platanos.docGraphDB.Protocol.LoadCommand.GraphView
+									.getDefaultInstance()) {
+						graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+								.newBuilder(graphView_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						graphView_ = value;
+					}
+					onChanged();
+				} else {
+					graphViewBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder clearGraphView() {
+				if (graphViewBuilder_ == null) {
+					graphView_ = platanos.docGraphDB.Protocol.LoadCommand.GraphView
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					graphViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000002);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder getGraphViewBuilder() {
+				bitField0_ |= 0x00000002;
+				onChanged();
+				return getGraphViewFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder getGraphViewOrBuilder() {
+				if (graphViewBuilder_ != null) {
+					return graphViewBuilder_.getMessageOrBuilder();
+				} else {
+					return graphView_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder> getGraphViewFieldBuilder() {
+				if (graphViewBuilder_ == null) {
+					graphViewBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.GraphView, platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder, platanos.docGraphDB.Protocol.LoadCommand.GraphViewOrBuilder>(
+							graphView_, getParentForChildren(), isClean());
+					graphView_ = null;
+				}
+				return graphViewBuilder_;
+			}
+
+			// optional .protocol.LoadCommand.ContentView contentView = 3;
+			private platanos.docGraphDB.Protocol.LoadCommand.ContentView contentView_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.ContentView, platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder, platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder> contentViewBuilder_;
+
+			public boolean hasContentView() {
+				return ((bitField0_ & 0x00000004) == 0x00000004);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.ContentView getContentView() {
+				if (contentViewBuilder_ == null) {
+					return contentView_;
+				} else {
+					return contentViewBuilder_.getMessage();
+				}
+			}
+
+			public Builder setContentView(
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView value) {
+				if (contentViewBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					contentView_ = value;
+					onChanged();
+				} else {
+					contentViewBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder setContentView(
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder builderForValue) {
+				if (contentViewBuilder_ == null) {
+					contentView_ = builderForValue.build();
+					onChanged();
+				} else {
+					contentViewBuilder_.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder mergeContentView(
+					platanos.docGraphDB.Protocol.LoadCommand.ContentView value) {
+				if (contentViewBuilder_ == null) {
+					if (((bitField0_ & 0x00000004) == 0x00000004)
+							&& contentView_ != platanos.docGraphDB.Protocol.LoadCommand.ContentView
+									.getDefaultInstance()) {
+						contentView_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+								.newBuilder(contentView_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						contentView_ = value;
+					}
+					onChanged();
+				} else {
+					contentViewBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder clearContentView() {
+				if (contentViewBuilder_ == null) {
+					contentView_ = platanos.docGraphDB.Protocol.LoadCommand.ContentView
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					contentViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000004);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder getContentViewBuilder() {
+				bitField0_ |= 0x00000004;
+				onChanged();
+				return getContentViewFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder getContentViewOrBuilder() {
+				if (contentViewBuilder_ != null) {
+					return contentViewBuilder_.getMessageOrBuilder();
+				} else {
+					return contentView_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.ContentView, platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder, platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder> getContentViewFieldBuilder() {
+				if (contentViewBuilder_ == null) {
+					contentViewBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.ContentView, platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder, platanos.docGraphDB.Protocol.LoadCommand.ContentViewOrBuilder>(
+							contentView_, getParentForChildren(), isClean());
+					contentView_ = null;
+				}
+				return contentViewBuilder_;
+			}
+
+			// optional .protocol.LoadCommand.SearchView searchView = 4;
+			private platanos.docGraphDB.Protocol.LoadCommand.SearchView searchView_ = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.SearchView, platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder, platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder> searchViewBuilder_;
+
+			public boolean hasSearchView() {
+				return ((bitField0_ & 0x00000008) == 0x00000008);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.SearchView getSearchView() {
+				if (searchViewBuilder_ == null) {
+					return searchView_;
+				} else {
+					return searchViewBuilder_.getMessage();
+				}
+			}
+
+			public Builder setSearchView(
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView value) {
+				if (searchViewBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					searchView_ = value;
+					onChanged();
+				} else {
+					searchViewBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000008;
+				return this;
+			}
+
+			public Builder setSearchView(
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder builderForValue) {
+				if (searchViewBuilder_ == null) {
+					searchView_ = builderForValue.build();
+					onChanged();
+				} else {
+					searchViewBuilder_.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000008;
+				return this;
+			}
+
+			public Builder mergeSearchView(
+					platanos.docGraphDB.Protocol.LoadCommand.SearchView value) {
+				if (searchViewBuilder_ == null) {
+					if (((bitField0_ & 0x00000008) == 0x00000008)
+							&& searchView_ != platanos.docGraphDB.Protocol.LoadCommand.SearchView
+									.getDefaultInstance()) {
+						searchView_ = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+								.newBuilder(searchView_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						searchView_ = value;
+					}
+					onChanged();
+				} else {
+					searchViewBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000008;
+				return this;
+			}
+
+			public Builder clearSearchView() {
+				if (searchViewBuilder_ == null) {
+					searchView_ = platanos.docGraphDB.Protocol.LoadCommand.SearchView
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					searchViewBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000008);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder getSearchViewBuilder() {
+				bitField0_ |= 0x00000008;
+				onChanged();
+				return getSearchViewFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder getSearchViewOrBuilder() {
+				if (searchViewBuilder_ != null) {
+					return searchViewBuilder_.getMessageOrBuilder();
+				} else {
+					return searchView_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.SearchView, platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder, platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder> getSearchViewFieldBuilder() {
+				if (searchViewBuilder_ == null) {
+					searchViewBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.SearchView, platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder, platanos.docGraphDB.Protocol.LoadCommand.SearchViewOrBuilder>(
+							searchView_, getParentForChildren(), isClean());
+					searchView_ = null;
+				}
+				return searchViewBuilder_;
+			}
+
+			// optional .protocol.LoadCommand.Vertex vertex = 5;
+			private platanos.docGraphDB.Protocol.LoadCommand.Vertex vertex_ = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Vertex, platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder, platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder> vertexBuilder_;
+
+			public boolean hasVertex() {
+				return ((bitField0_ & 0x00000010) == 0x00000010);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Vertex getVertex() {
+				if (vertexBuilder_ == null) {
+					return vertex_;
+				} else {
+					return vertexBuilder_.getMessage();
+				}
+			}
+
+			public Builder setVertex(
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex value) {
+				if (vertexBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					vertex_ = value;
+					onChanged();
+				} else {
+					vertexBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000010;
+				return this;
+			}
+
+			public Builder setVertex(
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder builderForValue) {
+				if (vertexBuilder_ == null) {
+					vertex_ = builderForValue.build();
+					onChanged();
+				} else {
+					vertexBuilder_.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000010;
+				return this;
+			}
+
+			public Builder mergeVertex(
+					platanos.docGraphDB.Protocol.LoadCommand.Vertex value) {
+				if (vertexBuilder_ == null) {
+					if (((bitField0_ & 0x00000010) == 0x00000010)
+							&& vertex_ != platanos.docGraphDB.Protocol.LoadCommand.Vertex
+									.getDefaultInstance()) {
+						vertex_ = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+								.newBuilder(vertex_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						vertex_ = value;
+					}
+					onChanged();
+				} else {
+					vertexBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000010;
+				return this;
+			}
+
+			public Builder clearVertex() {
+				if (vertexBuilder_ == null) {
+					vertex_ = platanos.docGraphDB.Protocol.LoadCommand.Vertex
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					vertexBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000010);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder getVertexBuilder() {
+				bitField0_ |= 0x00000010;
+				onChanged();
+				return getVertexFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder getVertexOrBuilder() {
+				if (vertexBuilder_ != null) {
+					return vertexBuilder_.getMessageOrBuilder();
+				} else {
+					return vertex_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Vertex, platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder, platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder> getVertexFieldBuilder() {
+				if (vertexBuilder_ == null) {
+					vertexBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand.Vertex, platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder, platanos.docGraphDB.Protocol.LoadCommand.VertexOrBuilder>(
+							vertex_, getParentForChildren(), isClean());
+					vertex_ = null;
+				}
+				return vertexBuilder_;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.LoadCommand)
+		}
+
+		static {
+			defaultInstance = new LoadCommand(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.LoadCommand)
+	}
+
+	public interface MultiCommandOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// required .protocol.MultiCommand.Save save = 1;
+		boolean hasSave();
+
+		platanos.docGraphDB.Protocol.MultiCommand.Save getSave();
+
+		// optional .protocol.LoadCommand LoadCommand = 2;
+		boolean hasLoadCommand();
+
+		platanos.docGraphDB.Protocol.LoadCommand getLoadCommand();
+
+		platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder();
+
+		// optional .protocol.MultiSaveCommand multiSaveCommand = 3;
+		boolean hasMultiSaveCommand();
+
+		platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand();
+
+		platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder();
+	}
+
+	public static final class MultiCommand extends
+			com.google.protobuf.GeneratedMessage implements
+			MultiCommandOrBuilder {
+		// Use MultiCommand.newBuilder() to construct.
+		private MultiCommand(Builder builder) {
+			super(builder);
+		}
+
+		private MultiCommand(boolean noInit) {
+		}
+
+		private static final MultiCommand defaultInstance;
+
+		public static MultiCommand getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public MultiCommand getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_fieldAccessorTable;
+		}
+
+		public enum Save implements com.google.protobuf.ProtocolMessageEnum {
+			TRUE(0, 0), FALSE(1, 1), ;
+
+			public static final int TRUE_VALUE = 0;
+			public static final int FALSE_VALUE = 1;
+
+			public final int getNumber() {
+				return value;
+			}
+
+			public static Save valueOf(int value) {
+				switch (value) {
+				case 0:
+					return TRUE;
+				case 1:
+					return FALSE;
+				default:
+					return null;
+				}
+			}
+
+			public static com.google.protobuf.Internal.EnumLiteMap<Save> internalGetValueMap() {
+				return internalValueMap;
+			}
+
+			private static com.google.protobuf.Internal.EnumLiteMap<Save> internalValueMap = new com.google.protobuf.Internal.EnumLiteMap<Save>() {
+				public Save findValueByNumber(int number) {
+					return Save.valueOf(number);
+				}
+			};
+
+			public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+				return getDescriptor().getValues().get(index);
+			}
+
+			public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+				return getDescriptor();
+			}
+
+			public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.MultiCommand
+						.getDescriptor().getEnumTypes().get(0);
+			}
+
+			private static final Save[] VALUES = { TRUE, FALSE, };
+
+			public static Save valueOf(
+					com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+				if (desc.getType() != getDescriptor()) {
+					throw new java.lang.IllegalArgumentException(
+							"EnumValueDescriptor is not for this type.");
+				}
+				return VALUES[desc.getIndex()];
+			}
+
+			private final int index;
+			private final int value;
+
+			private Save(int index, int value) {
+				this.index = index;
+				this.value = value;
+			}
+
+			// @@protoc_insertion_point(enum_scope:protocol.MultiCommand.Save)
+		}
+
+		private int bitField0_;
+		// required .protocol.MultiCommand.Save save = 1;
+		public static final int SAVE_FIELD_NUMBER = 1;
+		private platanos.docGraphDB.Protocol.MultiCommand.Save save_;
+
+		public boolean hasSave() {
+			return ((bitField0_ & 0x00000001) == 0x00000001);
+		}
+
+		public platanos.docGraphDB.Protocol.MultiCommand.Save getSave() {
+			return save_;
+		}
+
+		// optional .protocol.LoadCommand LoadCommand = 2;
+		public static final int LOADCOMMAND_FIELD_NUMBER = 2;
+		private platanos.docGraphDB.Protocol.LoadCommand loadCommand_;
+
+		public boolean hasLoadCommand() {
+			return ((bitField0_ & 0x00000002) == 0x00000002);
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommand getLoadCommand() {
+			return loadCommand_;
+		}
+
+		public platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder() {
+			return loadCommand_;
+		}
+
+		// optional .protocol.MultiSaveCommand multiSaveCommand = 3;
+		public static final int MULTISAVECOMMAND_FIELD_NUMBER = 3;
+		private platanos.docGraphDB.Protocol.MultiSaveCommand multiSaveCommand_;
+
+		public boolean hasMultiSaveCommand() {
+			return ((bitField0_ & 0x00000004) == 0x00000004);
+		}
+
+		public platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand() {
+			return multiSaveCommand_;
+		}
+
+		public platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder() {
+			return multiSaveCommand_;
+		}
+
+		private void initFields() {
+			save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
+			loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand
+					.getDefaultInstance();
+			multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand
+					.getDefaultInstance();
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			if (!hasSave()) {
+				memoizedIsInitialized = 0;
+				return false;
+			}
+			if (hasLoadCommand()) {
+				if (!getLoadCommand().isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			if (hasMultiSaveCommand()) {
+				if (!getMultiSaveCommand().isInitialized()) {
+					memoizedIsInitialized = 0;
+					return false;
+				}
+			}
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				output.writeEnum(1, save_.getNumber());
+			}
+			if (((bitField0_ & 0x00000002) == 0x00000002)) {
+				output.writeMessage(2, loadCommand_);
+			}
+			if (((bitField0_ & 0x00000004) == 0x00000004)) {
+				output.writeMessage(3, multiSaveCommand_);
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				size += com.google.protobuf.CodedOutputStream.computeEnumSize(
+						1, save_.getNumber());
+			}
+			if (((bitField0_ & 0x00000002) == 0x00000002)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(2, loadCommand_);
+			}
+			if (((bitField0_ & 0x00000004) == 0x00000004)) {
+				size += com.google.protobuf.CodedOutputStream
+						.computeMessageSize(3, multiSaveCommand_);
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.MultiCommand parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.MultiCommand prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.MultiCommandOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_MultiCommand_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.MultiCommand.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+					getLoadCommandFieldBuilder();
+					getMultiSaveCommandFieldBuilder();
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				if (loadCommandBuilder_ == null) {
+					loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand
+							.getDefaultInstance();
+				} else {
+					loadCommandBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000002);
+				if (multiSaveCommandBuilder_ == null) {
+					multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand
+							.getDefaultInstance();
+				} else {
+					multiSaveCommandBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000004);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.MultiCommand
+						.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.MultiCommand getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.MultiCommand
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.MultiCommand build() {
+				platanos.docGraphDB.Protocol.MultiCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.MultiCommand buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.MultiCommand result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiCommand buildPartial() {
+				platanos.docGraphDB.Protocol.MultiCommand result = new platanos.docGraphDB.Protocol.MultiCommand(
+						this);
+				int from_bitField0_ = bitField0_;
+				int to_bitField0_ = 0;
+				if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+					to_bitField0_ |= 0x00000001;
+				}
+				result.save_ = save_;
+				if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+					to_bitField0_ |= 0x00000002;
+				}
+				if (loadCommandBuilder_ == null) {
+					result.loadCommand_ = loadCommand_;
+				} else {
+					result.loadCommand_ = loadCommandBuilder_.build();
+				}
+				if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+					to_bitField0_ |= 0x00000004;
+				}
+				if (multiSaveCommandBuilder_ == null) {
+					result.multiSaveCommand_ = multiSaveCommand_;
+				} else {
+					result.multiSaveCommand_ = multiSaveCommandBuilder_.build();
+				}
+				result.bitField0_ = to_bitField0_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.MultiCommand) {
+					return mergeFrom((platanos.docGraphDB.Protocol.MultiCommand) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.MultiCommand other) {
+				if (other == platanos.docGraphDB.Protocol.MultiCommand
+						.getDefaultInstance())
+					return this;
+				if (other.hasSave()) {
+					setSave(other.getSave());
+				}
+				if (other.hasLoadCommand()) {
+					mergeLoadCommand(other.getLoadCommand());
+				}
+				if (other.hasMultiSaveCommand()) {
+					mergeMultiSaveCommand(other.getMultiSaveCommand());
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				if (!hasSave()) {
+
+					return false;
+				}
+				if (hasLoadCommand()) {
+					if (!getLoadCommand().isInitialized()) {
+
+						return false;
+					}
+				}
+				if (hasMultiSaveCommand()) {
+					if (!getMultiSaveCommand().isInitialized()) {
+
+						return false;
+					}
+				}
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 8: {
+						int rawValue = input.readEnum();
+						platanos.docGraphDB.Protocol.MultiCommand.Save value = platanos.docGraphDB.Protocol.MultiCommand.Save
+								.valueOf(rawValue);
+						if (value == null) {
+							unknownFields.mergeVarintField(1, rawValue);
+						} else {
+							bitField0_ |= 0x00000001;
+							save_ = value;
+						}
+						break;
+					}
+					case 18: {
+						platanos.docGraphDB.Protocol.LoadCommand.Builder subBuilder = platanos.docGraphDB.Protocol.LoadCommand
+								.newBuilder();
+						if (hasLoadCommand()) {
+							subBuilder.mergeFrom(getLoadCommand());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setLoadCommand(subBuilder.buildPartial());
+						break;
+					}
+					case 26: {
+						platanos.docGraphDB.Protocol.MultiSaveCommand.Builder subBuilder = platanos.docGraphDB.Protocol.MultiSaveCommand
+								.newBuilder();
+						if (hasMultiSaveCommand()) {
+							subBuilder.mergeFrom(getMultiSaveCommand());
+						}
+						input.readMessage(subBuilder, extensionRegistry);
+						setMultiSaveCommand(subBuilder.buildPartial());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// required .protocol.MultiCommand.Save save = 1;
+			private platanos.docGraphDB.Protocol.MultiCommand.Save save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
+
+			public boolean hasSave() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiCommand.Save getSave() {
+				return save_;
+			}
+
+			public Builder setSave(
+					platanos.docGraphDB.Protocol.MultiCommand.Save value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				bitField0_ |= 0x00000001;
+				save_ = value;
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSave() {
+				bitField0_ = (bitField0_ & ~0x00000001);
+				save_ = platanos.docGraphDB.Protocol.MultiCommand.Save.TRUE;
+				onChanged();
+				return this;
+			}
+
+			// optional .protocol.LoadCommand LoadCommand = 2;
+			private platanos.docGraphDB.Protocol.LoadCommand loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder> loadCommandBuilder_;
+
+			public boolean hasLoadCommand() {
+				return ((bitField0_ & 0x00000002) == 0x00000002);
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand getLoadCommand() {
+				if (loadCommandBuilder_ == null) {
+					return loadCommand_;
+				} else {
+					return loadCommandBuilder_.getMessage();
+				}
+			}
+
+			public Builder setLoadCommand(
+					platanos.docGraphDB.Protocol.LoadCommand value) {
+				if (loadCommandBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					loadCommand_ = value;
+					onChanged();
+				} else {
+					loadCommandBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder setLoadCommand(
+					platanos.docGraphDB.Protocol.LoadCommand.Builder builderForValue) {
+				if (loadCommandBuilder_ == null) {
+					loadCommand_ = builderForValue.build();
+					onChanged();
+				} else {
+					loadCommandBuilder_.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder mergeLoadCommand(
+					platanos.docGraphDB.Protocol.LoadCommand value) {
+				if (loadCommandBuilder_ == null) {
+					if (((bitField0_ & 0x00000002) == 0x00000002)
+							&& loadCommand_ != platanos.docGraphDB.Protocol.LoadCommand
+									.getDefaultInstance()) {
+						loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand
+								.newBuilder(loadCommand_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						loadCommand_ = value;
+					}
+					onChanged();
+				} else {
+					loadCommandBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000002;
+				return this;
+			}
+
+			public Builder clearLoadCommand() {
+				if (loadCommandBuilder_ == null) {
+					loadCommand_ = platanos.docGraphDB.Protocol.LoadCommand
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					loadCommandBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000002);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommand.Builder getLoadCommandBuilder() {
+				bitField0_ |= 0x00000002;
+				onChanged();
+				return getLoadCommandFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.LoadCommandOrBuilder getLoadCommandOrBuilder() {
+				if (loadCommandBuilder_ != null) {
+					return loadCommandBuilder_.getMessageOrBuilder();
+				} else {
+					return loadCommand_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder> getLoadCommandFieldBuilder() {
+				if (loadCommandBuilder_ == null) {
+					loadCommandBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.LoadCommand, platanos.docGraphDB.Protocol.LoadCommand.Builder, platanos.docGraphDB.Protocol.LoadCommandOrBuilder>(
+							loadCommand_, getParentForChildren(), isClean());
+					loadCommand_ = null;
+				}
+				return loadCommandBuilder_;
+			}
+
+			// optional .protocol.MultiSaveCommand multiSaveCommand = 3;
+			private platanos.docGraphDB.Protocol.MultiSaveCommand multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand
+					.getDefaultInstance();
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder> multiSaveCommandBuilder_;
+
+			public boolean hasMultiSaveCommand() {
+				return ((bitField0_ & 0x00000004) == 0x00000004);
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand getMultiSaveCommand() {
+				if (multiSaveCommandBuilder_ == null) {
+					return multiSaveCommand_;
+				} else {
+					return multiSaveCommandBuilder_.getMessage();
+				}
+			}
+
+			public Builder setMultiSaveCommand(
+					platanos.docGraphDB.Protocol.MultiSaveCommand value) {
+				if (multiSaveCommandBuilder_ == null) {
+					if (value == null) {
+						throw new NullPointerException();
+					}
+					multiSaveCommand_ = value;
+					onChanged();
+				} else {
+					multiSaveCommandBuilder_.setMessage(value);
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder setMultiSaveCommand(
+					platanos.docGraphDB.Protocol.MultiSaveCommand.Builder builderForValue) {
+				if (multiSaveCommandBuilder_ == null) {
+					multiSaveCommand_ = builderForValue.build();
+					onChanged();
+				} else {
+					multiSaveCommandBuilder_
+							.setMessage(builderForValue.build());
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder mergeMultiSaveCommand(
+					platanos.docGraphDB.Protocol.MultiSaveCommand value) {
+				if (multiSaveCommandBuilder_ == null) {
+					if (((bitField0_ & 0x00000004) == 0x00000004)
+							&& multiSaveCommand_ != platanos.docGraphDB.Protocol.MultiSaveCommand
+									.getDefaultInstance()) {
+						multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand
+								.newBuilder(multiSaveCommand_).mergeFrom(value)
+								.buildPartial();
+					} else {
+						multiSaveCommand_ = value;
+					}
+					onChanged();
+				} else {
+					multiSaveCommandBuilder_.mergeFrom(value);
+				}
+				bitField0_ |= 0x00000004;
+				return this;
+			}
+
+			public Builder clearMultiSaveCommand() {
+				if (multiSaveCommandBuilder_ == null) {
+					multiSaveCommand_ = platanos.docGraphDB.Protocol.MultiSaveCommand
+							.getDefaultInstance();
+					onChanged();
+				} else {
+					multiSaveCommandBuilder_.clear();
+				}
+				bitField0_ = (bitField0_ & ~0x00000004);
+				return this;
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommand.Builder getMultiSaveCommandBuilder() {
+				bitField0_ |= 0x00000004;
+				onChanged();
+				return getMultiSaveCommandFieldBuilder().getBuilder();
+			}
+
+			public platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder getMultiSaveCommandOrBuilder() {
+				if (multiSaveCommandBuilder_ != null) {
+					return multiSaveCommandBuilder_.getMessageOrBuilder();
+				} else {
+					return multiSaveCommand_;
+				}
+			}
+
+			private com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder> getMultiSaveCommandFieldBuilder() {
+				if (multiSaveCommandBuilder_ == null) {
+					multiSaveCommandBuilder_ = new com.google.protobuf.SingleFieldBuilder<platanos.docGraphDB.Protocol.MultiSaveCommand, platanos.docGraphDB.Protocol.MultiSaveCommand.Builder, platanos.docGraphDB.Protocol.MultiSaveCommandOrBuilder>(
+							multiSaveCommand_, getParentForChildren(),
+							isClean());
+					multiSaveCommand_ = null;
+				}
+				return multiSaveCommandBuilder_;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.MultiCommand)
+		}
+
+		static {
+			defaultInstance = new MultiCommand(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.MultiCommand)
+	}
+
+	public interface VertexOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// required bytes size = 1;
+		boolean hasSize();
+
+		com.google.protobuf.ByteString getSize();
+
+		// repeated bytes edges = 2;
+		java.util.List<com.google.protobuf.ByteString> getEdgesList();
+
+		int getEdgesCount();
+
+		com.google.protobuf.ByteString getEdges(int index);
+
+		// repeated bytes back_edges = 3;
+		java.util.List<com.google.protobuf.ByteString> getBackEdgesList();
+
+		int getBackEdgesCount();
+
+		com.google.protobuf.ByteString getBackEdges(int index);
+	}
+
+	public static final class Vertex extends
+			com.google.protobuf.GeneratedMessage implements VertexOrBuilder {
+		// Use Vertex.newBuilder() to construct.
+		private Vertex(Builder builder) {
+			super(builder);
+		}
+
+		private Vertex(boolean noInit) {
+		}
+
+		private static final Vertex defaultInstance;
+
+		public static Vertex getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public Vertex getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_fieldAccessorTable;
+		}
+
+		private int bitField0_;
+		// required bytes size = 1;
+		public static final int SIZE_FIELD_NUMBER = 1;
+		private com.google.protobuf.ByteString size_;
+
+		public boolean hasSize() {
+			return ((bitField0_ & 0x00000001) == 0x00000001);
+		}
+
+		public com.google.protobuf.ByteString getSize() {
+			return size_;
+		}
+
+		// repeated bytes edges = 2;
+		public static final int EDGES_FIELD_NUMBER = 2;
+		private java.util.List<com.google.protobuf.ByteString> edges_;
+
+		public java.util.List<com.google.protobuf.ByteString> getEdgesList() {
+			return edges_;
+		}
+
+		public int getEdgesCount() {
+			return edges_.size();
+		}
+
+		public com.google.protobuf.ByteString getEdges(int index) {
+			return edges_.get(index);
+		}
+
+		// repeated bytes back_edges = 3;
+		public static final int BACK_EDGES_FIELD_NUMBER = 3;
+		private java.util.List<com.google.protobuf.ByteString> backEdges_;
+
+		public java.util.List<com.google.protobuf.ByteString> getBackEdgesList() {
+			return backEdges_;
+		}
+
+		public int getBackEdgesCount() {
+			return backEdges_.size();
+		}
+
+		public com.google.protobuf.ByteString getBackEdges(int index) {
+			return backEdges_.get(index);
+		}
+
+		private void initFields() {
+			size_ = com.google.protobuf.ByteString.EMPTY;
+			edges_ = java.util.Collections.emptyList();
+			;
+			backEdges_ = java.util.Collections.emptyList();
+			;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			if (!hasSize()) {
+				memoizedIsInitialized = 0;
+				return false;
+			}
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				output.writeBytes(1, size_);
+			}
+			for (int i = 0; i < edges_.size(); i++) {
+				output.writeBytes(2, edges_.get(i));
+			}
+			for (int i = 0; i < backEdges_.size(); i++) {
+				output.writeBytes(3, backEdges_.get(i));
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			if (((bitField0_ & 0x00000001) == 0x00000001)) {
+				size += com.google.protobuf.CodedOutputStream.computeBytesSize(
+						1, size_);
+			}
+			{
+				int dataSize = 0;
+				for (int i = 0; i < edges_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(edges_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getEdgesList().size();
+			}
+			{
+				int dataSize = 0;
+				for (int i = 0; i < backEdges_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(backEdges_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getBackEdgesList().size();
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.Vertex parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.Vertex prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.VertexOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_Vertex_fieldAccessorTable;
+			}
+
+			// Construct using platanos.docGraphDB.Protocol.Vertex.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				size_ = com.google.protobuf.ByteString.EMPTY;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				edges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				backEdges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000004);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.Vertex.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.Vertex getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.Vertex.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.Vertex build() {
+				platanos.docGraphDB.Protocol.Vertex result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.Vertex buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.Vertex result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.Vertex buildPartial() {
+				platanos.docGraphDB.Protocol.Vertex result = new platanos.docGraphDB.Protocol.Vertex(
+						this);
+				int from_bitField0_ = bitField0_;
+				int to_bitField0_ = 0;
+				if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+					to_bitField0_ |= 0x00000001;
+				}
+				result.size_ = size_;
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					edges_ = java.util.Collections.unmodifiableList(edges_);
+					bitField0_ = (bitField0_ & ~0x00000002);
+				}
+				result.edges_ = edges_;
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					backEdges_ = java.util.Collections
+							.unmodifiableList(backEdges_);
+					bitField0_ = (bitField0_ & ~0x00000004);
+				}
+				result.backEdges_ = backEdges_;
+				result.bitField0_ = to_bitField0_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.Vertex) {
+					return mergeFrom((platanos.docGraphDB.Protocol.Vertex) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(platanos.docGraphDB.Protocol.Vertex other) {
+				if (other == platanos.docGraphDB.Protocol.Vertex
+						.getDefaultInstance())
+					return this;
+				if (other.hasSize()) {
+					setSize(other.getSize());
+				}
+				if (!other.edges_.isEmpty()) {
+					if (edges_.isEmpty()) {
+						edges_ = other.edges_;
+						bitField0_ = (bitField0_ & ~0x00000002);
+					} else {
+						ensureEdgesIsMutable();
+						edges_.addAll(other.edges_);
+					}
+					onChanged();
+				}
+				if (!other.backEdges_.isEmpty()) {
+					if (backEdges_.isEmpty()) {
+						backEdges_ = other.backEdges_;
+						bitField0_ = (bitField0_ & ~0x00000004);
+					} else {
+						ensureBackEdgesIsMutable();
+						backEdges_.addAll(other.backEdges_);
+					}
+					onChanged();
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				if (!hasSize()) {
+
+					return false;
+				}
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 10: {
+						bitField0_ |= 0x00000001;
+						size_ = input.readBytes();
+						break;
+					}
+					case 18: {
+						ensureEdgesIsMutable();
+						edges_.add(input.readBytes());
+						break;
+					}
+					case 26: {
+						ensureBackEdgesIsMutable();
+						backEdges_.add(input.readBytes());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// required bytes size = 1;
+			private com.google.protobuf.ByteString size_ = com.google.protobuf.ByteString.EMPTY;
+
+			public boolean hasSize() {
+				return ((bitField0_ & 0x00000001) == 0x00000001);
+			}
+
+			public com.google.protobuf.ByteString getSize() {
+				return size_;
+			}
+
+			public Builder setSize(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				bitField0_ |= 0x00000001;
+				size_ = value;
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSize() {
+				bitField0_ = (bitField0_ & ~0x00000001);
+				size_ = getDefaultInstance().getSize();
+				onChanged();
+				return this;
+			}
+
+			// repeated bytes edges = 2;
+			private java.util.List<com.google.protobuf.ByteString> edges_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureEdgesIsMutable() {
+				if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+					edges_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							edges_);
+					bitField0_ |= 0x00000002;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getEdgesList() {
+				return java.util.Collections.unmodifiableList(edges_);
+			}
+
+			public int getEdgesCount() {
+				return edges_.size();
+			}
+
+			public com.google.protobuf.ByteString getEdges(int index) {
+				return edges_.get(index);
+			}
+
+			public Builder setEdges(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureEdgesIsMutable();
+				edges_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addEdges(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureEdgesIsMutable();
+				edges_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllEdges(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureEdgesIsMutable();
+				super.addAll(values, edges_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearEdges() {
+				edges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				onChanged();
+				return this;
+			}
+
+			// repeated bytes back_edges = 3;
+			private java.util.List<com.google.protobuf.ByteString> backEdges_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureBackEdgesIsMutable() {
+				if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+					backEdges_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							backEdges_);
+					bitField0_ |= 0x00000004;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getBackEdgesList() {
+				return java.util.Collections.unmodifiableList(backEdges_);
+			}
+
+			public int getBackEdgesCount() {
+				return backEdges_.size();
+			}
+
+			public com.google.protobuf.ByteString getBackEdges(int index) {
+				return backEdges_.get(index);
+			}
+
+			public Builder setBackEdges(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureBackEdgesIsMutable();
+				backEdges_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addBackEdges(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureBackEdgesIsMutable();
+				backEdges_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllBackEdges(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureBackEdgesIsMutable();
+				super.addAll(values, backEdges_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearBackEdges() {
+				backEdges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000004);
+				onChanged();
+				return this;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.Vertex)
+		}
+
+		static {
+			defaultInstance = new Vertex(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.Vertex)
+	}
+
+	public interface GraphViewOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// repeated bytes summaries = 1;
+		java.util.List<com.google.protobuf.ByteString> getSummariesList();
+
+		int getSummariesCount();
+
+		com.google.protobuf.ByteString getSummaries(int index);
+
+		// repeated bytes sha3 = 2;
+		java.util.List<com.google.protobuf.ByteString> getSha3List();
+
+		int getSha3Count();
+
+		com.google.protobuf.ByteString getSha3(int index);
+
+		// repeated bytes edges = 3;
+		java.util.List<com.google.protobuf.ByteString> getEdgesList();
+
+		int getEdgesCount();
+
+		com.google.protobuf.ByteString getEdges(int index);
+	}
+
+	public static final class GraphView extends
+			com.google.protobuf.GeneratedMessage implements GraphViewOrBuilder {
+		// Use GraphView.newBuilder() to construct.
+		private GraphView(Builder builder) {
+			super(builder);
+		}
+
+		private GraphView(boolean noInit) {
+		}
+
+		private static final GraphView defaultInstance;
+
+		public static GraphView getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public GraphView getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_GraphView_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_GraphView_fieldAccessorTable;
+		}
+
+		// repeated bytes summaries = 1;
+		public static final int SUMMARIES_FIELD_NUMBER = 1;
+		private java.util.List<com.google.protobuf.ByteString> summaries_;
+
+		public java.util.List<com.google.protobuf.ByteString> getSummariesList() {
+			return summaries_;
+		}
+
+		public int getSummariesCount() {
+			return summaries_.size();
+		}
+
+		public com.google.protobuf.ByteString getSummaries(int index) {
+			return summaries_.get(index);
+		}
+
+		// repeated bytes sha3 = 2;
+		public static final int SHA3_FIELD_NUMBER = 2;
+		private java.util.List<com.google.protobuf.ByteString> sha3_;
+
+		public java.util.List<com.google.protobuf.ByteString> getSha3List() {
+			return sha3_;
+		}
+
+		public int getSha3Count() {
+			return sha3_.size();
+		}
+
+		public com.google.protobuf.ByteString getSha3(int index) {
+			return sha3_.get(index);
+		}
+
+		// repeated bytes edges = 3;
+		public static final int EDGES_FIELD_NUMBER = 3;
+		private java.util.List<com.google.protobuf.ByteString> edges_;
+
+		public java.util.List<com.google.protobuf.ByteString> getEdgesList() {
+			return edges_;
+		}
+
+		public int getEdgesCount() {
+			return edges_.size();
+		}
+
+		public com.google.protobuf.ByteString getEdges(int index) {
+			return edges_.get(index);
+		}
+
+		private void initFields() {
+			summaries_ = java.util.Collections.emptyList();
+			;
+			sha3_ = java.util.Collections.emptyList();
+			;
+			edges_ = java.util.Collections.emptyList();
+			;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			for (int i = 0; i < summaries_.size(); i++) {
+				output.writeBytes(1, summaries_.get(i));
+			}
+			for (int i = 0; i < sha3_.size(); i++) {
+				output.writeBytes(2, sha3_.get(i));
+			}
+			for (int i = 0; i < edges_.size(); i++) {
+				output.writeBytes(3, edges_.get(i));
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			{
+				int dataSize = 0;
+				for (int i = 0; i < summaries_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(summaries_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getSummariesList().size();
+			}
+			{
+				int dataSize = 0;
+				for (int i = 0; i < sha3_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(sha3_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getSha3List().size();
+			}
+			{
+				int dataSize = 0;
+				for (int i = 0; i < edges_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(edges_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getEdgesList().size();
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.GraphView parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.GraphView prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.GraphViewOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_GraphView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_GraphView_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.GraphView.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				summaries_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				sha3_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				edges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000004);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.GraphView.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.GraphView getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.GraphView
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.GraphView build() {
+				platanos.docGraphDB.Protocol.GraphView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.GraphView buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.GraphView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.GraphView buildPartial() {
+				platanos.docGraphDB.Protocol.GraphView result = new platanos.docGraphDB.Protocol.GraphView(
+						this);
+				int from_bitField0_ = bitField0_;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					summaries_ = java.util.Collections
+							.unmodifiableList(summaries_);
+					bitField0_ = (bitField0_ & ~0x00000001);
+				}
+				result.summaries_ = summaries_;
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					sha3_ = java.util.Collections.unmodifiableList(sha3_);
+					bitField0_ = (bitField0_ & ~0x00000002);
+				}
+				result.sha3_ = sha3_;
+				if (((bitField0_ & 0x00000004) == 0x00000004)) {
+					edges_ = java.util.Collections.unmodifiableList(edges_);
+					bitField0_ = (bitField0_ & ~0x00000004);
+				}
+				result.edges_ = edges_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.GraphView) {
+					return mergeFrom((platanos.docGraphDB.Protocol.GraphView) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.GraphView other) {
+				if (other == platanos.docGraphDB.Protocol.GraphView
+						.getDefaultInstance())
+					return this;
+				if (!other.summaries_.isEmpty()) {
+					if (summaries_.isEmpty()) {
+						summaries_ = other.summaries_;
+						bitField0_ = (bitField0_ & ~0x00000001);
+					} else {
+						ensureSummariesIsMutable();
+						summaries_.addAll(other.summaries_);
+					}
+					onChanged();
+				}
+				if (!other.sha3_.isEmpty()) {
+					if (sha3_.isEmpty()) {
+						sha3_ = other.sha3_;
+						bitField0_ = (bitField0_ & ~0x00000002);
+					} else {
+						ensureSha3IsMutable();
+						sha3_.addAll(other.sha3_);
+					}
+					onChanged();
+				}
+				if (!other.edges_.isEmpty()) {
+					if (edges_.isEmpty()) {
+						edges_ = other.edges_;
+						bitField0_ = (bitField0_ & ~0x00000004);
+					} else {
+						ensureEdgesIsMutable();
+						edges_.addAll(other.edges_);
+					}
+					onChanged();
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 10: {
+						ensureSummariesIsMutable();
+						summaries_.add(input.readBytes());
+						break;
+					}
+					case 18: {
+						ensureSha3IsMutable();
+						sha3_.add(input.readBytes());
+						break;
+					}
+					case 26: {
+						ensureEdgesIsMutable();
+						edges_.add(input.readBytes());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// repeated bytes summaries = 1;
+			private java.util.List<com.google.protobuf.ByteString> summaries_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureSummariesIsMutable() {
+				if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+					summaries_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							summaries_);
+					bitField0_ |= 0x00000001;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getSummariesList() {
+				return java.util.Collections.unmodifiableList(summaries_);
+			}
+
+			public int getSummariesCount() {
+				return summaries_.size();
+			}
+
+			public com.google.protobuf.ByteString getSummaries(int index) {
+				return summaries_.get(index);
+			}
+
+			public Builder setSummaries(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSummariesIsMutable();
+				summaries_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addSummaries(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSummariesIsMutable();
+				summaries_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllSummaries(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureSummariesIsMutable();
+				super.addAll(values, summaries_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSummaries() {
+				summaries_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				onChanged();
+				return this;
+			}
+
+			// repeated bytes sha3 = 2;
+			private java.util.List<com.google.protobuf.ByteString> sha3_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureSha3IsMutable() {
+				if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+					sha3_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							sha3_);
+					bitField0_ |= 0x00000002;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getSha3List() {
+				return java.util.Collections.unmodifiableList(sha3_);
+			}
+
+			public int getSha3Count() {
+				return sha3_.size();
+			}
+
+			public com.google.protobuf.ByteString getSha3(int index) {
+				return sha3_.get(index);
+			}
+
+			public Builder setSha3(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSha3IsMutable();
+				sha3_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addSha3(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSha3IsMutable();
+				sha3_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllSha3(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureSha3IsMutable();
+				super.addAll(values, sha3_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSha3() {
+				sha3_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				onChanged();
+				return this;
+			}
+
+			// repeated bytes edges = 3;
+			private java.util.List<com.google.protobuf.ByteString> edges_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureEdgesIsMutable() {
+				if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+					edges_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							edges_);
+					bitField0_ |= 0x00000004;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getEdgesList() {
+				return java.util.Collections.unmodifiableList(edges_);
+			}
+
+			public int getEdgesCount() {
+				return edges_.size();
+			}
+
+			public com.google.protobuf.ByteString getEdges(int index) {
+				return edges_.get(index);
+			}
+
+			public Builder setEdges(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureEdgesIsMutable();
+				edges_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addEdges(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureEdgesIsMutable();
+				edges_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllEdges(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureEdgesIsMutable();
+				super.addAll(values, edges_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearEdges() {
+				edges_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000004);
+				onChanged();
+				return this;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.GraphView)
+		}
+
+		static {
+			defaultInstance = new GraphView(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.GraphView)
+	}
+
+	public interface ContentViewOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// repeated bytes data = 1;
+		java.util.List<com.google.protobuf.ByteString> getDataList();
+
+		int getDataCount();
+
+		com.google.protobuf.ByteString getData(int index);
+	}
+
+	public static final class ContentView extends
+			com.google.protobuf.GeneratedMessage implements
+			ContentViewOrBuilder {
+		// Use ContentView.newBuilder() to construct.
+		private ContentView(Builder builder) {
+			super(builder);
+		}
+
+		private ContentView(boolean noInit) {
+		}
+
+		private static final ContentView defaultInstance;
+
+		public static ContentView getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public ContentView getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_ContentView_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_ContentView_fieldAccessorTable;
+		}
+
+		// repeated bytes data = 1;
+		public static final int DATA_FIELD_NUMBER = 1;
+		private java.util.List<com.google.protobuf.ByteString> data_;
+
+		public java.util.List<com.google.protobuf.ByteString> getDataList() {
+			return data_;
+		}
+
+		public int getDataCount() {
+			return data_.size();
+		}
+
+		public com.google.protobuf.ByteString getData(int index) {
+			return data_.get(index);
+		}
+
+		private void initFields() {
+			data_ = java.util.Collections.emptyList();
+			;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			for (int i = 0; i < data_.size(); i++) {
+				output.writeBytes(1, data_.get(i));
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			{
+				int dataSize = 0;
+				for (int i = 0; i < data_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(data_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getDataList().size();
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.ContentView parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.ContentView prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.ContentViewOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_ContentView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_ContentView_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.ContentView.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				data_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.ContentView.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.ContentView getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.ContentView
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.ContentView build() {
+				platanos.docGraphDB.Protocol.ContentView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.ContentView buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.ContentView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.ContentView buildPartial() {
+				platanos.docGraphDB.Protocol.ContentView result = new platanos.docGraphDB.Protocol.ContentView(
+						this);
+				int from_bitField0_ = bitField0_;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					data_ = java.util.Collections.unmodifiableList(data_);
+					bitField0_ = (bitField0_ & ~0x00000001);
+				}
+				result.data_ = data_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.ContentView) {
+					return mergeFrom((platanos.docGraphDB.Protocol.ContentView) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.ContentView other) {
+				if (other == platanos.docGraphDB.Protocol.ContentView
+						.getDefaultInstance())
+					return this;
+				if (!other.data_.isEmpty()) {
+					if (data_.isEmpty()) {
+						data_ = other.data_;
+						bitField0_ = (bitField0_ & ~0x00000001);
+					} else {
+						ensureDataIsMutable();
+						data_.addAll(other.data_);
+					}
+					onChanged();
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 10: {
+						ensureDataIsMutable();
+						data_.add(input.readBytes());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// repeated bytes data = 1;
+			private java.util.List<com.google.protobuf.ByteString> data_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureDataIsMutable() {
+				if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+					data_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							data_);
+					bitField0_ |= 0x00000001;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getDataList() {
+				return java.util.Collections.unmodifiableList(data_);
+			}
+
+			public int getDataCount() {
+				return data_.size();
+			}
+
+			public com.google.protobuf.ByteString getData(int index) {
+				return data_.get(index);
+			}
+
+			public Builder setData(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureDataIsMutable();
+				data_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addData(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureDataIsMutable();
+				data_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllData(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureDataIsMutable();
+				super.addAll(values, data_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearData() {
+				data_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				onChanged();
+				return this;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.ContentView)
+		}
+
+		static {
+			defaultInstance = new ContentView(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.ContentView)
+	}
+
+	public interface SearchViewOrBuilder extends
+			com.google.protobuf.MessageOrBuilder {
+
+		// repeated bytes summaries = 1;
+		java.util.List<com.google.protobuf.ByteString> getSummariesList();
+
+		int getSummariesCount();
+
+		com.google.protobuf.ByteString getSummaries(int index);
+
+		// repeated bytes sha3 = 2;
+		java.util.List<com.google.protobuf.ByteString> getSha3List();
+
+		int getSha3Count();
+
+		com.google.protobuf.ByteString getSha3(int index);
+	}
+
+	public static final class SearchView extends
+			com.google.protobuf.GeneratedMessage implements SearchViewOrBuilder {
+		// Use SearchView.newBuilder() to construct.
+		private SearchView(Builder builder) {
+			super(builder);
+		}
+
+		private SearchView(boolean noInit) {
+		}
+
+		private static final SearchView defaultInstance;
+
+		public static SearchView getDefaultInstance() {
+			return defaultInstance;
+		}
+
+		public SearchView getDefaultInstanceForType() {
+			return defaultInstance;
+		}
+
+		public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_SearchView_descriptor;
+		}
+
+		protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+			return platanos.docGraphDB.Protocol.internal_static_protocol_SearchView_fieldAccessorTable;
+		}
+
+		// repeated bytes summaries = 1;
+		public static final int SUMMARIES_FIELD_NUMBER = 1;
+		private java.util.List<com.google.protobuf.ByteString> summaries_;
+
+		public java.util.List<com.google.protobuf.ByteString> getSummariesList() {
+			return summaries_;
+		}
+
+		public int getSummariesCount() {
+			return summaries_.size();
+		}
+
+		public com.google.protobuf.ByteString getSummaries(int index) {
+			return summaries_.get(index);
+		}
+
+		// repeated bytes sha3 = 2;
+		public static final int SHA3_FIELD_NUMBER = 2;
+		private java.util.List<com.google.protobuf.ByteString> sha3_;
+
+		public java.util.List<com.google.protobuf.ByteString> getSha3List() {
+			return sha3_;
+		}
+
+		public int getSha3Count() {
+			return sha3_.size();
+		}
+
+		public com.google.protobuf.ByteString getSha3(int index) {
+			return sha3_.get(index);
+		}
+
+		private void initFields() {
+			summaries_ = java.util.Collections.emptyList();
+			;
+			sha3_ = java.util.Collections.emptyList();
+			;
+		}
+
+		private byte memoizedIsInitialized = -1;
+
+		public final boolean isInitialized() {
+			byte isInitialized = memoizedIsInitialized;
+			if (isInitialized != -1)
+				return isInitialized == 1;
+
+			memoizedIsInitialized = 1;
+			return true;
+		}
+
+		public void writeTo(com.google.protobuf.CodedOutputStream output)
+				throws java.io.IOException {
+			getSerializedSize();
+			for (int i = 0; i < summaries_.size(); i++) {
+				output.writeBytes(1, summaries_.get(i));
+			}
+			for (int i = 0; i < sha3_.size(); i++) {
+				output.writeBytes(2, sha3_.get(i));
+			}
+			getUnknownFields().writeTo(output);
+		}
+
+		private int memoizedSerializedSize = -1;
+
+		public int getSerializedSize() {
+			int size = memoizedSerializedSize;
+			if (size != -1)
+				return size;
+
+			size = 0;
+			{
+				int dataSize = 0;
+				for (int i = 0; i < summaries_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(summaries_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getSummariesList().size();
+			}
+			{
+				int dataSize = 0;
+				for (int i = 0; i < sha3_.size(); i++) {
+					dataSize += com.google.protobuf.CodedOutputStream
+							.computeBytesSizeNoTag(sha3_.get(i));
+				}
+				size += dataSize;
+				size += 1 * getSha3List().size();
+			}
+			size += getUnknownFields().getSerializedSize();
+			memoizedSerializedSize = size;
+			return size;
+		}
+
+		private static final long serialVersionUID = 0L;
+
+		@java.lang.Override
+		protected java.lang.Object writeReplace()
+				throws java.io.ObjectStreamException {
+			return super.writeReplace();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				com.google.protobuf.ByteString data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				com.google.protobuf.ByteString data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				byte[] data)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				byte[] data,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws com.google.protobuf.InvalidProtocolBufferException {
+			return newBuilder().mergeFrom(data, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseDelimitedFrom(
+				java.io.InputStream input) throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseDelimitedFrom(
+				java.io.InputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			Builder builder = newBuilder();
+			if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+				return builder.buildParsed();
+			} else {
+				return null;
+			}
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				com.google.protobuf.CodedInputStream input)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input).buildParsed();
+		}
+
+		public static platanos.docGraphDB.Protocol.SearchView parseFrom(
+				com.google.protobuf.CodedInputStream input,
+				com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+				throws java.io.IOException {
+			return newBuilder().mergeFrom(input, extensionRegistry)
+					.buildParsed();
+		}
+
+		public static Builder newBuilder() {
+			return Builder.create();
+		}
+
+		public Builder newBuilderForType() {
+			return newBuilder();
+		}
+
+		public static Builder newBuilder(
+				platanos.docGraphDB.Protocol.SearchView prototype) {
+			return newBuilder().mergeFrom(prototype);
+		}
+
+		public Builder toBuilder() {
+			return newBuilder(this);
+		}
+
+		@java.lang.Override
+		protected Builder newBuilderForType(
+				com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+			Builder builder = new Builder(parent);
+			return builder;
+		}
+
+		public static final class Builder extends
+				com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+				platanos.docGraphDB.Protocol.SearchViewOrBuilder {
+			public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_SearchView_descriptor;
+			}
+
+			protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+				return platanos.docGraphDB.Protocol.internal_static_protocol_SearchView_fieldAccessorTable;
+			}
+
+			// Construct using
+			// platanos.docGraphDB.Protocol.SearchView.newBuilder()
+			private Builder() {
+				maybeForceBuilderInitialization();
+			}
+
+			private Builder(BuilderParent parent) {
+				super(parent);
+				maybeForceBuilderInitialization();
+			}
+
+			private void maybeForceBuilderInitialization() {
+				if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+				}
+			}
+
+			private static Builder create() {
+				return new Builder();
+			}
+
+			public Builder clear() {
+				super.clear();
+				summaries_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				sha3_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				return this;
+			}
+
+			public Builder clone() {
+				return create().mergeFrom(buildPartial());
+			}
+
+			public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+				return platanos.docGraphDB.Protocol.SearchView.getDescriptor();
+			}
+
+			public platanos.docGraphDB.Protocol.SearchView getDefaultInstanceForType() {
+				return platanos.docGraphDB.Protocol.SearchView
+						.getDefaultInstance();
+			}
+
+			public platanos.docGraphDB.Protocol.SearchView build() {
+				platanos.docGraphDB.Protocol.SearchView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result);
+				}
+				return result;
+			}
+
+			private platanos.docGraphDB.Protocol.SearchView buildParsed()
+					throws com.google.protobuf.InvalidProtocolBufferException {
+				platanos.docGraphDB.Protocol.SearchView result = buildPartial();
+				if (!result.isInitialized()) {
+					throw newUninitializedMessageException(result)
+							.asInvalidProtocolBufferException();
+				}
+				return result;
+			}
+
+			public platanos.docGraphDB.Protocol.SearchView buildPartial() {
+				platanos.docGraphDB.Protocol.SearchView result = new platanos.docGraphDB.Protocol.SearchView(
+						this);
+				int from_bitField0_ = bitField0_;
+				if (((bitField0_ & 0x00000001) == 0x00000001)) {
+					summaries_ = java.util.Collections
+							.unmodifiableList(summaries_);
+					bitField0_ = (bitField0_ & ~0x00000001);
+				}
+				result.summaries_ = summaries_;
+				if (((bitField0_ & 0x00000002) == 0x00000002)) {
+					sha3_ = java.util.Collections.unmodifiableList(sha3_);
+					bitField0_ = (bitField0_ & ~0x00000002);
+				}
+				result.sha3_ = sha3_;
+				onBuilt();
+				return result;
+			}
+
+			public Builder mergeFrom(com.google.protobuf.Message other) {
+				if (other instanceof platanos.docGraphDB.Protocol.SearchView) {
+					return mergeFrom((platanos.docGraphDB.Protocol.SearchView) other);
+				} else {
+					super.mergeFrom(other);
+					return this;
+				}
+			}
+
+			public Builder mergeFrom(
+					platanos.docGraphDB.Protocol.SearchView other) {
+				if (other == platanos.docGraphDB.Protocol.SearchView
+						.getDefaultInstance())
+					return this;
+				if (!other.summaries_.isEmpty()) {
+					if (summaries_.isEmpty()) {
+						summaries_ = other.summaries_;
+						bitField0_ = (bitField0_ & ~0x00000001);
+					} else {
+						ensureSummariesIsMutable();
+						summaries_.addAll(other.summaries_);
+					}
+					onChanged();
+				}
+				if (!other.sha3_.isEmpty()) {
+					if (sha3_.isEmpty()) {
+						sha3_ = other.sha3_;
+						bitField0_ = (bitField0_ & ~0x00000002);
+					} else {
+						ensureSha3IsMutable();
+						sha3_.addAll(other.sha3_);
+					}
+					onChanged();
+				}
+				this.mergeUnknownFields(other.getUnknownFields());
+				return this;
+			}
+
+			public final boolean isInitialized() {
+				return true;
+			}
+
+			public Builder mergeFrom(
+					com.google.protobuf.CodedInputStream input,
+					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+					throws java.io.IOException {
+				com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet
+						.newBuilder(this.getUnknownFields());
+				while (true) {
+					int tag = input.readTag();
+					switch (tag) {
+					case 0:
+						this.setUnknownFields(unknownFields.build());
+						onChanged();
+						return this;
+					default: {
+						if (!parseUnknownField(input, unknownFields,
+								extensionRegistry, tag)) {
+							this.setUnknownFields(unknownFields.build());
+							onChanged();
+							return this;
+						}
+						break;
+					}
+					case 10: {
+						ensureSummariesIsMutable();
+						summaries_.add(input.readBytes());
+						break;
+					}
+					case 18: {
+						ensureSha3IsMutable();
+						sha3_.add(input.readBytes());
+						break;
+					}
+					}
+				}
+			}
+
+			private int bitField0_;
+
+			// repeated bytes summaries = 1;
+			private java.util.List<com.google.protobuf.ByteString> summaries_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureSummariesIsMutable() {
+				if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+					summaries_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							summaries_);
+					bitField0_ |= 0x00000001;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getSummariesList() {
+				return java.util.Collections.unmodifiableList(summaries_);
+			}
+
+			public int getSummariesCount() {
+				return summaries_.size();
+			}
+
+			public com.google.protobuf.ByteString getSummaries(int index) {
+				return summaries_.get(index);
+			}
+
+			public Builder setSummaries(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSummariesIsMutable();
+				summaries_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addSummaries(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSummariesIsMutable();
+				summaries_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllSummaries(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureSummariesIsMutable();
+				super.addAll(values, summaries_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSummaries() {
+				summaries_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000001);
+				onChanged();
+				return this;
+			}
+
+			// repeated bytes sha3 = 2;
+			private java.util.List<com.google.protobuf.ByteString> sha3_ = java.util.Collections
+					.emptyList();;
+
+			private void ensureSha3IsMutable() {
+				if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+					sha3_ = new java.util.ArrayList<com.google.protobuf.ByteString>(
+							sha3_);
+					bitField0_ |= 0x00000002;
+				}
+			}
+
+			public java.util.List<com.google.protobuf.ByteString> getSha3List() {
+				return java.util.Collections.unmodifiableList(sha3_);
+			}
+
+			public int getSha3Count() {
+				return sha3_.size();
+			}
+
+			public com.google.protobuf.ByteString getSha3(int index) {
+				return sha3_.get(index);
+			}
+
+			public Builder setSha3(int index,
+					com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSha3IsMutable();
+				sha3_.set(index, value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addSha3(com.google.protobuf.ByteString value) {
+				if (value == null) {
+					throw new NullPointerException();
+				}
+				ensureSha3IsMutable();
+				sha3_.add(value);
+				onChanged();
+				return this;
+			}
+
+			public Builder addAllSha3(
+					java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+				ensureSha3IsMutable();
+				super.addAll(values, sha3_);
+				onChanged();
+				return this;
+			}
+
+			public Builder clearSha3() {
+				sha3_ = java.util.Collections.emptyList();
+				;
+				bitField0_ = (bitField0_ & ~0x00000002);
+				onChanged();
+				return this;
+			}
+
+			// @@protoc_insertion_point(builder_scope:protocol.SearchView)
+		}
+
+		static {
+			defaultInstance = new SearchView(true);
+			defaultInstance.initFields();
+		}
+
+		// @@protoc_insertion_point(class_scope:protocol.SearchView)
+	}
+
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_Edge_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_Edge_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_GraphView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_ContentView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_SearchView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_SearchView_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_LoadCommand_Vertex_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_LoadCommand_Vertex_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_MultiCommand_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_MultiCommand_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_Vertex_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_Vertex_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_GraphView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_GraphView_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_ContentView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_ContentView_fieldAccessorTable;
+	private static com.google.protobuf.Descriptors.Descriptor internal_static_protocol_SearchView_descriptor;
+	private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_protocol_SearchView_fieldAccessorTable;
+
+	public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+		return descriptor;
+	}
+
+	private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+	static {
+		java.lang.String[] descriptorData = {
+				"\n\016protocol.proto\022\010protocol\"\206\013\n\020MultiSave"
+						+ "Command\022\013\n\003key\030\001 \002(\003\022;\n\013saveCommand\030\002 \003("
+						+ "\0132&.protocol.MultiSaveCommand.SaveComman"
+						+ "d\032\247\n\n\013SaveCommand\0229\n\004type\030\001 \002(\0162+.protoc"
+						+ "ol.MultiSaveCommand.SaveCommand.Type\022A\n\010"
+						+ "metadata\030\002 \001(\0132/.protocol.MultiSaveComma"
+						+ "nd.SaveCommand.Metadata\022?\n\007content\030\003 \001(\013"
+						+ "2..protocol.MultiSaveCommand.SaveCommand"
+						+ ".Content\0229\n\004edge\030\004 \001(\0132+.protocol.MultiS"
+						+ "aveCommand.SaveCommand.Edge\022=\n\006vertex\030\005 ",
+				"\001(\0132-.protocol.MultiSaveCommand.SaveComm"
+						+ "and.Vertex\032\222\003\n\010Metadata\022N\n\nsecCommand\030\001 "
+						+ "\002(\0162:.protocol.MultiSaveCommand.SaveComm"
+						+ "and.Metadata.SecCommand\022\020\n\010position\030\002 \002("
+						+ "\014\022\014\n\004sha3\030\003 \001(\014\022\021\n\tluceneUid\030\004 \001(\003\022\014\n\004ti"
+						+ "me\030\005 \001(\005\022\016\n\006author\030\006 \001(\014\022\020\n\010prevSha3\030\007 \003"
+						+ "(\014\022\020\n\010location\030\010 \001(\014\022\016\n\006seller\030\t \001(\014\022\016\n\006"
+						+ "period\030\n \001(\014\022\024\n\014sha3Contract\030\013 \001(\014\"\212\001\n\nS"
+						+ "ecCommand\022\t\n\005csha3\020\000\022\016\n\ncluceneUid\020\001\022\t\n\005"
+						+ "ctime\020\002\022\013\n\007cauthor\020\003\022\r\n\tcprevSha3\020\004\022\r\n\tc",
+				"location\020\005\022\013\n\007cseller\020\006\022\013\n\007cperiod\020\007\022\021\n\r"
+						+ "csha3Contract\020\010\032\236\001\n\007Content\022M\n\nsecComman"
+						+ "d\030\001 \002(\01629.protocol.MultiSaveCommand.Save"
+						+ "Command.Content.SecCommand\022\020\n\010position\030\002"
+						+ " \002(\014\022\014\n\004data\030\003 \002(\014\"$\n\nSecCommand\022\010\n\004cdoc"
+						+ "\020\000\022\014\n\010csummary\020\001\032\246\001\n\004Edge\022J\n\nsecCommand\030"
+						+ "\001 \002(\01626.protocol.MultiSaveCommand.SaveCo"
+						+ "mmand.Edge.SecCommand\022\020\n\010position\030\002 \001(\014\022"
+						+ "\014\n\004edge\030\003 \001(\014\022\014\n\004data\030\004 \002(\014\"$\n\nSecComman"
+						+ "d\022\013\n\007cinEdge\020\000\022\t\n\005cedge\020\001\032\302\001\n\006Vertex\022L\n\n",
+				"secCommand\030\001 \002(\01628.protocol.MultiSaveCom"
+						+ "mand.SaveCommand.Vertex.SecCommand\022\014\n\004si"
+						+ "ze\030\002 \001(\014\022\014\n\004edge\030\003 \001(\014\"N\n\nSecCommand\022\021\n\r"
+						+ "ccreateVertex\020\000\022\014\n\010csetSize\020\001\022\014\n\010caddEdg"
+						+ "e\020\002\022\021\n\rcaddBack_edge\020\003\";\n\004Type\022\r\n\tcmetad"
+						+ "ata\020\000\022\014\n\010ccontent\020\001\022\t\n\005cedge\020\002\022\013\n\007cverte"
+						+ "x\020\003\"\334\005\n\013LoadCommand\022(\n\004type\030\001 \002(\0162\032.prot"
+						+ "ocol.LoadCommand.Type\0222\n\tgraphView\030\002 \001(\013"
+						+ "2\037.protocol.LoadCommand.GraphView\0226\n\013con"
+						+ "tentView\030\003 \001(\0132!.protocol.LoadCommand.Co",
+				"ntentView\0224\n\nsearchView\030\004 \001(\0132 .protocol"
+						+ ".LoadCommand.SearchView\022,\n\006vertex\030\005 \001(\0132"
+						+ "\034.protocol.LoadCommand.Vertex\032\224\001\n\004Edge\0229"
+						+ "\n\nsecCommand\030\001 \002(\0162%.protocol.LoadComman"
+						+ "d.Edge.SecCommand\022\013\n\003key\030\002 \002(\003\022\020\n\010positi"
+						+ "on\030\003 \001(\014\022\014\n\004edge\030\004 \001(\014\"$\n\nSecCommand\022\013\n\007"
+						+ "cinEdge\020\000\022\t\n\005cedge\020\001\032Y\n\tGraphView\022\017\n\003key"
+						+ "\030\001 \003(\003B\002\020\001\022\020\n\010position\030\002 \003(\014\022)\n\005edges\030\003 "
+						+ "\003(\0132\032.protocol.LoadCommand.Edge\032D\n\013Conte"
+						+ "ntView\022\013\n\003key\030\001 \002(\003\022\020\n\010position\030\002 \002(\014\022\026\n",
+				"\016start_position\030\003 \002(\014\032/\n\nSearchView\022\017\n\003k"
+						+ "ey\030\001 \003(\003B\002\020\001\022\020\n\010position\030\002 \003(\014\032\025\n\006Vertex"
+						+ "\022\013\n\003key\030\001 \002(\003\"S\n\004Type\022\016\n\ncgraphView\020\000\022\020\n"
+						+ "\014ccontentView\020\001\022\017\n\013csearchView\020\002\022\013\n\007cver"
+						+ "tex\020\003\022\013\n\007crepair\020\004\"\270\001\n\014MultiCommand\022)\n\004s"
+						+ "ave\030\001 \002(\0162\033.protocol.MultiCommand.Save\022*"
+						+ "\n\013LoadCommand\030\002 \001(\0132\025.protocol.LoadComma"
+						+ "nd\0224\n\020multiSaveCommand\030\003 \001(\0132\032.protocol."
+						+ "MultiSaveCommand\"\033\n\004Save\022\010\n\004TRUE\020\000\022\t\n\005FA"
+						+ "LSE\020\001\"9\n\006Vertex\022\014\n\004size\030\001 \002(\014\022\r\n\005edges\030\002",
+				" \003(\014\022\022\n\nback_edges\030\003 \003(\014\";\n\tGraphView\022\021\n"
+						+ "\tsummaries\030\001 \003(\014\022\014\n\004sha3\030\002 \003(\014\022\r\n\005edges\030"
+						+ "\003 \003(\014\"\033\n\013ContentView\022\014\n\004data\030\001 \003(\014\"-\n\nSe"
+						+ "archView\022\021\n\tsummaries\030\001 \003(\014\022\014\n\004sha3\030\002 \003("
+						+ "\014B\037\n\023platanos.docGraphDBB\010Protocol" };
+		com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner = new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+			public com.google.protobuf.ExtensionRegistry assignDescriptors(
+					com.google.protobuf.Descriptors.FileDescriptor root) {
+				descriptor = root;
+				internal_static_protocol_MultiSaveCommand_descriptor = getDescriptor()
+						.getMessageTypes().get(0);
+				internal_static_protocol_MultiSaveCommand_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_descriptor,
+						new java.lang.String[] { "Key", "SaveCommand", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.Builder.class);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor = internal_static_protocol_MultiSaveCommand_descriptor
+						.getNestedTypes().get(0);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor,
+						new java.lang.String[] { "Type", "Metadata", "Content",
+								"Edge", "Vertex", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Builder.class);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor = internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor
+						.getNestedTypes().get(0);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_SaveCommand_Metadata_descriptor,
+						new java.lang.String[] { "SecCommand", "Position",
+								"Sha3", "LuceneUid", "Time", "Author",
+								"PrevSha3", "Location", "Seller", "Period",
+								"Sha3Contract", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Metadata.Builder.class);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor = internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor
+						.getNestedTypes().get(1);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Content_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_SaveCommand_Content_descriptor,
+						new java.lang.String[] { "SecCommand", "Position",
+								"Data", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Content.Builder.class);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor = internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor
+						.getNestedTypes().get(2);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_SaveCommand_Edge_descriptor,
+						new java.lang.String[] { "SecCommand", "Position",
+								"Edge", "Data", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Edge.Builder.class);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor = internal_static_protocol_MultiSaveCommand_SaveCommand_descriptor
+						.getNestedTypes().get(3);
+				internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiSaveCommand_SaveCommand_Vertex_descriptor,
+						new java.lang.String[] { "SecCommand", "Size", "Edge", },
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.class,
+						platanos.docGraphDB.Protocol.MultiSaveCommand.SaveCommand.Vertex.Builder.class);
+				internal_static_protocol_LoadCommand_descriptor = getDescriptor()
+						.getMessageTypes().get(1);
+				internal_static_protocol_LoadCommand_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_descriptor,
+						new java.lang.String[] { "Type", "GraphView",
+								"ContentView", "SearchView", "Vertex", },
+						platanos.docGraphDB.Protocol.LoadCommand.class,
+						platanos.docGraphDB.Protocol.LoadCommand.Builder.class);
+				internal_static_protocol_LoadCommand_Edge_descriptor = internal_static_protocol_LoadCommand_descriptor
+						.getNestedTypes().get(0);
+				internal_static_protocol_LoadCommand_Edge_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_Edge_descriptor,
+						new java.lang.String[] { "SecCommand", "Key",
+								"Position", "Edge", },
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.class,
+						platanos.docGraphDB.Protocol.LoadCommand.Edge.Builder.class);
+				internal_static_protocol_LoadCommand_GraphView_descriptor = internal_static_protocol_LoadCommand_descriptor
+						.getNestedTypes().get(1);
+				internal_static_protocol_LoadCommand_GraphView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_GraphView_descriptor,
+						new java.lang.String[] { "Key", "Position", "Edges", },
+						platanos.docGraphDB.Protocol.LoadCommand.GraphView.class,
+						platanos.docGraphDB.Protocol.LoadCommand.GraphView.Builder.class);
+				internal_static_protocol_LoadCommand_ContentView_descriptor = internal_static_protocol_LoadCommand_descriptor
+						.getNestedTypes().get(2);
+				internal_static_protocol_LoadCommand_ContentView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_ContentView_descriptor,
+						new java.lang.String[] { "Key", "Position",
+								"StartPosition", },
+						platanos.docGraphDB.Protocol.LoadCommand.ContentView.class,
+						platanos.docGraphDB.Protocol.LoadCommand.ContentView.Builder.class);
+				internal_static_protocol_LoadCommand_SearchView_descriptor = internal_static_protocol_LoadCommand_descriptor
+						.getNestedTypes().get(3);
+				internal_static_protocol_LoadCommand_SearchView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_SearchView_descriptor,
+						new java.lang.String[] { "Key", "Position", },
+						platanos.docGraphDB.Protocol.LoadCommand.SearchView.class,
+						platanos.docGraphDB.Protocol.LoadCommand.SearchView.Builder.class);
+				internal_static_protocol_LoadCommand_Vertex_descriptor = internal_static_protocol_LoadCommand_descriptor
+						.getNestedTypes().get(4);
+				internal_static_protocol_LoadCommand_Vertex_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_LoadCommand_Vertex_descriptor,
+						new java.lang.String[] { "Key", },
+						platanos.docGraphDB.Protocol.LoadCommand.Vertex.class,
+						platanos.docGraphDB.Protocol.LoadCommand.Vertex.Builder.class);
+				internal_static_protocol_MultiCommand_descriptor = getDescriptor()
+						.getMessageTypes().get(2);
+				internal_static_protocol_MultiCommand_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_MultiCommand_descriptor,
+						new java.lang.String[] { "Save", "LoadCommand",
+								"MultiSaveCommand", },
+						platanos.docGraphDB.Protocol.MultiCommand.class,
+						platanos.docGraphDB.Protocol.MultiCommand.Builder.class);
+				internal_static_protocol_Vertex_descriptor = getDescriptor()
+						.getMessageTypes().get(3);
+				internal_static_protocol_Vertex_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_Vertex_descriptor,
+						new java.lang.String[] { "Size", "Edges", "BackEdges", },
+						platanos.docGraphDB.Protocol.Vertex.class,
+						platanos.docGraphDB.Protocol.Vertex.Builder.class);
+				internal_static_protocol_GraphView_descriptor = getDescriptor()
+						.getMessageTypes().get(4);
+				internal_static_protocol_GraphView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_GraphView_descriptor,
+						new java.lang.String[] { "Summaries", "Sha3", "Edges", },
+						platanos.docGraphDB.Protocol.GraphView.class,
+						platanos.docGraphDB.Protocol.GraphView.Builder.class);
+				internal_static_protocol_ContentView_descriptor = getDescriptor()
+						.getMessageTypes().get(5);
+				internal_static_protocol_ContentView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_ContentView_descriptor,
+						new java.lang.String[] { "Data", },
+						platanos.docGraphDB.Protocol.ContentView.class,
+						platanos.docGraphDB.Protocol.ContentView.Builder.class);
+				internal_static_protocol_SearchView_descriptor = getDescriptor()
+						.getMessageTypes().get(6);
+				internal_static_protocol_SearchView_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+						internal_static_protocol_SearchView_descriptor,
+						new java.lang.String[] { "Summaries", "Sha3", },
+						platanos.docGraphDB.Protocol.SearchView.class,
+						platanos.docGraphDB.Protocol.SearchView.Builder.class);
+				return null;
+			}
+		};
+		com.google.protobuf.Descriptors.FileDescriptor
+				.internalBuildGeneratedFileFrom(
+						descriptorData,
+						new com.google.protobuf.Descriptors.FileDescriptor[] {},
+						assigner);
+	}
+
+	// @@protoc_insertion_point(outer_class_scope)
 }

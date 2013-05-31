@@ -6,6 +6,7 @@ import me.prettyprint.cassandra.service.template.ColumnFamilyTemplate;
 import me.prettyprint.cassandra.service.template.ColumnFamilyUpdater;
 import me.prettyprint.cassandra.service.template.ThriftColumnFamilyTemplate;
 import me.prettyprint.hector.api.Keyspace;
+import me.prettyprint.hector.api.beans.HColumn;
 import me.prettyprint.hector.api.exceptions.HectorException;
 
 class Summaries {
@@ -14,8 +15,7 @@ class Summaries {
 
 	Summaries(Keyspace ksp) {
 		template = new ThriftColumnFamilyTemplate<Long, byte[]>(ksp,
-				"Summaries", LongSerializer.get(),
-				BytesArraySerializer.get());
+				"Summaries", LongSerializer.get(), BytesArraySerializer.get());
 	}
 
 	protected boolean addSummary(Long key, byte[] position, byte[] data) {
@@ -31,6 +31,12 @@ class Summaries {
 		} catch (HectorException e) {
 			return false;
 		}
+	}
+
+	protected byte[] getSummary(Long key, byte[] position) {
+		HColumn<byte[], byte[]> c = template.querySingleColumn(key, position,
+				BytesArraySerializer.get());
+		return c.getValue();
 	}
 
 }
