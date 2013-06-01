@@ -1,9 +1,9 @@
 package platanos.docGraphDB;
 
 import java.util.Arrays;
-
 import me.prettyprint.cassandra.service.ThriftKsDef;
 import me.prettyprint.hector.api.Cluster;
+import me.prettyprint.hector.api.beans.DynamicComposite;
 import me.prettyprint.hector.api.ddl.ColumnFamilyDefinition;
 import me.prettyprint.hector.api.ddl.ComparatorType;
 import me.prettyprint.hector.api.ddl.KeyspaceDefinition;
@@ -29,37 +29,41 @@ public class Schema {
 	}
 
 	static void createSchema(Cluster cluster, int replicationFactor) {
+		
 
-		KeyspaceDefinition keyspaceDef = cluster
-				.describeKeyspace("DocGraphUID");
+		KeyspaceDefinition keyspaceDef = cluster.describeKeyspace("DocGraphUID");
 
 		if (keyspaceDef == null) {
-			ColumnFamilyDefinition DocVerticesDef = HFactory
+			ColumnFamilyDefinition docVerticesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocVertices",
 							ComparatorType.DYNAMICCOMPOSITETYPE);
+			docVerticesDef.setComparatorTypeAlias(DynamicComposite.DEFAULT_DYNAMIC_COMPOSITE_ALIASES);
+			
 
-			ColumnFamilyDefinition DocsDef = HFactory
+			ColumnFamilyDefinition docsDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Docs",
 							ComparatorType.BYTESTYPE);
 
-			ColumnFamilyDefinition SummariesDef = HFactory
+			ColumnFamilyDefinition summariesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Summaries",
 							ComparatorType.BYTESTYPE);
 
-			ColumnFamilyDefinition EdgesDef = HFactory
+			ColumnFamilyDefinition edgesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Edges",
 							ComparatorType.COMPOSITETYPE);
-
-			ColumnFamilyDefinition DocMetaDataDef = HFactory
+			edgesDef.setComparatorTypeAlias("(UTF8Type , BytesType)");
+			
+			ColumnFamilyDefinition docMetaDataDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocMetadata",
 							ComparatorType.COMPOSITETYPE);
-
+			docMetaDataDef.setComparatorTypeAlias("(UTF8Type , BytesType)");
+			
 			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
-					"DOcGraphUID", ThriftKsDef.DEF_STRATEGY_CLASS,
-					replicationFactor, Arrays.asList(DocVerticesDef, DocsDef,
-							SummariesDef, EdgesDef, DocMetaDataDef));
-
-			cluster.addKeyspace(newKeyspace, true);
+					"DocGraphUID", ThriftKsDef.DEF_STRATEGY_CLASS,
+					replicationFactor, Arrays.asList(docVerticesDef, docsDef,
+							summariesDef, edgesDef, docMetaDataDef));
+ 
+			cluster.addKeyspace(newKeyspace, false);
 		}
 		keyspaceDef = cluster.describeKeyspace("LuceneUIDRanges");
 
@@ -73,7 +77,7 @@ public class Schema {
 					"LuceneUIDRanges", ThriftKsDef.DEF_STRATEGY_CLASS,
 					replicationFactor, Arrays.asList(luceneUIDs));
 
-			cluster.addKeyspace(newKeyspace, true);
+			cluster.addKeyspace(newKeyspace, false);
 
 		}
 		keyspaceDef = cluster.describeKeyspace("Sha3");
@@ -88,7 +92,7 @@ public class Schema {
 					"Sha3", ThriftKsDef.DEF_STRATEGY_CLASS, replicationFactor,
 					Arrays.asList(graphUID));
 
-			cluster.addKeyspace(newKeyspace, true);
+			cluster.addKeyspace(newKeyspace, false);
 
 		}
 	}

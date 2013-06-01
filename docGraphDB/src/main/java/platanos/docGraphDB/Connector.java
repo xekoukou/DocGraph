@@ -1,6 +1,5 @@
 package platanos.docGraphDB;
 
-
 import org.zeromq.ZFrame;
 import org.zeromq.ZMsg;
 import org.zeromq.ZContext;
