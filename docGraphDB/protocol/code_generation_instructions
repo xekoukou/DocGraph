@@ -1,0 +1,5 @@
+issue this command to generate the code for C and java.
+You must be inside the folder of the instructions when executing it.
+
+protoc-c --c_out=../../ protocol.proto
+protoc --java_out=../src/main/java/ protocol.proto

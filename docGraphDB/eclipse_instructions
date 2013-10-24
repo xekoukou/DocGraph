@@ -1,0 +1,5 @@
+To use the eclipse IDE issue this command
+
+mvn eclipse:eclipse
+
+then verify that the maven variable is set in Eclipse, else set it to the maven directory where dependencies are held
