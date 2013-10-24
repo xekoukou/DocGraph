@@ -235,6 +235,7 @@ message GraphView
 message ContentView
 {
     repeated bytes data = 1;
+    repeated int64 luceneUid = 2;
 
 }
 

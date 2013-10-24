@@ -29,16 +29,16 @@ public class Schema {
 	}
 
 	static void createSchema(Cluster cluster, int replicationFactor) {
-		
 
-		KeyspaceDefinition keyspaceDef = cluster.describeKeyspace("DocGraphUID");
+		KeyspaceDefinition keyspaceDef = cluster
+				.describeKeyspace("DocGraphUID");
 
 		if (keyspaceDef == null) {
 			ColumnFamilyDefinition docVerticesDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocVertices",
 							ComparatorType.DYNAMICCOMPOSITETYPE);
-			docVerticesDef.setComparatorTypeAlias(DynamicComposite.DEFAULT_DYNAMIC_COMPOSITE_ALIASES);
-			
+			docVerticesDef
+					.setComparatorTypeAlias(DynamicComposite.DEFAULT_DYNAMIC_COMPOSITE_ALIASES);
 
 			ColumnFamilyDefinition docsDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "Docs",
@@ -52,17 +52,17 @@ public class Schema {
 					.createColumnFamilyDefinition("DocGraphUID", "Edges",
 							ComparatorType.COMPOSITETYPE);
 			edgesDef.setComparatorTypeAlias("(UTF8Type , BytesType)");
-			
+
 			ColumnFamilyDefinition docMetaDataDef = HFactory
 					.createColumnFamilyDefinition("DocGraphUID", "DocMetadata",
 							ComparatorType.COMPOSITETYPE);
 			docMetaDataDef.setComparatorTypeAlias("(UTF8Type , BytesType)");
-			
+
 			KeyspaceDefinition newKeyspace = HFactory.createKeyspaceDefinition(
 					"DocGraphUID", ThriftKsDef.DEF_STRATEGY_CLASS,
 					replicationFactor, Arrays.asList(docVerticesDef, docsDef,
 							summariesDef, edgesDef, docMetaDataDef));
- 
+
 			cluster.addKeyspace(newKeyspace, false);
 		}
 		keyspaceDef = cluster.describeKeyspace("LuceneUIDRanges");

@@ -10,6 +10,7 @@ import org.zeromq.ZMQ.Poller;
 
 import platanos.docGraphDB.Protocol.GraphView;
 import platanos.docGraphDB.Protocol.GraphView.Builder;
+import platanos.docGraphDB.Protocol.ContentView;
 import platanos.docGraphDB.Protocol.LoadCommand;
 import platanos.docGraphDB.Protocol.MultiCommand;
 import platanos.docGraphDB.Protocol.MultiCommand.Save;
@@ -249,17 +250,22 @@ class Connector {
 			result.data = gv.build().toByteArray();
 			return result;
 		case ccontentView:
-			result.data = docs.getDoc(loadCommand.getContentView().getKey(),
-					loadCommand.getContentView().getStartPosition()
-							.toByteArray(), loadCommand.getContentView()
-							.getPosition().toByteArray());
+			platanos.docGraphDB.Protocol.ContentView.Builder cv = ContentView
+					.newBuilder();
+			long key = loadCommand.getContentView().getKey();
+			byte[] position = loadCommand.getContentView().getPosition()
+					.toByteArray();
+			docs.getDoc(key, loadCommand.getContentView().getStartPosition()
+					.toByteArray(), position, cv);
+			cv.addLuceneUid(docMetadata.getLuceneUID(key, position));
+			result.data = cv.build().toByteArray();
 			return result;
 		case csearchView:
 			platanos.docGraphDB.Protocol.SearchView.Builder sv = SearchView
 					.newBuilder();
 			for (int i = 0; i <= loadCommand.getSearchView().getKeyCount(); i++) {
-				long key = loadCommand.getSearchView().getKey(i);
-				byte[] position = loadCommand.getSearchView().getPosition(i)
+				key = loadCommand.getSearchView().getKey(i);
+				position = loadCommand.getSearchView().getPosition(i)
 						.toByteArray();
 				sv.setSummaries(i, ByteString.copyFrom(summaries.getSummary(
 						key, position)));

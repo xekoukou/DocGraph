@@ -241,4 +241,15 @@ class DocMetadata {
 
 	}
 
+	protected Long getLuceneUID(Long key, byte[] position) {
+		Composite comp = new Composite();
+		comp.add(0, "luceneUID");
+		comp.add(1, position);
+
+		HColumn<Composite, Long> c = template.querySingleColumn(key, comp,
+				LongSerializer.get());
+		return c.getValue();
+
+	}
+
 }

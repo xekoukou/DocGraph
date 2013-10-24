@@ -1,6 +1,5 @@
 package platanos.docGraphDB;
 
-import platanos.docGraphDB.Protocol.ContentView;
 import platanos.docGraphDB.Protocol.ContentView.Builder;
 
 import com.google.protobuf.ByteString;
@@ -43,8 +42,8 @@ class Docs {
 		}
 	}
 
-	protected byte[] getDoc(Long key, byte[] start_position, byte[] position) {
-		Builder cv = ContentView.newBuilder();
+	protected void getDoc(Long key, byte[] start_position, byte[] position,
+			Builder cv) {
 
 		SliceQuery<Long, byte[], byte[]> sliceQuery = HFactory
 				.createSliceQuery(ksp, LongSerializer.get(),
@@ -60,7 +59,7 @@ class Docs {
 			byte[] data = sres.getValue();
 			cv.addData(ByteString.copyFrom(data));
 		}
-		return cv.build().toByteArray();
+
 	}
 
 }
